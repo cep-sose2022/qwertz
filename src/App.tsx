@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-// @ts-ignore
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
 
 // import MainPages
 import Startseite from './Mainpages/Startseite/Startseite';
@@ -16,24 +15,28 @@ import Zuordnung from './Gamemodi/Zuordnung/Zuordnung';
 import Endscreen from './Gamemodi/Endscreen/Endscreen';
 
 function App() {
-    // @ts-ignore
     return (
         <Router>
-            {/*MainPage*/}
-            <Route path="/" exact component={Startseite}/>
-            {/*Dashboard un alles was darunter ist }*/}
-            <Route path="/Dashboard" component={Dashboard}/>
-
-            <Route path="/Dashboard/Gamemodi" component={Gamemodi}/>
-            {/*Alles was unter Gamemodi ist*/}
-            <Route path="/Dashboard/Gamemodi/Ablaufanordnung" component={Ablaufanordnung}/>
-            <Route path="/Dashboard/Gamemodi/Wimmelbild" component={Wimmelbild}/>
-            <Route path="/Dashboard/Gamemodi/Zuordnung" component={Zuordnung}/>
-            <Route path="/Dashboard/Gamemodi/Endscreen" component={Endscreen}/>
-
-            <Route path="/Dashboard/Badges" component={Badges}/>
-
-
+            <Link to='Startseite'>Startseite</Link>
+            <Link to='Dashboard'>Dashboard</Link>
+            <Routes>
+                {/*MainPage*/}
+                <Route path="Startseite" element={<Startseite/>}/>
+                {/*Dashboard un alles was darunter ist }*/}
+                <Route path="Dashboard" element={<Dashboard/>}>
+                    <Route path="Badges" element={<Badges/>}/>
+                    <Route path="Gamemodi" element={<Gamemodi/>}>
+                        {/*Alles was unter Gamemodi ist*/}
+                        <Route path="Ablaufanordnung" element={<Ablaufanordnung/>}/>
+                        <Route path="Wimmelbild" element={<Wimmelbild/>}/>
+                        <Route path="Zuordnung" element={<Zuordnung/>}/>
+                        <Route path="Endscreen" element={<Endscreen/>}/>
+                    </Route>
+                </Route>
+            </Routes>
+            <div>
+                Footer
+            </div>
         </Router>
     );
 }
