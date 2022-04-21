@@ -1,10 +1,9 @@
-const Wimmelbild = () => {
+import React from 'react';
 
-    return(
-        <div>
-            Hallo
-        </div>
+const Wimmelbild = () => {
+    return (
+        <h1>Wimmelbild</h1>
     );
-};
+}
 
 export default Wimmelbild;
