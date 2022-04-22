@@ -17,8 +17,16 @@ import Endscreen from './Gamemodi/Endscreen/Endscreen';
 function App() {
     return (
         <Router>
-            <Link to='Startseite'>Startseite</Link>
-            <Link to='Dashboard'>Dashboard</Link>
+            <nav>
+                <Link to='Startseite'>Startseite </Link>
+                <Link to='Dashboard'>Dashboard </Link>
+                <Link to='Dashboard/Badges'>Badges </Link>
+                <Link to='Dashboard/Gamemodi/Zuordnung'>Zuordnung </Link>
+                <Link to='Dashboard/Gamemodi/Ablaufanordnung'>Ablaufanordnung </Link>
+                <Link to='Dashboard/Gamemodi/Endscreen'>Endscreen </Link>
+                <Link to='Dashboard/Gamemodi/Wimmelbild'>Wimmelbild </Link>
+            </nav>
+
             <Routes>
                 {/*MainPage*/}
                 <Route path="Startseite" element={<Startseite/>}/>
