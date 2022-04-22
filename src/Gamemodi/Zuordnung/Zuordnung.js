@@ -5,38 +5,73 @@ import {DndProvider} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
 import DropItem from "./DropItem";
 import {ItemState} from "./ItemState";
-
-
-const textList = [
-    {
-        id: 1,
-        text: "Cooler Text 1",
-        state: ItemState.NOTSELECTED
-    },
-    {
-        id: 2,
-        text: "Cooler Text 2",
-        state: ItemState.NOTSELECTED
-    },
-    {
-        id: 3,
-        text: "Cooler Text 3",
-        state: ItemState.NOTSELECTED
-    }
-];
+import JsonList from "../../Resources/Json/ZuordnungData.json";
 
 export const ItemContext = createContext({
     markAsX: (id, state) => {
     }
 });
 
+function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex !== 0) {
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+}
+
 const Zuordnung = () => {
-    const [itemList, setItem] = useState(textList);
+    const [fragen] = useState([]);
+    const [antworten, setAntworten] = useState([]);
+
+    if (fragen[0] === undefined) {
+        let fragenId = 1;
+        JsonList.map(object => {
+            let frage = {
+                id: fragenId,
+                frage: object.frage,
+            };
+            fragen.push(frage);
+            let antwortId = 1;
+            object.antworten.map(a => {
+                let antwort = {
+                    id: ((antwortId) + 10 * fragenId),
+                    text: a.text,
+                    state: ItemState.NOTSELECTED,
+                    right: false
+                };
+                antworten.push(antwort)
+                antwortId++;
+            });
+            fragenId++;
+        });
+
+        setAntworten(shuffle(antworten));
+    }
+
 
     const markAsX = (id, state) => {
-        const draggedItem = itemList.filter((i) => i.id === id)[0];
+        const draggedItem = antworten.filter((i) => i.id === id)[0];
         draggedItem.state = state;
-        setItem(itemList.filter((i) => i.id !== id).concat(draggedItem));
+
+        if (state === ItemState.UP)
+            draggedItem.right = Math.floor(id / 10) === 1;
+        else if (state === ItemState.DOWN)
+            draggedItem.right = Math.floor(id / 10) === 2;
+        else
+            draggedItem.right = false;
+
+        setAntworten(antworten.filter((i) => i.id !== id).concat(draggedItem));
     }
 
     return (
@@ -49,20 +84,23 @@ const Zuordnung = () => {
                         <DropZone type="Left">
                             Left
                             {
-                                itemList.filter(i => i.state === ItemState.NOTSELECTED).map(i => (
-                                    <DropItem key={i.id} state={i.state} text={i.text} id={i.id}/>
-                                ))
+                                antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
+                                        <DropItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right}/>
+                                    )
+                                )
                             }
                         </DropZone>
                     </div>
 
                     <div>
                         <DropZone type="Up">
-                            Up
                             {
-                                itemList.filter(i => i.state === ItemState.UP).map(i => (
-                                    <DropItem key={i.id} state={i.state} text={i.text} id={i.id}/>
-                                ))
+                                fragen[0].frage
+                            }
+                            {
+                                antworten.filter(a => a.state === ItemState.UP).map(i => (
+                                    <DropItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right}/>)
+                                )
                             }
                         </DropZone>
                     </div>
@@ -70,11 +108,13 @@ const Zuordnung = () => {
                     <div>
 
                         <DropZone type="Down">
-                            Down
                             {
-                                itemList.filter(i => i.state === ItemState.DOWN).map(i => (
-                                    <DropItem key={i.id} state={i.state} text={i.text} id={i.id}/>
-                                ))
+                                fragen[1].frage
+                            }
+                            {
+                                antworten.filter(a => a.state === ItemState.DOWN).map(i => (
+                                    <DropItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right}/>)
+                                )
                             }
                         </DropZone>
                     </div>
