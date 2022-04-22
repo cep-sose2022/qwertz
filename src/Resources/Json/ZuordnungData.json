@@ -1,0 +1,30 @@
+[
+  {
+      "frage": "Fragen für Up",
+      "antworten": [
+        {
+          "text": "Antwort 1 zu up"
+        },
+        {
+          "text": "Antwort 2 zu up"
+        },
+        {
+          "text": "Antwort 3 zu up"
+        }
+      ]
+  },
+  {
+      "frage": "Fragen für Down",
+      "antworten": [
+        {
+          "text": "Antwort 1 zu down"
+        },
+        {
+          "text": "Antwort 2 zu down"
+        },
+        {
+          "text": "Antwort 3 zu down"
+        }
+      ]
+  }
+]

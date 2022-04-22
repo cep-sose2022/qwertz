@@ -1,8 +1,8 @@
 import React from 'react';
 import {useDrag} from "react-dnd";
 
-const DropItem = (props: { id: number; state: any; text: String }) => {
-    const {id, text, state} = props;
+const DropItem = (props: { id: number; state: any; text: String; right: boolean }) => {
+    const {id, text, state, right} = props;
 
     const [{isDragging}, drag] = useDrag({
         type: state,
@@ -10,16 +10,17 @@ const DropItem = (props: { id: number; state: any; text: String }) => {
             id: id,
             type: state,
             text: text,
+            right: right
         },
         collect: (monitor) => ({
-            isDragging: !!monitor.isDragging(),
+            isDragging: monitor.isDragging(),
         }),
     });
 
     return (
         <p ref={drag} className="Card"
            style={{
-               backgroundColor: 'green',
+               backgroundColor: right ? 'green' : 'red',
                fontSize: (isDragging ? 20 : undefined)
            }}>
             {text}
