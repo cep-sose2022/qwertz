@@ -4,17 +4,18 @@ import Header from "../Header";
 
 const Dashboard = () => {
     return (
-        <div>
+        <header id="header">
             <Header>
                 <Link to='../Startseite'>Startseite</Link>
                 <Link to='../Dashboard/Badges'>Badges</Link>
                 <Link to='../Dashboard'>Dashboard</Link>
             </Header>
             <section className="services section" id="services">
-                <Outlet/>
+                <div className="container">
+                    <Outlet/>
+                </div>
             </section>
-
-        </div>
+        </header>
 
     );
 }
