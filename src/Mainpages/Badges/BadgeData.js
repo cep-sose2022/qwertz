@@ -7,8 +7,8 @@ const data = [
         },
 
         link: {
-            url: "https://www.youtube.com/watch?v=tQk564TavCE",
-            text: "Marwin hier Routing statt link? klappt net.."
+            url: "./Gamemodi/Zuordnung",
+            text: "START"
         }
     },
 
