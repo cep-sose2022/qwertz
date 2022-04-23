@@ -6,7 +6,6 @@ import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
 import Startseite from './Mainpages/Startseite/Startseite';
 import Dashboard from './Mainpages/Dashboard/Dashboard';
 import Badges from './Mainpages/Badges/Badges';
-import Header from "./Mainpages/Header";
 
 // import Gamemodi
 import Gamemodi from './Gamemodi/Gamemodi';
@@ -23,6 +22,18 @@ function App() {
 
     return (
         <Router>
+            <div style={{backgroundColor: 'green'}}>
+                <a> Zum Debugen un Testen aller Seiten, kommt dann am Ende noch weg</a>
+                <br/>
+                <Link to='Startseite'>Startseite </Link>
+                <Link to='Dashboard'>Dashboard </Link>
+                <Link to='Dashboard/Badges'>Badges </Link>
+                <Link to='Dashboard/Gamemodi/Zuordnung'>Zuordnung </Link>
+                <Link to='Dashboard/Gamemodi/Ablaufanordnung'>Ablaufanordnung </Link>
+                <Link to='Dashboard/Gamemodi/Endscreen'>Endscreen </Link>
+                <Link to='Dashboard/Gamemodi/Wimmelbild'>Wimmelbild </Link>
+            </div>
+
             <Routes>
                 {/*MainPage*/}
                 <Route path="" element={<Startseite/>}/>
