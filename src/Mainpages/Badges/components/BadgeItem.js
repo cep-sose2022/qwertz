@@ -1,16 +1,17 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
-const BadgeItem = ({ data }) => (
+const BadgeItem = ({data}) => (
     <div className="badgeline-item">
         <div className="badgeline-item-content">
-            <span className="tag" style={{ background: data.category.color }}>
+            <span className="tag" style={{background: data.category.color}}>
                 {data.category.tag}
             </span>
             <p>{data.text}</p>
             {data.link && (
-                <a href={data.link.url} target="_blank" rel="noopener noreferrer">
-                    {data.link.text} 
-                </a>
+                <Link to={data.link.url}>
+                    {data.link.text}
+                </Link>
             )}
             <span className="circle"></span>
         </div>

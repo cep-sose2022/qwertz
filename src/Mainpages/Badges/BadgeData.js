@@ -7,7 +7,7 @@ const data = [
         },
 
         link: {
-            url: "./Gamemodi/Zuordnung",
+            url: "../Gamemodi/Zuordnung",
             text: "START"
         }
     },
