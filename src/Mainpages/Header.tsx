@@ -1,7 +1,5 @@
 import React from 'react';
-import './style.css';
 import Anapur_Ag_Logo_removebg from '../Resources/images/Anapur_Ag_Logo-removebg.png';
-import {Outlet} from "react-router-dom";
 
 const Header = (props: { children: any; }) => {
 

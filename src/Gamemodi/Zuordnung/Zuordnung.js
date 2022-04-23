@@ -1,4 +1,3 @@
-import './styles.css';
 import React, {createContext, useState} from 'react';
 import DropZone from "./DropZone";
 import {DndProvider} from "react-dnd";

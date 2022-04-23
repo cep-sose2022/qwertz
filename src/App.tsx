@@ -15,6 +15,9 @@ import Wimmelbild from './Gamemodi/Wimmelbild/Wimmelbild';
 import Zuordnung from './Gamemodi/Zuordnung/Zuordnung';
 import Endscreen from './Gamemodi/Endscreen/Endscreen';
 
+// import CSS
+import './Mainpages/style.css';
+import './Gamemodi/Zuordnung/styles.css'
 
 function App() {
 
