@@ -7,7 +7,7 @@ import {ItemState} from "./ItemState";
 import JsonList from "../../Resources/Json/ZuordnungData.json";
 
 export const ItemContext = createContext({
-    markAsX: (id, state) => {
+    markAsX: (_id, _state) => {
     }
 });
 
@@ -78,7 +78,6 @@ const Zuordnung = () => {
             <ItemContext.Provider value={{markAsX}}>
 
                 <div>
-                    <h1>Zuordnung</h1>
                     <div>
                         <DropZone type="Left">
                             Left
