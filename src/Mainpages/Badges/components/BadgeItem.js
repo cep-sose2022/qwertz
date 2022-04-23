@@ -8,7 +8,7 @@ const BadgeItem = ({ data }) => (
             </span>
             <p>{data.text}</p>
             {data.link && (
-                <a link to={data.link.url} target="_blank" rel="noopener noreferrer">
+                <a href={data.link.url} target="_blank" rel="noopener noreferrer">
                     {data.link.text} 
                 </a>
             )}
