@@ -12,7 +12,9 @@ const Gamemodi = () => {
                 <br />
                 <Fortschrittsanzeige />
                 <br />
-                <a href="#" className="xbutton"></a>
+                <a href="#" className="xbutton">
+
+                </a>
             </div>
 
             <div className="container">
