@@ -726,3 +726,14 @@ nav .container {
 .xbutton:after {
     transform: rotate(-45deg);
 }
+
+.fortschrittanzeige {
+    background-color: rgb(0, 0, 0);
+    border: none;
+    padding: 15px;
+    display: inline-block;
+    margin: 24px 7.5px;
+    cursor: pointer;
+    opacity: 0.7;
+    border-radius: 100px;
+}
