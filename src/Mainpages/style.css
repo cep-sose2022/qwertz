@@ -693,6 +693,36 @@ nav .container {
     text-align: center;
     vertical-align: middle;
     border-radius: 50%;
-    /* may require vendor prefixes */
     background: rgba(7, 153, 255, 1);
+}
+
+.xbutton {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.4;
+}
+
+.xbutton:hover {
+    opacity: 10;
+}
+
+.xbutton:before,
+.xbutton:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 25px;
+    width: 2px;
+    background-color: #333;
+}
+
+.xbutton:before {
+    transform: rotate(45deg);
+}
+
+.xbutton:after {
+    transform: rotate(-45deg);
 }
