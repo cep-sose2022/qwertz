@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import Fortschrittsanzeige from "./Fortschrittsanzeige";
 
 const Gamemodi = () => {
@@ -12,7 +12,7 @@ const Gamemodi = () => {
                 <br />
                 <Fortschrittsanzeige />
                 <br />
-                <a href="#" className="xbutton"></a>
+                <Link to="#" className="xbutton"></Link>
             </div>
 
             <div className="container">
