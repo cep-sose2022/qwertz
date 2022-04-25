@@ -2,7 +2,7 @@ import React, {createContext, useState} from 'react';
 import DropZone from "./DropZone";
 import {DndProvider} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
-import DropItem from "./DropItem";
+import DragItem from "./DragItem";
 import {ItemState} from "./ItemState";
 import JsonList from "../../Resources/Json/ZuordnungData.json";
 
@@ -83,7 +83,7 @@ const Zuordnung = () => {
                             Left
                             {
                                 antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
-                                        <DropItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right}/>
+                                        <DragItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right}/>
                                     )
                                 )
                             }
@@ -97,7 +97,7 @@ const Zuordnung = () => {
                             }
                             {
                                 antworten.filter(a => a.state === ItemState.UP).map(i => (
-                                    <DropItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right}/>)
+                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right}/>)
                                 )
                             }
                         </DropZone>
@@ -111,7 +111,7 @@ const Zuordnung = () => {
                             }
                             {
                                 antworten.filter(a => a.state === ItemState.DOWN).map(i => (
-                                    <DropItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right}/>)
+                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right}/>)
                                 )
                             }
                         </DropZone>

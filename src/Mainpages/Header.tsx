@@ -15,7 +15,7 @@ const Header = (props: { children: any; }) => {
                 <div className="links">
                     <ul>
                         {children.map((child: any) => (
-                            <li>{child}</li>))}
+                            <li key={Math.floor(Math.random() * 10)}>{child}</li>))}
                     </ul>
                 </div>
             </div>

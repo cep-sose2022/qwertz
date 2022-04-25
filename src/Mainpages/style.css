@@ -736,3 +736,51 @@ nav .container {
     opacity: 0.7;
     border-radius: 100px;
 }
+
+.section-body grid-2 .quote-heading {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.section-body grid-2 .quote-body {
+    width: 100%;
+    height: 238px;
+    padding: 50px 35px;
+    background-color: rgba(255, 255, 255, .55);
+    backdrop-filter: blur(16px) saturate(100%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    border-radius: 5px;
+}
+
+.section-body grid-2 .quote-body .author {
+    text-align: right;
+    margin-top: 15px;
+}
+
+.section-body grid-2 .quote-body .quote-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    border-top: 1px solid #93a0ac;
+    padding: 7px 0;
+}
+
+.section-body grid-2 .quote-body .quote-buttons .social a {
+    font-size: 40px;
+    color: #455261;
+    transition: .3s ease;
+}
+
+.section-body grid-2 .quote-body .quote-buttons .btn button {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    background-color: #455261;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
