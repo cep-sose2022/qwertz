@@ -24,8 +24,8 @@ function App() {
 
     return (
         <Router>
-            <div style={{ backgroundColor: 'green' }}>
-                <a> Zum Debugen un Testen aller Seiten, kommt dann am Ende noch weg</a>
+            <div style={{ backgroundColor: 'lightgreen' }}>
+                <a> Zum Debuggen und Testen aller Seiten, kommt dann am Ende noch weg</a>
                 <br />
                 <Link to='Startseite'>Startseite </Link>
                 <Link to='Dashboard'>Dashboard </Link>
@@ -74,38 +74,20 @@ function App() {
                             <div className="grid-4-col footer-links">
                                 <h3 className="title-sm">Links</h3>
                                 <ul>
-                                    <li>
-                                        <a href="#header">Startseite</a>
-                                    </li>
-                                    <li>
-                                        <a href="#services">Schulung</a>
-                                    </li>
-                                    <li>
-                                        <a href="#about">Über uns</a>
-                                    </li>
-                                    <li>
-                                        <a href="#zitat">Zitat</a>
-                                    </li>
+                                    <li><a href="#header">Startseite</a></li>
+                                    <li><a href="#services">Schulung</a></li>
+                                    <li><a href="#about">Über uns</a></li>
+                                    <li><a href="#zitat">Zitat</a></li>
                                 </ul>
                             </div>
                             <div className="grid-4-col footer-links">
                                 <h3 className="title-sm">Schulungen</h3>
                                 <ul>
-                                    <li>
-                                        <a href="#">Lorem ipsum</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Lorem ipsum</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Lorem ipsum</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Lorem ipsum</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Lorem ipsum</a>
-                                    </li>
+                                    <li><a href="#">Lorem ipsum</a></li>
+                                    <li><a href="#">Lorem ipsum</a></li>
+                                    <li><a href="#">Lorem ipsum</a></li>
+                                    <li><a href="#">Lorem ipsum</a></li>
+                                    <li><a href="#">Lorem ipsum</a></li>
                                 </ul>
                             </div>
                             <div className="LEER"></div>

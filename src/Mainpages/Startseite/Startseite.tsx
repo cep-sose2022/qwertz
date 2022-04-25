@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from "../Header";
 import { Link } from "react-router-dom";
+
+// import images
 import img1 from './../images/avatarmitkreis.png'
 import img2 from './../images/avatar2mitkreis.png'
 import img3 from './../images/icons8-lebenslauf.png'

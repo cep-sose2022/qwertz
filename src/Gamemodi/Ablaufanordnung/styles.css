@@ -13,8 +13,8 @@
 }
 
 
-.board{
-    background-color: #0798fe;
+.board {
+    background-color: rgba(7, 152, 255, 0.527);
     display: inline-block;
     color: black;
     text-align: center;
@@ -22,8 +22,8 @@
     text-decoration: none;
 }
 
-.board div{
+.board div {
     border-style: dashed;
-    width:200px;
-    height:50px;
+    width: 200px;
+    height: 50px;
 }

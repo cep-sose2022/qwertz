@@ -10,6 +10,7 @@
     width: 300px;
     height: 300px;
     border: 3px solid rgb(0, 0, 0);
+    box-shadow: 10px 5px 5px black;
     background-color: #aeb0b9;
 }
 
@@ -23,12 +24,13 @@
     width: 300px;
     height: 300px;
     border: 3px solid black;
+    box-shadow: 10px 5px 5px black;
     background-color: rgba(7, 152, 255, 0.527);
 }
 
 .Down {
     position: relative;
-    margin-left: 35.5rem;
+    margin-left: 34.2rem;
     margin-top: -18.8rem;
     text-align: center;
     font-family: "Poppins", sans-serif;
@@ -37,5 +39,6 @@
     width: 300px;
     height: 300px;
     border: 3px solid black;
+    box-shadow: 10px 5px 5px black;
     background-color: rgba(7, 152, 255, 0.527);
 }
