@@ -175,7 +175,8 @@ const Startseite = () => {
                                 <div className="column-2 image">
                                     <img className="column-2 image"
                                         src={img2}
-                                        alt="logo" />                                </div>
+                                        alt="logo" />
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -186,35 +187,23 @@ const Startseite = () => {
                                     Dein Zitat für heute
                                 </h3>
                             </div>
-                            <div className="section-body grid-2">
-                                <div className="column-1">
-                                    <div className="quote-body">
-                                        <div className="icon-quote">
-                                            <span className="icon"></span>
-                                            <i className="fas fa-quote-left"></i>
-                                            <p className="quote">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                                        </div>
-                                        <div className="author">― Lorem ipsum</div>
+                            <div className="quote-body">
+                                <div className="icon-quote">
+                                    <span className="icon2"></span>
+                                    <i className="fas fa-quote-left"></i>
+                                    <p className="quote">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                </div>
+                                <div className="author">― Lorem ipsum</div>
 
-                                        <div className="quote-buttons">
-                                            <div className="social">
-                                                <a className="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">
-                                                    <i className="fab fa-twitter-square"></i>
-                                                </a>
-                                            </div>
-
-                                            <div className="btnzitat">
-                                                <Link to='zitate.js'>
-                                                    <button id="quote-btn">Neues Zitat</button>
-                                                </Link>
-
-                                            </div>
-
-                                        </div>
+                                <div className="quote-buttons">
+                                    <div className="btnzitat">
+                                        <button id="quote-btn">Neues Zitat</button>
                                     </div>
                                 </div>
                             </div>
+
+                            <script src="/zitate.js"></script>
                         </div>
                     </section>
                 </main>
