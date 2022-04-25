@@ -8,6 +8,7 @@ import img2 from './../images/avatar2mitkreis.png'
 import img3 from './../images/icons8-lebenslauf.png'
 import img4 from './../images/icons8-medien.png'
 import img5 from './../images/icons8-verschlüsseln.png'
+import logo from './../images/Anapur_Ag_Logo-removebg.png'
 
 const Startseite = () => {
     return (
@@ -25,7 +26,9 @@ const Startseite = () => {
                         <nav>
                             <div className="container">
                                 <div className="logo">
-                                    <img src="images/Anapur_Ag_Logo-removebg.png" alt="" />
+                                    <img className="icon"
+                                        src={logo}
+                                        alt="icon" />
                                 </div>
                                 <div className="links">
                                     <ul>
