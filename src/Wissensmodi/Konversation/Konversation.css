@@ -1,0 +1,35 @@
+.theoretic-conversation p{
+    text-align: center;
+}
+
+.bubble-right {
+    border: 2px solid #e1c71c;
+    background-color: rgb(80, 80, 80);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.bubble-right img {
+    float:left;
+    max-widht: 60px;
+    width: 60px;
+    margin-right: 20px;
+border-radius: 50%
+}
+.bubble-left {
+    border: 2px solid #e1c71c;
+    background-color: rgba(36, 215, 120, 0.19);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.bubble-left img {
+    float:right;
+    max-widht: 60px;
+    width: 60px;
+    margin-right: 20px;
+    border-radius: 50%
+}
+
