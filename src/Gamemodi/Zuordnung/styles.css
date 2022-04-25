@@ -1,23 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 .Left {
+    position: relative;
+    margin-left: 4rem;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
     float: left;
     width: 300px;
     height: 300px;
-    border: 2px solid black;
-    background-color: aqua;
+    border: 3px solid rgb(0, 0, 0);
+    background-color: #aeb0b9;
 }
 
 .Up {
+    position: relative;
+    margin-right: 2.5rem;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
     float: right;
     width: 300px;
     height: 300px;
-    border: 2px solid black;
-    background-color: #c9125d;
+    border: 3px solid black;
+    background-color: rgba(7, 152, 255, 0.527);
 }
 
 .Down {
+    position: relative;
+    margin-left: 35.5rem;
+    margin-top: -18.8rem;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
     float: left;
     width: 300px;
     height: 300px;
-    border: 2px solid black;
-    background-color: #063b42;
+    border: 3px solid black;
+    background-color: rgba(7, 152, 255, 0.527);
 }
