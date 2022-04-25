@@ -1,6 +1,11 @@
 import React from 'react';
 import Header from "../Header";
 import { Link } from "react-router-dom";
+import img1 from './../images/avatarmitkreis.png'
+import img2 from './../images/avatar2mitkreis.png'
+import img3 from './../images/icons8-lebenslauf.png'
+import img4 from './../images/icons8-medien.png'
+import img5 from './../images/icons8-verschlüsseln.png'
 
 const Startseite = () => {
     return (
@@ -54,13 +59,10 @@ const Startseite = () => {
                                         Jetzt starten
                                     </a>
                                 </div>
-                                <div className="column-2 image">
-                                    <img
-                                        src="images/avatarmitkreis.png"
-                                        className="img-element z-index"
-                                        alt=""
-                                    />
-                                </div>
+
+                                <img className="column-2 image"
+                                    src={img1}
+                                    alt="logo" />
                             </div>
                         </div>
                     </header>
@@ -83,11 +85,9 @@ const Startseite = () => {
                                     />
                                     <div className="card" data-card="Lorem ipsum">
                                         <div className="card-content z-index">
-                                            <img
-                                                src="images/icons8-verschlüsseln.png"
-                                                className="icon"
-                                                alt=""
-                                            />
+                                            <img className="column-2 image"
+                                                src={img5}
+                                                alt="logo" />
                                             <h3 className="title-sm">Lorem ipsum</h3>
                                             <p className="text">
                                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -103,11 +103,9 @@ const Startseite = () => {
                                 <div className="card-wrap">
                                     <div className="card" data-card="Lorem ipsum">
                                         <div className="card-content z-index">
-                                            <img
-                                                src="images/icons8-lebenslauf.png"
-                                                className="icon"
-                                                alt=""
-                                            />
+                                            <img className="column-2 image"
+                                                src={img3}
+                                                alt="logo" />
                                             <h3 className="title-sm">Lorem ipsum</h3>
                                             <p className="text">
                                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -121,24 +119,19 @@ const Startseite = () => {
                                     </div>
                                 </div>
                                 <div className="card-wrap">
-                                    <img
-                                        src="./img/shapes/points3.png"
-                                        className="points points2 points-sq"
-                                        alt=""
-                                    />
                                     <div className="card" data-card="Lorem ipsum">
-                                        <div className="card-content z-index">
-                                            <img src="images/icons8-medien.png" className="icon" alt="" />
-                                            <h3 className="title-sm">Lorem ipsum</h3>
-                                            <p className="text">
-                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                aliquyam
-                                            </p>
-                                            <a href="#" className="btn small">
-                                                Mehr lesen
-                                            </a>
-                                        </div>
+                                        <img className="column-2 image"
+                                            src={img4}
+                                            alt="logo" />
+                                        <h3 className="title-sm">Lorem ipsum</h3>
+                                        <p className="text">
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                            diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                            aliquyam
+                                        </p>
+                                        <a href="#" className="btn small">
+                                            Mehr lesen
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -162,9 +155,9 @@ const Startseite = () => {
                                         sanctus est Lorem ipsum dolor sit amet.
                                     </p>
                                 </div>
-                                <div className="column-2 image">
-                                    <img src="images/avatarmitkreis.png" className="z-index" alt="" />
-                                </div>
+                                <img className="column-2 image"
+                                    src={img1}
+                                    alt="logo" />
                             </div>
                         </div>
                     </section>
@@ -182,8 +175,9 @@ const Startseite = () => {
                                     </p>
                                 </div>
                                 <div className="column-2 image">
-                                    <img src="images/avatar2mitkreis.png" className="z-index" alt="" />
-                                </div>
+                                    <img className="column-2 image"
+                                        src={img2}
+                                        alt="logo" />                                </div>
                             </div>
                         </div>
                     </section>
