@@ -1,9 +1,16 @@
 .theoretic-conversation p{
     text-align: center;
 }
+.theoretic-conversation{
+    background-color: rgba(45, 215, 164, 0.19);
+    padding:20px;
+    height:600px;
+    border:5px solid;
+    overflow: auto
+}
 
 .bubble-right {
-    border: 2px solid #e1c71c;
+    border: 2px solid #000000;
     background-color: rgb(80, 80, 80);
     border-radius: 5px;
     padding: 10px;
@@ -19,8 +26,8 @@
     border-radius: 50%
 }
 .bubble-left {
-    border: 2px solid #e1c71c;
-    background-color: rgba(36, 215, 120, 0.19);
+    border: 2px solid #000000FF;
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;

@@ -6,7 +6,9 @@ import Data from "./Data";
 
 const Konversation = () => (
     <div className="theoretic-conversation">
-        {Data.map(data => (<Bubble data={data} />))
+        {Data.map(data => (
+            <Bubble data={data}/>
+        ))
 
         }
 

@@ -15,10 +15,6 @@ const data = [
         text: 'Text 4',
         category: 'bubble-right',
     },
-    {
-        text: 'Text 5',
-        category: 'bubble-left',
-    },
 
 
 ]
