@@ -59,10 +59,11 @@ const Startseite = () => {
                                         Jetzt starten
                                     </a>
                                 </div>
-
-                                <img className="column-2 image"
-                                    src={img1}
-                                    alt="logo" />
+                                <div className="column-2 image">
+                                    <img className="column-2 image"
+                                        src={img1}
+                                        alt="logo" />
+                                </div>
                             </div>
                         </div>
                     </header>
@@ -78,16 +79,11 @@ const Startseite = () => {
                             </div>
                             <div className="cards">
                                 <div className="card-wrap">
-                                    <img
-                                        src="./img/shapes/points3.png"
-                                        className="points points1 points-sq"
-                                        alt=""
-                                    />
                                     <div className="card" data-card="Lorem ipsum">
                                         <div className="card-content z-index">
-                                            <img className="column-2 image"
+                                            <img className="icon"
                                                 src={img5}
-                                                alt="logo" />
+                                                alt="icon" />
                                             <h3 className="title-sm">Lorem ipsum</h3>
                                             <p className="text">
                                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -103,9 +99,9 @@ const Startseite = () => {
                                 <div className="card-wrap">
                                     <div className="card" data-card="Lorem ipsum">
                                         <div className="card-content z-index">
-                                            <img className="column-2 image"
+                                            <img className="icon"
                                                 src={img3}
-                                                alt="logo" />
+                                                alt="icon" />
                                             <h3 className="title-sm">Lorem ipsum</h3>
                                             <p className="text">
                                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -120,9 +116,9 @@ const Startseite = () => {
                                 </div>
                                 <div className="card-wrap">
                                     <div className="card" data-card="Lorem ipsum">
-                                        <img className="column-2 image"
+                                        <img className="icon"
                                             src={img4}
-                                            alt="logo" />
+                                            alt="icon" />
                                         <h3 className="title-sm">Lorem ipsum</h3>
                                         <p className="text">
                                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -155,9 +151,10 @@ const Startseite = () => {
                                         sanctus est Lorem ipsum dolor sit amet.
                                     </p>
                                 </div>
-                                <img className="column-2 image"
-                                    src={img1}
-                                    alt="logo" />
+                                <div className="column-2 image">
+                                    <img className="column-2 image"
+                                        src={img1}
+                                        alt="logo" />                                </div>
                             </div>
                         </div>
                     </section>
@@ -219,6 +216,8 @@ const Startseite = () => {
                             </div>
                         </div>
                     </section>
+
+
                 </main>
 
             </>
