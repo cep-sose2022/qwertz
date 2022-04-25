@@ -79,7 +79,7 @@ img {
 /*============= Avatar Bild ============= */
 .column-2 image {
     position: relative;
-
+    width: 10%;
 }
 
 .image {

@@ -59,11 +59,9 @@ const Startseite = () => {
                                         Jetzt starten
                                     </a>
                                 </div>
-                                <div className="column-2 image">
-                                    <img className="column-2 image"
-                                        src={img1}
-                                        alt="logo" />
-                                </div>
+                                <img className="column-2 image"
+                                    src={img1}
+                                    alt="logo" />
                             </div>
                         </div>
                     </header>
@@ -116,18 +114,21 @@ const Startseite = () => {
                                 </div>
                                 <div className="card-wrap">
                                     <div className="card" data-card="Lorem ipsum">
-                                        <img className="icon"
-                                            src={img4}
-                                            alt="icon" />
-                                        <h3 className="title-sm">Lorem ipsum</h3>
-                                        <p className="text">
-                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                            diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                            aliquyam
-                                        </p>
-                                        <a href="#" className="btn small">
-                                            Mehr lesen
-                                        </a>
+                                        <div className="card-content z-index">
+                                            <img className="icon"
+                                                src={img4}
+                                                alt="icon" />
+                                            <h3 className="title-sm">Lorem ipsum</h3>
+                                            <p className="text">
+                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam
+                                            </p>
+                                            <a href="#" className="btn small">
+                                                Mehr lesen
+                                            </a>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
