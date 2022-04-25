@@ -188,44 +188,38 @@ const Startseite = () => {
                             </div>
                             <div className="section-body grid-2">
                                 <div className="column-1">
-                                    <p>kommt noch</p>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
+                                    <div className="quote-body">
+                                        <div className="icon-quote">
+                                            <span className="icon"></span>
+                                            <i className="fas fa-quote-left"></i>
+                                            <p className="quote">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                        </div>
+                                        <div className="author">― Lorem ipsum</div>
+
+                                        <div className="quote-buttons">
+                                            <div className="social">
+                                                <a className="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">
+                                                    <i className="fab fa-twitter-square"></i>
+                                                </a>
+                                            </div>
+
+                                            <div className="btnzitat">
+                                                <Link to='zitate.js'>
+                                                    <button id="quote-btn">Neues Zitat</button>
+                                                </Link>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </section>
-
-
                 </main>
-
             </>
-
         </div>
-
-
     );
 }
 
