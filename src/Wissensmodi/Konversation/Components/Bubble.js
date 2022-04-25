@@ -21,5 +21,6 @@ const Bubble = () => (
             <p>Textfeld</p>
         </div>
     </div>
+
 );
 export default Bubble;
