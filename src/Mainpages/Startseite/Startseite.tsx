@@ -211,9 +211,15 @@ const Startseite = () => {
                             <script src="/zitate.js"></script>
                         </div>
                     </section>
+
                 </main>
+
             </>
+
+
+
         </div>
+
     );
 }
 
