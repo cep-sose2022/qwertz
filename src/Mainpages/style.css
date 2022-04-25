@@ -61,19 +61,30 @@ img {
 }
 
 .text {
-    font-size: 1.25rem;
+    font-size: 1.33rem;
     color: var(--dark-two);
     line-height: 1.6;
 }
 
 .column-1 {
-    margin-top: -20rem;
+    margin-top: -19rem;
+    margin-right: 1.5rem;
+    margin-left: 5rem;
+    flex-basis: 120%;
+    position: relative;
+    margin-left: 50px;
+}
+
+
+
+.column-1 .header-title {
+    margin-top: 25rem;
     margin-right: 1.5rem;
 }
 
 .column-2 {
     margin-top: 10rem;
-    margin-left: 1.5rem;
+    margin-left: 6rem;
 }
 
 /*============= Avatar Bild ============= */
@@ -386,6 +397,7 @@ nav .container {
     font-size: 8rem;
 }
 
+
 /* About */
 
 .about {
@@ -409,7 +421,7 @@ nav .container {
 }
 
 .about .column-1:before {
-    content: "Über mich";
+    content: "Übermich";
     position: absolute;
     font-size: 8rem;
     font-weight: 200;
@@ -418,6 +430,7 @@ nav .container {
     top: 20px;
     left: 0;
     line-height: 0;
+    letter-spacing: 0.1em;
 
 }
 
