@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDrag} from "react-dnd";
 
-const DropItem = (props: { id: number; state: any; text: String; right: boolean }) => {
+const DragItem = (props: { id: number; state: any; text: String; right: boolean }) => {
     const {id, text, state, right} = props;
 
     const [{isDragging}, drag] = useDrag({
@@ -28,4 +28,4 @@ const DropItem = (props: { id: number; state: any; text: String; right: boolean 
     );
 }
 
-export default DropItem;
+export default DragItem;
