@@ -20,22 +20,22 @@ const data = [
         },
 
         link: {
-            url: "https://www.youtube.com/watch?v=tQk564TavCE",
-            text: "Marwin hier Routing statt link? klappt net.."
+            url: "../Gamemodi/Zuordnung",
+            text: "START"
         }
 
     },
 
     {
-        text: 'Hier könnte ihre Werbung stehen....... linebreak funktioniert nicht',
+        text: 'Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele',
         category: {
             tag: 'Badge 3',
             color: '#0404B4'
         },
 
         link: {
-            url: "https://www.youtube.com/watch?v=tQk564TavCE",
-            text: "Marwin hier Routing statt link? klappt net.."
+            url: "../Gamemodi/Zuordnung",
+            text: "START"
         }
 
     },
