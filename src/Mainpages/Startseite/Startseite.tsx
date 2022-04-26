@@ -3,8 +3,8 @@ import Header from "../Header";
 import { Link } from "react-router-dom";
 
 // import images
-import img1 from './../images/avatarmitkreis.png'
-import img2 from './../images/avatar2mitkreis.png'
+import img1 from './../../Resources/images/reagenzglasOrangetransparent.png'
+import img2 from './../../Resources/images/reagenzglasgruentransparent.png'
 import img3 from './../images/icons8-lebenslauf.png'
 import img4 from './../images/icons8-medien.png'
 import img5 from './../images/icons8-verschlüsseln.png'
