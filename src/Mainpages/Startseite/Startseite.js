@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from "../Header";
 import { Link } from "react-router-dom";
+
+import Jsonlist from '../../Resources/Json/zitate.json'
+import Zitat from './Zitat'
 
 // import images
 import img1 from './../../Resources/images/reagenzglasOrangetransparent.png'
@@ -11,6 +14,38 @@ import img5 from './../images/icons8-verschlüsseln.png'
 import logo from './../images/Anapur_Ag_Logo-removebg.png'
 
 const Startseite = () => {
+    const [zitat, setZitat] = useState(Jsonlist[Math.floor(Math.random() * Jsonlist.length)])
+    console.log(zitat)
+    /*if (zitate[0] === undefined) {
+        Jsonlist.map(object => {
+            let zitat = {
+                quote: object.quote,
+                author: object.author,
+                selected: false
+            }
+            zitate.push(zitat)
+        })
+    }
+    const generator = () => {
+        const aktuell = zitate.filter(zitat =>
+            zitat.selected === true
+        )[0]
+        aktuell.selected = false
+
+        setZitate(zitate.filter(zitat =>
+            zitat.selected !== true
+        ).concat(aktuell))
+
+        const neuesZitat = zitate.filter(zitat =>
+            zitat.selected === false
+        )[0]
+
+        
+    }
+    */
+    const generator = () => {
+        setZitat(Jsonlist[Math.floor(Math.random() * Jsonlist.length)])
+    }
     return (
         <div>
             <>
@@ -133,7 +168,6 @@ const Startseite = () => {
                                                 Mehr lesen
                                             </a>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +194,8 @@ const Startseite = () => {
                                 <div className="column-2 image">
                                     <img className="column-2 image"
                                         src={img1}
-                                        alt="logo" />                                </div>
+                                        alt="logo" />
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -193,33 +228,21 @@ const Startseite = () => {
                                 </h3>
                             </div>
                             <div className="quote-body">
-                                <div className="icon-quote">
-                                    <span className="icon2"></span>
-                                    <i className="fas fa-quote-left"></i>
-                                    <p className="quote">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                                </div>
-                                <div className="author">― Lorem ipsum</div>
+
+                                <Zitat quote={zitat.quote} author={zitat.author} />
+
 
                                 <div className="quote-buttons">
                                     <div className="btnzitat">
-                                        <button id="quote-btn">Neues Zitat</button>
+                                        <button onClick={generator}>Neues Zitat</button>
                                     </div>
                                 </div>
                             </div>
-
-                            <script src="/zitate.js"></script>
                         </div>
                     </section>
-
                 </main>
-
             </>
-
-
-
         </div>
-
     );
 }
 
