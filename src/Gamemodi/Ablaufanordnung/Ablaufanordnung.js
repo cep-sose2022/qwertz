@@ -1,10 +1,10 @@
-import React, {useState, createContext} from 'react';
-import {DndProvider} from "react-dnd";
+import React, { useState, createContext } from 'react';
+import { DndProvider } from "react-dnd";
 import CardStorage from "./CardStorage";
 import './styles.css'
 import DragCard from "./DragCard";
-import {ItemState} from "./ItemState";
-import {HTML5Backend} from "react-dnd-html5-backend";
+import { ItemState } from "./ItemState";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 import DropBox from "./DropBox";
 
@@ -40,20 +40,20 @@ const Ablaufanordnung = () => {
         let id = 1;
         if (cards[0] === undefined) {
             JsonList.map(object => {
-                    let card = {
-                        key: Math.floor(Math.random() * 100000),
-                        id: id++,
-                        text: object.text,
-                        state: ItemState.WRONG,
-                        boxId: 0
-                    }
-                    cards.push(card);
-                    let box = {
-                        key: Math.floor(Math.random() * 100000),
-                        id: card.id
-                    };
-                    boxes.push(box);
+                let card = {
+                    key: Math.floor(Math.random() * 100000),
+                    id: id++,
+                    text: object.text,
+                    state: ItemState.WRONG,
+                    boxId: 0
                 }
+                cards.push(card);
+                let box = {
+                    key: Math.floor(Math.random() * 100000),
+                    id: card.id
+                };
+                boxes.push(box);
+            }
             )
             setCards(shuffle(cards));
         }
@@ -81,35 +81,34 @@ const Ablaufanordnung = () => {
 
     return (
         <DndProvider backend={HTML5Backend}>
-            <CardContext.Provider value={{markAsX}}>
-                <h1>Ablaufanordnung</h1>
+            <CardContext.Provider value={{ markAsX }}>
                 <CardStorage>
                     {
                         cards.filter(card => card.boxId === 0)
                             .map(card => (
-                                    <DragCard key={card.key} id={card.id} text={card.text} state={card.state}/>
-                                )
+                                <DragCard key={card.key} id={card.id} text={card.text} state={card.state} />
+                            )
                             )
                     }
                 </CardStorage>
                 <div className="board">
                     {
                         boxes.map(box => (
-                                <DropBox key={box.key} id={box.id}>
-                                    <br/>
-                                    {
-                                        cards.filter(card => card.boxId === box.id).map(card => (
-                                                <DragCard key={card.id} id={card.id} text={card.text} state={card.state}/>
-                                            )
-                                        )
-                                        // let card = cards.filter(card =>(card.boxId === box.id))[0],
-                                        // box.id === cards.filter(card => (card.boxId === box.id))[0] ?
-                                        // <DragCard key={card.id} id={card.id} text={card.text} state={card.state}/>
-                                        // : <a> Leer </a>
-                                    }
+                            <DropBox key={box.key} id={box.id}>
+                                <br />
+                                {
+                                    cards.filter(card => card.boxId === box.id).map(card => (
+                                        <DragCard key={card.id} id={card.id} text={card.text} state={card.state} />
+                                    )
+                                    )
+                                    // let card = cards.filter(card =>(card.boxId === box.id))[0],
+                                    // box.id === cards.filter(card => (card.boxId === box.id))[0] ?
+                                    // <DragCard key={card.id} id={card.id} text={card.text} state={card.state}/>
+                                    // : <a> Leer </a>
+                                }
 
-                                </DropBox>
-                            )
+                            </DropBox>
+                        )
                         )
                     }
                 </div>
