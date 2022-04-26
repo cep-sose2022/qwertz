@@ -1,6 +1,10 @@
-.theoretic-conversation p {
-    text-align: center;
+
+.theoretic-conversation {
+    text-align: center
 }
+
+
+
 
 .theoretic-conversation {
     background-color: rgba(45, 215, 164, 0.19);
@@ -112,4 +116,40 @@
     width: 60px;
     margin-right: 20px;
     border-radius: 50%
+}
+
+
+@keyframes blink {
+    0% {
+        opacity: .2;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: .2;
+    }
+}
+
+.loading-button {
+    background-color: transparent;
+    border-color: transparent;
+    position: relative;
+}
+
+.loading-button span {
+    color: #34b61a;
+    font-size: 50px;
+    animation-name: blink;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.loading-button span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.loading-button span:nth-child(3) {
+    animation-delay: .4s;
 }

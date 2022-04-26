@@ -1,34 +1,49 @@
 import React, {useState} from "react";
 import "./Konversation.css"
+
+import Data from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
 
-import Data from "./Data";
-import BubblePlacer from "./Components/BubblePlacer";
-
-var firstState = false;
-
-function getData() {
-    console.log(Data);
-}
 
 const Konversation = () => {
-    const [text] = useState([]);
-    const [key,setKey] = useState(0);
+    const [bubbles, setBubbles] = useState([]);
 
 
+    if (bubbles[0] === undefined) {
+        Data.map(object => {
+            let bubble = {
+                id: Math.floor(Math.random() * 10000),
+                text: object.text,
+                category: object.category,
+                selected: false
+            }
+            bubbles.push(bubble);
+        })
 
+    }
+
+    const abbilden = () => {
+        const nextBubble = bubbles.filter(bubble => bubble.selected === false)[0];
+        nextBubble.selected = true;
+        setBubbles(bubbles.filter(bubble => bubble.id !== nextBubble.id).concat(nextBubble));
+
+    }
     return (
         <div className="theoretic-conversation">
-            {/*{getData()}*/}
-            {/*{*/}
 
-            {/*    Data.map((data) => (*/}
-            {/*        <Bubble data={data}/>*/}
-            {/*    ))*/}
+            {
+                bubbles.filter(bubbles => bubbles.selected === true).map(
+                    bubbles => <Bubble key={bubbles.id} category={bubbles.category} text={bubbles.text}/>
+                )
+            }
 
-            {/*}*/}
+            {
+                bubbles.filter(bubbles => bubbles.selected === false).map(() =>
+                    <button onClick={abbilden} className="loading-button"><span>.</span><span>.</span><span>.</span>
+                    </button>
+                )
 
-            <BubblePlacer/>
+            }
 
 
         </div>
