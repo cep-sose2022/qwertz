@@ -9,6 +9,8 @@ const EndscreenItem = ({ data }) => (
             <Link to={data.link.route}>
                 {data.link.text}
             </Link>
+            <div id="styledimg"></div>
+
         </div>
     </div>
 )

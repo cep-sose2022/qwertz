@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?familiy=Lato');
 
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -17,6 +17,12 @@
 }
 
 .endscreen-container {
+    background: url(./../../Resources/images/reagenzglasgewonnen.png);
+    background-position: 400px;
+    top: 180px;
+    background-repeat: no-repeat;
+    width: 900px;
+    height: 590px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -32,15 +38,13 @@
     font-weight: bold;
     line-height: 24px;
     margin: 15px 0;
-  
+
 }
 
 
 .endscreen-item-content a {
-	color: rgb(118, 95, 245);
-	text-decoration: none;
+    color: rgb(118, 95, 245);
+    text-decoration: none;
     font-size: 26px;
     font-weight: bold;
 }
-
-
