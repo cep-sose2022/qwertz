@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
 
 // import MainPages
 import Startseite from './Mainpages/Startseite/Startseite';
@@ -20,13 +20,16 @@ import Konversation from './Wissensmodi/Konversation/Konversation';
 import './Mainpages/style.css';
 import './Gamemodi/Zuordnung/styles.css'
 
+// import Json Data
+import JsonZitate from './Resources/Json/zitate.json';
+
 function App() {
 
     return (
         <Router>
-            <div style={{ backgroundColor: 'lightgreen' }}>
+            <div style={{backgroundColor: 'lightgreen'}}>
                 <a> Zum Debuggen und Testen aller Seiten, kommt dann am Ende noch weg</a>
-                <br />
+                <br/>
                 <Link to='Startseite'>Startseite </Link>
                 <Link to='Dashboard'>Dashboard </Link>
                 <Link to='Dashboard/Badges'>Badges </Link>
@@ -40,19 +43,19 @@ function App() {
 
             <Routes>
                 {/*MainPage*/}
-                <Route path="" element={<Startseite />} />
-                <Route path="Startseite" element={<Startseite />} />
+                <Route path="" element={<Startseite/>}/>
+                <Route path="Startseite" element={<Startseite JsonZitate={JsonZitate}/>}/>
                 {/*Dashboard un alles was darunter ist }*/}
-                <Route path="Dashboard" element={<Dashboard />}>
-                    <Route path="Badges" element={<Badges />} />
-                    <Route path="Gamemodi" element={<Gamemodi />}>
+                <Route path="Dashboard" element={<Dashboard/>}>
+                    <Route path="Badges" element={<Badges/>}/>
+                    <Route path="Gamemodi" element={<Gamemodi/>}>
                         {/*Alles was unter Gamemodi ist*/}
-                        <Route path="Ablaufanordnung" element={<Ablaufanordnung />} />
-                        <Route path="Wimmelbild" element={<Wimmelbild />} />
-                        <Route path="Zuordnung" element={<Zuordnung />} />
-                        <Route path="Endscreen" element={<Endscreen />} />
-                        <Route path="Konversation" element={<Konversation />} />
-                        <Route path="Video" element={<Video />} />
+                        <Route path="Ablaufanordnung" element={<Ablaufanordnung/>}/>
+                        <Route path="Wimmelbild" element={<Wimmelbild/>}/>
+                        <Route path="Zuordnung" element={<Zuordnung/>}/>
+                        <Route path="Endscreen" element={<Endscreen/>}/>
+                        <Route path="Konversation" element={<Konversation/>}/>
+                        <Route path="Video" element={<Video/>}/>
                     </Route>
                 </Route>
             </Routes>
@@ -96,26 +99,26 @@ function App() {
                             <div className="copyright">
                                 <p className="text">
                                     MIT License
-                                    <br />
+                                    <br/>
                                     -----------
-                                    <br />
+                                    <br/>
                                     Copyright© 2022 Team QWERTZ
-                                    <br />| Made by
+                                    <br/>| Made by
                                     <span>Team QWERTZ</span>
                                 </p>
                             </div>
                             <div className="followme-wrap">
                                 <div className="followme">
-                                    <span className="footer-line" />
+                                    <span className="footer-line"/>
                                     <div className="social-media">
                                         <a href="https://www.linkedin.com/company/anapur-ag/">
-                                            <i className="fab fa-linkedin-in" />
+                                            <i className="fab fa-linkedin-in"/>
                                         </a>
                                     </div>
                                 </div>
                                 <div className="back-btn-wrap">
                                     <a href="#" className="back-btn">
-                                        <i className="fas fa-chevron-up" />
+                                        <i className="fas fa-chevron-up"/>
                                     </a>
                                 </div>
                             </div>
