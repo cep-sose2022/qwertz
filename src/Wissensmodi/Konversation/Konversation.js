@@ -38,11 +38,10 @@ const Konversation = () => {
             }
 
             {
-                bubbles.filter(bubbles => bubbles.selected === false).map(() =>
+                bubbles.filter(bubbles => bubbles.selected === false) >= 0 ?
+                    null :
                     <button onClick={abbilden} className="loading-button"><span>.</span><span>.</span><span>.</span>
                     </button>
-                )
-
             }
 
 
