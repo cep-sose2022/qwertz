@@ -43,7 +43,7 @@ function App() {
 
             <Routes>
                 {/*MainPage*/}
-                <Route path="" element={<Startseite/>}/>
+                <Route path="" element={<Startseite JsonZitate={JsonZitate}/>}/>
                 <Route path="Startseite" element={<Startseite JsonZitate={JsonZitate}/>}/>
                 {/*Dashboard un alles was darunter ist }*/}
                 <Route path="Dashboard" element={<Dashboard/>}>
