@@ -27,6 +27,7 @@ import Footer from "./Mainpages/Startseite/Footer";
 
 function App() {
 
+    
     return (
         <Router>
             <div style={{backgroundColor: 'lightgreen'}}>
