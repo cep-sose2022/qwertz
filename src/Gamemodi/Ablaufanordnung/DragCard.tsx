@@ -1,11 +1,10 @@
 import React from 'react';
-import { useDrag } from "react-dnd";
-import { ItemState } from "./ItemState";
+import {useDrag} from "react-dnd";
 
 const DragCard = (props: { id: number; state: any; text: String }) => {
-    const { id, text, state } = props;
+    const {id, text, state} = props;
 
-    const [{ isDragging }, drag] = useDrag({
+    const [{}, drag] = useDrag({
         type: state,
         item: {
             id: id,
@@ -20,10 +19,6 @@ const DragCard = (props: { id: number; state: any; text: String }) => {
     return (
         <p
             ref={drag}
-            style={{
-                backgroundColor: state === ItemState.RIGHT ? 'lightgreen' : 'red',
-                fontSize: (isDragging ? 20 : undefined)
-            }}
         >
             {text}
         </p>

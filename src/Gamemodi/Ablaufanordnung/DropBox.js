@@ -2,10 +2,11 @@ import React, {useContext} from 'react';
 import {useDrop} from "react-dnd";
 import {ItemState} from "./ItemState";
 import {CardContext} from "./Ablaufanordnung";
+import {Center} from "@mantine/core";
 
 
 const DropBox = (props) => {
-    const {children, id} = props;
+    const {children, id, bgColor} = props;
 
 
     const {markAsX} = useContext(CardContext);
@@ -19,14 +20,17 @@ const DropBox = (props) => {
     }));
 
     return (
-        <div
+        <Center
             ref={drop}
             style={{
-                backgroundColor: (isDragging ? 'gray' : undefined),
+                backgroundColor: (isDragging ? 'gray' : bgColor),
+                width: 250,
+                height: 50
+
             }}
         >
             {children}
-        </div>
+        </Center>
     );
 }
 
