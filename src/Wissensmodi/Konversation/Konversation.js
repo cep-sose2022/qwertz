@@ -30,7 +30,7 @@ const Konversation = () => {
     }
     return (
         <div className="theoretic-conversation">
-            <div className="chatelemente">
+            <div className="chat-objects">
                 {
                     bubbles.filter(bubbles => bubbles.selected === true).map(
                         bubbles => <Bubble key={bubbles.id} category={bubbles.category} text={bubbles.text}/>

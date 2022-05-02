@@ -3,15 +3,13 @@
     min-width: 250px;
     max-height:650px;
     text-align: center;
-    /*align-items: center;*/
-    /*justify-content: center;*/
     background-color: var(--dark-one);
     border: 5px solid;
     overflow: auto;
-
+    margin: auto;
     display:flex
 }
-.chatelemente {
+.chat-objects {
     flex: 1
 }
 
