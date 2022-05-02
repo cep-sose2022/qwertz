@@ -30,21 +30,20 @@ const Konversation = () => {
     }
     return (
         <div className="theoretic-conversation">
+            <div className="chatelemente">
+                {
+                    bubbles.filter(bubbles => bubbles.selected === true).map(
+                        bubbles => <Bubble key={bubbles.id} category={bubbles.category} text={bubbles.text}/>
+                    )
+                }
 
-            {
-                bubbles.filter(bubbles => bubbles.selected === true).map(
-                    bubbles => <Bubble key={bubbles.id} category={bubbles.category} text={bubbles.text}/>
-                )
-            }
-
-            {
-                bubbles.filter(bubbles => bubbles.selected === false) >= 0 ?
-                    null :
-                    <button onClick={abbilden} className="loading-button"><span>.</span><span>.</span><span>.</span>
-                    </button>
-            }
-
-
+                {
+                    bubbles.filter(bubbles => bubbles.selected === false) >= 0 ?
+                        null :
+                        <button onClick={abbilden} className="loading-button"><span>.</span><span>.</span><span>.</span>
+                        </button>
+                }
+            </div>
         </div>
     )
 
