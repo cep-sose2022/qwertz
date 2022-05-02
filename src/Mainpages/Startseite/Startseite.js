@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import {HashLink} from "react-router-hash-link";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 import NavBar from "../NavBar";
 import Zitat from './Zitat'
@@ -17,7 +17,7 @@ import Card from "./Card";
 import Introduction from "./Introduction";
 
 const Startseite = (props) => {
-    const {JsonZitate} = props;
+    const { JsonZitate } = props;
 
     return (
         <main>
@@ -30,7 +30,7 @@ const Startseite = (props) => {
             </NavBar>
 
             <header id="header">
-                <Header/>
+                <Header />
             </header>
 
             <section className="services section" id="services">
@@ -69,7 +69,7 @@ const Startseite = (props) => {
 
             <section className="about section" id="about">
                 <div className="container">
-                    <Headline title={"Wer sind wir"} headline={"Über uns"} text={""}/>
+                    <Headline title={"Wer sind wir"} headline={"Über uns"} text={""} />
 
                     <Introduction
                         name={"Zepp"}
@@ -98,8 +98,8 @@ const Startseite = (props) => {
 
             <section className="zitat section" id="zitat">
                 <div className="container">
-                    <Headline title={"Zitat"} headline={"Dein Zitat für heute"} text={""}/>
-                    <Zitat JsonData={JsonZitate}/>
+                    <Headline title={"Zitat"} headline={"Dein Zitat für heute"} text={""} />
+                    <Zitat JsonData={JsonZitate} />
                 </div>
             </section>
         </main>

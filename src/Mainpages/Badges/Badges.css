@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?familiy=Lato');
 
-*{
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 .bodyForBadge {
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #1a56b6 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,12 +24,15 @@
 }
 
 .badgeline-container::after {
-    background-color: #0a0a0a;
-    content: '';
     position: absolute;
-    left: calc(50% - 2px);
-    width: 4px;
+    content: ' ';
+    width: 3.5px;
     height: 100%;
+    background-image: linear-gradient(to bottom, rgb(106, 6, 236), rgb(92, 0, 240));
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 0;
 }
 
 
@@ -74,6 +78,14 @@
     height: 15px;
 }
 
+.badgeline-item-content .title {
+    position: absolute;
+    font-size: 20px;
+    font-weight: 500;
+    top: -190px;
+    color: rgb(106, 6, 236);
+}
+
 .badgeline-item:nth-child(odd) .badgeline-item-content {
     text-align: left;
     align-items: flex-start;
@@ -86,44 +98,57 @@
 }
 
 .badgeline-item-content .tag {
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    top: 5px;
-    left: 5px;
-    letter-spacing: 1px;
-    padding: 5px;
     position: absolute;
-    text-transform: uppercase;
+    top: -48px;
+    width: 135px;
+    height: 35px;
+    border-radius: 20px;
+    color: #fff;
+    background-image: linear-gradient(to right, rgb(106, 6, 236), rgb(44, 0, 240));
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.418);
 }
 
 .badgeline-item:nth-child(odd) .badgeline-item-content .tag {
     left: auto;
-    right: 5px;
+    right: 125px;
 }
 
 .badgeline-item-content p {
+    position: relative;
+    top: 30px;
     font-size: 16px;
     line-height: 24px;
     margin: 15px 0;
     max-width: 250px;
 }
 
+.badgeline-item-content h3 {
+    position: relative;
+    color: rgb(44, 7, 146);
+    font-size: 30px;
+    line-height: 24px;
+    margin: 15px 0;
+    top: -115px;
+    max-width: 250px;
+}
+
 .badgeline-item-content a {
-	color: rgb(118, 95, 245);
-	text-decoration: none;
-    font-size: 14px;
+    color: rgb(118, 95, 245);
+    text-decoration: none;
+    font-size: 16px;
     font-weight: bold;
 }
 
 .badgeline-item-content a::after {
     content: ' ►';
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .badgeline-item-content .circle {
-    background-color: rgb(175, 233, 239);
-    border: 3px solid #0d0d0d;
+    background-color: rgba(0, 112, 240, 0.403);
     border-radius: 50%;
     position: absolute;
     top: calc(50% - 10px);
@@ -133,22 +158,19 @@
     z-index: 100;
 }
 
+.badgeline-item-content .circle::after {
+    content: ' ';
+    width: 15px;
+    height: 15px;
+    background-color: rgb(106, 6, 236);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .badgeline-item:nth-child(odd) .badgeline-item-content .circle {
     right: auto;
     left: -40px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

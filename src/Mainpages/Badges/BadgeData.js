@@ -1,9 +1,10 @@
 const data = [
     {
+        title: 'Phishing',
         text: 'Es gibt zunächst zwei Theorievideos und danach erwarten Sie interkative Spiele',
         category: {
             tag: 'Badge 1',
-            color: '#DF0101'
+            color: 'linear-gradient(to right, rgb(106, 6, 236), rgb(44, 0, 240))'
         },
 
         link: {
@@ -13,10 +14,11 @@ const data = [
     },
 
     {
+        title: 'Firewall',
         text: 'Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele',
         category: {
             tag: 'Badge 2',
-            color: '#00FF00'
+            color: 'linear-gradient(to right, rgb(106, 6, 236), rgb(44, 0, 240))'
         },
 
         link: {
@@ -27,10 +29,11 @@ const data = [
     },
 
     {
+        title: 'OT',
         text: 'Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele',
         category: {
             tag: 'Badge 3',
-            color: '#0404B4'
+            color: 'linear-gradient(to right, rgb(106, 6, 236), rgb(44, 0, 240))'
         },
 
         link: {
