@@ -1,6 +1,6 @@
 const data = [
     {
-        title: 'Phishing',
+        title: '"Phishing"', /*Oberbegriff vom Thema */
         text: 'Es gibt zunächst zwei Theorievideos und danach erwarten Sie interkative Spiele',
         category: {
             tag: 'Badge 1',
@@ -14,7 +14,7 @@ const data = [
     },
 
     {
-        title: 'Firewall',
+        title: '"Firewall"',
         text: 'Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele',
         category: {
             tag: 'Badge 2',
@@ -29,7 +29,7 @@ const data = [
     },
 
     {
-        title: 'OT',
+        title: '"OT"',
         text: 'Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele',
         category: {
             tag: 'Badge 3',
