@@ -1,0 +1,42 @@
+[
+  {
+    "bild": "chemieanlage.png"
+  },
+  {
+    "buttons": [
+      {
+        "text": "Text 1",
+        "leftCorner": {
+          "x": 0,
+          "y": 0
+        },
+        "rightCorner": {
+          "x": 50,
+          "y": 20
+        }
+      },
+      {
+        "text": "Text 2",
+        "leftCorner": {
+          "x": 40,
+          "y": 40
+        },
+        "rightCorner": {
+          "x": 60,
+          "y": 60
+        }
+      },
+      {
+        "text": "Text 3",
+        "leftCorner": {
+          "x": 60,
+          "y": 70
+        },
+        "rightCorner": {
+          "x": 90,
+          "y": 90
+        }
+      }
+    ]
+  }
+]
