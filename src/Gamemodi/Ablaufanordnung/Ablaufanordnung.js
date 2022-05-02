@@ -7,7 +7,7 @@ import {ItemState} from "./ItemState";
 import {HTML5Backend} from "react-dnd-html5-backend";
 import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 import DropBox from "./DropBox";
-import {Button, Group, Modal, Popover, SimpleGrid, Text} from "@mantine/core";
+import {Button, Group, Modal, Popover, SimpleGrid, Text, Tooltip} from "@mantine/core";
 
 
 export const CardContext = createContext({
@@ -202,9 +202,9 @@ const Ablaufanordnung = () => {
                         </div>
                     </Popover>
 
-                    {allRight && (
-                        <Button onClick={() => console.log("Weiter")}> Weiter</Button>
-                    )}
+                    <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
+                        <Button onClick={() => console.log("Weiter")} disabled={!allRight}> Weiter</Button>
+                    </Tooltip>
                 </Group>
 
             </CardContext.Provider>
