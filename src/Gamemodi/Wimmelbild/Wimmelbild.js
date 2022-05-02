@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import JsonData from '../../Resources/Json/WimmelbildData.json';
-import {BackgroundImage, Box, Button,Modal, Tooltip} from "@mantine/core";
+import { BackgroundImage, Box, Button, Modal, Tooltip } from "@mantine/core";
 
 const Wimmelbild = () => {
     const image = require('../../Resources/images/' + JsonData[0].bild);
@@ -46,30 +46,30 @@ const Wimmelbild = () => {
             <Modal opened={modalOpened} onClose={() => setModalOpened(false)}>
                 <p>{modalContent}</p>
             </Modal>
-            <Box sx={{Width: 500, High: 500}}>
+            <Box sx={{ Width: 500, High: 500 }}>
                 <BackgroundImage
-                    style={{width: 500, height: 500, marginLeft: 'auto', marginRight: 'auto', position: 'relative'}}
+                    style={{ width: 500, height: 500, marginLeft: 'auto', marginRight: 'auto', position: 'relative', top: 70 }}
                     src={image}
                     radius="sm"
                 >
                     {/*Her kommen alle Buttons rein*/}
                     {
                         buttons.map(b => (
-                                <button
-                                    key={Math.random()}
-                                    style={{
-                                        border: 'gray',
-                                        opacity: b.isClicked ? .5 : 2,
-                                        // backgroundColor: b.isClicked ? 'gray' : 'transparent',
-                                        width: b.width + "%",
-                                        height: b.height + "%",
-                                        position: 'absolute',
-                                        left: `calc(${b.left}% - 0px)`,
-                                        top: `calc(${b.top}% - 0px)`,
-                                    }}
-                                    onClick={() => clickButton(b.id)}
-                                />
-                            )
+                            <button
+                                key={Math.random()}
+                                style={{
+                                    border: 'gray',
+                                    opacity: b.isClicked ? .5 : 2,
+                                    // backgroundColor: b.isClicked ? 'gray' : 'transparent',
+                                    width: b.width + "%",
+                                    height: b.height + "%",
+                                    position: 'absolute',
+                                    left: `calc(${b.left}% - 0px)`,
+                                    top: `calc(${b.top}% - 0px)`,
+                                }}
+                                onClick={() => clickButton(b.id)}
+                            />
+                        )
                         )
                     }
 

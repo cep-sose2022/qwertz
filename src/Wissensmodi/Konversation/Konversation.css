@@ -1,14 +1,17 @@
 .theoretic-conversation {
     width: 75%;
-    min-width: 250px;
-    max-height:650px;
+    min-width: 240px;
+    max-height: 650px;
+    position: relative;
+    top: 40px;
     text-align: center;
     background-color: var(--dark-one);
     border: 5px solid;
     overflow: auto;
     margin: auto;
-    display:flex
+    display: flex
 }
+
 .chat-objects {
     flex: 1
 }
@@ -17,6 +20,7 @@
     justify-content: flex-end;
 
 }
+
 .bubble-left-msg-text {
     background: var(--dark-two);
     color: var(--light-one);
@@ -31,7 +35,8 @@
     font-size: 22px;
     margin-bottom: 10px
 }
-.bubble-left-msg-img{
+
+.bubble-left-msg-img {
     width: 50px;
     border-radius: 50%;
     margin: 0 20px
@@ -43,13 +48,12 @@
     margin: 40px
 }
 
-
-
 .bubble-right-msg-row {
     display: flex;
     align-items: center;
     margin: 40px
 }
+
 .bubble-right-msg-text {
     background: var(--dark-two);
     color: var(--light-one);
@@ -64,7 +68,8 @@
     font-size: 22px;
     margin-bottom: 10px
 }
-.bubble-right-msg-img{
+
+.bubble-right-msg-img {
     width: 50px;
     border-radius: 50%;
     margin: 0 20px
@@ -162,9 +167,11 @@
     0% {
         opacity: .2;
     }
+
     20% {
         opacity: 1;
     }
+
     100% {
         opacity: .2;
     }

@@ -12,6 +12,8 @@
     border: 3px solid rgb(0, 0, 0);
     box-shadow: 10px 5px 5px black;
     background-color: #aeb0b9;
+    top: 75px;
+    right: 800px;
 }
 
 .Up {
@@ -26,6 +28,7 @@
     border: 3px solid black;
     box-shadow: 10px 5px 5px black;
     background-color: rgba(7, 152, 255, 0.527);
+    top: -230px;
 }
 
 .Down {
@@ -41,4 +44,5 @@
     border: 3px solid black;
     box-shadow: 10px 5px 5px black;
     background-color: rgba(7, 152, 255, 0.527);
+    top: 70px;
 }
