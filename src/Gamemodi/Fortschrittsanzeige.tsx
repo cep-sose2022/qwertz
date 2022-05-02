@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom';
 const Fortschrittsanzeige = () => {
     return (
         <>
-            <Link to="/Dashboard/Gamemodi/Konversation" className="fortschrittanzeige"></Link>
-            <Link to="/Dashboard/Gamemodi/Video" className="fortschrittanzeige"></Link>
-            <Link to="/Dashboard/Gamemodi/Wimmelbild" className="fortschrittanzeige"></Link>
-            <Link to="/Dashboard/Gamemodi/Ablaufanordnung" className="fortschrittanzeige"></Link>
-            <Link to="/Dashboard/Gamemodi/Zuordnung" className="fortschrittanzeige"></Link>
 
+
+            <ul className="progressbar">
+                <li className="bestanden">Konversation</li>
+                <li>Video</li>
+                <li>Wimmelbild</li>
+                <li>Ablaufanordnung</li>
+                <li>Zuordnung</li>
+            </ul>
         </>
     );
 }
