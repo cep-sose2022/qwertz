@@ -5,6 +5,22 @@ import {HTML5Backend} from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
 import {ItemState} from "./ItemState";
 import JsonList from "../../Resources/Json/ZuordnungData.json";
+import {Button, Group, Modal, Popover, Text, Tooltip} from "@mantine/core";
+
+const modalContent1 = [
+    {
+        title: "Aufgabenstellung",
+        content: "hier hast du eine Wichtige und coole aufgabe"
+    },
+    {
+        title: "Leider Falsch",
+        content: "Leider nicht alles richtig, schaue dir das noch mal an."
+    },
+    {
+        title: "Alles Richtig",
+        content: "Super du hast alles richtig!"
+    }
+]
 
 export const ItemContext = createContext({
     markAsX: (_id, _state) => {
@@ -32,6 +48,10 @@ function shuffle(array) {
 const Zuordnung = () => {
     const [fragen] = useState([]);
     const [antworten, setAntworten] = useState([]);
+    const [openedModal, setOpenedModal] = useState(false);
+    const [openedPopover, setOpenedPopover] = useState(false);
+    const [modalContent, setModalContent] = useState(modalContent1[0]);
+    const [allRight, setAllRight] = useState(false);
 
     if (fragen[0] === undefined) {
         let fragenId = 1;
@@ -63,19 +83,59 @@ const Zuordnung = () => {
         const draggedItem = antworten.filter((i) => i.id === id)[0];
         draggedItem.state = state;
 
-        if (state === ItemState.UP)
-            draggedItem.right = Math.floor(id / 10) === 1;
-        else if (state === ItemState.DOWN)
-            draggedItem.right = Math.floor(id / 10) === 2;
-        else
-            draggedItem.right = false;
+        // if (state === ItemState.UP)
+        //     draggedItem.right = Math.floor(id / 10) === 1;
+        // else if (state === ItemState.DOWN)
+        //     draggedItem.right = Math.floor(id / 10) === 2;
+        // else
+        //     draggedItem.right = false;
 
         setAntworten(antworten.filter((i) => i.id !== id).concat(draggedItem));
+    }
+
+    const checkIfAllRight = () => {
+        if (antworten.filter(antwort => antwort.state === ItemState.NOTSELECTED).length !== 0) {
+            setOpenedPopover(true);
+            setAllRight(false);
+            return;
+        }
+
+        antworten.map(antwort => {
+            if (antwort.state === ItemState.UP)
+                antwort.right = Math.floor(antwort.id / 10) === 1;
+            else if (antwort.state === ItemState.DOWN)
+                antwort.right = Math.floor(antwort.id / 10) === 2;
+            else
+                antwort.right = false;
+        })
+
+        if (antworten.filter(antwort => antwort.right === false).length === 0) {
+            // alles Richtig
+            setModalContent(modalContent1[2]);
+            setOpenedModal(true);
+            setAllRight(true);
+        } else {
+            // noch was Falsch
+            setModalContent(modalContent1[1]);
+            setOpenedModal(true);
+            setAllRight(false);
+        }
     }
 
     return (
         <DndProvider backend={HTML5Backend}>
             <ItemContext.Provider value={{markAsX}}>
+                <Modal
+                    centered
+                    opened={openedModal}
+                    onClose={() => {
+                        setOpenedModal(false);
+                        setModalContent(modalContent1[0])
+                    }}
+                    title={modalContent.title}
+                >
+                    <p>{modalContent.content}</p>
+                </Modal>
 
                 <div>
                     <div>
@@ -104,7 +164,6 @@ const Zuordnung = () => {
                     </div>
 
                     <div>
-
                         <DropZone type="Down">
                             {
                                 fragen[1].frage
@@ -116,6 +175,25 @@ const Zuordnung = () => {
                             }
                         </DropZone>
                     </div>
+
+                    <Group position="apart">
+                        <Popover
+                            opened={openedPopover}
+                            onClose={() => setOpenedPopover(false)}
+                            target={<Button onClick={checkIfAllRight}>Fertig</Button>}
+                            width={260}
+                            position="bottom"
+                            withArrow
+                        >
+                            <div style={{display: 'flex'}}>
+                                <Text size="sm">Du musst erst alle Boxen zuordnen</Text>
+                            </div>
+                        </Popover>
+
+                        <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
+                            <Button onClick={() => console.log("Weiter")} disabled={!allRight}> Weiter</Button>
+                        </Tooltip>
+                    </Group>
 
                 </div>
             </ItemContext.Provider>
