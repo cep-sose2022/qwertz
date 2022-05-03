@@ -8,10 +8,10 @@ import image from '../../Resources/images/wallpaperbetter.jpg'
 const Badges = () => (
     <div className="bodyForBadge">
         <Headline title={"Badges"} headline={"irgendwas sinnvolles steht hier"} text={""} />
-        <BackgroundImage src={image}>
-           <BadgeLine /> 
+        <BackgroundImage className="image">
+            <BadgeLine />
         </BackgroundImage>
-        
+
     </div>
 
 );
