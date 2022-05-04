@@ -54,12 +54,15 @@ const Gamemodi = () => {
             <Modal opened={modalOpened} onClose={() => setModalOpened(false)}>
                 <p>Möchtest du wirklich abbrechen?</p>
                 <Group>
-                    <Link to='../Badges' onClick={() => setModalOpened(false)}>Ja</Link>
+                    <Button onClick={() => {
+                        navigator('../Badges')
+                        setModalOpened(false)
+                    }}>Ja</Button>
                     <Button onClick={() => setModalOpened(false)}>Nein</Button>
                 </Group>
             </Modal>
             <div className="section-header">
-                <h3 className="title" data-title={"Badge " + badgeNr}>{url[url.length - 1]}</h3>
+                <h3 className="title" data-title={"Badge " + badgeNr}>{modis.filter(modi => modi.passed === false)[0].title}</h3>
                 <br/>
                 <Fortschrittsanzeige modis={modis}/>
                 <br/>
