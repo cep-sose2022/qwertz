@@ -3,13 +3,14 @@ import BadgeLine from "./components/BadgeLine";
 import "./Badges.css"
 import Headline from "../Startseite/Headline";
 import { BackgroundImage } from "@mantine/core";
-import image from '../../Resources/images/wallpaperbetter.jpg'
+
+import JsonData from "../../Resources/Json/BadgeData.json";
 
 const Badges = () => (
     <div className="bodyForBadge">
         <Headline title={"Badges"} headline={"irgendwas sinnvolles steht hier"} text={""} />
-        <BackgroundImage className="image">
-            <BadgeLine />
+        <BackgroundImage className="image" src={''}>
+            <BadgeLine badgeData={JsonData} />
         </BackgroundImage>
 
     </div>

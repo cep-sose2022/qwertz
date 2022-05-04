@@ -1,32 +1,27 @@
 import React, {createContext, useState} from 'react';
-import {Link, Navigate, Outlet, useParams} from "react-router-dom";
+import {Outlet, useParams} from "react-router-dom";
 import Fortschrittsanzeige from "./Fortschrittsanzeige";
 import {Button, Group, Modal} from "@mantine/core";
 import {useNavigate} from "react-router";
 
 const modis = [
     {
-        id: 0,
         passed: false,
         title: 'Konversation'
     },
     {
-        id: 1,
         passed: false,
         title: 'Video'
     },
     {
-        id: 2,
         passed: false,
         title: 'Wimmelbild'
     },
     {
-        id: 3,
         passed: false,
         title: 'Ablaufanordnung'
     },
     {
-        id: 4,
         passed: false,
         title: 'Zuordnung'
     }
@@ -35,7 +30,6 @@ const modis = [
 export const ModiContext = createContext({});
 
 const Gamemodi = () => {
-    const url = (window.location.href).split("/");
     const {badgeNr} = useParams();
     const [modalOpened, setModalOpened] = useState(false);
     const navigator = useNavigate();
@@ -43,8 +37,8 @@ const Gamemodi = () => {
     const markAsPassed = (title: string) => {
         modis.filter(modi => modi.title === title)[0].passed = true;
 
-        if (modis.filter(modi => modi.passed === false).length !== 0)
-            navigator('./' + modis.filter(modi => modi.passed === false)[0].title)
+        if (modis.filter(modi => !modi.passed).length !== 0)
+            navigator('./' + modis.filter(modi => !modi.passed)[0].title)
         else
             navigator('./Endscreen');
     }
@@ -62,7 +56,7 @@ const Gamemodi = () => {
                 </Group>
             </Modal>
             <div className="section-header">
-                <h3 className="title" data-title={"Badge " + badgeNr}>{modis.filter(modi => modi.passed === false)[0].title}</h3>
+                <h3 className="title" data-title={"Badge " + badgeNr}>{modis.filter(modi => !modi.passed)[0].title}</h3>
                 <br/>
                 <Fortschrittsanzeige modis={modis}/>
                 <br/>
