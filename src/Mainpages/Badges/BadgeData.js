@@ -8,7 +8,7 @@ const data = [
         },
 
         link: {
-            url: "../Gamemodi/Zuordnung",
+            url: "../Gamemodi/Konversation",
             text: "START"
         }
     },

@@ -1,15 +1,18 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import "./Konversation.css"
 import {Button, Tooltip} from "@mantine/core";
 
 
 import Data from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
+import {ModiContext} from "../../Gamemodi/Gamemodi";
 
 
 const Konversation = () => {
     const [bubbles, setBubbles] = useState([]);
     let allRight = false;
+
+    const {markAsPassed} = useContext(ModiContext);
 
 
     if (bubbles[0] === undefined) {
@@ -56,7 +59,7 @@ const Konversation = () => {
                 </div>
                 <div className="theoretic-conversation-footer">
                     <Tooltip disabled={allRight} label="Du musst die Einheit erst abschließen um weiter zu machen!">
-                        <Button disabled={!allRight}>Weiter</Button>
+                        <Button onClick={() => markAsPassed('Konversation')} disabled={!allRight}> Weiter</Button>
                     </Tooltip>
                 </div>
 

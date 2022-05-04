@@ -19,7 +19,7 @@ const NavBar = (props: { children: any; }) => {
                 <div className="links">
                     <ul>
                         {children.map((child: any) => (
-                            <li key={Math.floor(Math.random() * 10)}>{child}</li>))}
+                            <li key={Math.random()}>{child}</li>))}
                     </ul>
                 </div>
             </div>

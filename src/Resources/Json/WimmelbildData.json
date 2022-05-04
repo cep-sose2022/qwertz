@@ -6,33 +6,33 @@
     "buttons": [
       {
         "text": "Text 1",
-        "leftCorner": {
+        "topLeftCorner": {
           "x": 0,
           "y": 0
         },
-        "rightCorner": {
+        "bottomRightCorner": {
           "x": 50,
           "y": 20
         }
       },
       {
         "text": "Text 2",
-        "leftCorner": {
+        "topLeftCorner": {
           "x": 40,
           "y": 40
         },
-        "rightCorner": {
+        "bottomRightCorner": {
           "x": 60,
           "y": 60
         }
       },
       {
         "text": "Text 3",
-        "leftCorner": {
+        "topLeftCorner": {
           "x": 60,
           "y": 70
         },
-        "rightCorner": {
+        "bottomRightCorner": {
           "x": 90,
           "y": 90
         }

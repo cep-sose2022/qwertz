@@ -1,17 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Fortschrittsanzeige = () => {
+const Fortschrittsanzeige = (props: { modis: any; }) => {
+
+    const {modis} = props;
     return (
         <>
-
-
             <ul className="progressbar">
-                <li className="bestanden">Konversation</li>
-                <li>Video</li>
-                <li>Wimmelbild</li>
-                <li>Ablaufanordnung</li>
-                <li>Zuordnung</li>
+                {
+                    modis.map((modi: { passed: any; title: boolean }) => (
+                        <li key={Math.random()} className={modi.passed ? 'bestanden' : undefined}>{modi.title}</li>
+                    ))
+                }
             </ul>
         </>
     );

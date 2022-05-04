@@ -22,16 +22,16 @@ const Footer = () => {
                     <div className="grid-4-col footer-links">
                         <h3 className="title-sm">Links</h3>
                         <ul>
-                            <li key={Math.floor(Math.random() * 10000)}>
+                            <li key={Math.random()}>
                                 <HashLink to="#header">Startseite</HashLink>
                             </li>
-                            <li key={Math.floor(Math.random() * 10000)}>
+                            <li key={Math.random()}>
                                 <HashLink to="#services">Schulung</HashLink>
                             </li>
-                            <li key={Math.floor(Math.random() * 10000)}>
+                            <li key={Math.random()}>
                                 <HashLink to="#about">Über uns</HashLink>
                             </li>
-                            <li key={Math.floor(Math.random() * 10000)}>
+                            <li key={Math.random()}>
                                 <HashLink to="#zitat">Zitat</HashLink>
                             </li>
                         </ul>
@@ -39,11 +39,11 @@ const Footer = () => {
                     <div className="grid-4-col footer-links">
                         <h3 className="title-sm">Schulungen</h3>
                         <ul>
-                            <li key={Math.floor(Math.random() * 10000)}><a href="#">Lorem ipsum</a></li>
-                            <li key={Math.floor(Math.random() * 10000)}><a href="#">Lorem ipsum</a></li>
-                            <li key={Math.floor(Math.random() * 10000)}><a href="#">Lorem ipsum</a></li>
-                            <li key={Math.floor(Math.random() * 10000)}><a href="#">Lorem ipsum</a></li>
-                            <li key={Math.floor(Math.random() * 10000)}><a href="#">Lorem ipsum</a></li>
+                            <li key={Math.random()}><a href="#">Lorem ipsum</a></li>
+                            <li key={Math.random()}><a href="#">Lorem ipsum</a></li>
+                            <li key={Math.random()}><a href="#">Lorem ipsum</a></li>
+                            <li key={Math.random()}><a href="#">Lorem ipsum</a></li>
+                            <li key={Math.random()}><a href="#">Lorem ipsum</a></li>
                         </ul>
                     </div>
                     <div className="LEER"></div>

@@ -1,4 +1,4 @@
-import React, {useState, createContext} from 'react';
+import React, {useState, createContext, useContext} from 'react';
 import {DndProvider} from "react-dnd";
 import CardStorage from "./CardStorage";
 import './ablaufanordnungStyles.css'
@@ -8,6 +8,8 @@ import {HTML5Backend} from "react-dnd-html5-backend";
 import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 import DropBox from "./DropBox";
 import {Button, Group, Modal, Popover, SimpleGrid, Text, Tooltip} from "@mantine/core";
+
+import {ModiContext} from "../Gamemodi";
 
 
 export const CardContext = createContext({
@@ -55,6 +57,8 @@ const Ablaufanordnung = () => {
     const [openedPopover, setOpenedPopover] = useState(false);
     const [modalContent, setModalContent] = useState(modalContent1[0]);
     const [allRight, setAllRight] = useState(false);
+
+    const {markAsPassed} = useContext(ModiContext);
 
     const init = () => {
         let id = 1;
@@ -203,7 +207,7 @@ const Ablaufanordnung = () => {
                     </Popover>
 
                     <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                        <Button onClick={() => console.log("Weiter")} disabled={!allRight}> Weiter</Button>
+                        <Button onClick={() => markAsPassed('Ablaufanordnung')} disabled={!allRight}> Weiter</Button>
                     </Tooltip>
                 </Group>
 

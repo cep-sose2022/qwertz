@@ -1,11 +1,13 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useState, useContext} from 'react';
 import DropZone from "./DropZone";
 import {DndProvider} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
 import {ItemState} from "./ItemState";
-import JsonList from "../../Resources/Json/ZuordnungData.json";
 import {Button, Group, Modal, Popover, Text, Tooltip} from "@mantine/core";
+import {ModiContext} from "../Gamemodi";
+
+import JsonList from "../../Resources/Json/ZuordnungData.json";
 
 const modalContent1 = [
     {
@@ -53,6 +55,9 @@ const Zuordnung = () => {
     const [modalContent, setModalContent] = useState(modalContent1[0]);
     const [allRight, setAllRight] = useState(false);
 
+    const {markAsPassed} = useContext(ModiContext);
+
+
     if (fragen[0] === undefined) {
         let fragenId = 1;
         JsonList.map(object => {
@@ -82,14 +87,6 @@ const Zuordnung = () => {
     const markAsX = (id, state) => {
         const draggedItem = antworten.filter((i) => i.id === id)[0];
         draggedItem.state = state;
-
-        // if (state === ItemState.UP)
-        //     draggedItem.right = Math.floor(id / 10) === 1;
-        // else if (state === ItemState.DOWN)
-        //     draggedItem.right = Math.floor(id / 10) === 2;
-        // else
-        //     draggedItem.right = false;
-
         setAntworten(antworten.filter((i) => i.id !== id).concat(draggedItem));
     }
 
@@ -191,7 +188,7 @@ const Zuordnung = () => {
                         </Popover>
 
                         <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                            <Button onClick={() => console.log("Weiter")} disabled={!allRight}> Weiter</Button>
+                            <Button onClick={() => markAsPassed('Zuordnung')} disabled={!allRight}> Weiter</Button>
                         </Tooltip>
                     </Group>
 
