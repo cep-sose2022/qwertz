@@ -1,4 +1,5 @@
 import { ActionIcon, useMantineColorScheme } from '@mantine/core';
+import './style.css';
 
 function LightAndDarkModeButton() {
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();

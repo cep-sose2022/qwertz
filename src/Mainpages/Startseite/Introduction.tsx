@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './style.css';
 
 const Introduction = (props: { name: string; text: string; image: any; }) => {
     const {name, text, image} = props;

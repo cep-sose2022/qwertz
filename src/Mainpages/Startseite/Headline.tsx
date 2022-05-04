@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css';
 
 
 const Headline = (props: { title: string; headline: string; text: string; }) => {

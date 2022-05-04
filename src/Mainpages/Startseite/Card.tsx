@@ -1,4 +1,6 @@
 import React from 'react';
+import './style.css';
+
 
 const Card = (props: { image: any; title: string; text: string; link: string; }) => {
     const {image, title, text, link} = props;

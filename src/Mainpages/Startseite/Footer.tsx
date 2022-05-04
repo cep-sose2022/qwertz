@@ -1,4 +1,6 @@
 import React from 'react';
+import './style.css';
+
 // @ts-ignore
 import {HashLink} from 'react-router-hash-link';
 

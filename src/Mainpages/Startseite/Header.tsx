@@ -1,6 +1,6 @@
 import React from 'react';
 import img1 from "../../Resources/images/reagenzglasOrangetransparent.png";
-
+import './style.css';
 
 const Header = () => {
 

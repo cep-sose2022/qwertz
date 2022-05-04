@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
 
 // import MainPages
@@ -17,8 +16,7 @@ import Video from './Wissensmodi/Video/Video';
 import Konversation from './Wissensmodi/Konversation/Konversation';
 
 // import CSS
-import './Mainpages/style.css';
-import './Gamemodi/Zuordnung/styles.css'
+import './Style/style.css';
 
 // import Json Data
 import JsonZitate from './Resources/Json/zitate.json';

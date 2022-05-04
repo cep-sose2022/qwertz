@@ -1,5 +1,5 @@
 import React, {useState, useContext} from "react";
-import "./Konversation.css"
+import "./Konversation.css";
 import {Button, Tooltip} from "@mantine/core";
 
 
@@ -39,7 +39,9 @@ const Konversation = () => {
             <div className="theoretic-conversation">
 
                 <div className="theoretic-conversation-body">
-
+                    <div className="-chat-header" >
+                        <p>Header</p>
+                    </div>
                     <div className="chat-objects">
                         {
                             bubbles.filter(bubbles => bubbles.selected === true).map(
@@ -55,6 +57,9 @@ const Konversation = () => {
                                 </button>
 
                         }
+                    </div>
+                    <div classname="chat-footer">
+                        <p>Footer</p>
                     </div>
                 </div>
                 <div className="theoretic-conversation-footer">
