@@ -1,8 +1,8 @@
 import React from 'react';
-import './style.css';
+import './Startseite.css';
 
 // @ts-ignore
-import {HashLink} from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 
 const Footer = () => {
 
@@ -55,26 +55,26 @@ const Footer = () => {
                     <div className="copyright">
                         <p className="text">
                             MIT License
-                            <br/>
+                            <br />
                             -----------
-                            <br/>
+                            <br />
                             Copyright© 2022 Team QWERTZ
-                            <br/>| Made by
+                            <br />| Made by
                             <span>Team QWERTZ</span>
                         </p>
                     </div>
                     <div className="followme-wrap">
                         <div className="followme">
-                            <span className="footer-line"/>
+                            <span className="footer-line" />
                             <div className="social-media">
                                 <a href="https://www.linkedin.com/company/anapur-ag/">
-                                    <i className="fab fa-linkedin-in"/>
+                                    <i className="fab fa-linkedin-in" />
                                 </a>
                             </div>
                         </div>
                         <div className="back-btn-wrap">
                             <a href="#" className="back-btn">
-                                <i className="fas fa-chevron-up"/>
+                                <i className="fas fa-chevron-up" />
                             </a>
                         </div>
                     </div>

@@ -1,10 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 .Left {
     position: relative;
     margin-left: 4rem;
     text-align: center;
-    font-family: "Poppins", sans-serif;
     font-weight: bold;
     float: left;
     width: 300px;
@@ -20,7 +17,6 @@
     position: relative;
     margin-right: 2.5rem;
     text-align: center;
-    font-family: "Poppins", sans-serif;
     font-weight: bold;
     float: right;
     width: 300px;
@@ -36,7 +32,6 @@
     margin-left: 34.2rem;
     margin-top: -18.8rem;
     text-align: center;
-    font-family: "Poppins", sans-serif;
     font-weight: bold;
     float: left;
     width: 300px;

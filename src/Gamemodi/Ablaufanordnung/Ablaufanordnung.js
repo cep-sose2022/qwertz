@@ -1,15 +1,15 @@
-import React, {useState, createContext, useContext} from 'react';
-import {DndProvider} from "react-dnd";
+import React, { useState, createContext, useContext } from 'react';
+import { DndProvider } from "react-dnd";
 import CardStorage from "./CardStorage";
-import './ablaufanordnungStyles.css'
+import './Ablaufanordnung.css'
 import DragCard from "./DragCard";
-import {ItemState} from "./ItemState";
-import {HTML5Backend} from "react-dnd-html5-backend";
+import { ItemState } from "./ItemState";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 import DropBox from "./DropBox";
-import {Button, Group, Modal, Popover, SimpleGrid, Text, Tooltip} from "@mantine/core";
+import { Button, Group, Modal, Popover, SimpleGrid, Text, Tooltip } from "@mantine/core";
 
-import {ModiContext} from "../Gamemodi";
+import { ModiContext } from "../Gamemodi";
 
 
 export const CardContext = createContext({
@@ -58,26 +58,26 @@ const Ablaufanordnung = () => {
     const [modalContent, setModalContent] = useState(modalContent1[0]);
     const [allRight, setAllRight] = useState(false);
 
-    const {markAsPassed} = useContext(ModiContext);
+    const { markAsPassed } = useContext(ModiContext);
 
     const init = () => {
         let id = 1;
         if (cards[0] === undefined) {
             JsonList.map(object => {
-                    let card = {
-                        key: Math.floor(Math.random() * 100000),
-                        id: id++,
-                        text: object.text,
-                        state: ItemState.WRONG,
-                        boxId: 0
-                    }
-                    cards.push(card);
-                    let box = {
-                        key: Math.floor(Math.random() * 100000),
-                        id: card.id
-                    };
-                    boxes.push(box);
+                let card = {
+                    key: Math.floor(Math.random() * 100000),
+                    id: id++,
+                    text: object.text,
+                    state: ItemState.WRONG,
+                    boxId: 0
                 }
+                cards.push(card);
+                let box = {
+                    key: Math.floor(Math.random() * 100000),
+                    id: card.id
+                };
+                boxes.push(box);
+            }
             )
             setCards(shuffle(cards));
         }
@@ -138,7 +138,7 @@ const Ablaufanordnung = () => {
 
     return (
         <DndProvider backend={HTML5Backend}>
-            <CardContext.Provider value={{markAsX}}>
+            <CardContext.Provider value={{ markAsX }}>
 
                 <Modal
                     centered
@@ -157,8 +157,8 @@ const Ablaufanordnung = () => {
                     {
                         cards.filter(card => card.boxId === 0)
                             .map(card => (
-                                    <DragCard key={card.key} id={card.id} text={card.text} state={card.state}/>
-                                )
+                                <DragCard key={card.key} id={card.id} text={card.text} state={card.state} />
+                            )
                             )
                     }
                 </CardStorage>
@@ -167,27 +167,27 @@ const Ablaufanordnung = () => {
                     cols={4}
                     spacing="xl"
                     breakpoints={[
-                        {maxWidth: 980, cols: 3, spacing: 'xl'},
-                        {maxWidth: 755, cols: 2, spacing: 'xl'},
-                        {maxWidth: 600, cols: 1, spacing: 'xl'},
+                        { maxWidth: 980, cols: 3, spacing: 'xl' },
+                        { maxWidth: 755, cols: 2, spacing: 'xl' },
+                        { maxWidth: 600, cols: 1, spacing: 'xl' },
                     ]}
                 >
                     {
                         boxes.map(box => (
-                                <DropBox key={box.key} id={box.id}
-                                         bgColor={
-                                             cards.filter(card => card.boxId === box.id)[0] !== undefined ?
-                                                 (cards.filter(card => card.boxId === box.id)[0].state === ItemState.RIGHT ? 'green' : 'red')
-                                                 : 'red'}>
-                                    <br/>
-                                    {
-                                        cards.filter(card => card.boxId === box.id).map(card => (
-                                                <DragCard key={card.id} id={card.id} text={card.text} state={card.state}/>
-                                            )
-                                        )
-                                    }
-                                </DropBox>
-                            )
+                            <DropBox key={box.key} id={box.id}
+                                bgColor={
+                                    cards.filter(card => card.boxId === box.id)[0] !== undefined ?
+                                        (cards.filter(card => card.boxId === box.id)[0].state === ItemState.RIGHT ? 'green' : 'red')
+                                        : 'red'}>
+                                <br />
+                                {
+                                    cards.filter(card => card.boxId === box.id).map(card => (
+                                        <DragCard key={card.id} id={card.id} text={card.text} state={card.state} />
+                                    )
+                                    )
+                                }
+                            </DropBox>
+                        )
                         )
                     }
                 </SimpleGrid>
@@ -201,7 +201,7 @@ const Ablaufanordnung = () => {
                         position="bottom"
                         withArrow
                     >
-                        <div style={{display: 'flex'}}>
+                        <div style={{ display: 'flex' }}>
                             <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
                         </div>
                     </Popover>

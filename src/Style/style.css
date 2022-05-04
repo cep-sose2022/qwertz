@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/*=========Festgelegte Farben, um nicht jedesmal selber wählen zu müssen========= */
+/*=======================Festgelegte Farben=======================*/
 :root {
     --dark-one: #333;
     --dark-two: #7a7a7a;
@@ -10,7 +10,7 @@
     --light-three: #f6f7fb;
 }
 
-/* General Styles */
+/*=======================General Styles=======================*/
 *,
 *::before,
 *::after {
@@ -27,6 +27,7 @@ html {
 body,
 button,
 input,
+/*=======================Textschrift überall=======================*/
 textarea {
     font-family: "Poppins", sans-serif;
 }
@@ -74,8 +75,6 @@ img {
     margin-left: 50px;
 }
 
-
-
 .column-1 .header-title {
     margin-top: 25rem;
     margin-right: 1.5rem;
@@ -86,11 +85,9 @@ img {
     margin-left: 6rem;
 }
 
+/*=======================End General Styles=======================*/
 
-
-/* End General Styles */
-/* Header */
-
+/*=======================Header=======================*/
 header {
     width: 100%;
     background-color: var(--light-three);
@@ -152,9 +149,9 @@ nav .container {
     background-color: #4488e0;
 }
 
-/* End Header */
-/* Footer */
+/*=======================End Header=======================*/
 
+/*=======================Footer=======================*/
 .footer {
     background-color: #222;
     padding: 6rem 0;
@@ -297,4 +294,4 @@ nav .container {
     }
 }
 
-/* End Footer */
+/*=======================End Footer=======================*/

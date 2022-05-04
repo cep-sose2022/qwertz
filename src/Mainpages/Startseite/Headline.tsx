@@ -1,9 +1,9 @@
 import React from 'react';
-import './style.css';
+import './Startseite.css';
 
 
 const Headline = (props: { title: string; headline: string; text: string; }) => {
-    const {title, headline, text} = props;
+    const { title, headline, text } = props;
 
     return (
         <div className="section-header">

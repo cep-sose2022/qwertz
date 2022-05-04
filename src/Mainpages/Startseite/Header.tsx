@@ -1,6 +1,6 @@
 import React from 'react';
 import img1 from "../../Resources/images/reagenzglasOrangetransparent.png";
-import './style.css';
+import './Startseite.css';
 
 const Header = () => {
 
@@ -19,8 +19,8 @@ const Header = () => {
                     </a>
                 </div>
                 <img className="column-2 image"
-                     src={img1}
-                     alt="logo"/>
+                    src={img1}
+                    alt="logo" />
             </div>
         </div>
 

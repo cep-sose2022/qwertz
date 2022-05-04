@@ -1,8 +1,8 @@
 import React from 'react';
-import './style.css';
+import './Startseite.css';
 
 const Introduction = (props: { name: string; text: string; image: any; }) => {
-    const {name, text, image} = props;
+    const { name, text, image } = props;
 
     return (
         <div className="section-body grid-2">
@@ -14,8 +14,8 @@ const Introduction = (props: { name: string; text: string; image: any; }) => {
             </div>
             <div className="column-2 image">
                 <img className="column-2 image"
-                     src={image}
-                     alt="logo"/>
+                    src={image}
+                    alt="logo" />
             </div>
         </div>
     );

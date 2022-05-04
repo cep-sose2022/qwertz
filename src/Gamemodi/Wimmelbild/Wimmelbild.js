@@ -1,8 +1,8 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import JsonData from '../../Resources/Json/WimmelbildData.json';
-import {BackgroundImage, Box, Button, Modal, Tooltip} from "@mantine/core";
-import {Navigate, useNavigate} from "react-router";
-import {ModiContext} from "../Gamemodi";
+import { BackgroundImage, Box, Button, Modal, Tooltip } from "@mantine/core";
+import { Navigate, useNavigate } from "react-router";
+import { ModiContext } from "../Gamemodi";
 
 const Wimmelbild = () => {
     const image = require('../../Resources/images/' + JsonData[0].bild);
@@ -12,7 +12,7 @@ const Wimmelbild = () => {
     const [allRight, setAllRight] = useState(false);
     const navigator = useNavigate();
 
-    const {markAsPassed} = useContext(ModiContext);
+    const { markAsPassed } = useContext(ModiContext);
 
     let id = 1;
     if (buttons[0] === undefined) {
@@ -49,30 +49,30 @@ const Wimmelbild = () => {
             <Modal opened={modalOpened} onClose={() => setModalOpened(false)}>
                 <p>{modalContent}</p>
             </Modal>
-            <Box sx={{Width: 500, High: 500}}>
+            <Box sx={{ Width: 500, High: 500 }}>
                 <BackgroundImage
-                    style={{width: 500, height: 500, marginLeft: 'auto', marginRight: 'auto', position: 'relative'}}
+                    style={{ width: 500, height: 500, marginLeft: 'auto', marginRight: 'auto', position: 'relative' }}
                     src={image}
                     radius="sm"
                 >
                     {/*Her kommen alle Buttons rein*/}
                     {
                         buttons.map(b => (
-                                <button
-                                    key={Math.random()}
-                                    style={{
-                                        border: 'gray',
-                                        opacity: b.isClicked ? .5 : 2,
-                                        // backgroundColor: b.isClicked ? 'gray' : 'transparent',
-                                        width: b.width + "%",
-                                        height: b.height + "%",
-                                        position: 'absolute',
-                                        left: `calc(${b.left}%)`,
-                                        top: `calc(${b.top}%)`,
-                                    }}
-                                    onClick={() => clickButton(b.id)}
-                                />
-                            )
+                            <button
+                                key={Math.random()}
+                                style={{
+                                    border: 'gray',
+                                    opacity: b.isClicked ? .5 : 2,
+                                    // backgroundColor: b.isClicked ? 'gray' : 'transparent',
+                                    width: b.width + "%",
+                                    height: b.height + "%",
+                                    position: 'absolute',
+                                    left: `calc(${b.left}%)`,
+                                    top: `calc(${b.top}%)`,
+                                }}
+                                onClick={() => clickButton(b.id)}
+                            />
+                        )
                         )
                     }
 

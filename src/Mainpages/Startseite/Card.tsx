@@ -1,17 +1,17 @@
 import React from 'react';
-import './style.css';
+import './Startseite.css';
 
 
 const Card = (props: { image: any; title: string; text: string; link: string; }) => {
-    const {image, title, text, link} = props;
+    const { image, title, text, link } = props;
 
     return (
         <div className="card-wrap">
             <div className="card" data-card="Lorem ipsum">
                 <div className="card-content z-index">
                     <img className="icon"
-                         src={image}
-                         alt="icon"/>
+                        src={image}
+                        alt="icon" />
                     <h3 className="title-sm">{title}</h3>
                     <p className="text">
                         {text}

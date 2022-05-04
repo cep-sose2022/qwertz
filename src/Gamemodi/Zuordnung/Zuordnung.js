@@ -1,11 +1,11 @@
-import React, {createContext, useState, useContext} from 'react';
+import React, { createContext, useState, useContext } from 'react';
 import DropZone from "./DropZone";
-import {DndProvider} from "react-dnd";
-import {HTML5Backend} from "react-dnd-html5-backend";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
-import {ItemState} from "./ItemState";
-import {Button, Group, Modal, Popover, Text, Tooltip} from "@mantine/core";
-import {ModiContext} from "../Gamemodi";
+import { ItemState } from "./ItemState";
+import { Button, Group, Modal, Popover, Text, Tooltip } from "@mantine/core";
+import { ModiContext } from "../Gamemodi";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
 
@@ -55,7 +55,7 @@ const Zuordnung = () => {
     const [modalContent, setModalContent] = useState(modalContent1[0]);
     const [allRight, setAllRight] = useState(false);
 
-    const {markAsPassed} = useContext(ModiContext);
+    const { markAsPassed } = useContext(ModiContext);
 
 
     if (fragen[0] === undefined) {
@@ -121,7 +121,7 @@ const Zuordnung = () => {
 
     return (
         <DndProvider backend={HTML5Backend}>
-            <ItemContext.Provider value={{markAsX}}>
+            <ItemContext.Provider value={{ markAsX }}>
                 <Modal
                     centered
                     opened={openedModal}
@@ -140,8 +140,8 @@ const Zuordnung = () => {
                             Left
                             {
                                 antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
-                                        <DragItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right}/>
-                                    )
+                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right} />
+                                )
                                 )
                             }
                         </DropZone>
@@ -154,7 +154,7 @@ const Zuordnung = () => {
                             }
                             {
                                 antworten.filter(a => a.state === ItemState.UP).map(i => (
-                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right}/>)
+                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right} />)
                                 )
                             }
                         </DropZone>
@@ -167,7 +167,7 @@ const Zuordnung = () => {
                             }
                             {
                                 antworten.filter(a => a.state === ItemState.DOWN).map(i => (
-                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right}/>)
+                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right} />)
                                 )
                             }
                         </DropZone>
@@ -182,7 +182,7 @@ const Zuordnung = () => {
                             position="bottom"
                             withArrow
                         >
-                            <div style={{display: 'flex'}}>
+                            <div style={{ display: 'flex' }}>
                                 <Text size="sm">Du musst erst alle Boxen zuordnen</Text>
                             </div>
                         </Popover>
