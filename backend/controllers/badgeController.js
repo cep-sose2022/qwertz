@@ -1,11 +1,11 @@
-const asyncHandler = require("express-async-handler");
-const DataModel = require("../model/dataModel");
+const asyncHandler = require('express-async-handler')
+const BadgeModel = require("../model/badgeModel");
 
 // @desc    Get data
 // @route   GET /api/data
 // @access  Private
-const getData = ((req, res) => {
-    DataModel.find({}, (err, result) => {
+const getBadge = ((req, res) => {
+    BadgeModel.find({}, (err, result) => {
         if (err) {
             res.json(err)
         } else {
@@ -15,5 +15,5 @@ const getData = ((req, res) => {
 })
 
 module.exports = {
-    getData
+    getBadge
 }
