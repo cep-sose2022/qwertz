@@ -174,12 +174,14 @@
     bottom: 0;
 }
 
+/*Vertical Scrollbar*/
 .wrappervertikal {
     overflow-x: auto;
     overflow-y: hidden;
     /*sonst gibt es 2 Scrollbar, Horizontal und Vertikal und mit hidden horizontal verbergen */
 }
 
+/*End Vertical Scrollbar*/
 .bottom_wrapper .message_input {
     text-align: left;
     height: 50px;
