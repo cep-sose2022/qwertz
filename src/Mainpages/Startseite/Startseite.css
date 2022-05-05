@@ -624,65 +624,6 @@
     transform: rotate(-45deg);
 }
 
-/*==============================================================================*/
-.progressbar {
-    position: relative;
-    left: 270px;
-    top: 13px;
-    counter-reset: step;
-    overflow: scroll;
-}
-
-.progressbar li {
-    position: relative;
-    list-style: none;
-    float: left;
-    width: 12%;
-    text-align: center;
-}
-
-.progressbar li:before {
-    content: counter(step);
-    counter-increment: step;
-    width: 40px;
-    height: 40px;
-    border: 1px solid #a0adc4;
-    display: block;
-    text-align: center;
-    margin: 0 auto 10px auto;
-    border-radius: 50%;
-    background-color: #a0adc4;
-
-    /* Center */
-    line-height: 39px;
-}
-
-.progressbar li:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background: #a0adc4;
-    top: 20px;
-    left: -50%;
-    z-index: -1;
-}
-
-.progressbar li:first-child:after {
-    content: none;
-}
-
-.progressbar li.bestanden:before {
-    background: #00E676;
-    content: "✔";
-}
-
-
-
-
-
-
-/*===============================================================================*/
 .rectangleRight {
     width: 480px;
     height: 370px;
