@@ -20,5 +20,26 @@
    },{
       "text":"Text 6",
       "category":"bubble-right"
+   },{
+      "text":"Text1",
+      "category":"bubble-left"
+   },
+   {
+      "text":"Text2Text2Text2 ",
+      "category":"bubble-right"
+   },
+   {
+      "text":"Text3",
+      "category":"bubble-left"
+   },
+   {
+      "text":"Text 4",
+      "category":"bubble-right"
+   },{
+      "text":"Text 5",
+      "category":"bubble-right"
+   },{
+      "text":"Text 6",
+      "category":"bubble-right"
    }
 ]

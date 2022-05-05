@@ -1,15 +1,15 @@
 .theoretic-conversation-body {
-    width: 75%;
-    min-width: 240px;
+    width: 50%;
     height: 650px;
     position: relative;
     top: 40px;
     text-align: center;
-    background-color: var(--dark-one);
+    background-color: transparent;
     border: 5px solid;
-    overflow: auto;
+    overflow: hidden;
     margin: auto;
-    display: flex
+    display: flex;
+    flex-direction: column;
 }
 .theoretic-conversation-footer {
     background-color: var(--dark-one);
@@ -22,6 +22,9 @@
     border: 5px solid;
     border-top: 0px solid;
 }
+
+
+/*text container*/
 :root {
     --send-bg: #0B93F6;
     --send-color: white;
@@ -30,18 +33,17 @@
     --page-background: white;
 }
 
-.theoretic-conversation-body {
-    display: flex;
-    /*max-width: 450px;*/
-    /*margin: -10px auto;*/
-    background-color: var(--page-background);
-}
 
-.chat-objects{
+.chat-objects {
+    position: relative;
+    height: calc(100%);
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     font-size: 20px;
     font-weight: normal;
+    overflow: auto;
+
 }
 
 .chat-objects p {
@@ -52,7 +54,6 @@
     position: relative;
     padding: 10px 20px;
     border-radius: 25px;
-
 }
 
 .bubble-right {
@@ -67,7 +68,10 @@
     align-self: flex-start;
 }
 
+/*text container end */
 
+
+/*loading button*/
 @keyframes blink {
     0% {
         opacity: .2;
@@ -88,7 +92,7 @@
     position: relative;
 
 
-    background: #7a7a7f;
+    background: transparent;
     color: var(--light-one);
     padding: 20px 40px;
     border: 8px;
@@ -98,7 +102,7 @@
 
 
 .loading-button span {
-    color: #34b61a;
+    color: var(--main-color);
     font-size: 50px;
     animation-name: blink;
     animation-duration: 1.4s;
@@ -113,3 +117,106 @@
 .loading-button span:nth-child(3) {
     animation-delay: .4s;
 }
+
+/*loading button end */
+
+
+/*topbar*/
+.top-menu {
+    background-color: var(--dark-two);
+    width: 100%;
+    padding: 20px 0 15px;
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+}
+
+.top-menu .buttons {
+    margin: 3px 0 0 20px;
+    position: absolute;
+}
+
+.top-menu .buttons .button {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+}
+
+.top-menu .buttons .button.close {
+    background-color: #f5886e;
+}
+
+.top-menu .buttons .button.minimize {
+    background-color: #fdbf68;
+}
+
+.top-menu .buttons .button.maximize {
+    background-color: #a3d063;
+}
+
+.top-menu .title-chat {
+    text-align: center;
+    color: var(--dark-one);
+    font-size: 20px;
+}
+
+/*topbar end*/
+
+/*input field*/
+.bottom_wrapper {
+    min-width: 615px;
+    position: relative;
+    width: 100%;
+    background-color: var(--dark-two);
+    padding: 20px 20px;
+    bottom: 0;
+
+}
+
+.bottom_wrapper .message_input {
+    text-align: left;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px solid #bcbdc0;
+    width: calc(100% - 30%);
+    position: relative;
+    padding: 0 20px;
+    box-sizing: border-box;
+    outline-width: 0;
+    color: gray;
+}
+
+.bottom_wrapper .send_message {
+    width: 140px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 50px;
+    background-color: var(--main-color);
+    color: var(--dark-one);
+    cursor: pointer;
+    transition: all 0.2s linear;
+    text-align: center;
+    float: right;
+}
+
+.bottom_wrapper .send_message:hover {
+    color: var(--dark-one);
+    background-color: #4488e0;
+}
+
+.bottom_wrapper Button {
+    margin-left: 20px;
+}
+
+
+.bottom_wrapper .send_message .text {
+    font-size: 18px;
+    margin: auto;
+    font-weight: 300;
+    display: inline-block;
+    line-height: 48px;
+    color: var(--light-one);
+}
+
+/*input field end*/

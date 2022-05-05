@@ -63,7 +63,7 @@ const Gamemodi = () => {
                 <div onClick={() => setModalOpened(true)} className="xbutton"></div>
             </div>
 
-            <div className="container">
+            <div className="container" style={{position: 'relative'}}>
                 <ModiContext.Provider value={{ markAsPassed }}>
                     <Outlet />
                 </ModiContext.Provider>

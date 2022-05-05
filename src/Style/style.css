@@ -4,7 +4,7 @@
 :root {
     --dark-one: #333;
     --dark-two: #7a7a7a;
-    --main-color: rgba(7, 153, 255, 1);
+    --main-color: rgb(7, 153, 255, 1);
     --light-one: #fff;
     --light-two: #f9fafb;
     --light-three: #f6f7fb;
@@ -23,11 +23,11 @@ html {
     scroll-padding-top: 70px;
     scroll-behavior: smooth
 }
+/*=======================Textschrift überall=======================*/
 
 body,
 button,
 input,
-/*=======================Textschrift überall=======================*/
 textarea {
     font-family: "Poppins", sans-serif;
 }

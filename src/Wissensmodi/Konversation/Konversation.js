@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import React, {useContext, useState} from "react";
 import "./Konversation.css";
 import {Button, Tooltip} from "@mantine/core";
 
@@ -36,37 +36,46 @@ const Konversation = () => {
     }
     return (
         <div>
-            <div className="theoretic-conversation">
-
+            <div className="theoretic-conversation" onClick={abbilden}>
                 <div className="theoretic-conversation-body">
-                    <div className="-chat-header" >
-                        <p>Header</p>
+                    <div className="chat-window">
+                        <div className="top-menu">
+                            <div className="buttons">
+                                <div className="button close"></div>
+                                <div className="button minimize"></div>
+                                <div className="button maximize"></div>
+                            </div>
+                            <div className="title-chat">Chat</div>
+                        </div>
+
                     </div>
+
+
                     <div className="chat-objects">
                         {
                             bubbles.filter(bubbles => bubbles.selected === true).map(
-                                bubbles => <Bubble key={bubbles.id} category={bubbles.category} text={bubbles.text}/>
+                                bubbles => <Bubble key={bubbles.id} category={bubbles.category}
+                                                   text={bubbles.text}/>
                             )
                         }
 
                         {
                             bubbles.filter(bubbles => bubbles.selected === false) >= 0 ?
                                 allRight = true :
-                                <button onClick={abbilden} className="loading-button" id="loading-Button">
+                                <button className="loading-button" id="loading-Button">
                                     <span>.</span><span>.</span><span>.</span>
                                 </button>
 
                         }
                     </div>
-                    <div classname="chat-footer">
-                        <p>Footer</p>
+                    <div className="bottom_wrapper">
+                        <input className="message_input" placeholder="Type your message here..."/>
+                        <Tooltip disabled={allRight} label="Du musst die Einheit erst abschließen um weiter zu machen!">
+                            <Button onClick={() => markAsPassed('Konversation')} disabled={!allRight}> Weiter</Button>
+                        </Tooltip>
                     </div>
                 </div>
-                <div className="theoretic-conversation-footer">
-                    <Tooltip disabled={allRight} label="Du musst die Einheit erst abschließen um weiter zu machen!">
-                        <Button onClick={() => markAsPassed('Konversation')} disabled={!allRight}> Weiter</Button>
-                    </Tooltip>
-                </div>
+
 
             </div>
 
@@ -79,5 +88,3 @@ const Konversation = () => {
 };
 
 export default Konversation;
-
-
