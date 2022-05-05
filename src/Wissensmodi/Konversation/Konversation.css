@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .theoretic-conversation-footer {
     background-color: var(--dark-one);
     width: 75%;
@@ -43,7 +44,6 @@
     font-size: 20px;
     font-weight: normal;
     overflow: auto;
-
 }
 
 .chat-objects p {
@@ -54,6 +54,7 @@
     position: relative;
     padding: 10px 20px;
     border-radius: 25px;
+
 }
 
 .bubble-right {
@@ -97,7 +98,7 @@
     padding: 20px 40px;
     border: 8px;
     flex-basis: 70%;
-    font-weight: 300
+    font-weight: 300;
 }
 
 
@@ -171,7 +172,12 @@
     background-color: var(--dark-two);
     padding: 20px 20px;
     bottom: 0;
+}
 
+.wrappervertikal {
+    overflow-x: auto;
+    overflow-y: hidden;
+    /*sonst gibt es 2 Scrollbar, Horizontal und Vertikal und mit hidden horizontal verbergen */
 }
 
 .bottom_wrapper .message_input {

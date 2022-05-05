@@ -1,18 +1,18 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import "./Konversation.css";
-import {Button, Tooltip} from "@mantine/core";
+import { Button, Tooltip } from "@mantine/core";
 
 
 import Data from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
-import {ModiContext} from "../../Gamemodi/Gamemodi";
+import { ModiContext } from "../../Gamemodi/Gamemodi";
 
 
 const Konversation = () => {
     const [bubbles, setBubbles] = useState([]);
     let allRight = false;
 
-    const {markAsPassed} = useContext(ModiContext);
+    const { markAsPassed } = useContext(ModiContext);
 
 
     if (bubbles[0] === undefined) {
@@ -55,7 +55,7 @@ const Konversation = () => {
                         {
                             bubbles.filter(bubbles => bubbles.selected === true).map(
                                 bubbles => <Bubble key={bubbles.id} category={bubbles.category}
-                                                   text={bubbles.text}/>
+                                    text={bubbles.text} />
                             )
                         }
 
@@ -68,19 +68,22 @@ const Konversation = () => {
 
                         }
                     </div>
-                    <div className="bottom_wrapper">
-                        <input className="message_input" placeholder="Type your message here..."/>
-                        <Tooltip disabled={allRight} label="Du musst die Einheit erst abschließen um weiter zu machen!">
-                            <Button onClick={() => markAsPassed('Konversation')} disabled={!allRight}> Weiter</Button>
-                        </Tooltip>
+                    <div className="wrappervertikal">
+                        <div className="bottom_wrapper">
+                            <input className="message_input" placeholder="Type your message here..." />
+                            <Tooltip disabled={allRight} label="Du musst die Einheit erst abschließen um weiter zu machen!">
+                                <Button onClick={() => markAsPassed('Konversation')} disabled={!allRight}> Weiter</Button>
+                            </Tooltip>
+                        </div>
                     </div>
+
                 </div>
 
 
             </div>
 
 
-        </div>
+        </div >
 
     )
 
