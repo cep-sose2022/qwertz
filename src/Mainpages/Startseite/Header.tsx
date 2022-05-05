@@ -1,5 +1,5 @@
 import React from 'react';
-import img1 from "../../Resources/images/reagenzglasOrangetransparent.png";
+import img1 from "../../Resources/images/orange_zwinkern.png";
 import './Startseite.css';
 
 const Header = () => {

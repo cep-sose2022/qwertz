@@ -6,8 +6,8 @@ import NavBar from "../NavBar";
 import Zitat from './Zitat'
 
 // import images
-import img1 from './../../Resources/images/reagenzglasOrangetransparent.png'
-import img2 from './../../Resources/images/reagenzglasgruentransparent.png'
+import img1 from './../../Resources/images/orange_normal.png'
+import img2 from './../../Resources/images/erlenmeyerkolben_gruen_normal.png'
 import img3 from './../../Resources/images/icons8-lebenslauf.png'
 import img4 from './../../Resources/images/icons8-medien.png'
 import img5 from './../../Resources/images/icons8-verschlüsseln.png'
