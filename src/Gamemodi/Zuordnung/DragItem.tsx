@@ -1,3 +1,4 @@
+import { Grid } from '@mantine/core';
 import React from 'react';
 import { useDrag } from "react-dnd";
 

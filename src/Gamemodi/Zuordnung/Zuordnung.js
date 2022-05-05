@@ -134,7 +134,7 @@ const Zuordnung = () => {
                     <p>{modalContent.content}</p>
                 </Modal>
 
-                <div>
+                <div className="background">
                     <div>
                         <DropZone type="Left">
                             Left
