@@ -21,6 +21,7 @@ const Startseite = (props) => {
 
     return (
         <main>
+
             <NavBar>
                 <HashLink to="#header">Startseite</HashLink>
                 <HashLink to="#services">Schulung</HashLink>
@@ -103,7 +104,9 @@ const Startseite = (props) => {
                 </div>
             </section>
         </main>
+
     );
+
 }
 
 export default Startseite;

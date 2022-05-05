@@ -630,6 +630,7 @@
     left: 270px;
     top: 13px;
     counter-reset: step;
+    overflow: scroll;
 }
 
 .progressbar li {
@@ -675,6 +676,9 @@
     background: #00E676;
     content: "✔";
 }
+
+
+
 
 
 
