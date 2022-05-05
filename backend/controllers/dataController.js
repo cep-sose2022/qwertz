@@ -4,7 +4,7 @@ const DataModel = require("../model/dataModel");
 // @desc    Get data
 // @route   GET /api/data
 // @access  Private
-const getData = asyncHandler(async (req, res) => {
+const getData = ((req, res) => {
     DataModel.find({}, (err, result) => {
         if (err) {
             res.json(err)
