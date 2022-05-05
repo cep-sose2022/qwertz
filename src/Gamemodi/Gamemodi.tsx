@@ -1,8 +1,8 @@
-import React, { createContext, useState } from 'react';
-import { Outlet, useParams } from "react-router-dom";
+import React, {createContext, useState} from 'react';
+import {Outlet, useParams} from "react-router-dom";
 import Fortschrittsanzeige from "./Fortschrittsanzeige";
-import { Button, Group, Modal } from "@mantine/core";
-import { useNavigate } from "react-router";
+import {Button, Group, Modal} from "@mantine/core";
+import {useNavigate} from "react-router";
 
 const modis = [
     {
@@ -30,7 +30,7 @@ const modis = [
 export const ModiContext = createContext({});
 
 const Gamemodi = () => {
-    const { badgeNr } = useParams();
+    const {badgeNr} = useParams();
     const [modalOpened, setModalOpened] = useState(false);
     const navigator = useNavigate();
 
@@ -55,17 +55,18 @@ const Gamemodi = () => {
                     <Button onClick={() => setModalOpened(false)}>Nein</Button>
                 </Group>
             </Modal>
+
             <div className="section-header">
                 <h3 className="title" data-title={"Badge " + badgeNr}>{modis.filter(modi => !modi.passed)[0].title}</h3>
-                <br />
-                <Fortschrittsanzeige modis={modis} />
-                <br />
+                <br/>
+                <Fortschrittsanzeige modis={modis}/>
+                <br/>
                 <div onClick={() => setModalOpened(true)} className="xbutton"></div>
             </div>
 
             <div className="container">
-                <ModiContext.Provider value={{ markAsPassed }}>
-                    <Outlet />
+                <ModiContext.Provider value={{markAsPassed, badgeNr}}>
+                    <Outlet/>
                 </ModiContext.Provider>
             </div>
 

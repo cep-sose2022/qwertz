@@ -1,5 +1,4 @@
 const service = {}
-
 const backendUrl = 'http://localhost:5000'
 
 service.getZitate = () => {
@@ -22,6 +21,5 @@ service.getModi = (id, modiName) => {
     xmlHttp.send(null);
     return JSON.parse(xmlHttp.responseText);
 }
-
 
 module.exports = service

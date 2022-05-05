@@ -1,8 +1,6 @@
 [
   {
-    "bild": "chemieanlage.png"
-  },
-  {
+    "bild": "chemieanlage.png",
     "buttons": [
       {
         "text": "Text 1",

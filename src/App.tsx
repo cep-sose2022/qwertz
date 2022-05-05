@@ -48,7 +48,7 @@ function App() {
                 {/*Dashboard un alles was darunter ist }*/}
                 <Route path="Dashboard" element={<Dashboard />}>
                     <Route path="Badges" element={<Badges />} />
-                    <Route path="Gamemodi" element={<Gamemodi />}>
+                    <Route path="Gamemodi/:badgeNr" element={<Gamemodi />}>
                         {/*Alles was unter Gamemodi ist*/}
                         <Route path="Ablaufanordnung" element={<Ablaufanordnung />} />
                         <Route path="Wimmelbild" element={<Wimmelbild />} />
