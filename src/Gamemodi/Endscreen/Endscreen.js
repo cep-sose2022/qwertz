@@ -7,6 +7,7 @@ import {ModiContext} from "../Gamemodi";
 const Endscreen = () => {
     const {setCurrentModiTitle} = useContext(ModiContext);
     setCurrentModiTitle("Endscreen");
+
     return (
         <div className="endscreen-body">
             <EndscreenPlace/>

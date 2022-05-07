@@ -6,8 +6,8 @@ const EndscreenItem = ({ data }) => (
         <div className="endscreen-item-content">
             <p>{data.text}</p>
             <br></br>
-            <Link to={data.link.route}>
-                {data.link.text}
+            <Link to="../../Badges">
+                Weiter zum abschließen
             </Link>
             <div id="styledimg"></div>
 
