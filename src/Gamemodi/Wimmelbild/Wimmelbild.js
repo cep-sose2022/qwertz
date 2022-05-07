@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import JsonData from '../../Resources/Json/WimmelbildData.json';
 import { BackgroundImage, Box, Button, Modal, Tooltip } from "@mantine/core";
-import { Navigate, useNavigate } from "react-router";
 import { ModiContext } from "../Gamemodi";
 
 const Wimmelbild = () => {
@@ -10,9 +9,9 @@ const Wimmelbild = () => {
     const [modalContent, setModalContent] = useState('');
     const [modalOpened, setModalOpened] = useState(false);
     const [allRight, setAllRight] = useState(false);
-    const navigator = useNavigate();
 
-    const { markAsPassed } = useContext(ModiContext);
+    const {markAsPassed, setCurrentModiTitle} = useContext(ModiContext);
+    setCurrentModiTitle("Wimmelbild");
 
     let id = 1;
     if (buttons[0] === undefined) {

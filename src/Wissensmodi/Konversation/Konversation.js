@@ -12,7 +12,8 @@ const Konversation = () => {
     const [bubbles, setBubbles] = useState([]);
     let allRight = false;
 
-    const { markAsPassed } = useContext(ModiContext);
+    const {markAsPassed, setCurrentModiTitle} = useContext(ModiContext);
+    setCurrentModiTitle("Konversation");
 
 
     if (bubbles[0] === undefined) {

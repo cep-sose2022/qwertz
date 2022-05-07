@@ -55,7 +55,8 @@ const Zuordnung = () => {
     const [modalContent, setModalContent] = useState(modalContent1[0]);
     const [allRight, setAllRight] = useState(false);
 
-    const { markAsPassed } = useContext(ModiContext);
+    const {markAsPassed, setCurrentModiTitle} = useContext(ModiContext);
+    setCurrentModiTitle("Zuordnung");
 
 
     if (fragen[0] === undefined) {
