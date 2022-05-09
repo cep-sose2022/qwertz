@@ -166,7 +166,6 @@
 
 /*input field*/
 .bottom_wrapper {
-    min-width: 615px;
     position: relative;
     width: 100%;
     background-color: var(--dark-two);
@@ -175,56 +174,24 @@
 }
 
 /*Vertical Scrollbar*/
-.wrappervertikal {
-    overflow-x: auto;
-    overflow-y: hidden;
-    /*sonst gibt es 2 Scrollbar, Horizontal und Vertikal und mit hidden horizontal verbergen */
-}
+/*.wrappervertikal {*/
+/*    overflow-x: auto;*/
+/*    overflow-y: hidden;*/
+/*    !*sonst gibt es 2 Scrollbar, Horizontal und Vertikal und mit hidden horizontal verbergen *!*/
+/*}*/
 
 /*End Vertical Scrollbar*/
 .bottom_wrapper .message_input {
+    width: 100%;
     text-align: left;
     height: 50px;
     border-radius: 25px;
     border: 1px solid #bcbdc0;
-    width: calc(100% - 30%);
     position: relative;
     padding: 0 20px;
     box-sizing: border-box;
     outline-width: 0;
     color: gray;
+    resize: none;
 }
-
-.bottom_wrapper .send_message {
-    width: 140px;
-    height: 50px;
-    display: inline-block;
-    border-radius: 50px;
-    background-color: var(--main-color);
-    color: var(--dark-one);
-    cursor: pointer;
-    transition: all 0.2s linear;
-    text-align: center;
-    float: right;
-}
-
-.bottom_wrapper .send_message:hover {
-    color: var(--dark-one);
-    background-color: #4488e0;
-}
-
-.bottom_wrapper Button {
-    margin-left: 20px;
-}
-
-
-.bottom_wrapper .send_message .text {
-    font-size: 18px;
-    margin: auto;
-    font-weight: 300;
-    display: inline-block;
-    line-height: 48px;
-    color: var(--light-one);
-}
-
 /*input field end*/

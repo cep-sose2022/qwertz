@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, {useContext, useState} from "react";
 import "./Konversation.css";
-import { Button, Tooltip } from "@mantine/core";
+import { Tooltip,Button} from '@mantine/core';
 
 
 import Data from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
-import { ModiContext } from "../../Gamemodi/Gamemodi";
+import {ModiContext} from "../../Gamemodi/Gamemodi";
 
 
 const Konversation = () => {
@@ -69,22 +69,17 @@ const Konversation = () => {
 
                         }
                     </div>
-                    <div className="wrappervertikal">
-                        <div className="bottom_wrapper">
-                            <input className="message_input" placeholder="Type your message here..." />
-                            <Tooltip disabled={allRight} label="Du musst die Einheit erst abschließen um weiter zu machen!">
-                                <Button onClick={() => markAsPassed('Konversation')} disabled={!allRight}> Weiter</Button>
-                            </Tooltip>
-                        </div>
+
+                    <div class="bottom_wrapper">
+                        <textarea  className="message_input" placeholder="type a message"></textarea>
+                        <Tooltip disabled={allRight} label="Du musst die Einheit erst abschließen um weiter zu machen!">
+                            <Button onClick={() => markAsPassed('Konversation')} disabled={!allRight}> Weiter</Button>
+                        </Tooltip>
                     </div>
-
                 </div>
-
-
             </div>
 
-
-        </div >
+        </div>
 
     )
 
