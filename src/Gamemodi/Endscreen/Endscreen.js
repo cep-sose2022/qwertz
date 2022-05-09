@@ -3,8 +3,8 @@ import EndscreenPlace from "./components/EndscreenPlace";
 import "./Endscreen.css";
 import { ModiContext } from "../Gamemodi";
 
-
 const Endscreen = () => {
+
     const { setCurrentModiTitle } = useContext(ModiContext);
     setCurrentModiTitle("Geschafft!");
 
