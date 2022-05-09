@@ -1,21 +1,9 @@
 .endscreen-body {
     display: flex;
-    width: calc(100vh);
-    height: calc(100vh);
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 100vh;
     margin: 0;
-
-}
-
-.imgerlen {
-    width: 80%;
-    height: auto;
-    position: relative;
-    display: inline-block;
-    position: float;
 }
 
 .endscreen-item-content p {
@@ -50,13 +38,11 @@
     font-family: Arial;
     color: #ffffff;
     font-size: 20px;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 10px 9px 20px;
     text-decoration: none;
     position: absolute;
     right: 0;
     bottom: 0;
-
-
 }
 
 .endscreen-container .btn:hover {
@@ -74,6 +60,12 @@
     animation-name: example;
     animation-duration: 8.5s;
     animation-iteration-count: infinite;
+    width: 68%;
+    height: auto;
+    position: relative;
+    display: inline-block;
+    top: -31px;
+    position: float;
 }
 
 @keyframes example {
