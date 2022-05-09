@@ -1,16 +1,16 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import EndscreenPlace from "./components/EndscreenPlace";
 import "./Endscreen.css";
-import {ModiContext} from "../Gamemodi";
+import { ModiContext } from "../Gamemodi";
 
 
 const Endscreen = () => {
-    const {setCurrentModiTitle} = useContext(ModiContext);
-    setCurrentModiTitle("Endscreen");
+    const { setCurrentModiTitle } = useContext(ModiContext);
+    setCurrentModiTitle("Geschafft!");
 
     return (
         <div className="endscreen-body">
-            <EndscreenPlace/>
+            <EndscreenPlace />
         </div>
     )
 };
