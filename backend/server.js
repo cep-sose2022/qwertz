@@ -6,27 +6,13 @@ connectDB()
 const port = process.env.PORT || 5000
 const app = express()
 
-const DataModel = require('./model/dataModel')
 const ZitatModel = require('./model/zitatModel')
-
-const cors = require('cors')
+const ablaufModel = require('./model/ablaufModel')
 
 app.use(express.json())
-app.use(cors())
 
 app.use(express.urlencoded({extended: false}))
 app.use('/', require('./routes/dataRoutes'))
-
-
-
-
-app.post("/createData", async (req, res) => {
-    const data = req.body
-    const newData = new DataModel(data)
-    await newData.save()
-
-    res.json(data)
-})
 
 app.post("/createZitat", async (req, res) => {
     const zitat = req.body
@@ -34,6 +20,14 @@ app.post("/createZitat", async (req, res) => {
     await newZitat.save()
 
     res.json(zitat)
+})
+
+app.post("/createAblauf", async (req, res) => {
+    const ablauf = req.body
+    const newAblauf = new ablaufModel(ablauf)
+    await newAblauf.save()
+
+    res.json(ablauf)
 })
 
 

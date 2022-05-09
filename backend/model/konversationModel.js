@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const konversationSchema = new mongoose.Schema({
+    badgeID: {
+        type:Number,
+        required:true,
+    },
     text: {
         type: String,
         required: true
