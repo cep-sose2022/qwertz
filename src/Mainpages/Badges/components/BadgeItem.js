@@ -1,11 +1,11 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const BadgeItem = ({data, id}) => (
+const BadgeItem = ({ data, id }) => (
     <div className="badgeline-item">
         <div className="badgeline-item-content">
-            <span className="tag"
-                  style={{background: 'linear-gradient(to right, rgb(106, 6, 236), rgb(44, 0, 240))'}}>
+            <span className="tag">
+                {id === 1 ? '🔓' : '🔒'}
                 Badge {id}
             </span>
             <p>{data.text}</p>

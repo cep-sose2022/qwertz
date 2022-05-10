@@ -14,8 +14,7 @@ const Badges = () => (
         <BackgroundImage className="image" src={''}>
             <BadgeLine badgeData={JsonData} />
         </BackgroundImage>
-        <div class="locked">🔒</div>
-        <div class="open">🔓</div>
+
 
     </div>
 
