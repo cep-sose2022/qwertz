@@ -10,7 +10,7 @@ import img1 from './../../Resources/images/orange_normal.png'
 import img2 from './../../Resources/images/erlenmeyerkolben_gruen_normal.png'
 import img3 from './../../Resources/images/icons8-lebenslauf.png'
 import img4 from './../../Resources/images/icons8-medien.png'
-import img5 from './../../Resources/images/icons8-verschlüsseln.png'
+import img5 from './../../Resources/images/icons8-online-learning.png'
 import Header from "./Header";
 import Headline from "./Headline";
 import Card from "./Card";
@@ -45,9 +45,8 @@ const Startseite = (props) => {
                     <div className="cards">
                         <Card
                             image={img5}
-                            title={"Lorem ipsum"}
-                            text={"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, " +
-                                "seddiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"}
+                            title={"E-Learning-Plattform"}
+                            text={"Unsere E-Learning-Module sind für Automatisierungsingenieur aus dem Sektor Chemie perfekt geeignet. Sie umfasst Wissensmodus und interaktive Module, die spielerisch zur Auseinandersetzung mit OT-Security anregen. "}
                             link={"#"}
                         />
                         <Card

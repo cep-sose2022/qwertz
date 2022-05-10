@@ -200,6 +200,10 @@
     width: 100%;
 }
 
+.card .text {
+    text-align: justify;
+}
+
 /*============Abstand zum Außenbereich==========*/
 .card-wrap {
     position: relative;

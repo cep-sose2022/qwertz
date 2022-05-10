@@ -60,7 +60,7 @@ const Footer = () => {
                             <br />
                             Copyright© 2022 Team QWERTZ
                             <br />| Made by
-                            <span>Team QWERTZ</span>
+                            <span> Team QWERTZ</span>
                         </p>
                     </div>
                     <div className="followme-wrap">
