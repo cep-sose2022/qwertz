@@ -1,13 +1,39 @@
+.ablaufanordung-container {
+    background-color: var(--dark-two);
+    position: relative;
+    top: 40px;
+    border: 5px solid;
+    padding: 10px;
+}
+.ablaufanordung-container .ablaufanordung-header{
+    background-color: var(--main-color);
+    padding: 10px;
+
+}
+.ablaufanordung-container .ablaufanordung-footer {
+    background-color: var(--dark-one);
+    border: 3px solid;
+    margin: auto;
+}
+
+.ablaufanordung-container .ablaufanordung-body {
+    background-color: var(--main-color);
+    border: 3px solid;
+    margin: 5px;
+}
+
+
 .scrollmenu {
-    background-color: #333;
+    background-color: #34b61a;
     overflow: auto;
     white-space: nowrap;
 }
 
 .scrollmenu p {
     display: inline-block;
-    color: white;
+    /*color: black;*/
     text-align: center;
+    border: 3px solid;
     padding: 14px;
     text-decoration: none;
 }
@@ -17,8 +43,8 @@
     display: inline-block;
     color: black;
     text-align: center;
-    padding: 14px;
     text-decoration: none;
+    margin: 5px
 }
 
 .board div {
@@ -26,3 +52,4 @@
     width: 200px;
     height: 50px;
 }
+

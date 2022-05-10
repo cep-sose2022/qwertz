@@ -1,4 +1,4 @@
-import React, {useState, createContext, useContext} from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import {DndProvider} from "react-dnd";
 import CardStorage from "./CardStorage";
 import './Ablaufanordnung.css'
@@ -7,7 +7,7 @@ import {ItemState} from "./ItemState";
 import {HTML5Backend} from "react-dnd-html5-backend";
 import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 import DropBox from "./DropBox";
-import {Button, Group, Modal, Popover, SimpleGrid, Text, Tooltip} from "@mantine/core";
+import {Button, Modal, Popover, SimpleGrid, Text, Tooltip} from "@mantine/core";
 
 import {ModiContext} from "../Gamemodi";
 
@@ -137,82 +137,87 @@ const Ablaufanordnung = () => {
 
 
     return (
-        <DndProvider backend={HTML5Backend}>
-            <CardContext.Provider value={{markAsX}}>
-
-                <Modal
-                    centered
-                    opened={openedModal}
-                    onClose={() => {
-                        setOpenedModal(false);
-                        setModalContent(modalContent1[0])
-                    }}
-                    title={modalContent.title}
-                >
-                    <p>{modalContent.content}</p>
-                </Modal>
-                <Button onClick={() => setOpenedModal(true)}>Aufgabenstellung</Button>
-
-                <CardStorage>
-                    {
-                        cards.filter(card => card.boxId === 0)
-                            .map(card => (
-                                    <DragCard key={card.key} id={card.id} text={card.text} state={card.state}/>
-                                )
-                            )
-                    }
-                </CardStorage>
-
-                <SimpleGrid
-                    cols={4}
-                    spacing="xl"
-                    breakpoints={[
-                        {maxWidth: 980, cols: 3, spacing: 'xl'},
-                        {maxWidth: 755, cols: 2, spacing: 'xl'},
-                        {maxWidth: 600, cols: 1, spacing: 'xl'},
-                    ]}
-                >
-                    {
-                        boxes.map(box => (
-                                <DropBox key={box.key} id={box.id}
-                                         bgColor={
-                                             cards.filter(card => card.boxId === box.id)[0] !== undefined ?
-                                                 (cards.filter(card => card.boxId === box.id)[0].state === ItemState.RIGHT ? 'green' : 'red')
-                                                 : 'red'}>
-                                    <br/>
-                                    {
-                                        cards.filter(card => card.boxId === box.id).map(card => (
-                                                <DragCard key={card.id} id={card.id} text={card.text} state={card.state}/>
-                                            )
+        <div className="ablaufanordung-container">
+            <DndProvider backend={HTML5Backend}>
+                <CardContext.Provider value={{markAsX}}>
+                    <div className="ablaufanordung-header">
+                        <Modal
+                            centered
+                            opened={openedModal}
+                            onClose={() => {
+                                setOpenedModal(false);
+                                setModalContent(modalContent1[0])
+                            }}
+                            title={modalContent.title}
+                        >
+                            <p>{modalContent.content}</p>
+                        </Modal>
+                        <Button onClick={() => setOpenedModal(true)}>Aufgabenstellung</Button>
+                    </div>
+                    <div className="ablaufanordung-body">
+                        <CardStorage>
+                            {
+                                cards.filter(card => card.boxId === 0)
+                                    .map(card => (
+                                            <DragCard key={card.key} id={card.id} text={card.text} state={card.state}/>
                                         )
-                                    }
-                                </DropBox>
-                            )
-                        )
-                    }
-                </SimpleGrid>
+                                    )
+                            }
+                        </CardStorage>
+                        <SimpleGrid
+                            cols={4}
+                            spacing="xl"
+                            breakpoints={[
+                                {maxWidth: 1285, cols: 3, spacing: 'xl'},
+                                {maxWidth: 1040, cols: 2, spacing: 'xl'},
+                                {maxWidth: 780, cols: 1, spacing: 'xl'},
+                            ]}
+                        >
+                            {
+                                boxes.map(box => (
+                                        <DropBox key={box.key} id={box.id}
+                                                 bgColor={
+                                                     cards.filter(card => card.boxId === box.id)[0] !== undefined ?
+                                                         (cards.filter(card => card.boxId === box.id)[0].state === ItemState.RIGHT ? 'green' : 'red')
+                                                         : 'red'}>
+                                            <br/>
+                                            {
+                                                cards.filter(card => card.boxId === box.id).map(card => (
+                                                        <DragCard key={card.id} id={card.id} text={card.text}
+                                                                  state={card.state}/>
+                                                    )
+                                                )
+                                            }
+                                        </DropBox>
+                                    )
+                                )
+                            }
+                        </SimpleGrid>
+                    </div>
+                    <div className="ablaufanordung-footer">
 
-                <Group position="apart">
-                    <Popover
-                        opened={openedPopover}
-                        onClose={() => setOpenedPopover(false)}
-                        target={<Button onClick={checkIfAllRight}>Fertig</Button>}
-                        width={260}
-                        position="bottom"
-                        withArrow
-                    >
-                        <div style={{display: 'flex'}}>
-                            <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
-                        </div>
-                    </Popover>
+                        <Popover
+                            opened={openedPopover}
+                            onClose={() => setOpenedPopover(false)}
+                            target={<Button onClick={checkIfAllRight}>Fertig</Button>}
+                            width={260}
+                            position="bottom"
+                            withArrow
+                        >
+                            <div style={{display: 'flex'}}>
+                                <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
+                            </div>
+                        </Popover>
 
-                    <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                        <Button onClick={() => markAsPassed('Ablaufanordnung')} disabled={!allRight}> Weiter</Button>
-                    </Tooltip>
-                </Group>
+                        <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
+                            <Button onClick={() => markAsPassed('Ablaufanordnung')}
+                                    disabled={!allRight}> Weiter</Button>
+                        </Tooltip>
+                    </div>
 
-            </CardContext.Provider>
-        </DndProvider>
+                </CardContext.Provider>
+            </DndProvider>
+        </div>
     );
 }
 
