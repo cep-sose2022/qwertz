@@ -1,4 +1,3 @@
-const asyncHandler = require('express-async-handler')
 const ZuordnungModel = require("../model/zuordnungModel");
 
 const getZuordnung = ((req, res) => {

@@ -1,4 +1,3 @@
-const asyncHandler = require('express-async-handler')
 const WimmelbildModel = require("../model/wimmelbildModel");
 
 const getWimmelbild = ((req, res) => {

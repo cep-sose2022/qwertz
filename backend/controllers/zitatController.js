@@ -1,4 +1,3 @@
-const asyncHandler = require('express-async-handler')
 const ZitatModel = require("../model/zitatModel");
 
 const getZitate = ((req, res) => {

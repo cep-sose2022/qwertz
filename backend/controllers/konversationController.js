@@ -1,4 +1,3 @@
-const asyncHandler = require('express-async-handler')
 const KonversationModel = require("../model/konversationModel");
 
 const getKonversation = ((req, res) => {

@@ -1,8 +1,7 @@
-const asyncHandler = require('express-async-handler')
 const BadgeModel = require("../model/badgeModel");
 
 const getBadge = ((req, res) => {
-    
+
     BadgeModel.find({}, (err, result) => {
         if (err) {
             res.json(err)

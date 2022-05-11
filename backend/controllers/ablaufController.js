@@ -1,4 +1,3 @@
-const asyncHandler = require('express-async-handler')
 const AblaufModel = require("../model/ablaufModel");
 
 const getAblauf = ((req, res) => {
