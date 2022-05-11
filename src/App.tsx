@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
 
 // import MainPages
 import Startseite from './Mainpages/Startseite/Startseite';
@@ -22,14 +22,15 @@ import './Gamemodi/Zuordnung/Zuordnung.css'
 // import Json Data
 import JsonZitate from './Resources/Json/zitate.json';
 import Footer from "./Mainpages/Startseite/Footer";
+import Error503Page from "./Gamemodi/Error503Page";
 
 
 function App() {
     return (
         <Router>
-            <div style={{ backgroundColor: 'lightgreen' }}>
+            <div style={{backgroundColor: 'lightgreen'}}>
                 <a> Zum Debuggen und Testen aller Seiten, kommt dann am Ende noch weg</a>
-                <br />
+                <br/>
                 <Link to='Startseite'>Startseite </Link>
                 <Link to='Dashboard'>Dashboard </Link>
                 <Link to='Dashboard/Badges'>Badges </Link>
@@ -43,24 +44,25 @@ function App() {
 
             <Routes>
                 {/*MainPage*/}
-                <Route path="" element={<Startseite JsonZitate={JsonZitate} />} />
-                <Route path="Startseite" element={<Startseite JsonZitate={JsonZitate} />} />
+                <Route path="" element={<Startseite JsonZitate={JsonZitate}/>}/>
+                <Route path="Startseite" element={<Startseite JsonZitate={JsonZitate}/>}/>
                 {/*Dashboard un alles was darunter ist }*/}
-                <Route path="Dashboard" element={<Dashboard />}>
-                    <Route path="Badges" element={<Badges />} />
-                    <Route path="Gamemodi" element={<Gamemodi />}>
+                <Route path="Dashboard" element={<Dashboard/>}>
+                    <Route path="Badges" element={<Badges/>}/>
+                    <Route path="Error503" element={<Error503Page/>}/>
+                    <Route path="Gamemodi" element={<Gamemodi/>}>
                         {/*Alles was unter Gamemodi ist*/}
-                        <Route path="Ablaufanordnung" element={<Ablaufanordnung />} />
-                        <Route path="Wimmelbild" element={<Wimmelbild />} />
-                        <Route path="Zuordnung" element={<Zuordnung />} />
-                        <Route path="Endscreen" element={<Endscreen />} />
-                        <Route path="Konversation" element={<Konversation />} />
-                        <Route path="Video" element={<Video />} />
+                        <Route path="Ablaufanordnung" element={<Ablaufanordnung/>}/>
+                        <Route path="Wimmelbild" element={<Wimmelbild/>}/>
+                        <Route path="Zuordnung" element={<Zuordnung/>}/>
+                        <Route path="Endscreen" element={<Endscreen/>}/>
+                        <Route path="Konversation" element={<Konversation/>}/>
+                        <Route path="Video" element={<Video/>}/>
                     </Route>
                 </Route>
             </Routes>
 
-            <Footer />
+            <Footer/>
 
         </Router>
     );
