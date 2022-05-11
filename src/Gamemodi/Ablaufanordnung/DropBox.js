@@ -2,7 +2,8 @@ import React, {useContext} from 'react';
 import {useDrop} from "react-dnd";
 import {ItemState} from "./ItemState";
 import {CardContext} from "./Ablaufanordnung";
-import {Center} from "@mantine/core";
+import {Center, Container} from "@mantine/core";
+import "./Ablaufanordnung.css";
 
 
 const DropBox = (props) => {
@@ -23,9 +24,11 @@ const DropBox = (props) => {
         <Center
             ref={drop}
             style={{
-                backgroundColor: (isDragging ? 'gray' : bgColor),
-                width: 250,
-                height: 50
+                backgroundColor: (isDragging ? 'green' : '#0799FFFF'),
+                width: "auto",
+                minHeight: 50
+
+
 
             }}
         >

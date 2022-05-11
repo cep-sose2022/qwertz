@@ -1,5 +1,6 @@
 import React from 'react';
 import {useDrag} from "react-dnd";
+import './Ablaufanordnung.css';
 
 const DragCard = (props: { id: number; state: any; text: String }) => {
     const {id, text, state} = props;
@@ -17,7 +18,7 @@ const DragCard = (props: { id: number; state: any; text: String }) => {
     });
 
     return (
-        <p
+        <p className="dragCard"
             ref={drag}
         >
             {text}

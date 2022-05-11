@@ -7,7 +7,7 @@ import {ItemState} from "./ItemState";
 import {HTML5Backend} from "react-dnd-html5-backend";
 import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 import DropBox from "./DropBox";
-import {Button, Modal, Popover, SimpleGrid, Text, Tooltip} from "@mantine/core";
+import {Button, Grid, Modal, Popover, SimpleGrid, Text, Tooltip} from "@mantine/core";
 
 import {ModiContext} from "../Gamemodi";
 
@@ -20,7 +20,7 @@ export const CardContext = createContext({
 const modalContent1 = [
     {
         title: "Aufgabenstellung",
-        content: "hier hast du eine Wichtige und coole aufgabe"
+        content: "hier hast du eine Wichtige und coole Aufgabe"
     },
     {
         title: "Leider Falsch",
@@ -84,6 +84,7 @@ const Ablaufanordnung = () => {
     }
     init();
 
+
     const markAsX = (id, boxId) => {
         const draggedCard = cards.filter(card => card.id === id)[0];
         let otherCard = cards.filter(card => card.boxId === boxId)[0];
@@ -141,18 +142,49 @@ const Ablaufanordnung = () => {
             <DndProvider backend={HTML5Backend}>
                 <CardContext.Provider value={{markAsX}}>
                     <div className="ablaufanordung-header">
-                        <Modal
-                            centered
-                            opened={openedModal}
-                            onClose={() => {
-                                setOpenedModal(false);
-                                setModalContent(modalContent1[0])
-                            }}
-                            title={modalContent.title}
-                        >
-                            <p>{modalContent.content}</p>
-                        </Modal>
-                        <Button onClick={() => setOpenedModal(true)}>Aufgabenstellung</Button>
+                        <Grid justify={"center"} >
+                            <Grid.Col span={2}>
+
+
+                                <Modal
+                                    centered
+                                    opened={openedModal}
+                                    onClose={() => {
+                                        setOpenedModal(false);
+                                        setModalContent(modalContent1[0])
+                                    }}
+                                    title={modalContent.title}
+                                >
+                                    <p>{modalContent.content}</p>
+                                </Modal>
+                                <Button onClick={() => setOpenedModal(true)}>Aufgabenstellung</Button>
+
+
+                            </Grid.Col>
+
+                            <Grid.Col span={2}>
+                                <Popover
+                                    opened={openedPopover}
+                                    onClose={() => setOpenedPopover(false)}
+                                    target={<Button onClick={checkIfAllRight}>Fertig</Button>}
+                                    width={260}
+                                    position="bottom"
+                                    withArrow
+                                >
+                                    <div style={{display: 'flex'}}>
+                                        <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
+                                    </div>
+                                </Popover>
+
+                                <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
+                                    <Button onClick={() => markAsPassed('Ablaufanordnung')}
+                                            disabled={!allRight}> Weiter</Button>
+                                </Tooltip>
+                            </Grid.Col>
+
+                        </Grid>
+
+
                     </div>
                     <div className="ablaufanordung-body">
                         <CardStorage>
@@ -164,14 +196,14 @@ const Ablaufanordnung = () => {
                                     )
                             }
                         </CardStorage>
-                        <SimpleGrid
-                            cols={4}
-                            spacing="xl"
-                            breakpoints={[
-                                {maxWidth: 1285, cols: 3, spacing: 'xl'},
-                                {maxWidth: 1040, cols: 2, spacing: 'xl'},
-                                {maxWidth: 780, cols: 1, spacing: 'xl'},
-                            ]}
+                        <SimpleGrid style={{padding: 10,}}
+                                    cols={4}
+                                    spacing={75}
+                                    breakpoints={[
+                                        {maxWidth: 1400, cols: 3},
+                                        {maxWidth: 1150, cols: 2},
+                                        {maxWidth: 850, cols: 1},
+                                    ]}
                         >
                             {
                                 boxes.map(box => (
@@ -180,7 +212,6 @@ const Ablaufanordnung = () => {
                                                      cards.filter(card => card.boxId === box.id)[0] !== undefined ?
                                                          (cards.filter(card => card.boxId === box.id)[0].state === ItemState.RIGHT ? 'green' : 'red')
                                                          : 'red'}>
-                                            <br/>
                                             {
                                                 cards.filter(card => card.boxId === box.id).map(card => (
                                                         <DragCard key={card.id} id={card.id} text={card.text}
@@ -194,27 +225,6 @@ const Ablaufanordnung = () => {
                             }
                         </SimpleGrid>
                     </div>
-                    <div className="ablaufanordung-footer">
-
-                        <Popover
-                            opened={openedPopover}
-                            onClose={() => setOpenedPopover(false)}
-                            target={<Button onClick={checkIfAllRight}>Fertig</Button>}
-                            width={260}
-                            position="bottom"
-                            withArrow
-                        >
-                            <div style={{display: 'flex'}}>
-                                <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
-                            </div>
-                        </Popover>
-
-                        <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                            <Button onClick={() => markAsPassed('Ablaufanordnung')}
-                                    disabled={!allRight}> Weiter</Button>
-                        </Tooltip>
-                    </div>
-
                 </CardContext.Provider>
             </DndProvider>
         </div>
