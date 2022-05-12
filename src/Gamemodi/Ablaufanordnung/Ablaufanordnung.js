@@ -10,6 +10,7 @@ import DropBox from "./DropBox";
 import { Button, Grid, Modal, Popover, SimpleGrid, Text, Tooltip, Title } from "@mantine/core";
 
 import { ModiContext } from "../Gamemodi";
+import { FiBookOpen } from "react-icons/fi";
 
 
 export const CardContext = createContext({
@@ -138,6 +139,7 @@ const Ablaufanordnung = () => {
 
 
     return (
+
         <div className="ablaufanordung-container">
             <DndProvider backend={HTML5Backend}>
                 <CardContext.Provider value={{ markAsX }}>
@@ -153,21 +155,23 @@ const Ablaufanordnung = () => {
                                     overlayOpacity={0.55}
                                     overlayBlur={3}
                                     style={{ fontSize: 20 }}
+
                                     centered
                                     opened={openedModal}
                                     onClose={() => {
                                         setOpenedModal(false);
                                         setModalContent(modalContent1[0])
                                     }}
-                                    title='Ablaufanordnung'
+
+                                    title={<FiBookOpen />}
                                 >
                                     <Title size="sm" style={{ lineHeight: 2.5, fontSize: 22 }}>
                                         {modalContent.title}
                                     </Title>
                                     <p>{modalContent.content}</p>
                                 </Modal>
-
                                 <Button onClick={() => setOpenedModal(true)}>Aufgabenstellung</Button>
+
 
 
                             </Grid.Col>

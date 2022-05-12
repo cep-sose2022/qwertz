@@ -5,6 +5,7 @@ import { Button, Group, Modal } from "@mantine/core";
 import { useNavigate } from "react-router";
 
 const modis = [
+
     {
         passed: false,
         title: 'Konversation'
@@ -42,7 +43,9 @@ const Gamemodi = () => {
             navigator('./' + modis.filter(modi => !modi.passed)[0].title)
         else
             navigator('./Endscreen');
+
     }
+
 
     return (
         <>

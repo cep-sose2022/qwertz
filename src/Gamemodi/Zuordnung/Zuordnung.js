@@ -1,13 +1,14 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import DropZone from "./DropZone";
-import {DndProvider} from "react-dnd";
-import {HTML5Backend} from "react-dnd-html5-backend";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
-import {ItemState} from "./ItemState";
-import {Button, Modal, Popover, Text, Tooltip} from "@mantine/core";
-import {ModiContext} from "../Gamemodi";
+import { ItemState } from "./ItemState";
+import { Button, Modal, Popover, Text, Tooltip, Title } from "@mantine/core";
+import { ModiContext } from "../Gamemodi";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
+import { BsFillCheckCircleFill } from "react-icons/bs";
 
 const modalContent1 = [
     {
@@ -55,7 +56,7 @@ const Zuordnung = () => {
     const [modalContent, setModalContent] = useState(modalContent1[0]);
     const [allRight, setAllRight] = useState(false);
 
-    const {markAsPassed, setCurrentModiTitle} = useContext(ModiContext);
+    const { markAsPassed, setCurrentModiTitle } = useContext(ModiContext);
     setCurrentModiTitle("Zuordnung");
 
 
@@ -124,7 +125,7 @@ const Zuordnung = () => {
 
         <div className="container-Zuordnung">
             <DndProvider backend={HTML5Backend}>
-                <ItemContext.Provider value={{markAsX}}>
+                <ItemContext.Provider value={{ markAsX }}>
 
                     <Modal
                         centered
@@ -133,8 +134,14 @@ const Zuordnung = () => {
                             setOpenedModal(false);
                             setModalContent(modalContent1[0])
                         }}
-                        title={modalContent.title}
+                        title={<BsFillCheckCircleFill />}
+
                     >
+
+                        <Title size="sm" style={{ lineHeight: 2.5, fontSize: 22 }}>
+                            {modalContent.title}
+
+                        </Title>
                         <p>{modalContent.content}</p>
                     </Modal>
 
@@ -143,22 +150,22 @@ const Zuordnung = () => {
                         <div className="header-categorization">
                             <div>
                                 <Popover
-                                opened={openedPopover}
-                                onClose={() => setOpenedPopover(false)}
-                                target={<Button onClick={checkIfAllRight}>Fertig</Button>}
-                                width={260}
-                                position="bottom"
-                                withArrow
-                            >
-                                <div style={{display: 'flex'}}>
-                                    <Text size="sm">Du musst erst alle Boxen zuordnen</Text>
-                                </div>
-                            </Popover>
+                                    opened={openedPopover}
+                                    onClose={() => setOpenedPopover(false)}
+                                    target={<Button onClick={checkIfAllRight}>Fertig</Button>}
+                                    width={260}
+                                    position="bottom"
+                                    withArrow
+                                >
+                                    <div style={{ display: 'flex' }}>
+                                        <Text size="sm">Du musst erst alle Boxen zuordnen</Text>
+                                    </div>
+                                </Popover>
                             </div>
                             <div>
                                 <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
                                     <Button onClick={() => markAsPassed('Zuordnung')}
-                                            disabled={!allRight}> Weiter</Button>
+                                        disabled={!allRight}> Weiter</Button>
                                 </Tooltip>
                             </div>
                         </div>
@@ -168,9 +175,9 @@ const Zuordnung = () => {
                                 Left
                                 {
                                     antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
-                                            <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                      right={i.right}/>
-                                        )
+                                        <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                            right={i.right} />
+                                    )
                                     )
                                 }
                             </DropZone>
@@ -185,7 +192,7 @@ const Zuordnung = () => {
                                 {
                                     antworten.filter(a => a.state === ItemState.UP).map(i => (
                                         <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                  right={i.right}/>)
+                                            right={i.right} />)
                                     )
                                 }
                             </DropZone>
@@ -197,7 +204,7 @@ const Zuordnung = () => {
                                 {
                                     antworten.filter(a => a.state === ItemState.DOWN).map(i => (
                                         <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                  right={i.right}/>)
+                                            right={i.right} />)
                                     )
                                 }
                             </DropZone>
@@ -207,7 +214,7 @@ const Zuordnung = () => {
                     </div>
                 </ItemContext.Provider>
             </DndProvider>
-        </div>
+        </div >
     );
 }
 
