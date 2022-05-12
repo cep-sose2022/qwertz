@@ -21,8 +21,12 @@ const DragItem = (props: { id: number; state: any; text: String; right: boolean 
     return (
         <p ref={drag} className="Card"
             style={{
-                backgroundColor: right ? 'lightgreen' : 'red',
-                fontSize: (isDragging ? 20 : undefined)
+                backgroundColor: right ? 'lightgreen' : 'var(--dark-two)',
+                fontSize: (isDragging ? 20 : undefined),
+                border: '1px solid',
+                borderColor:'var(--dark-one)',
+                borderRadius: '2022px',
+                color: 'white'
             }}>
             {text}
         </p>
