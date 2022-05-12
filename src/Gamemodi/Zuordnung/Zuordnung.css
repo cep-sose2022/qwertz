@@ -9,6 +9,7 @@
 
 /*item heap*/
 .item-heap {
+    margin-top: calc(100% - 99%);
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -73,3 +74,8 @@
 
 /*answer heap end*/
 
+.header-categorization {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}

@@ -4,7 +4,7 @@ import {DndProvider} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
 import {ItemState} from "./ItemState";
-import {Button, Group, Modal, Text, Tooltip, Popover} from "@mantine/core";
+import {Button, Modal, Popover, Text, Tooltip} from "@mantine/core";
 import {ModiContext} from "../Gamemodi";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
@@ -140,6 +140,29 @@ const Zuordnung = () => {
 
                     <div className="background">
 
+                        <div className="header-categorization">
+
+                            <div>
+                                <Popover
+                                opened={openedPopover}
+                                onClose={() => setOpenedPopover(false)}
+                                target={<Button onClick={checkIfAllRight}>Fertig</Button>}
+                                width={260}
+                                position="bottom"
+                                withArrow
+                            >
+                                <div style={{display: 'flex'}}>
+                                    <Text size="sm">Du musst erst alle Boxen zuordnen</Text>
+                                </div>
+                            </Popover>
+                            </div>
+                            <div>
+                                <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
+                                    <Button onClick={() => markAsPassed('Zuordnung')}
+                                            disabled={!allRight}> Weiter</Button>
+                                </Tooltip>
+                            </div>
+                        </div>
                         <div className="item-heap">
                             <DropZone type="Left">
                                 Left
@@ -179,25 +202,6 @@ const Zuordnung = () => {
                             </DropZone>
 
                         </div>
-                        <Group>
-                            <Popover
-                                opened={openedPopover}
-                                onClose={() => setOpenedPopover(false)}
-                                target={<Button onClick={checkIfAllRight}>Fertig</Button>}
-                                width={260}
-                                position="bottom"
-                                withArrow
-                            >
-                                <div style={{display: 'flex'}}>
-                                    <Text size="sm">Du musst erst alle Boxen zuordnen</Text>
-                                </div>
-                            </Popover>
-
-                            <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                                <Button onClick={() => markAsPassed('Zuordnung')} disabled={!allRight}> Weiter</Button>
-                            </Tooltip>
-                        </Group>
-
 
                     </div>
                 </ItemContext.Provider>
