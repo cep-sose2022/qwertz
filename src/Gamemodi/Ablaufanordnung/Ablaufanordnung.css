@@ -5,7 +5,8 @@
     /*border: 5px solid;*/
     padding: 10px;
 }
-.ablaufanordung-container .ablaufanordung-header{
+
+.ablaufanordung-container .ablaufanordung-header {
     background-color: var(--dark-one);
     padding: 10px;
     border: 5px solid;
@@ -20,6 +21,11 @@
 
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .scrollmenu {
     min-height: 50px;
@@ -29,7 +35,7 @@
     white-space: nowrap;
 }
 
-.dragCard{
+.dragCard {
     display: inline-block;
     /*color: black;*/
     text-align: center;
@@ -58,5 +64,3 @@
 .DropBox {
     padding-left: 200px;
 }
-
-

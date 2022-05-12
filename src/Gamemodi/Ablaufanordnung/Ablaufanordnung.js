@@ -12,7 +12,7 @@ import { Button, Grid, Modal, Popover, SimpleGrid, Text, Tooltip, Title } from "
 import { ModiContext } from "../Gamemodi";
 import { FiBookOpen } from "react-icons/fi";
 
-
+import img from "../../Resources/images/orange_erstaunt.png";
 export const CardContext = createContext({
     markAsX: (_id, _state) => {
     }
@@ -155,7 +155,7 @@ const Ablaufanordnung = () => {
                                     overlayOpacity={0.55}
                                     overlayBlur={3}
                                     style={{ fontSize: 20 }}
-
+                                    bgColor='red'
                                     centered
                                     opened={openedModal}
                                     onClose={() => {
@@ -165,9 +165,12 @@ const Ablaufanordnung = () => {
 
                                     title={<FiBookOpen />}
                                 >
+                                    <img className="center" width="200" height="250" src={img}></img>
+
                                     <Title size="sm" style={{ lineHeight: 2.5, fontSize: 22 }}>
                                         {modalContent.title}
                                     </Title>
+
                                     <p>{modalContent.content}</p>
                                 </Modal>
                                 <Button onClick={() => setOpenedModal(true)}>Aufgabenstellung</Button>
