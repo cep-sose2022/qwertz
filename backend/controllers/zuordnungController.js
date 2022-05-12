@@ -1,7 +1,7 @@
 const ZuordnungModel = require("../model/zuordnungModel");
 
 const getZuordnung = ((req, res) => {
-    ZuordnungModel.find({id: req.params.id}, (err, result) => {
+    ZuordnungModel.find({badgeID: req.params.badgeID, modiID: req.params.modiID}, (err, result) => {
         if (err) {
             res.json(err)
         } else {
@@ -10,6 +10,14 @@ const getZuordnung = ((req, res) => {
     })
 })
 
+const postZuordnung = (async (req, res) => {
+    const zuordnung = req.body
+    const newZuordnung = new ZuordnungModel(zuordnung)
+    await newZuordnung.save()
+    res.json(zuordnung)
+})
+
 module.exports = {
-    getZuordnung
+    getZuordnung,
+    postZuordnung
 }

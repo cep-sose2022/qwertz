@@ -1,17 +1,25 @@
 const mongoose = require('mongoose')
 
 const wimmelbildSchema = new mongoose.Schema({
+    aufgabenstellung: {
+        type: String,
+        required: true
+    },
     badgeID: {
         type: Number,
         required: true,
     },
-    buttons: [
+    modiID: {
+        type: Number,
+        required: true
+    },
+    data: [
         {
             text: {
                 type: String,
                 required: true,
             },
-            topleftCorner: {
+            topLeftCorner: {
                 x: {
                     type: Number,
                     required: true,
@@ -21,7 +29,7 @@ const wimmelbildSchema = new mongoose.Schema({
                     required: true,
                 },
             },
-            buttomRightCorner: {
+            bottemRightCorner: {
                 x: {
                     type: Number,
                     required: true,

@@ -9,11 +9,11 @@ const BadgeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    modis: [{
-        type: String,
-        required: true,
-    }
-
+    modis: [
+        {
+            type: String,
+            required: true,
+        }
     ]
 })
 

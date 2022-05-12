@@ -1,7 +1,7 @@
 const WimmelbildModel = require("../model/wimmelbildModel");
 
 const getWimmelbild = ((req, res) => {
-    WimmelbildModel.find({id: req.params.id}, (err, result) => {
+    WimmelbildModel.find({badgeID: req.params.badgeID, modiID: req.params.modiID}, (err, result) => {
         if (err) {
             res.json(err)
         } else {
@@ -10,6 +10,14 @@ const getWimmelbild = ((req, res) => {
     })
 })
 
+const postWimmelbild = (async (req, res) => {
+    const wimmelbild = req.body
+    const newWimmelbild = new WimmelbildModel(wimmelbild)
+    await newWimmelbild.save()
+    res.json(wimmelbild)
+})
+
 module.exports = {
-    getWimmelbild
+    getWimmelbild,
+    postWimmelbild
 }
