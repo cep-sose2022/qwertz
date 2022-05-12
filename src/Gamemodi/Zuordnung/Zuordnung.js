@@ -4,11 +4,10 @@ import {DndProvider} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
 import {ItemState} from "./ItemState";
-import {Button, Group, Modal, Text, Tooltip} from "@mantine/core";
+import {Button, Group, Modal, Text, Tooltip, Popover} from "@mantine/core";
 import {ModiContext} from "../Gamemodi";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
-import * as PropTypes from "prop-types";
 
 const modalContent1 = [
     {
@@ -48,19 +47,6 @@ function shuffle(array) {
     return array;
 }
 
-function Popover(props) {
-    return null;
-}
-
-Popover.propTypes = {
-    onClose: PropTypes.func,
-    position: PropTypes.string,
-    width: PropTypes.number,
-    opened: PropTypes.bool,
-    withArrow: PropTypes.bool,
-    target: PropTypes.element,
-    children: PropTypes.node
-};
 const Zuordnung = () => {
     const [fragen] = useState([]);
     const [antworten, setAntworten] = useState([]);
@@ -193,7 +179,7 @@ const Zuordnung = () => {
                             </DropZone>
 
                         </div>
-                        <Group position="apart">
+                        <Group>
                             <Popover
                                 opened={openedPopover}
                                 onClose={() => setOpenedPopover(false)}
