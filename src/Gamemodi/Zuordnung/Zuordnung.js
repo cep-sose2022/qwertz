@@ -1,13 +1,14 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import DropZone from "./DropZone";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import {DndProvider} from "react-dnd";
+import {HTML5Backend} from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
-import { ItemState } from "./ItemState";
-import { Button, Group, Modal, Popover, Text, Tooltip } from "@mantine/core";
-import { ModiContext } from "../Gamemodi";
+import {ItemState} from "./ItemState";
+import {Button, Group, Modal, Text, Tooltip} from "@mantine/core";
+import {ModiContext} from "../Gamemodi";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
+import * as PropTypes from "prop-types";
 
 const modalContent1 = [
     {
@@ -47,6 +48,19 @@ function shuffle(array) {
     return array;
 }
 
+function Popover(props) {
+    return null;
+}
+
+Popover.propTypes = {
+    onClose: PropTypes.func,
+    position: PropTypes.string,
+    width: PropTypes.number,
+    opened: PropTypes.bool,
+    withArrow: PropTypes.bool,
+    target: PropTypes.element,
+    children: PropTypes.node
+};
 const Zuordnung = () => {
     const [fragen] = useState([]);
     const [antworten, setAntworten] = useState([]);
@@ -121,81 +135,88 @@ const Zuordnung = () => {
     }
 
     return (
-        <DndProvider backend={HTML5Backend}>
-            <ItemContext.Provider value={{ markAsX }}>
-                <Modal
-                    centered
-                    opened={openedModal}
-                    onClose={() => {
-                        setOpenedModal(false);
-                        setModalContent(modalContent1[0])
-                    }}
-                    title={modalContent.title}
-                >
-                    <p>{modalContent.content}</p>
-                </Modal>
 
-                <div className="background">
-                    <div>
-                        <DropZone type="Left">
-                            Left
-                            {
-                                antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
-                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right} />
-                                )
-                                )
-                            }
-                        </DropZone>
+        <div className="container-Zuordnung">
+            <DndProvider backend={HTML5Backend}>
+                <ItemContext.Provider value={{markAsX}}>
+
+                    <Modal
+                        centered
+                        opened={openedModal}
+                        onClose={() => {
+                            setOpenedModal(false);
+                            setModalContent(modalContent1[0])
+                        }}
+                        title={modalContent.title}
+                    >
+                        <p>{modalContent.content}</p>
+                    </Modal>
+
+                    <div className="background">
+
+                        <div className="item-heap">
+                            <DropZone type="Left">
+                                Left
+                                {
+                                    antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
+                                            <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                                      right={i.right}/>
+                                        )
+                                    )
+                                }
+                            </DropZone>
+
+                        </div>
+                        <div className="answer-heap">
+                            <DropZone type="Up">
+                                {
+                                    fragen[0].frage
+                                }
+                                {
+                                    antworten.filter(a => a.state === ItemState.UP).map(i => (
+                                        <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                                  right={i.right}/>)
+                                    )
+                                }
+                            </DropZone>
+
+                            <DropZone type="Down">
+                                {
+                                    fragen[1].frage
+                                }
+                                {
+                                    antworten.filter(a => a.state === ItemState.DOWN).map(i => (
+                                        <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                                  right={i.right}/>)
+                                    )
+                                }
+                            </DropZone>
+
+                        </div>
+                        <Group position="apart">
+                            <Popover
+                                opened={openedPopover}
+                                onClose={() => setOpenedPopover(false)}
+                                target={<Button onClick={checkIfAllRight}>Fertig</Button>}
+                                width={260}
+                                position="bottom"
+                                withArrow
+                            >
+                                <div style={{display: 'flex'}}>
+                                    <Text size="sm">Du musst erst alle Boxen zuordnen</Text>
+                                </div>
+                            </Popover>
+
+                            <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
+                                <Button onClick={() => markAsPassed('Zuordnung')} disabled={!allRight}> Weiter</Button>
+                            </Tooltip>
+                        </Group>
+
+
                     </div>
-
-                    <div>
-                        <DropZone type="Up">
-                            {
-                                fragen[0].frage
-                            }
-                            {
-                                antworten.filter(a => a.state === ItemState.UP).map(i => (
-                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right} />)
-                                )
-                            }
-                        </DropZone>
-                    </div>
-
-                    <div>
-                        <DropZone type="Down">
-                            {
-                                fragen[1].frage
-                            }
-                            {
-                                antworten.filter(a => a.state === ItemState.DOWN).map(i => (
-                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id} right={i.right} />)
-                                )
-                            }
-                        </DropZone>
-                    </div>
-
-                    <Group position="apart">
-                        <Popover
-                            opened={openedPopover}
-                            onClose={() => setOpenedPopover(false)}
-                            target={<Button onClick={checkIfAllRight}>Fertig</Button>}
-                            width={260}
-                            position="bottom"
-                            withArrow
-                        >
-                            <div style={{ display: 'flex' }}>
-                                <Text size="sm">Du musst erst alle Boxen zuordnen</Text>
-                            </div>
-                        </Popover>
-
-                        <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                            <Button onClick={() => markAsPassed('Zuordnung')} disabled={!allRight}> Weiter</Button>
-                        </Tooltip>
-                    </Group>
-
-                </div>
-            </ItemContext.Provider>
-        </DndProvider>
+                </ItemContext.Provider>
+            </DndProvider>
+        </div>
     );
 }
 
