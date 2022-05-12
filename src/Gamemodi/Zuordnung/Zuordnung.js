@@ -141,7 +141,6 @@ const Zuordnung = () => {
                     <div className="background">
 
                         <div className="header-categorization">
-
                             <div>
                                 <Popover
                                 opened={openedPopover}
@@ -163,6 +162,7 @@ const Zuordnung = () => {
                                 </Tooltip>
                             </div>
                         </div>
+                        {/*heap of items */}
                         <div className="item-heap">
                             <DropZone type="Left">
                                 Left
@@ -177,6 +177,7 @@ const Zuordnung = () => {
 
                         </div>
                         <div className="answer-heap">
+                            {/*left answer container*/}
                             <DropZone type="Up">
                                 {
                                     fragen[0].frage
@@ -188,7 +189,7 @@ const Zuordnung = () => {
                                     )
                                 }
                             </DropZone>
-
+                            {/*right answer container*/}
                             <DropZone type="Down">
                                 {
                                     fragen[1].frage

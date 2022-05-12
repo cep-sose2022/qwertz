@@ -47,6 +47,7 @@
 }
 
 .chat-objects p {
+    min-width:calc(100% - 80%);
     max-width: 450px;
     word-wrap: break-word;
     margin-bottom: 12px;
