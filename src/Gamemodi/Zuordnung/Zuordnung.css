@@ -24,8 +24,8 @@
     min-height: 150px;
     border: 3px solid rgb(0, 0, 0);
     box-shadow: 10px 5px 5px black;
-    background-color: #aeb0b9;
-
+    background-color: var(--main-color);
+    border-radius:15px
 }
 
 /*item heap end*/
@@ -52,7 +52,8 @@
     min-height: 150px;
     border: 3px solid black;
     box-shadow: 10px 5px 5px black;
-    background-color: rgba(7, 152, 255, 0.527);
+    background-color: #e00626;
+    border-radius:15px
 }
 
 .Down {
@@ -66,7 +67,8 @@
     min-height: 150px;
     border: 3px solid black;
     box-shadow: 10px 5px 5px black;
-    background-color: rgba(7, 152, 255, 0.527);
+    background-color: #32c251;
+    border-radius:15px
 }
 
 /*answer heap end*/
