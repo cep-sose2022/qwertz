@@ -16,13 +16,9 @@ const Card = (props: { image: any; title: string; text: string; link: string; })
                     <p className="text">
                         {text}
                     </p>
-                    {/*TODO link anpassen, für was is das?*/}
-                    <a href={link} className="btn small">
-                        Mehr lesen
-                    </a>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

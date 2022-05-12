@@ -296,7 +296,7 @@
 .about {
     background-color: var(--light-three);
     overflow: hidden;
-    height: 670px;
+    height: 480px;
 }
 
 .about img {
