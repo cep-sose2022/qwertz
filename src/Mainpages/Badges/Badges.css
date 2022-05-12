@@ -5,6 +5,7 @@
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    min-width:600px;
 
 }
 
@@ -180,3 +181,4 @@
     left: 0px;
     opacity: 0.85;
 }
+
