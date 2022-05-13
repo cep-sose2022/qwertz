@@ -60,7 +60,7 @@ const Ablaufanordnung = () => {
     const [allRight, setAllRight] = useState(false);
 
     const { markAsPassed, setCurrentModiTitle } = useContext(ModiContext);
-    setCurrentModiTitle("Ablaufanordnung");
+    // setCurrentModiTitle("Ablaufanordnung");
     const init = () => {
         let id = 1;
         if (cards[0] === undefined) {
@@ -147,15 +147,14 @@ const Ablaufanordnung = () => {
                         <Grid justify={"center"} >
                             <Grid.Col span={2}>
 
-
                                 <Modal
                                     transition="slide-down"
                                     transitionDuration={900}
-                                    transitionTimingFunction="ease"
+                                    // transitionTimingFunction="ease"
                                     overlayOpacity={0.55}
                                     overlayBlur={3}
                                     style={{ fontSize: 20 }}
-                                    bgColor='red'
+                                    // bgColor='red'
                                     centered
                                     opened={openedModal}
                                     onClose={() => {

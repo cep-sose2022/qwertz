@@ -15,7 +15,7 @@ const Fortschrittsanzeige = (props: { modis: any; }) => {
             <Stepper active={bestandeneModi} breakpoint="sm">
                 {
                     modis.map((modi: { title: string }) =>
-                        <Stepper.Step label={modi.title} />
+                        <Stepper.Step key={Math.random()} label={modi.title} />
                     )
                 }
             </Stepper>

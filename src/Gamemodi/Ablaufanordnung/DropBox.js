@@ -27,9 +27,6 @@ const DropBox = (props) => {
                 backgroundColor: (isDragging ? 'green' : '#0799FFFF'),
                 width: "auto",
                 minHeight: 50
-
-
-
             }}
         >
             {children}
