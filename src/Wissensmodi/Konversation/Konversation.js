@@ -88,6 +88,8 @@ const Konversation = () => {
                             <Button onClick={() => markAsPassed('Konversation')}
                                 disabled={!allRight}> Weiter</Button>
                         </Tooltip>
+
+
                     </Grid.Col>
 
                 </Grid>

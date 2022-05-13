@@ -29,6 +29,8 @@ const DropBox = (props) => {
                 minHeight: 50,
                 display: "flex",
                 flexDirection: "column",
+                borderRadius: '15px',
+                boxShadow: '10px 5px 5px black',
             }}
         >
             <div className="card-header">

@@ -12,6 +12,7 @@ import JsonList from "../../Resources/Json/ZuordnungData.json";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
 import img from "../../Resources/images/orange_erstaunt.png";
+import {FcQuestions} from "react-icons/fc";
 export const CardContext = createContext({
     markAsX: (_id, _state) => {
     }
@@ -132,7 +133,7 @@ const Zuordnung = () => {
             <DndProvider backend={HTML5Backend}>
                 <CardContext.Provider value={{ markAsX }}>
                     <div className="zuordnung-header">
-                        <Grid justify={"center"} >
+                        <Grid justify={"space-between"} >
                             <Grid.Col span={2}>
 
                                 <Modal
@@ -185,7 +186,17 @@ const Zuordnung = () => {
                                         disabled={!allRight}> Weiter</Button>
                                 </Tooltip>
                             </Grid.Col>
+                            <Grid.Col span={2}>
+                                <div style={{textAlign:'end'}}>
+                                    <Button style={{
+                                        background: 'transparent'
+                                    }} onClick={() => {
+                                        setModalContent("Spielerklärung")
+                                        setOpenedModal(true)
+                                    }} ><FcQuestions size={32}/></Button>
+                                </div>
 
+                            </Grid.Col>
                         </Grid>
 
 

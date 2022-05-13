@@ -120,6 +120,7 @@
 
 /*topbar*/
 .top-menu {
+    z-index: -1;
     background-color: var(--dark-two);
     width: 100%;
     padding: 20px 0 15px;
@@ -163,6 +164,7 @@
 /*input field*/
 .bottom_wrapper {
     position: relative;
+    z-index: -1;
     width: 100%;
     background-color: var(--dark-two);
     padding: 20px 20px;
@@ -191,12 +193,15 @@
     background-color: var(--dark-one);
     padding: 10px;
     border: 5px solid;
-
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px black;
 }
 
 .konversation-container .konversation-body {
     border: 5px solid;
     margin-top: 5px;
     /*padding: 0.5%;*/
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px black;
 
 }

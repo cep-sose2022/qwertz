@@ -1,18 +1,20 @@
-import React, { createContext, useContext, useState } from 'react';
-import { DndProvider } from "react-dnd";
+import React, {createContext, useContext, useState} from 'react';
+import {DndProvider} from "react-dnd";
 import CardStorage from "./CardStorage";
 import './Ablaufanordnung.css'
 import DragCard from "./DragCard";
-import { ItemState } from "./ItemState";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import {ItemState} from "./ItemState";
+import {HTML5Backend} from "react-dnd-html5-backend";
 import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 import DropBox from "./DropBox";
-import { Button, Grid, Modal, Popover, SimpleGrid, Text, Tooltip, Title } from "@mantine/core";
+import {Button, Grid, Modal, Popover, SimpleGrid, Text, Title, Tooltip} from "@mantine/core";
 
-import { ModiContext } from "../Gamemodi";
-import { FiBookOpen } from "react-icons/fi";
+import {ModiContext} from "../Gamemodi";
+import {FiBookOpen} from "react-icons/fi";
 
 import img from "../../Resources/images/orange_erstaunt.png";
+import {FcQuestions} from "react-icons/fc";
+
 export const CardContext = createContext({
     markAsX: (_id, _state) => {
     }
@@ -144,7 +146,7 @@ const Ablaufanordnung = () => {
             <DndProvider backend={HTML5Backend}>
                 <CardContext.Provider value={{ markAsX }}>
                     <div className="ablaufanordung-header">
-                        <Grid justify={"center"} >
+                        <Grid justify={"space-between"} >
                             <Grid.Col span={2}>
 
                                 <Modal
@@ -187,17 +189,27 @@ const Ablaufanordnung = () => {
                                     position="bottom"
                                     withArrow
                                 >
-                                    <div style={{ display: 'flex' }}>
+                                    <div style={{display: 'flex'}}>
                                         <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
                                     </div>
                                 </Popover>
 
                                 <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
                                     <Button onClick={() => markAsPassed('Ablaufanordnung')}
-                                        disabled={!allRight}> Weiter</Button>
+                                            disabled={!allRight}> Weiter</Button>
                                 </Tooltip>
                             </Grid.Col>
+                            <Grid.Col span={2}>
+                                <div style={{textAlign: 'end'}}>
+                                    <Button style={{
+                                        background: 'transparent'
+                                    }} onClick={() => {
+                                        setModalContent("Spielerklärung")
+                                        setOpenedModal(true)
+                                    }}><FcQuestions size={32}/></Button>
+                                </div>
 
+                            </Grid.Col>
                         </Grid>
 
 

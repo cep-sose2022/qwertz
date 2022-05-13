@@ -1,7 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, {useContext, useState} from "react";
 import JsonData from '../../Resources/Json/WimmelbildData.json';
-import { BackgroundImage, Box, Button, Modal, Tooltip, Title, Grid, Popover, Text } from "@mantine/core";
-import { ModiContext } from "../Gamemodi";
+import {BackgroundImage, Box, Button, Grid, Modal, Popover, Text, Title, Tooltip} from "@mantine/core";
+import {ModiContext} from "../Gamemodi";
+import {FcQuestions} from "react-icons/fc";
 import './Wimmelbild.css'
 
 const Wimmelbild = () => {
@@ -11,7 +12,7 @@ const Wimmelbild = () => {
     const [openedModal, setModalOpened] = useState(false);
     const [allRight, setAllRight] = useState(false);
 
-    const { markAsPassed } = useContext(ModiContext);
+    const {markAsPassed} = useContext(ModiContext);
 
     let id = 1;
     if (buttons[0] === undefined) {
@@ -46,7 +47,7 @@ const Wimmelbild = () => {
     return (
         <div className="wimmelbild-container">
             <div className="wimmelbild-header">
-                <Grid justify={"center"} >
+                <Grid justify={"space-between"}>
                     <Grid.Col span={2}>
 
                         <Modal
@@ -55,7 +56,7 @@ const Wimmelbild = () => {
                             // transitionTimingFunction="ease"
                             overlayOpacity={0.55}
                             overlayBlur={3}
-                            style={{ fontSize: 20 }}
+                            style={{fontSize: 20}}
                             // bgColor='red'
                             centered
                             opened={openedModal}
@@ -84,15 +85,26 @@ const Wimmelbild = () => {
                             position="bottom"
                             withArrow
                         >
-                            <div style={{ display: 'flex' }}>
+                            <div style={{display: 'flex'}}>
                                 <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
                             </div>
                         </Popover>
 
                         <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
                             <Button onClick={() => markAsPassed('Ablaufanordnung')}
-                                disabled={!allRight}> Weiter</Button>
+                                    disabled={!allRight}> Weiter</Button>
                         </Tooltip>
+                    </Grid.Col>
+                    <Grid.Col span={2}>
+                        <div style={{textAlign:'end'}}>
+                            <Button style={{
+                                background: 'transparent'
+                            }} onClick={() => {
+                                setModalContent("Spielerklärung")
+                                setModalOpened(true)
+                            }} ><FcQuestions size={32}/></Button>
+                        </div>
+
                     </Grid.Col>
 
                 </Grid>
