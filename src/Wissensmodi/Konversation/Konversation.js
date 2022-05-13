@@ -43,9 +43,9 @@ const Konversation = () => {
                     <div className="chat-window">
                         <div className="top-menu">
                             <div className="buttons">
-                                <div className="button close"></div>
-                                <div className="button minimize"></div>
-                                <div className="button maximize"></div>
+                                <div className="button close"/>
+                                <div className="button minimize"/>
+                                <div className="button maximize"/>
                             </div>
                             <div className="title-chat">
                                 <p>Chat</p>
@@ -75,7 +75,7 @@ const Konversation = () => {
                     </div>
 
                     <div className="bottom_wrapper">
-                        <textarea  className="message_input" placeholder="type a message"></textarea>
+                        <textarea  className="message_input" placeholder="type a message"/>
                         <Tooltip disabled={allRight} label="Du musst die Einheit erst abschließen um weiter zu machen!">
                             <Button onClick={() => markAsPassed('Konversation')} disabled={!allRight}> Weiter</Button>
                         </Tooltip>
