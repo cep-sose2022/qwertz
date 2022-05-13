@@ -15,29 +15,29 @@ service.getBadges = () => {
     return JSON.parse(xmlHttp.responseText);
 }
 
-service.getAblaufanordnung = (id) => {
+service.getAblaufanordnung = (badgeID, modiID) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", `${backendUrl}/getAblaufanordnung/${id}`, false);
+    xmlHttp.open("GET", `${backendUrl}/getAblaufanordnung/${badgeID}/${modiID}`, false);
     xmlHttp.send(null);
-    return JSON.parse(xmlHttp.responseText);
+    return JSON.parse(xmlHttp.responseText).data;
 }
-service.getZuordnung = (id) => {
+service.getZuordnung = (badgeID, modiID) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", `${backendUrl}/getZuordnung/${id}`, false);
+    xmlHttp.open("GET", `${backendUrl}/getZuordnung/${badgeID}/${modiID}`, false);
     xmlHttp.send(null);
-    return JSON.parse(xmlHttp.responseText);
+    return JSON.parse(xmlHttp.responseText).data;
 }
-service.getKonversation = (id) => {
+service.getKonversation = (badgeID, modiID) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", `${backendUrl}/getKonversation/${id}`, false);
+    xmlHttp.open("GET", `${backendUrl}/getKonversation/${badgeID}/${modiID}`, false);
     xmlHttp.send(null);
-    return JSON.parse(xmlHttp.responseText);
+    return JSON.parse(xmlHttp.responseText).data;
 }
-service.getWimmelbild = (id) => {
+service.getWimmelbild = (badgeID, modiID) => {
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", `${backendUrl}/getWimmelbild/${id}`, false);
+    xmlHttp.open("GET", `${backendUrl}/getWimmelbild/${badgeID}/${modiID}`, false);
     xmlHttp.send(null);
-    return JSON.parse(xmlHttp.responseText);
+    return JSON.parse(xmlHttp.responseText).data;
 }
 
 module.exports = service

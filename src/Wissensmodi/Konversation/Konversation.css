@@ -1,11 +1,10 @@
 .theoretic-conversation-body {
-    width: 50%;
+    width: 100%;
     height: 650px;
     position: relative;
-    top: 40px;
+    top: 0.1px;
     text-align: center;
     background-color: transparent;
-    border: 5px solid;
     overflow: hidden;
     margin: auto;
     display: flex;
@@ -47,13 +46,13 @@
 }
 
 .chat-objects p {
-    min-width:calc(100% - 80%);
+    min-width: calc(100% - 80%);
     max-width: 450px;
     word-wrap: break-word;
     margin-bottom: 12px;
     line-height: 24px;
     position: relative;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 25px;
 
 }
@@ -69,6 +68,7 @@
     color: black;
     align-self: flex-start;
 }
+
 /*text container end */
 
 
@@ -88,10 +88,7 @@
 }
 
 .loading-button {
-
     position: relative;
-
-
     background: transparent;
     color: var(--light-one);
     padding: 20px 40px;
@@ -187,7 +184,19 @@
     color: gray;
     resize: none;
 }
+
 /*input field end*/
 
+.konversation-container .konversation-header {
+    background-color: var(--dark-one);
+    padding: 10px;
+    border: 5px solid;
 
+}
 
+.konversation-container .konversation-body {
+    border: 5px solid;
+    margin-top: 5px;
+    /*padding: 0.5%;*/
+
+}

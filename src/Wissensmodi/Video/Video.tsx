@@ -6,8 +6,7 @@ import { Button } from "@mantine/core";
 const Video = () => {
 
     // @ts-ignore
-    const { markAsPassed, setCurrentModiTitle } = useContext(ModiContext);
-    setCurrentModiTitle("Video");
+    const { markAsPassed } = useContext(ModiContext);
 
     return (
         <>
