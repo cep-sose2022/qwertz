@@ -39,8 +39,8 @@ const Konversation = () => {
         }
     }
     return (
-        <div className="wimmelbild-container">
-            <div className="wimmelbild-header">
+        <div className="konversation-container">
+            <div className="konversation-header">
                 <Grid justify={"center"} >
                     <Grid.Col span={2}>
 
@@ -85,7 +85,7 @@ const Konversation = () => {
                         </Popover>
 
                         <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                            <Button onClick={() => markAsPassed('Ablaufanordnung')}
+                            <Button onClick={() => markAsPassed('Konversation')}
                                 disabled={!allRight}> Weiter</Button>
                         </Tooltip>
                     </Grid.Col>
@@ -93,58 +93,54 @@ const Konversation = () => {
                 </Grid>
             </div>
 
-            <div>
-                <div className="theoretic-conversation" onClick={abbilden}>
-                    <div className="theoretic-conversation-body">
-                        <div className="chat-window">
-                            <div className="top-menu">
-                                <div className="buttons">
-                                    <div className="button close" />
-                                    <div className="button minimize" />
-                                    <div className="button maximize" />
-                                </div>
-                                <div className="title-chat">
-                                    <p>Chat</p>
+            <div className="konversation-body">
+                <div>
+                    <div className="theoretic-conversation" onClick={abbilden}>
+                        <div className="theoretic-conversation-body">
+                            <div className="chat-window">
+                                <div className="top-menu">
+                                    <div className="buttons">
+                                        <div className="button close" />
+                                        <div className="button minimize" />
+                                        <div className="button maximize" />
+                                    </div>
+                                    <div className="title-chat">
+                                        <p>Chat</p>
+                                    </div>
+
                                 </div>
 
                             </div>
 
-                        </div>
 
+                            <div className="chat-objects">
+                                {
+                                    bubbles.filter(bubbles => bubbles.selected === true).map(
+                                        bubbles => <Bubble key={bubbles.id} category={bubbles.category}
+                                            text={bubbles.text} />
+                                    )
+                                }
 
-                        <div className="chat-objects">
-                            {
-                                bubbles.filter(bubbles => bubbles.selected === true).map(
-                                    bubbles => <Bubble key={bubbles.id} category={bubbles.category}
-                                        text={bubbles.text} />
-                                )
-                            }
+                                {
+                                    bubbles.filter(bubbles => bubbles.selected === false) >= 0 ?
+                                        allRight = true :
+                                        <button className="loading-button" id="loading-Button">
+                                            <span>.</span><span>.</span><span>.</span>
+                                        </button>
 
-                            {
-                                bubbles.filter(bubbles => bubbles.selected === false) >= 0 ?
-                                    allRight = true :
-                                    <button className="loading-button" id="loading-Button">
-                                        <span>.</span><span>.</span><span>.</span>
-                                    </button>
+                                }
+                            </div>
 
-                            }
-                        </div>
-
-                        <div className="bottom_wrapper">
-                            <textarea className="message_input" placeholder="type a message" />
-                            <Tooltip disabled={allRight} label="Du musst die Einheit erst abschließen um weiter zu machen!">
-                                <Button onClick={() => markAsPassed('Konversation')} disabled={!allRight}> Weiter</Button>
-                            </Tooltip>
+                            <div className="bottom_wrapper">
+                                <textarea className="message_input" placeholder="type a message" />
+                                <Tooltip disabled={allRight} label="Du musst die Einheit erst abschließen um weiter zu machen!">
+                                    <Button onClick={() => markAsPassed('Konversation')} disabled={!allRight}> Weiter</Button>
+                                </Tooltip>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
-
-
-
         </div>
     );
 };
