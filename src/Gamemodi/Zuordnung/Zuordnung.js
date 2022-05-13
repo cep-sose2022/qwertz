@@ -1,18 +1,18 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import DropZone from "./DropZone";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import {DndProvider} from "react-dnd";
+import {HTML5Backend} from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
-import { ItemState } from "./ItemState";
-import { Button, Grid, Modal, Popover, Text, Tooltip, Title } from "@mantine/core";
-import { ModiContext } from "../Gamemodi";
-import { FiBookOpen } from "react-icons/fi";
+import {ItemState} from "./ItemState";
+import {Button, Grid, Modal, Popover, Text, Title, Tooltip} from "@mantine/core";
+import {ModiContext} from "../Gamemodi";
+import {FiBookOpen} from "react-icons/fi";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
-import { BsFillCheckCircleFill } from "react-icons/bs";
 
 import img from "../../Resources/images/orange_erstaunt.png";
 import {FcQuestions} from "react-icons/fc";
+
 export const CardContext = createContext({
     markAsX: (_id, _state) => {
     }
@@ -29,6 +29,9 @@ const modalContent1 = [
     {
         title: "Alles Richtig",
         content: "Super du hast alles richtig!"
+    }, {
+        title: "Spielerklärung",
+        content: "Ordne die Elemente den zwei Verschiedenen Boxen zu. "
     }
 ]
 
@@ -191,7 +194,7 @@ const Zuordnung = () => {
                                     <Button style={{
                                         background: 'transparent'
                                     }} onClick={() => {
-                                        setModalContent("Spielerklärung")
+                                        setModalContent(modalContent1[3])
                                         setOpenedModal(true)
                                     }} ><FcQuestions size={32}/></Button>
                                 </div>
@@ -207,9 +210,9 @@ const Zuordnung = () => {
                             Left
                             {
                                 antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
-                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                        right={i.right} />
-                                )
+                                        <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                                  right={i.right} />
+                                    )
                                 )
                             }
                         </DropZone>
@@ -224,7 +227,7 @@ const Zuordnung = () => {
                             {
                                 antworten.filter(a => a.state === ItemState.UP).map(i => (
                                     <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                        right={i.right} />)
+                                              right={i.right} />)
                                 )
                             }
                         </DropZone>
@@ -236,7 +239,7 @@ const Zuordnung = () => {
                             {
                                 antworten.filter(a => a.state === ItemState.DOWN).map(i => (
                                     <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                        right={i.right} />)
+                                              right={i.right} />)
                                 )
                             }
                         </DropZone>
