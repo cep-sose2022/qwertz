@@ -47,12 +47,13 @@
 
 .chat-objects p {
     min-width: calc(100% - 80%);
-    max-width: 450px;
+    max-width: calc(100% - 25%);
     word-wrap: break-word;
-    margin-bottom: 12px;
+    margin-bottom: 19px;
     line-height: 24px;
     position: relative;
-    padding: 15px 20px;
+    padding: 10px 20px;
+    margin: 10px;
     border-radius: 25px;
 
 }
