@@ -34,7 +34,7 @@ const DropBox = (props) => {
             <div className="card-header">
                 <span>{id}</span>
             </div>
-            <div className="card-content">
+            <div className="card-body">
                 {children}
             </div>
         </Center>
