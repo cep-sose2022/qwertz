@@ -13,7 +13,7 @@ import JsonList from "../../Resources/Json/ZuordnungData.json";
 import img from "../../Resources/images/orange_erstaunt.png";
 import {FcQuestions} from "react-icons/fc";
 
-export const CardContext = createContext({
+export const ItemContext = createContext({
     markAsX: (_id, _state) => {
     }
 });
@@ -35,10 +35,7 @@ const modalContent1 = [
     }
 ]
 
-export const ItemContext = createContext({
-    markAsX: (_id, _state) => {
-    }
-});
+
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -102,6 +99,7 @@ const Zuordnung = () => {
         setAntworten(antworten.filter((i) => i.id !== id).concat(draggedItem));
     }
 
+
     const checkIfAllRight = () => {
         if (antworten.filter(antwort => antwort.state === ItemState.NOTSELECTED).length !== 0) {
             setOpenedPopover(true);
@@ -134,7 +132,7 @@ const Zuordnung = () => {
     return (
         <div className="container-zuordnung">
             <DndProvider backend={HTML5Backend}>
-                <CardContext.Provider value={{ markAsX }}>
+                <ItemContext.Provider value={{ markAsX }}>
                     <div className="zuordnung-header">
                         <Grid justify={"space-between"} >
                             <Grid.Col span={2}>
@@ -246,7 +244,7 @@ const Zuordnung = () => {
 
                     </div>
 
-                </CardContext.Provider>
+                </ItemContext.Provider>
             </DndProvider>
         </div >
     );
