@@ -70,7 +70,7 @@ const Konversation = () => {
                         }
                     </div>
 
-                    <div class="bottom_wrapper">
+                    <div className="bottom_wrapper">
                         <textarea  className="message_input" placeholder="type a message"></textarea>
                         <Tooltip disabled={allRight} label="Du musst die Einheit erst abschließen um weiter zu machen!">
                             <Button onClick={() => markAsPassed('Konversation')} disabled={!allRight}> Weiter</Button>
