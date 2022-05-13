@@ -27,7 +27,7 @@
     font-weight: bold;
 }
 
-.card-content {
+.card-body {
     display:flex;
     justify-content:center;
     align-items: center;
