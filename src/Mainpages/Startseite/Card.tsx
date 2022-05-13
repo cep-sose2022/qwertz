@@ -9,7 +9,7 @@ const Card = (props: { image: any; title: string; text: string; link: string; })
         <div className="card-wrap">
             <div className="card" data-card="Lorem ipsum">
                 <div className="card-content z-index">
-                    <img className="icon"
+                    <img className="iconcard"
                         src={image}
                         alt="icon" />
                     <h3 className="title-sm">{title}</h3>

@@ -263,8 +263,9 @@
 
 /*===============Icon Größe im Bereich Schulung================*/
 .icon {
-    width: 90px;
-    margin-bottom: 1.7rem;
+    width: 300px;
+    margin-bottom: 0rem;
+    margin-left: -3.8rem;
 }
 
 /*============Abstand zwischen Überschrift und Text im Bereich Schulung============*/
