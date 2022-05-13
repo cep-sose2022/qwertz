@@ -112,8 +112,8 @@ const Wimmelbild = () => {
             <div className="wimmelbild-body">
                 <Box sx={{ Width: 500, High: 500 }}>
                     <BackgroundImage
-                        style={{ zIndex: -2, width: 1000, height: 563, marginLeft: 'auto', marginRight: 'auto', position: 'relative' }}
-                        src={image}
+                        style={{ zIndex: 1, width: 1000, height: 563, marginLeft: 'auto', marginRight: 'auto', position: 'relative' }}
+                        className="imagewimmelbild" src={image}
                         radius="sm"
                     >
                         {/*Her kommen alle Buttons rein*/}
@@ -124,7 +124,7 @@ const Wimmelbild = () => {
                                     style={{
                                         border: 'gray',
                                         opacity: b.isClicked ? .5 : 2,
-                                        backgroundColor: b.isClicked ? 'transparent' : 'transparent',
+                                        backgroundColor: b.isClicked ? 'gray' : 'transparent',
                                         width: b.width + "%",
                                         height: b.height + "%",
                                         position: 'absolute',
