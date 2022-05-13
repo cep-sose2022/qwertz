@@ -1,16 +1,16 @@
 import React, { useContext, useState } from "react";
 import JsonData from '../../Resources/Json/WimmelbildData.json';
-import { BackgroundImage, Box, Button, Modal, Tooltip } from "@mantine/core";
+import { BackgroundImage, Box, Button, Modal, Tooltip, Title } from "@mantine/core";
 import { ModiContext } from "../Gamemodi";
 
 const Wimmelbild = () => {
     const image = require('../../Resources/images/' + JsonData[0].bild);
     const [buttons, setButton] = useState([]);
     const [modalContent, setModalContent] = useState('');
-    const [modalOpened, setModalOpened] = useState(false);
+    const [openedModal, setModalOpened, setOpenedModal] = useState(false);
     const [allRight, setAllRight] = useState(false);
 
-    const {markAsPassed, setCurrentModiTitle} = useContext(ModiContext);
+    const { markAsPassed, setCurrentModiTitle } = useContext(ModiContext);
     setCurrentModiTitle("Wimmelbild");
 
     let id = 1;
@@ -45,9 +45,31 @@ const Wimmelbild = () => {
 
     return (
         <>
-            <Modal opened={modalOpened} onClose={() => setModalOpened(false)}>
-                <p>{modalContent}</p>
+            <Modal
+                transition="slide-down"
+                transitionDuration={900}
+                // transitionTimingFunction="ease"
+                overlayOpacity={0.55}
+                overlayBlur={3}
+                style={{ fontSize: 20 }}
+                // bgColor='red'
+                centered
+                opened={openedModal}
+                onClose={() => {
+                    setOpenedModal(false);
+                    setModalContent(modalContent[0])
+                }}
+
+            >
+
+                <Title size="sm" style={{ lineHeight: 2.5, fontSize: 22 }}>
+                    {modalContent.title}
+                </Title>
+
+                <p>{modalContent.content}</p>
             </Modal>
+            <Button onClick={() => setOpenedModal(true)}>Aufgabenstellung</Button>
+
             <Box sx={{ Width: 500, High: 500 }}>
                 <BackgroundImage
                     style={{ width: 500, height: 500, marginLeft: 'auto', marginRight: 'auto', position: 'relative' }}

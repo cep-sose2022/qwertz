@@ -4,12 +4,18 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
 import { ItemState } from "./ItemState";
-import { Button, Modal, Popover, Text, Tooltip, Title } from "@mantine/core";
+import { Button, Grid, Modal, Popover, Text, Tooltip, Title } from "@mantine/core";
 import { ModiContext } from "../Gamemodi";
+import { FiBookOpen } from "react-icons/fi";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
+import img from "../../Resources/images/orange_erstaunt.png";
+export const CardContext = createContext({
+    markAsX: (_id, _state) => {
+    }
+});
 const modalContent1 = [
     {
         title: "Aufgabenstellung",
@@ -122,33 +128,45 @@ const Zuordnung = () => {
     }
 
     return (
-
-        <div className="container-Zuordnung">
+        <div className="container-zuordnung">
             <DndProvider backend={HTML5Backend}>
-                <ItemContext.Provider value={{ markAsX }}>
+                <CardContext.Provider value={{ markAsX }}>
+                    <div className="zuordnung-header">
+                        <Grid justify={"center"} >
+                            <Grid.Col span={2}>
 
-                    <Modal
-                        centered
-                        opened={openedModal}
-                        onClose={() => {
-                            setOpenedModal(false);
-                            setModalContent(modalContent1[0])
-                        }}
-                        title={<BsFillCheckCircleFill />}
+                                <Modal
+                                    transition="slide-down"
+                                    transitionDuration={900}
+                                    // transitionTimingFunction="ease"
+                                    overlayOpacity={0.55}
+                                    overlayBlur={3}
+                                    style={{ fontSize: 20 }}
+                                    // bgColor='red'
+                                    centered
+                                    opened={openedModal}
+                                    onClose={() => {
+                                        setOpenedModal(false);
+                                        setModalContent(modalContent1[0])
+                                    }}
 
-                    >
+                                    title={<FiBookOpen />}
+                                >
+                                    <img className="center" width="200" height="250" src={img}></img>
 
-                        <Title size="sm" style={{ lineHeight: 2.5, fontSize: 22 }}>
-                            {modalContent.title}
+                                    <Title size="sm" style={{ lineHeight: 2.5, fontSize: 22 }}>
+                                        {modalContent.title}
+                                    </Title>
 
-                        </Title>
-                        <p>{modalContent.content}</p>
-                    </Modal>
+                                    <p>{modalContent.content}</p>
+                                </Modal>
+                                <Button onClick={() => setOpenedModal(true)}>Aufgabenstellung</Button>
 
-                    <div className="background">
 
-                        <div className="header-categorization">
-                            <div>
+
+                            </Grid.Col>
+
+                            <Grid.Col span={2}>
                                 <Popover
                                     opened={openedPopover}
                                     onClose={() => setOpenedPopover(false)}
@@ -158,61 +176,63 @@ const Zuordnung = () => {
                                     withArrow
                                 >
                                     <div style={{ display: 'flex' }}>
-                                        <Text size="sm">Du musst erst alle Boxen zuordnen</Text>
+                                        <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
                                     </div>
                                 </Popover>
-                            </div>
-                            <div>
+
                                 <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                                    <Button onClick={() => markAsPassed('Zuordnung')}
+                                    <Button onClick={() => markAsPassed('Ablaufanordnung')}
                                         disabled={!allRight}> Weiter</Button>
                                 </Tooltip>
-                            </div>
-                        </div>
-                        {/*heap of items */}
-                        <div className="item-heap">
-                            <DropZone type="Left">
-                                Left
-                                {
-                                    antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
-                                        <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                            right={i.right} />
-                                    )
-                                    )
-                                }
-                            </DropZone>
+                            </Grid.Col>
 
-                        </div>
-                        <div className="answer-heap">
-                            {/*left answer container*/}
-                            <DropZone type="Up">
-                                {
-                                    fragen[0].frage
-                                }
-                                {
-                                    antworten.filter(a => a.state === ItemState.UP).map(i => (
-                                        <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                            right={i.right} />)
-                                    )
-                                }
-                            </DropZone>
-                            {/*right answer container*/}
-                            <DropZone type="Down">
-                                {
-                                    fragen[1].frage
-                                }
-                                {
-                                    antworten.filter(a => a.state === ItemState.DOWN).map(i => (
-                                        <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                            right={i.right} />)
-                                    )
-                                }
-                            </DropZone>
+                        </Grid>
 
-                        </div>
 
                     </div>
-                </ItemContext.Provider>
+                    {/*heap of items */}
+                    <div className="item-heap">
+                        <DropZone type="Left">
+                            Left
+                            {
+                                antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
+                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                        right={i.right} />
+                                )
+                                )
+                            }
+                        </DropZone>
+
+                    </div>
+                    <div className="answer-heap">
+                        {/*left answer container*/}
+                        <DropZone type="Up">
+                            {
+                                fragen[0].frage
+                            }
+                            {
+                                antworten.filter(a => a.state === ItemState.UP).map(i => (
+                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                        right={i.right} />)
+                                )
+                            }
+                        </DropZone>
+                        {/*right answer container*/}
+                        <DropZone type="Down">
+                            {
+                                fragen[1].frage
+                            }
+                            {
+                                antworten.filter(a => a.state === ItemState.DOWN).map(i => (
+                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                        right={i.right} />)
+                                )
+                            }
+                        </DropZone>
+
+                    </div>
+
+                </CardContext.Provider>
             </DndProvider>
         </div >
     );
