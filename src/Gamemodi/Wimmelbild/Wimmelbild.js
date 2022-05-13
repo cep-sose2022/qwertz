@@ -110,11 +110,9 @@ const Wimmelbild = () => {
                 </Grid>
             </div>
             <div className="wimmelbild-body">
-
-
                 <Box sx={{ Width: 500, High: 500 }}>
                     <BackgroundImage
-                        style={{ width: 1000, height: 563, marginLeft: 'auto', marginRight: 'auto', position: 'relative' }}
+                        style={{ zIndex: -2, width: 1000, height: 563, marginLeft: 'auto', marginRight: 'auto', position: 'relative' }}
                         src={image}
                         radius="sm"
                     >
