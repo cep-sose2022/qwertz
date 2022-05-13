@@ -26,10 +26,17 @@ const DropBox = (props) => {
             style={{
                 background: (isDragging ? 'linear-gradient(to right bottom,#7608FF,#B273FF)' : 'linear-gradient(to right bottom,#0799FFFF,#3BADFF)'),
                 width: "auto",
-                minHeight: 50
+                minHeight: 50,
+                display: "flex",
+                flexDirection: "column",
             }}
         >
-            {children}
+            <div className="card-header">
+                <span>{id}</span>
+            </div>
+            <div className="card-content">
+                {children}
+            </div>
         </Center>
     );
 }

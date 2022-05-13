@@ -59,8 +59,8 @@ const Ablaufanordnung = () => {
     const [modalContent, setModalContent] = useState(modalContent1[0]);
     const [allRight, setAllRight] = useState(false);
 
-    const { markAsPassed, setCurrentModiTitle } = useContext(ModiContext);
-    // setCurrentModiTitle("Ablaufanordnung");
+    const { markAsPassed } = useContext(ModiContext);
+
     const init = () => {
         let id = 1;
         if (cards[0] === undefined) {
@@ -164,7 +164,7 @@ const Ablaufanordnung = () => {
 
                                     title={<FiBookOpen />}
                                 >
-                                    <img className="center" width="200" height="250" src={img}></img>
+                                    <img className="center" width="200" height="250" src={img} alt="Erstaunter Avatar"/>
 
                                     <Title size="sm" style={{ lineHeight: 2.5, fontSize: 22 }}>
                                         {modalContent.title}
