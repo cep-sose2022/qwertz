@@ -63,7 +63,7 @@ const Zuordnung = () => {
     const [allRight, setAllRight] = useState(false);
 
     const { markAsPassed, setCurrentModiTitle } = useContext(ModiContext);
-    setCurrentModiTitle("Zuordnung");
+    // setCurrentModiTitle("Zuordnung");
 
 
     if (fragen[0] === undefined) {
