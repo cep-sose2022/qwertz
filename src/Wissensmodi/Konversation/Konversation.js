@@ -1,12 +1,11 @@
 import React, {useContext, useState} from "react";
 import "./Konversation.css";
-import { Tooltip,Button} from '@mantine/core';
+import {Button, Tooltip} from '@mantine/core';
 
 
 import Data from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
 import {ModiContext} from "../../Gamemodi/Gamemodi";
-
 
 const Konversation = () => {
     const [bubbles, setBubbles] = useState([]);
@@ -32,8 +31,10 @@ const Konversation = () => {
 
     const abbilden = () => {
         const nextBubble = bubbles.filter(bubble => bubble.selected === false)[0];
-        nextBubble.selected = true;
-        setBubbles(bubbles.filter(bubble => bubble.id !== nextBubble.id).concat(nextBubble));
+        if (nextBubble !== undefined) {
+            nextBubble.selected = true;
+            setBubbles(bubbles.filter(bubble => bubble.id !== nextBubble.id).concat(nextBubble));
+        }
     }
     return (
         <div>
@@ -46,7 +47,10 @@ const Konversation = () => {
                                 <div className="button minimize"></div>
                                 <div className="button maximize"></div>
                             </div>
-                            <div className="title-chat">Chat</div>
+                            <div className="title-chat">
+                                <p>Chat</p>
+                            </div>
+
                         </div>
 
                     </div>
