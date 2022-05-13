@@ -3,7 +3,7 @@ import JsonData from '../../Resources/Json/WimmelbildData.json';
 import { BackgroundImage, Box, Button, Modal, Tooltip, Title, Grid, Popover, Text } from "@mantine/core";
 import { ModiContext } from "../Gamemodi";
 import './Wimmelbild.css'
-
+import antwort from './../../Resources/images/Wimmelbild/passwortsuchen_antwort.png'
 const Wimmelbild = () => {
     const image = require('../../Resources/images/' + JsonData[0].bild);
     const [buttons, setButton] = useState([]);
@@ -90,7 +90,8 @@ const Wimmelbild = () => {
                         </Popover>
 
                         <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                            <Button onClick={() => markAsPassed('Ablaufanordnung')}
+
+                            <Button onClick={() => markAsPassed('Wimmelbild')}
                                 disabled={!allRight}> Weiter</Button>
                         </Tooltip>
                     </Grid.Col>
@@ -102,8 +103,9 @@ const Wimmelbild = () => {
 
                 <Box sx={{ Width: 500, High: 500 }}>
                     <BackgroundImage
-                        style={{ width: 500, height: 500, marginLeft: 'auto', marginRight: 'auto', position: 'relative' }}
+                        style={{ width: 1000, height: 500, marginLeft: 'auto', marginRight: 'auto', position: 'relative' }}
                         src={image}
+
                         radius="sm"
                     >
                         {/*Her kommen alle Buttons rein*/}
@@ -114,7 +116,7 @@ const Wimmelbild = () => {
                                     style={{
                                         border: 'gray',
                                         opacity: b.isClicked ? .5 : 2,
-                                        // backgroundColor: b.isClicked ? 'gray' : 'transparent',
+                                        backgroundColor: b.isClicked ? 'gray' : 'gray',
                                         width: b.width + "%",
                                         height: b.height + "%",
                                         position: 'absolute',
@@ -130,7 +132,7 @@ const Wimmelbild = () => {
                     </BackgroundImage>
                 </Box>
             </div>
-        </div>
+        </div >
     );
 };
 
