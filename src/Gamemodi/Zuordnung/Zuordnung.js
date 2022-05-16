@@ -4,14 +4,12 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
 import { ItemState } from "./ItemState";
-import { Button, Grid, Modal, Popover, Text, Title, Tooltip } from "@mantine/core";
+import { Button, Grid, Modal, Popover, Text, Tooltip } from "@mantine/core";
 import { ModiContext } from "../Gamemodi";
-import { FiBookOpen } from "react-icons/fi";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
 
-import img from "../../Resources/images/orange_erstaunt.png";
 import { FcQuestions } from "react-icons/fc";
 
 export const ItemContext = createContext({
@@ -64,8 +62,7 @@ const Zuordnung = () => {
     const [modalContent, setModalContent] = useState(modalContent1[0]);
     const [allRight, setAllRight] = useState(false);
 
-    const { markAsPassed, setCurrentModiTitle } = useContext(ModiContext);
-    // setCurrentModiTitle("Zuordnung");
+    const { markAsPassed } = useContext(ModiContext);
 
 
     if (fragen[0] === undefined) {
@@ -155,7 +152,7 @@ const Zuordnung = () => {
 
                                     title={<IoIosInformationCircleOutline />}
                                 >
-                                    <h3 size="sm" style={{ lineHeight: 2.5, fontSize: 22 }}>
+                                    <h3 style={{ lineHeight: 2.5, fontSize: 22 }}>
                                         {modalContent.title}
                                     </h3>
 
