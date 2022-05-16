@@ -30,7 +30,7 @@ const modalContent1 = [
         content: "Super du hast alles richtig!"
     }, {
         title: "Spielerklärung",
-        content: "Ordne die Elemente den zwei Verschiedenen Boxen zu. "
+        content: "Ordne die grauen Elemente den zwei unteren Boxen zu. "
     }
 ]
 
