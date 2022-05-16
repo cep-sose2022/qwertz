@@ -7,8 +7,8 @@ const EndscreenItem = ({ data }) => (
             <p>{data.text}</p>
             <br></br>
             <div className="btn">
-                <Link to="../../Badges">
-                    Weiter zum abschließen  ➥
+                <Link to="../../Sammlung">
+                    Weiter zum Dashboard  ➥
                 </Link>
             </div>
 
