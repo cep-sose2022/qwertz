@@ -46,12 +46,20 @@ const Gamemodi = () => {
     useEffect(() => {
             if (firstRender) {
                 setFirstRender(false)
-                navigateToCurrentModi()
+                loadModiData()
             }
         }
     )
 
-    const navigateToCurrentModi = () => {
+    // navigierte zum aktuellen Modi
+    const redirect = (eigenerName) => {
+        const currentModiTitle = storage.getCurrentModiTitle()
+        if (currentModiTitle !== null && currentModiTitle !== eigenerName) {
+            navigator('./' + currentModiTitle)
+        }
+    }
+
+    const loadModiData = () => {
         // läd die Modis (also ob sie schon abgeschlossen sin oder net) aus dem LocalStorage
         const tempModis = storage.getModis()
         if (tempModis === undefined || tempModis === null) {
@@ -59,7 +67,7 @@ const Gamemodi = () => {
         } else
             modis = tempModis
 
-        // Redirected zu dem nächsten modi der dran is
+        // setzt den aktuellen Modi Title
         const tempModiTitle = storage.getCurrentModiTitle()
         if (tempModiTitle === undefined || tempModiTitle === null) {
             const modiTitle = modis.filter(modi => !modi.passed)[0].title
@@ -70,7 +78,7 @@ const Gamemodi = () => {
         }
     }
 
-    // sett einen Modi alls 'Passed' und leitet zum nächsten weiter
+    // setzt einen Modi alls 'Passed' und leitet zum nächsten weiter
     const markAsPassed = (modiTitle) => {
         modis.filter(modi => modi.title === modiTitle)[0].passed = true;
         if (modis.filter(modi => !modi.passed).length !== 0) {
@@ -114,7 +122,7 @@ const Gamemodi = () => {
 
             {/* Bereich für die Modi*/}
             <div className="container" style={{position: 'relative'}}>
-                <ModiContext.Provider value={{markAsPassed, currentModiTitle}}>
+                <ModiContext.Provider value={{markAsPassed, redirect}}>
                     <Outlet/>
                 </ModiContext.Provider>
             </div>
