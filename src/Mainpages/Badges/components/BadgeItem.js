@@ -31,10 +31,6 @@ const BadgeItem = ({ data, id }) => (
                 <span className="circle"/>
             </div>
         }
-
-
-
-
     </div>
 );
 

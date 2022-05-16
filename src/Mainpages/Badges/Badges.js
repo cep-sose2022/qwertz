@@ -10,7 +10,7 @@ import JsonData from "../../Resources/Json/BadgeData.json";
 
 const Badges = () => (
     <div className="bodyForBadge">
-        <Headline title={"Badges"} headline={"irgendwas sinnvolles steht hier"} text={""} />
+        <Headline title={"Badges"} headline={""} text={""} />
         <BackgroundImage className="image" src={''}>
             <BadgeLine badgeData={JsonData} />
         </BackgroundImage>
