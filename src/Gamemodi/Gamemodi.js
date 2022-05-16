@@ -40,12 +40,12 @@ const Gamemodi = () => {
     const [modalOpened, setModalOpened] = useState(false);
     const navigator = useNavigate();
     const [currentModiTitle, setCurrentModiTitle] = useState("");
-    let firstRender = true;
+    const [firstRender, setFirstRender] = useState(true)
 
 
     useEffect(() => {
             if (firstRender) {
-                firstRender = false
+                setFirstRender(false)
                 navigateToCurrentModi()
             }
         }

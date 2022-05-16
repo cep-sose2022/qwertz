@@ -78,6 +78,7 @@ const Wimmelbild = () => {
                         </Modal>
                     </Grid.Col>
 
+                    {/* Weiter Button der nur geht, wenn alles gefunden wurde */}
                     <Grid.Col span={2}>
                         <Tooltip label="Du muss alles gefunden haben um weiter zu machen!">
                             <Button onClick={() => markAsPassed(eigenerName)}
@@ -85,7 +86,7 @@ const Wimmelbild = () => {
                         </Tooltip>
                     </Grid.Col>
 
-                    {/* Weiter Button der nur geht, wenn alles gefunden wurde */}
+                    {/* Button für die Spielerklärung */}
                     <Grid.Col span={2}>
                         <div style={{textAlign: 'end'}}>
                             <Button style={{
@@ -98,6 +99,7 @@ const Wimmelbild = () => {
 
                 </Grid>
             </div>
+
             <div className="wimmelbild-body">
                 <Box sx={{Width: 500, High: 500}}>
                     <BackgroundImage

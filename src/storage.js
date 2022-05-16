@@ -39,7 +39,6 @@ storage.removeModis = () => {
 }
 storage.setModiPassed = (modiId) => {
     let modis = storage.getModis()
-    console.log(modis,modiId, "storage")
     modis.filter(modi => modi.modiID === modiId)[0].passed = true
     storage.setModis(modis)
 }
