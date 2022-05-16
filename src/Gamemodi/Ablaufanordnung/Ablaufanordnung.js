@@ -53,6 +53,7 @@ function shuffle(array) {
 }
 
 const Ablaufanordnung = () => {
+    const eigenerName = 'Ablaufanordnung';
     const [cards, setCards] = useState([]);
     const [boxes] = useState([]);
     const [openedModal, setOpenedModal] = useState(false);
@@ -179,7 +180,7 @@ const Ablaufanordnung = () => {
                                 </Popover>
 
                                 <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                                    <Button onClick={() => markAsPassed('Ablaufanordnung')}
+                                    <Button onClick={() => markAsPassed(eigenerName)}
                                             disabled={!allRight}> Weiter</Button>
                                 </Tooltip>
                             </Grid.Col>

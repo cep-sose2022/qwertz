@@ -52,6 +52,7 @@ function shuffle(array) {
 }
 
 const Zuordnung = () => {
+    const eigenerName = 'Zuordnung';
     const [fragen] = useState([]);
     const [antworten, setAntworten] = useState([]);
     const [openedModal, setOpenedModal] = useState(false);
@@ -170,7 +171,7 @@ const Zuordnung = () => {
 
                                 {/* Weiter Button der nur geht wenn alles richtig is */}
                                 <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                                    <Button onClick={() => markAsPassed('Zuordnung')}
+                                    <Button onClick={() => markAsPassed(eigenerName)}
                                             disabled={!allRight}> Weiter</Button>
                                 </Tooltip>
                             </Grid.Col>
