@@ -11,9 +11,7 @@ const Zitat = (props: { JsonData: any; }) => {
 
     return (
         <div className="quote-body">
-
             <div className="icon-quote">
-
                 <span className="icon2" />
                 <i className="fas fa-quote-left" />
                 <p className="quote">{zitat.quote}

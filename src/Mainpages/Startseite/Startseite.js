@@ -46,30 +46,23 @@ const Startseite = (props) => {
 
 
 
-                        <Spoiler maxHeight={450} showLabel="Show more" hideLabel="Hide">
-                            {<Card
-                                image={img5}
-                                title={"E-Learning-Plattform"}
-                                text={"Unsere E-Learning-Module sind für Automatisierungsingenieur aus dem Sektor Chemie perfekt geeignet. Sie umfasst Wissensmodus und interaktive Module, die spielerisch zur Auseinandersetzung mit OT-Security anregen. "}
-                            />}
-                        </Spoiler>
+                        <Card
+                            image={img5}
+                            title={"E-Learning-Plattform"}
+                            text={"Unsere E-Learning-Module sind für Automatisierungsingenieur aus dem Sektor Chemie perfekt geeignet. Sie umfasst Wissensmodus und interaktive Module, die spielerisch zur Auseinandersetzung mit OT-Security anregen. "}
+                        />
 
-                        <Spoiler maxHeight={450} showLabel="Show more" hideLabel="Hide">
-                            {<Card
-                                image={img3}
-                                title={"Awareness-Schulung"}
-                                text={"Der Schulungskurs besteht aus 2 Wissensmodulen und 3 Gamemodulen, die die wichtigsten Angriffsvektoren und den Schutz vor Bedrohungen behandeln. Die einzelnen Module liefern wertvolle Informationen über die OT-Security."}
-                            />}
-                        </Spoiler>
+                        <Card
+                            image={img3}
+                            title={"Awareness-Schulung"}
+                            text={"Der Schulungskurs besteht aus 2 Wissensmodulen und 3 Gamemodulen, die die wichtigsten Angriffsvektoren und den Schutz vor Bedrohungen behandeln. Die einzelnen Module liefern wertvolle Informationen über die OT-Security."}
+                        />
 
-                        <Spoiler maxHeight={450} showLabel="Show more" hideLabel="Hide">
-                            {<Card
-                                image={img4}
-                                title={"Test"}
-                                text={"Der Schulungskurs besteht aus 2 Wissensmodulen und 3 Gamemodulen, die die wichtigsten Angriffsvektoren und den Schutz vor Bedrohungen behandeln. Die einzelnen Module liefern wertvolle Informationen über die OT-Security."}
-                            />}
-                        </Spoiler>
-
+                        <Card
+                            image={img4}
+                            title={"Test"}
+                            text={"Der Schulungskurs besteht aus 2 Wissensmodulen und 3 Gamemodulen, die die wichtigsten Angriffsvektoren und den Schutz vor Bedrohungen behandeln. Die einzelnen Module liefern wertvolle Informationen über die OT-Security."}
+                        />
                     </div>
                 </div>
             </section>
