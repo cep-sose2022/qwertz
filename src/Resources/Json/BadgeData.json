@@ -1,6 +1,6 @@
 [
   {
-    "title": "Phishing",
+    "title": "Schadsoftware",
     "text": "Es gibt zunächst zwei Theorievideos und danach erwarten Sie interkative Spiele",
     "modis": [
       "Konversation",
@@ -11,7 +11,7 @@
     ]
   },
   {
-    "title": "Firewall",
+    "title": "Phishing",
     "text": "Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele",
     "modis": [
       "Konversation",
@@ -22,7 +22,7 @@
     ]
   },
   {
-    "title": "OT",
+    "title": "Patchmanagement",
     "text": "Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele",
     "modis": [
       "Konversation",
@@ -31,8 +31,9 @@
       "Wimmelbild",
       "Zuordnung"
     ]
-  },{
-    "title": "Phishing",
+  },
+  {
+    "title": "Remote Access",
     "text": "Es gibt zunächst zwei Theorievideos und danach erwarten Sie interkative Spiele",
     "modis": [
       "Konversation",
@@ -43,18 +44,7 @@
     ]
   },
   {
-    "title": "Firewall",
-    "text": "Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele",
-    "modis": [
-      "Konversation",
-      "Video",
-      "Ablaufanordnung",
-      "Wimmelbild",
-      "Zuordnung"
-    ]
-  },
-  {
-    "title": "OT",
+    "title": "Smartphone im Produktionsumfeld",
     "text": "Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele",
     "modis": [
       "Konversation",
