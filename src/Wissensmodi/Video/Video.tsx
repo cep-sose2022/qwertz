@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { ModiContext } from "../../Gamemodi/Gamemodi";
 import { Button } from "@mantine/core";
 
-
 const Video = () => {
 
     // @ts-ignore

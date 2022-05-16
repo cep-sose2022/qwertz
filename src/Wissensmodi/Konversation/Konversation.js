@@ -29,7 +29,23 @@ const Konversation = () => {
         })
 
     }
-
+    const modalContent1 = [
+        {
+            title: "Aufgabenstellung",
+            content: "hier hast du eine Wichtige und coole aufgabe"
+        },
+        {
+            title: "Leider Falsch",
+            content: "Leider nicht alles richtig, schaue dir das noch mal an."
+        },
+        {
+            title: "Alles Richtig",
+            content: "Super du hast alles richtig!"
+        }, {
+            title: "Spielerklärung",
+            content: "Ordne die Elemente den zwei Verschiedenen Boxen zu. "
+        }
+    ]
 
     const abbilden = () => {
         const nextBubble = bubbles.filter(bubble => bubble.selected === false)[0];

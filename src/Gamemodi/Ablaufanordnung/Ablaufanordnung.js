@@ -1,19 +1,20 @@
-import React, {createContext, useContext, useState} from 'react';
-import {DndProvider} from "react-dnd";
+import React, { createContext, useContext, useState } from 'react';
+import { DndProvider } from "react-dnd";
 import CardStorage from "./CardStorage";
 import './Ablaufanordnung.css'
 import DragCard from "./DragCard";
-import {ItemState} from "./ItemState";
-import {HTML5Backend} from "react-dnd-html5-backend";
+import { ItemState } from "./ItemState";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 import DropBox from "./DropBox";
-import {Button, Grid, Modal, Popover, SimpleGrid, Text, Title, Tooltip} from "@mantine/core";
+import { Button, Grid, Modal, Popover, SimpleGrid, Text, Title, Tooltip } from "@mantine/core";
 
-import {ModiContext} from "../Gamemodi";
-import {FiBookOpen} from "react-icons/fi";
+import { ModiContext } from "../Gamemodi";
+import { FiBookOpen } from "react-icons/fi";
+import { IoIosInformationCircleOutline } from "react-icons/io";
 
 import img from "../../Resources/images/orange_erstaunt.png";
-import {FcQuestions} from "react-icons/fc";
+import { FcQuestions } from "react-icons/fc";
 
 export const CardContext = createContext({
     markAsX: (_id, _state) => {
@@ -32,6 +33,9 @@ const modalContent1 = [
     {
         title: "Alles Richtig",
         content: "Super du hast alles richtig!"
+    }, {
+        title: "Spielerklärung",
+        content: "(Sachverhalt/Problem beschreiben). Ordne nun die Sätze."
     }
 ]
 
@@ -163,14 +167,11 @@ const Ablaufanordnung = () => {
                                         setOpenedModal(false);
                                         setModalContent(modalContent1[0])
                                     }}
-
-                                    title={<FiBookOpen />}
+                                    title={<IoIosInformationCircleOutline size={32} />}
                                 >
-                                    <img className="center" width="200" height="250" src={img} alt="Erstaunter Avatar"/>
-
-                                    <Title size="sm" style={{ lineHeight: 2.5, fontSize: 22 }}>
+                                    <h3 size="sm" style={{ lineHeight: 2.5, fontSize: 22 }}>
                                         {modalContent.title}
-                                    </Title>
+                                    </h3>
 
                                     <p>{modalContent.content}</p>
                                 </Modal>
@@ -189,24 +190,24 @@ const Ablaufanordnung = () => {
                                     position="bottom"
                                     withArrow
                                 >
-                                    <div style={{display: 'flex'}}>
+                                    <div style={{ display: 'flex' }}>
                                         <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
                                     </div>
                                 </Popover>
 
                                 <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
                                     <Button onClick={() => markAsPassed('Ablaufanordnung')}
-                                            disabled={!allRight}> Weiter</Button>
+                                        disabled={!allRight}> Weiter</Button>
                                 </Tooltip>
                             </Grid.Col>
                             <Grid.Col span={2}>
-                                <div style={{textAlign: 'end'}}>
+                                <div style={{ textAlign: 'end' }}>
                                     <Button style={{
                                         background: 'transparent'
                                     }} onClick={() => {
-                                        setModalContent("Spielerklärung")
+                                        setModalContent(modalContent1[3])
                                         setOpenedModal(true)
-                                    }}><FcQuestions size={32}/></Button>
+                                    }}><FcQuestions size={32} /></Button>
                                 </div>
 
                             </Grid.Col>
