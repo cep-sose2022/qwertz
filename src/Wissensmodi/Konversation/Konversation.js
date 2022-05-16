@@ -1,14 +1,13 @@
 import React, {useContext, useEffect, useState} from "react";
 import "./Konversation.css";
-import {Button, Tooltip, Grid, Modal, Title, Popover, Text} from '@mantine/core';
+import {Button, Tooltip, Grid, Modal, Title} from '@mantine/core';
 
 
 import Data from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
 import {ModiContext} from "../../Gamemodi/Gamemodi";
-import storage from "../../storage";
-import {useNavigate} from "react-router";
 import {FcQuestions} from "react-icons/fc";
+import {useScrollIntoView} from "@mantine/hooks";
 
 const modalData = [
     {
@@ -20,14 +19,12 @@ const modalData = [
 const Konversation = () => {
     const eigenerName = "Konversation";
     const [bubbles, setBubbles] = useState([]);
-    const [buttons, setButton] = useState([]);
-    const [modalContent, setModalContent] = useState(modalData[0]);
+    const [modalContent] = useState(modalData[0]);
     const [openedModal, setModalOpened] = useState(false);
-    const [setAllRight] = useState(false);
-    let allRight = true;
-    const navigator = useNavigate();
+    const [allRight, setAllRight] = useState(false);
+    const {scrollIntoView, targetRef, scrollableRef} = useScrollIntoView({duration: 200});
 
-    const {markAsPassed} = useContext(ModiContext);
+    const {markAsPassed, redirect} = useContext(ModiContext);
 
     // läd die daten aus der DB und schreib sie in eine const
     if (bubbles[0] === undefined) {
@@ -42,21 +39,10 @@ const Konversation = () => {
         })
     }
 
-    // useEffect(() =>
-    //     redirect()
-    // )
-
-    // navigierte zum aktuellen Modi
-    // const [firstRender, setFirstRender] = useState(true)
-    // const redirect = () => {
-    //     if (firstRender) {
-    //         setFirstRender(false)
-    //         const currentModiTitle = storage.getCurrentModiTitle()
-    //         if (currentModiTitle !== null && currentModiTitle !== eigenerName) {
-    //             navigator('../' + currentModiTitle)
-    //         }
-    //     }
-    // }
+    // um zu dem Modi umzuleiten, der gerade daran is
+    useEffect(() =>
+        redirect(eigenerName)
+    )
 
     // zum anzeigen des Nächsten Textes
     const abbilden = () => {
@@ -65,6 +51,9 @@ const Konversation = () => {
             nextBubble.selected = true;
             setBubbles(bubbles.filter(bubble => bubble.id !== nextBubble.id).concat(nextBubble));
         }
+
+        if (bubbles.filter(bubbles => bubbles.selected === false) >= 0)
+            setAllRight(true);
     }
 
     return (
@@ -113,7 +102,12 @@ const Konversation = () => {
             </div>
 
             <div className="konversation-body">
-                <div className="theoretic-conversation" onClick={abbilden}>
+                <div className="theoretic-conversation" onClick={() => {
+                    abbilden();
+                    setTimeout(() => scrollIntoView({alignment: 'end'})
+                        , 50)
+
+                }}>
                     <div className="theoretic-conversation-body">
                         <div className="chat-window">
                             <div className="top-menu">
@@ -128,7 +122,7 @@ const Konversation = () => {
                             </div>
                         </div>
 
-                        <div className="chat-objects">
+                        <div className="chat-objects" ref={scrollableRef}>
                             {
                                 bubbles.filter(bubbles => bubbles.selected === true).map(
                                     bubbles => <Bubble key={bubbles.id} category={bubbles.category}
@@ -137,9 +131,9 @@ const Konversation = () => {
                             }
 
                             {
-                                bubbles.filter(bubbles => bubbles.selected === false) >= 0 ?
-                                    allRight = true :
-                                    <button className="loading-button" id="loading-Button">
+                                allRight ?
+                                    null :
+                                    <button className="loading-button" id="loading-Button" ref={targetRef}>
                                         <span>.</span><span>.</span><span>.</span>
                                     </button>
 
