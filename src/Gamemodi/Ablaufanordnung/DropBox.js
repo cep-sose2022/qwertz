@@ -7,7 +7,7 @@ import "./Ablaufanordnung.css";
 
 
 const DropBox = (props) => {
-    const {children, id, bgColor} = props;
+    const {children, id} = props;
 
 
     const {markAsX} = useContext(CardContext);

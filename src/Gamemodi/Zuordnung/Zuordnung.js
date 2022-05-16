@@ -1,25 +1,26 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import DropZone from "./DropZone";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import {DndProvider} from "react-dnd";
+import {HTML5Backend} from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
-import { ItemState } from "./ItemState";
-import { Button, Grid, Modal, Popover, Text, Tooltip } from "@mantine/core";
-import { ModiContext } from "../Gamemodi";
-import { IoIosInformationCircleOutline } from "react-icons/io";
+import {ItemState} from "./ItemState";
+import {Button, Grid, Modal, Popover, Text, Tooltip} from "@mantine/core";
+import {ModiContext} from "../Gamemodi";
+import {IoIosInformationCircleOutline} from "react-icons/io";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
 
-import { FcQuestions } from "react-icons/fc";
+import {FcQuestions} from "react-icons/fc";
 
 export const ItemContext = createContext({
     markAsX: (_id, _state) => {
     }
 });
-const modalContent1 = [
+
+const modalData = [
     {
-        title: "Aufgabenstellung",
-        content: "hier hast du eine Wichtige und coole aufgabe"
+        title: "Spielerklärung",
+        content: "Ordne die Elemente den zwei Verschiedenen Boxen zu. "
     },
     {
         title: "Leider Falsch",
@@ -28,12 +29,8 @@ const modalContent1 = [
     {
         title: "Alles Richtig",
         content: "Super du hast alles richtig!"
-    }, {
-        title: "Spielerklärung",
-        content: "Ordne die grauen Elemente den zwei unteren Boxen zu. "
     }
 ]
-
 
 
 function shuffle(array) {
@@ -55,16 +52,18 @@ function shuffle(array) {
 }
 
 const Zuordnung = () => {
+    const eigenerName = 'Zuordnung';
     const [fragen] = useState([]);
     const [antworten, setAntworten] = useState([]);
     const [openedModal, setOpenedModal] = useState(false);
     const [openedPopover, setOpenedPopover] = useState(false);
-    const [modalContent, setModalContent] = useState(modalContent1[0]);
+    const [modalContent, setModalContent] = useState(modalData[0]);
     const [allRight, setAllRight] = useState(false);
 
-    const { markAsPassed } = useContext(ModiContext);
+    const {markAsPassed} = useContext(ModiContext);
 
 
+    // läd die daten aus der DB und schreib sie in eine const
     if (fragen[0] === undefined) {
         let fragenId = 1;
         JsonList.map(object => {
@@ -86,11 +85,11 @@ const Zuordnung = () => {
             });
             fragenId++;
         });
-
         setAntworten(shuffle(antworten));
     }
 
 
+    // makiert eine Box als den übergebenen status
     const markAsX = (id, state) => {
         const draggedItem = antworten.filter((i) => i.id === id)[0];
         draggedItem.state = state;
@@ -98,6 +97,7 @@ const Zuordnung = () => {
     }
 
 
+    // prüft, ob alle Boxen richtig zugeteilt sind, aber nur wenn auch alle zugeteilt wurden
     const checkIfAllRight = () => {
         if (antworten.filter(antwort => antwort.state === ItemState.NOTSELECTED).length !== 0) {
             setOpenedPopover(true);
@@ -116,12 +116,12 @@ const Zuordnung = () => {
 
         if (antworten.filter(antwort => antwort.right === false).length === 0) {
             // alles Richtig
-            setModalContent(modalContent1[2]);
+            setModalContent(modalData[2]);
             setOpenedModal(true);
             setAllRight(true);
         } else {
             // noch was Falsch
-            setModalContent(modalContent1[1]);
+            setModalContent(modalData[1]);
             setOpenedModal(true);
             setAllRight(false);
         }
@@ -130,40 +130,31 @@ const Zuordnung = () => {
     return (
         <div className="container-zuordnung">
             <DndProvider backend={HTML5Backend}>
-                <ItemContext.Provider value={{ markAsX }}>
+                <ItemContext.Provider value={{markAsX}}>
                     <div className="zuordnung-header">
-                        <Grid justify={"space-between"} >
-                            <Grid.Col span={2}>
+                        <Grid justify={"space-between"}>
 
+                            {/*Modal für die Aufgabenstellung und zum Anzusagen ob alles Richtig/falsch is*/}
+                            <Grid.Col span={2}>
                                 <Modal
                                     transition="slide-down"
                                     transitionDuration={900}
-                                    // transitionTimingFunction="ease"
                                     overlayOpacity={0.55}
                                     overlayBlur={3}
-                                    style={{ fontSize: 20 }}
-                                    // bgColor='red'
+                                    style={{fontSize: 20}}
                                     centered
                                     opened={openedModal}
-                                    onClose={() => {
-                                        setOpenedModal(false);
-                                        setModalContent(modalContent1[0])
-                                    }}
-
-                                    title={<IoIosInformationCircleOutline />}
+                                    onClose={() => setOpenedModal(false)}
+                                    title={<IoIosInformationCircleOutline/>}
                                 >
-                                    <h3 style={{ lineHeight: 2.5, fontSize: 22 }}>
+                                    <h3 style={{lineHeight: 2.5, fontSize: 22}}>
                                         {modalContent.title}
                                     </h3>
-
                                     <p>{modalContent.content}</p>
                                 </Modal>
-                                <Button onClick={() => setOpenedModal(true)}>Aufgabenstellung</Button>
-
-
-
                             </Grid.Col>
 
+                            {/* Popover um anzusagen das erst alle boxen zugeteilt werden müssen */}
                             <Grid.Col span={2}>
                                 <Popover
                                     opened={openedPopover}
@@ -173,45 +164,49 @@ const Zuordnung = () => {
                                     position="bottom"
                                     withArrow
                                 >
-                                    <div style={{ display: 'flex' }}>
+                                    <div style={{display: 'flex'}}>
                                         <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
                                     </div>
                                 </Popover>
 
+                                {/* Weiter Button der nur geht wenn alles richtig is */}
                                 <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                                    <Button onClick={() => markAsPassed('Ablaufanordnung')}
-                                        disabled={!allRight}> Weiter</Button>
+                                    <Button onClick={() => markAsPassed(eigenerName)}
+                                            disabled={!allRight}> Weiter</Button>
                                 </Tooltip>
                             </Grid.Col>
+
+                            {/* Button für die Spielerklärung */}
                             <Grid.Col span={2}>
-                                <div style={{ textAlign: 'end' }}>
+                                <div style={{textAlign: 'end'}}>
                                     <Button style={{
                                         background: 'transparent'
                                     }} onClick={() => {
-                                        setModalContent(modalContent1[3])
+                                        setModalContent(modalData[0])
                                         setOpenedModal(true)
-                                    }} ><FcQuestions size={32} /></Button>
+                                    }}><FcQuestions size={32}/></Button>
                                 </div>
-
                             </Grid.Col>
+
                         </Grid>
 
 
                     </div>
                     {/*heap of items */}
                     <div className="item-heap">
+                        {/* Storage für die antworten */}
                         <DropZone type="Left">
                             Left
                             {
                                 antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
-                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                        right={i.right} />
-                                )
+                                        <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                                  right={i.right}/>
+                                    )
                                 )
                             }
                         </DropZone>
-
                     </div>
+
                     <div className="answer-heap">
                         {/*left answer container*/}
                         <DropZone type="Up">
@@ -221,7 +216,7 @@ const Zuordnung = () => {
                             {
                                 antworten.filter(a => a.state === ItemState.UP).map(i => (
                                     <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                        right={i.right} />)
+                                              right={i.right}/>)
                                 )
                             }
                         </DropZone>
@@ -233,16 +228,15 @@ const Zuordnung = () => {
                             {
                                 antworten.filter(a => a.state === ItemState.DOWN).map(i => (
                                     <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                        right={i.right} />)
+                                              right={i.right}/>)
                                 )
                             }
                         </DropZone>
-
                     </div>
 
                 </ItemContext.Provider>
             </DndProvider>
-        </div >
+        </div>
     );
 }
 

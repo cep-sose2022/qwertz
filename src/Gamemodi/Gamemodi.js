@@ -42,31 +42,37 @@ const Gamemodi = () => {
     const [currentModiTitle, setCurrentModiTitle] = useState("");
     let firstRender = true;
 
+
     useEffect(() => {
             if (firstRender) {
                 firstRender = false
-                const tempModis = storage.getModis()
-                console.log(tempModis)
-                if (tempModis === undefined || tempModis === null) {
-                    storage.setModis(modis)
-                } else
-                    modis = tempModis
-
-                const tempModiTitle = storage.getCurrentModiTitle()
-                if (tempModiTitle === undefined || tempModiTitle === null) {
-                    const modiTitle = modis.filter(modi => !modi.passed)[0].title
-                    setCurrentModiTitle(modiTitle)
-                    console.log(modiTitle, "Das speicher ich Jetzt")
-                    storage.setCurrentModiTitle(modiTitle)
-                } else {
-                    setCurrentModiTitle(tempModiTitle)
-                }
+                navigateToCurrentModi()
             }
-        }, [firstRender]
+        }
     )
 
-    const markAsPassed = (title) => {
-        modis.filter(modi => modi.title === title)[0].passed = true;
+    const navigateToCurrentModi = () => {
+        // läd die Modis (also ob sie schon abgeschlossen sin oder net) aus dem LocalStorage
+        const tempModis = storage.getModis()
+        if (tempModis === undefined || tempModis === null) {
+            storage.setModis(modis)
+        } else
+            modis = tempModis
+
+        // Redirected zu dem nächsten modi der dran is
+        const tempModiTitle = storage.getCurrentModiTitle()
+        if (tempModiTitle === undefined || tempModiTitle === null) {
+            const modiTitle = modis.filter(modi => !modi.passed)[0].title
+            setCurrentModiTitle(modiTitle)
+            storage.setCurrentModiTitle(modiTitle)
+        } else {
+            setCurrentModiTitle(tempModiTitle)
+        }
+    }
+
+    // sett einen Modi alls 'Passed' und leitet zum nächsten weiter
+    const markAsPassed = (modiTitle) => {
+        modis.filter(modi => modi.title === modiTitle)[0].passed = true;
         if (modis.filter(modi => !modi.passed).length !== 0) {
             let modiTitle = modis.filter(modi => !modi.passed)[0].title
             storage.setCurrentModiTitle(modiTitle)
@@ -74,7 +80,6 @@ const Gamemodi = () => {
             setCurrentModiTitle(modiTitle)
             navigator('./' + modiTitle)
         } else {
-            // setCurrentModiTitle("Endscreen")
             storage.removeCurrentModiTitle()
             storage.removeModis()
             navigator('./Endscreen')

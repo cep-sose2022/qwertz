@@ -13,13 +13,13 @@ const Dashboard = () => {
                     <Link to='../Dashboard/Sammlung'>Dashboard</Link>
                 </NavBar>
             </header>
-            <body id="body">
-            <section className="services section" id="services">
-                <div className="container">
-                    <Outlet/>
-                </div>
-            </section>
-            </body>
+            <div id="body">
+                <section className="services section" id="services">
+                    <div className="container">
+                        <Outlet/>
+                    </div>
+                </section>
+            </div>
         </>
 
     );

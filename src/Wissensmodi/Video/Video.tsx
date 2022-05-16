@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import { ModiContext } from "../../Gamemodi/Gamemodi";
-import { Button } from "@mantine/core";
+import React, {useContext} from "react";
+import {ModiContext} from "../../Gamemodi/Gamemodi";
+import {Button} from "@mantine/core";
 
 const Video = () => {
-
+    const eigenerName = 'Video';
     // @ts-ignore
-    const { markAsPassed } = useContext(ModiContext);
+    const {markAsPassed} = useContext(ModiContext);
 
     return (
         <>
@@ -14,10 +14,7 @@ const Video = () => {
                 <video src="Bsp_Video.ogg"></video>
 
             </div>
-
-
-
-            <Button onClick={() => markAsPassed('Video')} disabled={false}> Weiter</Button>
+            <Button onClick={() => markAsPassed(eigenerName)} disabled={false}> Weiter</Button>
         </>
     );
 }
