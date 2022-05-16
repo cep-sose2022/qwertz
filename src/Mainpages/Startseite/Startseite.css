@@ -42,7 +42,7 @@
 /*============= Avatar Bild ============= */
 .column-2 image {
     position: relative;
-    width: 10%;
+    width: 50%;
 }
 
 .image {
@@ -297,12 +297,12 @@
 .about {
     background-color: var(--light-three);
     overflow: hidden;
-    height: 480px;
+    height: 550px;
 }
 
 .about img {
     max-width: 300px;
-    top: -20rem;
+    top: -29rem;
 }
 
 .about .text {
@@ -677,4 +677,8 @@
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.icon-quote p {
+    font-size: 1.2rem;
 }
