@@ -27,5 +27,22 @@ storage.setBadgePassed = (badgeID) => {
     storage.setBadges(badges)
 }
 
+// Methoden um mit den Modis zu agieren
+storage.setModis = (modis) => {
+    localStorage.setItem("modis", JSON.stringify(modis))
+}
+storage.getModis = () => {
+    return JSON.parse(localStorage.getItem("modis"))
+}
+storage.removeModis = () => {
+    localStorage.removeItem("modis")
+}
+storage.setModiPassed = (modiId) => {
+    let modis = storage.getModis()
+    console.log(modis,modiId, "storage")
+    modis.filter(modi => modi.modiID === modiId)[0].passed = true
+    storage.setModis(modis)
+}
+
 
 module.exports = storage
