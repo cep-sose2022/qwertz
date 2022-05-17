@@ -3,8 +3,6 @@ import JsonData from '../../Resources/Json/WimmelbildData.json';
 import { BackgroundImage, Box, Button, Grid, Modal, Title, Tooltip } from "@mantine/core";
 import { ModiContext } from "../Gamemodi";
 import { FcQuestions } from "react-icons/fc";
-import { ImCircleRight } from "react-icons/im";
-import { ImCircleLeft } from "react-icons/im";
 
 import './Wimmelbild.css'
 
@@ -19,7 +17,8 @@ const Wimmelbild = () => {
     const eigenerName = 'Wimmelbild';
     const image = require('../../Resources/images/' + JsonData[0].bild);
     const [buttons, setButton] = useState([]);
-    const [modalContent, setModalContent] = useState(modalData[0]);
+    const [modalTitle, setModalTitle] = useState(modalData[0].title);
+    const [modalContent, setModalContent] = useState(modalData[0].content);
     const [openedModal, setModalOpened] = useState(false);
     const [allRight, setAllRight] = useState(false);
 
@@ -47,6 +46,7 @@ const Wimmelbild = () => {
         const clickedButton = buttons.filter(button => button.id === id)[0];
         clickedButton.isClicked = true;
 
+        setModalTitle("")
         setModalContent(clickedButton.text);
         setModalOpened(true);
 
@@ -75,9 +75,9 @@ const Wimmelbild = () => {
                             }}
                         >
                             <Title size="sm" style={{ lineHeight: 2.5, fontSize: 22 }}>
-                                {modalContent.title}
+                                {modalTitle}
                             </Title>
-                            <p>{modalContent.content}</p>
+                            <p>{modalContent}</p>
                         </Modal>
                     </Grid.Col>
 
@@ -94,7 +94,12 @@ const Wimmelbild = () => {
                         <div style={{ textAlign: 'end' }}>
                             <Button style={{
                                 background: 'transparent'
-                            }} onClick={() => setModalOpened(true)}>
+                            }} onClick={() =>
+                            {
+                                setModalTitle(modalData[0].title);
+                                setModalContent(modalData[0].content);
+                                setModalOpened(true);
+                            }}>
                                 <FcQuestions size={32} />
                             </Button>
                         </div>
