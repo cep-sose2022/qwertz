@@ -40,9 +40,13 @@
 }
 
 /*============= Avatar Bild ============= */
-.container grid-2 .column-2 image {
+
+
+.imageAnfang {
     position: relative;
-    margin: 10rem;
+    left: -70px;
+    margin: 20rem;
+    top: -140px;
 }
 
 .image {

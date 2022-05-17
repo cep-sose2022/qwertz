@@ -18,7 +18,7 @@ const Header = () => {
                         Jetzt starten
                     </a>
                 </div>
-                <img className="column-2 image"
+                <img className="imageAnfang"
                     src={img1}
                     alt="logo" />
             </div>

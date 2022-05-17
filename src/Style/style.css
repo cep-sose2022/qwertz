@@ -93,6 +93,7 @@ img {
 /*=======================Header=======================*/
 header {
     width: 100%;
+    max-height: calc(100vh - 0.3rem);
     background-color: var(--light-three);
     overflow: hidden;
     position: relative;
