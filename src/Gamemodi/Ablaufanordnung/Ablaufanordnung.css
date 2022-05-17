@@ -69,6 +69,7 @@
 .dragCard {
     display: inline-block;
     text-align: center;
+    overflow-wrap: break-word;
     border: 1px solid;
     padding: 14px;
     text-decoration: none;

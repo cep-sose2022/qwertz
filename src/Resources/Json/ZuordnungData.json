@@ -1,29 +1,41 @@
 [
   {
-      "frage": "Fragen für Up",
+      "frage": "Richtige Aussagen",
       "antworten": [
         {
-          "text": "Antwort 1 zu up"
+          "text": "Eine Schadsoftware wurde dazu entwickelt ungewollte Funktionen auf einem System ausführen zu lassen"
         },
         {
-          "text": "Antwort 2 zu up"
+          "text": "Bei Viren, Ransomware und Trojanern handelt es sich um Schadsoftware welche sich auf einem externen Speichermedium befinden kann"
         },
         {
-          "text": "Antwort 3 zu up"
+          "text": "Um das ICS - Netz zu schützen macht es Sinn externen Dienstleistern ein quarantäne Netz einzurichten in dem diese getrennt vom Unternehmensnetz arbeiten können"
+        },
+        {
+          "text": "Durch Kunstharz kann ein physisches Anschließen von externen Speichermedien verhindert werden"
+        },
+        {
+          "text": "Wird ein externes Wartungsgerät in das Firmennetz gelassen, so sollte zwingend zuvor ein Virenscan vollzogen werden "
         }
       ]
   },
   {
-      "frage": "Fragen für Down",
+      "frage": "Falsche Aussagen",
       "antworten": [
         {
-          "text": "Antwort 1 zu down"
+          "text": "Finde ich einen USB-Stick auf dem Parkplatz sollte ich diesen direkt in der Firma ausprobieren und nachsehen was für Dateien sich darauf befinden"
         },
         {
-          "text": "Antwort 2 zu down"
+          "text": "Ich kann reinen Gewissens den USB-Stick mit Urlaubsfotos von einem Bekannten im Unternehmensnetz anschließen"
         },
         {
-          "text": "Antwort 3 zu down"
+          "text": "Bei Schadsoftware handelt es sich um alte Hardware die Fachgerecht entsorgt werden muss"
+        },
+        {
+          "text": "Ein externer wartungs Laptop der seinen Standort regelmäßig wechselt und sich mit dem internet und dem Firmennetz verbinden kann, stellt keinerlei Bedrohung dar"
+        },
+        {
+          "text": "Das externe Speichermedium das ich für Arbeit verwende kann ich ruhig mit nach Hause nehmen um dort weiter zu arbeiten. Außerdem ist es kein Problem dort dann auch private Daten zu speichern falls ich diese in der Firma mal benötige"
         }
       ]
   }

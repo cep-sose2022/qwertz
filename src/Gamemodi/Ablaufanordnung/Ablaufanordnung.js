@@ -31,6 +31,10 @@ const modalData = [
     {
         title: "Alles Richtig",
         content: "Super du hast alles richtig!"
+    },
+    {
+        title:"Aufgabenstellung",
+        content:"Ein externer Mitarbeiter hat ein infiziertes Wartungsgerät verwendet welches zuvor schon in ihrem ICS-Netzwerk verwendet wurde. Vermutlich hatte der externe sich die Schadsoftware über das Internet eingefangen und nun durch das erneute verbinden in Ihr ICS-System versehentlich Schadsoftware eingeschleust. Glücklicherweise wurde dies sofort Erkannt wie gehen Sie nun vor?"
     }
 ]
 
@@ -162,6 +166,9 @@ const Ablaufanordnung = () => {
 
                                     <p>{modalContent.content}</p>
                                 </Modal>
+                                <Button onClick={() => {setModalContent(modalData[3]); setOpenedModal(true)}}>
+                                    Augabenstellung
+                                </Button>
                             </Grid.Col>
 
                             {/* Popover um anzusagen das erst alle boxen zugeteilt werden müssen */}
