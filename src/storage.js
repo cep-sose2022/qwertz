@@ -2,24 +2,24 @@ const storage = {}
 
 // Methoden um mit den currentModiTitle zu agieren
 storage.setCurrentModiTitle = (currentModiTitle) => {
-    localStorage.setItem("currentModiTitle", currentModiTitle)
+    sessionStorage.setItem("currentModiTitle", currentModiTitle)
 }
 storage.getCurrentModiTitle = () => {
-    return localStorage.getItem("currentModiTitle")
+    return sessionStorage.getItem("currentModiTitle")
 }
 storage.removeCurrentModiTitle = () => {
-    localStorage.removeItem("currentModiTitle")
+    sessionStorage.removeItem("currentModiTitle")
 }
 
 // Methoden um mit den Badges zu agieren
 storage.setBadges = (badges) => {
-    localStorage.setItem("badges", badges)
+    sessionStorage.setItem("badges", badges)
 }
 storage.getBadges = () => {
-    return localStorage.getItem("badges")
+    return sessionStorage.getItem("badges")
 }
 storage.removeBadges = () => {
-    localStorage.removeItem("badges")
+    sessionStorage.removeItem("badges")
 }
 storage.setBadgePassed = (badgeID) => {
     let badges = storage.getBadges()
@@ -29,13 +29,13 @@ storage.setBadgePassed = (badgeID) => {
 
 // Methoden um mit den Modis zu agieren
 storage.setModis = (modis) => {
-    localStorage.setItem("modis", JSON.stringify(modis))
+    sessionStorage.setItem("modis", JSON.stringify(modis))
 }
 storage.getModis = () => {
-    return JSON.parse(localStorage.getItem("modis"))
+    return JSON.parse(sessionStorage.getItem("modis"))
 }
 storage.removeModis = () => {
-    localStorage.removeItem("modis")
+    sessionStorage.removeItem("modis")
 }
 storage.setModiPassed = (modiId) => {
     let modis = storage.getModis()
