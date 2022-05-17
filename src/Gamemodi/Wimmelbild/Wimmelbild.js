@@ -119,8 +119,8 @@ const Wimmelbild = () => {
                     <BackgroundImage
                         style={{
                             zIndex: 1,
-                            width: 1000,
-                            height: 563,
+                            width: 1210,
+                            height: 680,
                             marginLeft: 'auto',
                             marginRight: 'auto',
                             position: 'relative'
