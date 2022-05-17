@@ -23,6 +23,7 @@ html {
     scroll-padding-top: 70px;
     scroll-behavior: smooth
 }
+
 /*=======================Textschrift überall=======================*/
 
 body,
@@ -53,6 +54,8 @@ img {
     margin: 0 auto;
 }
 
+
+
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -67,7 +70,7 @@ img {
 }
 
 .column-1 {
-    margin-top: -19rem;
+    margin-top: -30rem;
     margin-right: 1.5rem;
     margin-left: 5rem;
     flex-basis: 120%;
@@ -81,7 +84,7 @@ img {
 }
 
 .column-2 {
-    margin-top: 10rem;
+    margin-top: 25.5rem;
     margin-left: 6rem;
 }
 

@@ -40,9 +40,9 @@
 }
 
 /*============= Avatar Bild ============= */
-.column-2 image {
+.container grid-2 .column-2 image {
     position: relative;
-    width: 50%;
+    margin: 10rem;
 }
 
 .image {
@@ -214,6 +214,7 @@
 .card {
     position: relative;
     width: 100%;
+    height: 550px;
     max-width: 390px;
     min-height: 520px;
     background-color: var(--light-three);
