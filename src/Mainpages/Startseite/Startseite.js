@@ -27,7 +27,7 @@ const Startseite = (props) => {
                 <HashLink to="#services">Schulung</HashLink>
                 <HashLink to="#about">Über uns</HashLink>
                 <HashLink to="#zitat">Zitat</HashLink>
-                <Link to="../Dashboard" className="active">Jetzt starten</Link>
+                <Link to="../Dashboard/Badges" className="active">Jetzt starten</Link>
             </NavBar>
 
             <header id="header">
@@ -39,7 +39,7 @@ const Startseite = (props) => {
                     <Headline
                         title={"Was wirst du lernen"}
                         headline={"Schulung"}
-                        text={"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam"}
+                        text={"OT-Awareness"}
                     />
 
                     <div className="cards">
@@ -82,7 +82,7 @@ const Startseite = (props) => {
                 <div className="container">
                     <Introduction
                         name={"Ted"}
-                        text={"testtesttesttesttesttesttesttesttesttest testtesttesttesttest testtesttesttest"}
+                        text={"Ich bin Ted, und habe keinerlei Erfahrungen mit OT-Security."}
                         image={img2}
                     />
                 </div>
