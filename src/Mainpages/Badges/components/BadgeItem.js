@@ -9,9 +9,8 @@ const BadgeItem = ({ data, id }) => (
                 <span className="tag">
                     🔓
                 </span>
-                <p>{data.text}</p>
                 <h3>{data.title}</h3>
-
+                <p>{data.text}</p>
                 <Link to={'../Gamemodi/' + data.modis[0]}>
                     Start
                 </Link>
@@ -22,8 +21,9 @@ const BadgeItem = ({ data, id }) => (
                 <span className="tag">
                     🔒
                 </span>
-                <p style={{filter: 'blur(4px)'}}>{data.text}</p>
                 <h3>{data.title}</h3>
+                <p style={{filter: 'blur(4px)'}}>{data.text}</p>
+
 
                 <Link disabled='disabled' style={{filter: 'blur(4px)'}} to={''}>
                     Start

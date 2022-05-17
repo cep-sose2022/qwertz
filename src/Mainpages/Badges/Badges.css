@@ -104,20 +104,20 @@
 }
 
 .badgeline-item-content p {
-    position: relative;
+    /*position: relative;*/
     top: 30px;
     font-size: 16px;
     line-height: 24px;
-    margin: 15px 0;
+    margin: 10px 0;
     max-width: 80%;
 }
 
 .badgeline-item-content h3 {
-    position: relative;
+    /*position: relative;*/
     color: rgb(7, 79, 146);
     font-size: 30px;
-    line-height: 24px;
-    margin: 15px 0;
+    /*line-height: px;*/
+    /*margin: 15px 0;*/
     top: -115px;
     max-width: 250px;
 }
