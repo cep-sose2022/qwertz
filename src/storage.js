@@ -13,17 +13,18 @@ storage.removeCurrentModiTitle = () => {
 
 // Methoden um mit den Badges zu agieren
 storage.setBadges = (badges) => {
-    sessionStorage.setItem("badges", badges)
+    sessionStorage.setItem("badges", JSON.stringify(badges))
 }
 storage.getBadges = () => {
-    return sessionStorage.getItem("badges")
+    return JSON.parse(sessionStorage.getItem("badges"))
 }
 storage.removeBadges = () => {
     sessionStorage.removeItem("badges")
 }
 storage.setBadgePassed = (badgeID) => {
     let badges = storage.getBadges()
-    badges.filter(badge => badge.id === badgeID)[0].passed = true
+    badges.filter(badge => badge.badgeID === badgeID)[0].passed = true
+    badges.filter(badge => badge.badgeID === (badgeID + 1))[0].unlocked = true
     storage.setBadges(badges)
 }
 

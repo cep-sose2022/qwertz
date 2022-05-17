@@ -1,10 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const BadgeItem = ({ data, id }) => (
+const BadgeItem = ({ data}) => (
     <div className="badgeline-item">
         {/*check if badge is unlocked */}
-        {id === 1 ?
+        {data.unlocked ?
             <div className="badgeline-item-content">
                 <span className="tag">
                     🔓

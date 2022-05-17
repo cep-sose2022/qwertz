@@ -5,7 +5,7 @@ import {Button, Group, Modal} from "@mantine/core";
 import {useNavigate} from "react-router";
 import storage from '../storage';
 
-let modis = [
+let modiData = [
     {
         modiID: 1,
         passed: false,
@@ -16,21 +16,21 @@ let modis = [
         passed: false,
         title: 'Video'
     },
-    {
-        modiID: 3,
-        passed: false,
-        title: 'Wimmelbild'
-    },
-    {
-        modiID: 4,
-        passed: false,
-        title: 'Ablaufanordnung'
-    },
-    {
-        modiID: 5,
-        passed: false,
-        title: 'Zuordnung'
-    }
+    // {
+    //     modiID: 3,
+    //     passed: false,
+    //     title: 'Wimmelbild'
+    // },
+    // {
+    //     modiID: 4,
+    //     passed: false,
+    //     title: 'Ablaufanordnung'
+    // },
+    // {
+    //     modiID: 5,
+    //     passed: false,
+    //     title: 'Zuordnung'
+    // }
 ]
 
 export const ModiContext = createContext({});
@@ -41,6 +41,7 @@ const Gamemodi = () => {
     const navigator = useNavigate();
     const [currentModiTitle, setCurrentModiTitle] = useState("");
     const [firstRender, setFirstRender] = useState(true)
+    const [modis, setModis] = useState(modiData)
 
 
     useEffect(() => {
@@ -65,7 +66,8 @@ const Gamemodi = () => {
         if (tempModis === undefined || tempModis === null) {
             storage.setModis(modis)
         } else
-            modis = tempModis
+            setModis(tempModis)
+        // modis = tempModis
 
         // setzt den aktuellen Modi Title
         const tempModiTitle = storage.getCurrentModiTitle()
@@ -79,15 +81,19 @@ const Gamemodi = () => {
     }
 
     // setzt einen Modi alls 'Passed' und leitet zum nächsten weiter
-    const markAsPassed = (modiTitle) => {
-        modis.filter(modi => modi.title === modiTitle)[0].passed = true;
+    const markAsPassed = () => {
+
+        storage.setModiPassed(modis.filter(modi => !modi.passed)[0].modiID)
+        modis.filter(modi => !modi.passed)[0].passed = true
+
         if (modis.filter(modi => !modi.passed).length !== 0) {
             let modiTitle = modis.filter(modi => !modi.passed)[0].title
             storage.setCurrentModiTitle(modiTitle)
-            storage.setModiPassed(modis.filter(modi => !modi.passed)[0].modiID)
+
             setCurrentModiTitle(modiTitle)
             navigator('./' + modiTitle)
         } else {
+            storage.setBadgePassed(1)
             storage.removeCurrentModiTitle()
             storage.removeModis()
             navigator('./Endscreen')
