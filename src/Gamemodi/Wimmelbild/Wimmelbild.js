@@ -88,18 +88,6 @@ const Wimmelbild = () => {
                         </Tooltip>
                     </Grid.Col>
 
-                    {/*Wimmelbild nächste / zurück */}
-                    <Grid.Col span={2}>
-                        <div style={{ textAlign: 'right' }}>
-                            <Button style={{
-                                background: 'transparent'
-                            }}>
-                                <ImCircleLeft size={20} />
-                                <ImCircleRight size={20} />
-                            </Button>
-                        </div>
-                    </Grid.Col>
-
 
                     {/* Weiter Button der nur geht, wenn alles gefunden wurde */}
                     <Grid.Col span={2}>
