@@ -70,7 +70,7 @@ img {
 }
 
 .column-1 {
-    margin-top: -30rem;
+    margin-top: -35.5rem;
     margin-right: 1.5rem;
     margin-left: 5rem;
     flex-basis: 120%;
@@ -79,7 +79,7 @@ img {
 }
 
 .column-1 .header-title {
-    margin-top: 25rem;
+    margin-top: 16rem;
     margin-right: 1.5rem;
 }
 
@@ -93,7 +93,7 @@ img {
 /*=======================Header=======================*/
 header {
     width: 100%;
-    max-height: calc(100vh - 0.3rem);
+    max-height: calc(100vh - -2.1rem);
     background-color: var(--light-three);
     overflow: hidden;
     position: relative;
