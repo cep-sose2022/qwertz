@@ -1,5 +1,6 @@
 import Headline from "../Startseite/Headline";
 import bild from "../../Resources/DashboardBild.jpeg";
+import bild2 from "../../Resources/images/Sammlungen/labortisch.png";
 import React from "react";
 import "./Sammlung.css";
 
@@ -9,8 +10,9 @@ const Sammlung = () => {
 
     return (
         <>
-            <Headline title={"Dashboard"} headline={"Meine Sammlung"} text={""}/>
+            <Headline title={"Dashboard"} headline={"Meine Sammlung"} text={""} />
             <img className="dashboardBild" src={bild}></img>
+            <img className="sammlung1" src={bild2}></img>
 
             <div className="tube">
                 <div className="shine"></div>
