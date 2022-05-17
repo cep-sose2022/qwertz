@@ -5,7 +5,7 @@
   {
     "buttons": [
       {
-        "text": "Text 1",
+        "text": "Gefunden! Auf gar keine Fall einen gefunden USB-Stick verwenden, unbedingt vor einer Nutzung prüfen. ",
         "topLeftCorner": {
           "x": 0,
           "y": 0
@@ -16,7 +16,7 @@
         }
       },
       {
-        "text": "Text 2",
+        "text": "Super! Externe Datenträger aus der Firma sollten nicht mit nach hause genommen um auf diesen dann private Daten zu speichern.",
         "topLeftCorner": {
           "x": 40,
           "y": 40
@@ -27,7 +27,7 @@
         }
       },
       {
-        "text": "Text 3",
+        "text": "Bingo! Externe Geräte sollten in segmentierten Netzen laufen, da diese oft zugang zum Internet haben und sich darüber Schadsoftware einschleusen kann beim nächsten Verbinden mit dem ICS - Netz. ",
         "topLeftCorner": {
           "x": 60,
           "y": 70
