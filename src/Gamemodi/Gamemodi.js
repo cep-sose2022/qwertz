@@ -11,26 +11,26 @@ let modiData = [
         passed: false,
         title: 'Konversation'
     },
+    // {
+    //     modiID: 2,
+    //     passed: false,
+    //     title: 'Video'
+    // },
     {
         modiID: 2,
         passed: false,
-        title: 'Video'
+        title: 'Wimmelbild'
     },
-    // {
-    //     modiID: 3,
-    //     passed: false,
-    //     title: 'Wimmelbild'
-    // },
-    // {
-    //     modiID: 4,
-    //     passed: false,
-    //     title: 'Ablaufanordnung'
-    // },
-    // {
-    //     modiID: 5,
-    //     passed: false,
-    //     title: 'Zuordnung'
-    // }
+    {
+        modiID: 3,
+        passed: false,
+        title: 'Ablaufanordnung'
+    },
+    {
+        modiID: 4,
+        passed: false,
+        title: 'Zuordnung'
+    }
 ]
 
 export const ModiContext = createContext({});
@@ -123,7 +123,7 @@ const Gamemodi = () => {
                 <br/>
                 <Fortschrittsanzeige modis={modis}/>
                 <br/>
-                <div onClick={() => setModalOpened(true)} className="xbutton"></div>
+                <div onClick={() => setModalOpened(true)} className="xbutton"/>
             </div>
 
             {/* Bereich für die Modi*/}
