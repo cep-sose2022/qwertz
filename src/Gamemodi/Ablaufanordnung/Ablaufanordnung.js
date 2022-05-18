@@ -60,9 +60,9 @@ const Ablaufanordnung = () => {
     const eigenerName = 'Ablaufanordnung';
     const [cards, setCards] = useState([]);
     const [boxes] = useState([]);
-    const [openedModal, setOpenedModal] = useState(false);
+    const [openedModal, setOpenedModal] = useState(true);
     const [openedPopover, setOpenedPopover] = useState(false);
-    const [modalContent, setModalContent] = useState(modalData[0]);
+    const [modalContent, setModalContent] = useState(modalData[3]);
     const [allRight, setAllRight] = useState(false);
 
     const {markAsPassed} = useContext(ModiContext);
