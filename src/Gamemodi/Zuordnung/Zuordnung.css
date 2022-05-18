@@ -41,7 +41,8 @@
     border: 3px solid rgb(0, 0, 0);
     box-shadow: 10px 5px 5px black;
     background-color: var(--main-color);
-    border-radius: 15px
+    border-radius: 15px;
+    padding: 10px;
 }
 
 /*item heap end*/
@@ -69,7 +70,8 @@
     border: 3px solid black;
     box-shadow: 10px 5px 5px black;
     background-color: #e00626;
-    border-radius: 15px
+    border-radius: 15px;
+    padding: 10px;
 }
 
 .Down {
@@ -84,7 +86,8 @@
     border: 3px solid black;
     box-shadow: 10px 5px 5px black;
     background-color: #32c251;
-    border-radius: 15px
+    border-radius: 15px;
+    padding: 10px;
 }
 
 /*answer heap end*/

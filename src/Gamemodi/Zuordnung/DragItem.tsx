@@ -26,7 +26,9 @@ const DragItem = (props: { id: number; state: any; text: String; right: boolean 
                 border: '1px solid',
                 borderColor:'var(--dark-one)',
                 borderRadius: '2022px',
-                color: 'white'
+                color: 'white',
+                padding: 7,
+                margin: 7,
             }}>
             {text}
         </p>

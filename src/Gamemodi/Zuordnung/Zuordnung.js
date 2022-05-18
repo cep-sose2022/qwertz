@@ -196,7 +196,7 @@ const Zuordnung = () => {
                     <div className="item-heap">
                         {/* Storage für die antworten */}
                         <DropZone type="Left">
-                            Left
+                            
                             {
                                 antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
                                         <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
