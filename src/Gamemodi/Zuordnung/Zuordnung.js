@@ -245,7 +245,7 @@ const Zuordnung = () => {
                                     <div className="downContainer">
                                         <div className="header">
                                             <h3 style={{
-                                                backgroundColor: "#32c251",
+                                                backgroundColor: "#01BC60",
                                                 textAlign: "center",
                                                 itemsAlign: 'center',
                                                 width: 'auto',
