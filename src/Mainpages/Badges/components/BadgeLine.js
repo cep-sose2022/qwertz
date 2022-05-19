@@ -7,7 +7,7 @@ const BadgeLine = (props) => {
         <div className="badgeline-container">
             {
                 badgeData.map((data, idx) => (
-                    <BadgeItem key={idx} data={data} id={idx+1} />
+                    <BadgeItem key={idx} data={data} />
                 ))
             }
         </div>

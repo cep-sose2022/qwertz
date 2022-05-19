@@ -7,20 +7,26 @@ import {Grid} from "@mantine/core";
 
 import {FaAward} from "react-icons/fa";
 import {VscFolderLibrary} from "react-icons/vsc";
+import storage from "../../../storage";
 
+const machEnde = () => {
+    let badgeID = storage.getBadgeID()
+    storage.setBadgePassed(parseInt(badgeID))
+    storage.removeAll()
+}
 
 const EndscreenPlace = () => EndscreenData.length > 0 && (
     <div className="endscreen-container">
         <div className="endscreen-header">
             <Grid justify={"space-around"}>
-                <div className="btn">
+                <div className="btn" onClick={machEnde}>
                     <Link to="../../Sammlung">
                         <span style={{fontSize: '20px', textAlign: 'center', itemsAlign: 'center'}}>
                             <VscFolderLibrary/> Weiter zur Sammlung
                         </span>
                     </Link>
                 </div>
-                <div className="btn">
+                <div className="btn" onClick={machEnde}>
                     <Link to="../../Badges" style={{fontSize: '20px', textAlign: 'center', itemsAlign: 'center'}}>
                         <FaAward/> Zu den Badges </Link>
                 </div>
