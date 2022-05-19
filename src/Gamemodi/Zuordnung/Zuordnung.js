@@ -132,30 +132,30 @@ const Zuordnung = () => {
             <DndProvider backend={HTML5Backend}>
                 <ItemContext.Provider value={{markAsX}}>
                     <div className="zuordnung-header">
-                        <Grid justify={"space-between"}>
+                        <Grid justify={"center"} columns={8}>
 
                             {/*Modal für die Aufgabenstellung und zum Anzusagen ob alles Richtig/falsch is*/}
-                            <Grid.Col span={2}>
-                                <Modal
-                                    transition="slide-down"
-                                    transitionDuration={900}
-                                    overlayOpacity={0.55}
-                                    overlayBlur={3}
-                                    style={{fontSize: 20}}
-                                    centered
-                                    opened={openedModal}
-                                    onClose={() => setOpenedModal(false)}
-                                    title={<IoIosInformationCircleOutline/>}
-                                >
-                                    <h3 style={{lineHeight: 2.5, fontSize: 22}}>
-                                        {modalContent.title}
-                                    </h3>
-                                    <p>{modalContent.content}</p>
-                                </Modal>
-                            </Grid.Col>
+                            <Modal
+                                transition="slide-down"
+                                transitionDuration={900}
+                                overlayOpacity={0.55}
+                                overlayBlur={3}
+                                style={{fontSize: 20}}
+                                centered
+                                opened={openedModal}
+                                onClose={() => setOpenedModal(false)}
+                                title={<IoIosInformationCircleOutline/>}
+                            >
+                                <h3 style={{lineHeight: 2.5, fontSize: 22}}>
+                                    {modalContent.title}
+                                </h3>
+                                <p>{modalContent.content}</p>
+                            </Modal>
 
                             {/* Popover um anzusagen das erst alle boxen zugeteilt werden müssen */}
                             <Grid.Col span={2}>
+
+
                                 <Popover
                                     opened={openedPopover}
                                     onClose={() => setOpenedPopover(false)}
@@ -168,6 +168,9 @@ const Zuordnung = () => {
                                         <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
                                     </div>
                                 </Popover>
+                            </Grid.Col>
+                            <Grid.Col span={5}>
+
 
                                 {/* Weiter Button der nur geht wenn alles richtig is */}
                                 <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
@@ -176,8 +179,9 @@ const Zuordnung = () => {
                                 </Tooltip>
                             </Grid.Col>
 
+
                             {/* Button für die Spielerklärung */}
-                            <Grid.Col span={2}>
+                            <Grid.Col span={1}>
                                 <div style={{textAlign: 'end'}}>
                                     <Button style={{
                                         background: 'transparent'
@@ -199,7 +203,6 @@ const Zuordnung = () => {
                                 <div className="item-heap">
                                     {/* Storage für die antworten */}
                                     <DropZone type="Left">
-
                                         {
                                             antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
                                                     <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
@@ -214,33 +217,57 @@ const Zuordnung = () => {
 
                                 <div className="answer-heap">
                                     {/*left answer container*/}
-                                    < DropZone type="Up">
-                                        {
-                                            fragen[0].frage
-                                        }
-                                        {
-                                            antworten.filter(a => a.state === ItemState.UP).map(i => (
-                                                <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                          right={i.right}/>)
-                                            )
-                                        }
-                                    </DropZone>
-                                    {/*right answer container*/}
-                                    <DropZone type="Down">
-                                        {
-                                            fragen[1].frage
-                                        }
-                                        {
-                                            antworten.filter(a => a.state === ItemState.DOWN).map(i => (
-                                                <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                          right={i.right}/>)
-                                            )
-                                        }
-                                    </DropZone>
 
+                                    <div className="upContainer">
+                                        <div className="header"><h3 style={{
+                                            backgroundColor: "#e00626",
+                                            textAlign: "center",
+                                            itemsAlign: 'center',
+                                            width: 'auto',
+                                            paddingBottom: '10px',
+                                            margin: 'auto'
+                                        }}>{
+                                            fragen[0].frage
+                                        }</h3>
+                                        </div>
+
+                                        <DropZone type="Up">
+
+                                            {
+                                                antworten.filter(a => a.state === ItemState.UP).map(i => (
+                                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                                              right={i.right}/>)
+                                                )
+                                            }
+                                        </DropZone>
+                                    </div>
+                                    {/*right answer container*/}
+                                    <div className="downContainer">
+                                        <div className="header">
+                                            <h3 style={{
+                                                backgroundColor: "#32c251",
+                                                textAlign: "center",
+                                                itemsAlign: 'center',
+                                                width: 'auto',
+                                                paddingBottom: '10px',
+                                                margin: 'auto'
+                                            }}>{
+                                                fragen[1].frage
+                                            }</h3>
+                                        </div>
+                                        <DropZone type="Down">
+                                            {
+                                                antworten.filter(a => a.state === ItemState.DOWN).map(i => (
+                                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                                              right={i.right}/>)
+                                                )
+                                            }
+                                        </DropZone>
+                                    </div>
                                 </div>
                             </Grid.Col>
-                        </Grid></div>
+                        </Grid>
+                    </div>
                 </ItemContext.Provider>
             </DndProvider>
         </div>
