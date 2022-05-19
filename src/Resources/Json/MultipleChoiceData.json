@@ -1,0 +1,41 @@
+[
+  {
+    "text": "Langer Text der ganz viele dinge erklärt",
+    "aufgaben": [
+      {
+        "frage": "Wie alt bist du?",
+        "antworten": [
+          {
+            "text": "zu alt",
+            "isRichtig": false
+          },
+          {
+            "text": "21",
+            "isRichtig": true
+          },
+          {
+            "text": "geht dich nix an",
+            "isRichtig": false
+          }
+        ]
+      },
+      {
+        "frage": "Was magst du?",
+        "antworten": [
+          {
+            "text": "Dich",
+            "isRichtig": false
+          },
+          {
+            "text": "Essen",
+            "isRichtig": true
+          },
+          {
+            "text": "geht dich nix an",
+            "isRichtig": false
+          }
+        ]
+      }
+    ]
+  }
+]
