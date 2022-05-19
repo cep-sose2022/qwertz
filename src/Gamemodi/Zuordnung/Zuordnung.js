@@ -192,48 +192,55 @@ const Zuordnung = () => {
 
 
                     </div>
-                    {/*heap of items */}
-                    <div className="item-heap">
-                        {/* Storage für die antworten */}
-                        <DropZone type="Left">
-                            
-                            {
-                                antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
-                                        <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                  right={i.right}/>
-                                    )
-                                )
-                            }
-                        </DropZone>
-                    </div>
+                    <div>
+                        <Grid columns={24}>
+                            <Grid.Col span={10}>
+                                {/*heap of items */}
+                                <div className="item-heap">
+                                    {/* Storage für die antworten */}
+                                    <DropZone type="Left">
 
-                    <div className="answer-heap">
-                        {/*left answer container*/}
-                        <DropZone type="Up">
-                            {
-                                fragen[0].frage
-                            }
-                            {
-                                antworten.filter(a => a.state === ItemState.UP).map(i => (
-                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                              right={i.right}/>)
-                                )
-                            }
-                        </DropZone>
-                        {/*right answer container*/}
-                        <DropZone type="Down">
-                            {
-                                fragen[1].frage
-                            }
-                            {
-                                antworten.filter(a => a.state === ItemState.DOWN).map(i => (
-                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                              right={i.right}/>)
-                                )
-                            }
-                        </DropZone>
-                    </div>
+                                        {
+                                            antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
+                                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                                              right={i.right}/>
+                                                )
+                                            )
+                                        }
+                                    </DropZone>
+                                </div>
+                            </Grid.Col>
+                            <Grid.Col span={14}>
 
+                                <div className="answer-heap">
+                                    {/*left answer container*/}
+                                    < DropZone type="Up">
+                                        {
+                                            fragen[0].frage
+                                        }
+                                        {
+                                            antworten.filter(a => a.state === ItemState.UP).map(i => (
+                                                <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                                          right={i.right}/>)
+                                            )
+                                        }
+                                    </DropZone>
+                                    {/*right answer container*/}
+                                    <DropZone type="Down">
+                                        {
+                                            fragen[1].frage
+                                        }
+                                        {
+                                            antworten.filter(a => a.state === ItemState.DOWN).map(i => (
+                                                <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                                          right={i.right}/>)
+                                            )
+                                        }
+                                    </DropZone>
+
+                                </div>
+                            </Grid.Col>
+                        </Grid></div>
                 </ItemContext.Provider>
             </DndProvider>
         </div>
