@@ -17,10 +17,10 @@
     overflow:auto;
     flex-direction: column;
     position: relative;
-    margin: 40px 0;
+    /*margin: 40px 0;*/
     /*height: 100%;*/
     width: 100vw;
-    padding:5%;
+    padding: 8vh;
 
 }
 

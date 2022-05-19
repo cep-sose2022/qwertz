@@ -1,7 +1,6 @@
 import React from "react";
 import BadgeLine from "./components/BadgeLine";
 import "./Badges.css"
-import "./Schloss.css"
 
 import Headline from "../Startseite/Headline";
 import {BackgroundImage} from "@mantine/core";
