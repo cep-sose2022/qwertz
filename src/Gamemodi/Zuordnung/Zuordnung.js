@@ -1,16 +1,16 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import DropZone from "./DropZone";
-import {DndProvider} from "react-dnd";
-import {HTML5Backend} from "react-dnd-html5-backend";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
-import {ItemState} from "./ItemState";
-import {Button, Grid, Modal, Popover, Text, Tooltip} from "@mantine/core";
-import {ModiContext} from "../Gamemodi";
-import {IoIosInformationCircleOutline} from "react-icons/io";
+import { ItemState } from "./ItemState";
+import { Button, Grid, Modal, Popover, Text, Tooltip } from "@mantine/core";
+import { ModiContext } from "../Gamemodi";
+import { IoIosInformationCircleOutline } from "react-icons/io";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
 
-import {FcQuestions} from "react-icons/fc";
+import { FcQuestions } from "react-icons/fc";
 
 export const ItemContext = createContext({
     markAsX: (_id, _state) => {
@@ -60,7 +60,7 @@ const Zuordnung = () => {
     const [modalContent, setModalContent] = useState(modalData[0]);
     const [allRight, setAllRight] = useState(false);
 
-    const {markAsPassed} = useContext(ModiContext);
+    const { markAsPassed } = useContext(ModiContext);
 
 
     // läd die daten aus der DB und schreib sie in eine const
@@ -130,7 +130,7 @@ const Zuordnung = () => {
     return (
         <div className="container-zuordnung">
             <DndProvider backend={HTML5Backend}>
-                <ItemContext.Provider value={{markAsX}}>
+                <ItemContext.Provider value={{ markAsX }}>
                     <div className="zuordnung-header">
                         <Grid justify={"center"} columns={8}>
 
@@ -140,13 +140,13 @@ const Zuordnung = () => {
                                 transitionDuration={900}
                                 overlayOpacity={0.55}
                                 overlayBlur={3}
-                                style={{fontSize: 20}}
+                                style={{ fontSize: 20 }}
                                 centered
                                 opened={openedModal}
                                 onClose={() => setOpenedModal(false)}
-                                title={<IoIosInformationCircleOutline/>}
+                                title={<IoIosInformationCircleOutline />}
                             >
-                                <h3 style={{lineHeight: 2.5, fontSize: 22}}>
+                                <h3 style={{ lineHeight: 2.5, fontSize: 22 }}>
                                     {modalContent.title}
                                 </h3>
                                 <p>{modalContent.content}</p>
@@ -164,7 +164,7 @@ const Zuordnung = () => {
                                     position="bottom"
                                     withArrow
                                 >
-                                    <div style={{display: 'flex'}}>
+                                    <div style={{ display: 'flex' }}>
                                         <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
                                     </div>
                                 </Popover>
@@ -175,20 +175,20 @@ const Zuordnung = () => {
                                 {/* Weiter Button der nur geht wenn alles richtig is */}
                                 <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
                                     <Button onClick={() => markAsPassed(eigenerName)}
-                                            disabled={!allRight}> Weiter</Button>
+                                        disabled={!allRight}> Weiter</Button>
                                 </Tooltip>
                             </Grid.Col>
 
 
                             {/* Button für die Spielerklärung */}
                             <Grid.Col span={1}>
-                                <div style={{textAlign: 'end'}}>
+                                <div style={{ textAlign: 'end' }}>
                                     <Button style={{
                                         background: 'transparent'
                                     }} onClick={() => {
                                         setModalContent(modalData[0])
                                         setOpenedModal(true)
-                                    }}><FcQuestions size={32}/></Button>
+                                    }}><FcQuestions size={32} /></Button>
                                 </div>
                             </Grid.Col>
 
@@ -205,9 +205,9 @@ const Zuordnung = () => {
                                     <DropZone type="Left">
                                         {
                                             antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
-                                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                              right={i.right}/>
-                                                )
+                                                <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                                    right={i.right} />
+                                            )
                                             )
                                         }
                                     </DropZone>
@@ -227,8 +227,8 @@ const Zuordnung = () => {
                                             paddingBottom: '10px',
                                             margin: 'auto'
                                         }}>{
-                                            fragen[0].frage
-                                        }</h3>
+                                                fragen[0].frage
+                                            }</h3>
                                         </div>
 
                                         <DropZone type="Up">
@@ -236,7 +236,7 @@ const Zuordnung = () => {
                                             {
                                                 antworten.filter(a => a.state === ItemState.UP).map(i => (
                                                     <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                              right={i.right}/>)
+                                                        right={i.right} />)
                                                 )
                                             }
                                         </DropZone>
@@ -252,14 +252,14 @@ const Zuordnung = () => {
                                                 paddingBottom: '10px',
                                                 margin: 'auto'
                                             }}>{
-                                                fragen[1].frage
-                                            }</h3>
+                                                    fragen[1].frage
+                                                }</h3>
                                         </div>
                                         <DropZone type="Down">
                                             {
                                                 antworten.filter(a => a.state === ItemState.DOWN).map(i => (
                                                     <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                              right={i.right}/>)
+                                                        right={i.right} />)
                                                 )
                                             }
                                         </DropZone>

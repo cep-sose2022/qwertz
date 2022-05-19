@@ -72,6 +72,7 @@
     border-radius: 15px;
     overflow: auto;
 }
+
 .upContainer {
     margin: 1rem;
     display: block;
@@ -87,6 +88,7 @@
     border-radius: 15px;
     padding: 10px;
 }
+
 .Down {
     display: block;
     position: relative;
@@ -111,7 +113,7 @@
     height: auto;
     border: 3px solid black;
     box-shadow: 10px 5px 5px black;
-    background-color:#01BC60;
+    background-color: #01BC60;
     border-radius: 15px;
     padding: 10px;
 }
