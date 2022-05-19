@@ -6,27 +6,28 @@ import NavBar from "../NavBar";
 import Zitat from './Zitat'
 
 // import images
-import img1 from './../../Resources/images/reagenzglasOrangetransparent.png'
-import img2 from './../../Resources/images/reagenzglasgruentransparent.png'
-import img3 from './../../Resources/images/icons8-lebenslauf.png'
+import img1 from './../../Resources/images/orange_normal.png'
+import img2 from './../../Resources/images/erlenmeyerkolben_gruen_normal.png'
+import img3 from './../../Resources/images/icons8-controller.png'
 import img4 from './../../Resources/images/icons8-medien.png'
-import img5 from './../../Resources/images/icons8-verschlüsseln.png'
+import img5 from './../../Resources/images/icons8-online-learning.png'
 import Header from "./Header";
 import Headline from "./Headline";
 import Card from "./Card";
 import Introduction from "./Introduction";
-
+import { Spoiler } from '@mantine/core';
 const Startseite = (props) => {
     const { JsonZitate } = props;
 
     return (
         <main>
+
             <NavBar>
                 <HashLink to="#header">Startseite</HashLink>
                 <HashLink to="#services">Schulung</HashLink>
                 <HashLink to="#about">Über uns</HashLink>
                 <HashLink to="#zitat">Zitat</HashLink>
-                <Link to="../Dashboard" className="active">Jetzt starten</Link>
+                <Link to="../Dashboard/Badges" className="active">Jetzt starten</Link>
             </NavBar>
 
             <header id="header">
@@ -38,30 +39,29 @@ const Startseite = (props) => {
                     <Headline
                         title={"Was wirst du lernen"}
                         headline={"Schulung"}
-                        text={"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam"}
+                        text={"OT-Awareness"}
                     />
 
                     <div className="cards">
+
+
+
                         <Card
                             image={img5}
-                            title={"Lorem ipsum"}
-                            text={"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, " +
-                                "seddiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"}
-                            link={"#"}
+                            title={"E-Learning-Plattform"}
+                            text={"Unsere E-Learning-Module sind für Automatisierungsingenieur aus dem Sektor Chemie perfekt geeignet. Sie umfasst Wissensmodus und interaktive Module, die spielerisch zur Auseinandersetzung mit OT-Security anregen. "}
                         />
+
                         <Card
                             image={img3}
-                            title={"Lorem ipsum"}
-                            text={"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, " +
-                                "seddiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"}
-                            link={"#"}
+                            title={"Awareness-Schulung"}
+                            text={"Der Schulungskurs besteht aus 2 Wissensmodulen und 3 Gamemodulen, die die wichtigsten Angriffsvektoren und den Schutz vor Bedrohungen behandeln. Die einzelnen Module liefern wertvolle Informationen über die OT-Security."}
                         />
+
                         <Card
                             image={img4}
-                            title={"Lorem ipsum"}
-                            text={"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, " +
-                                "seddiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"}
-                            link={"#"}
+                            title={"Test"}
+                            text={"Der Schulungskurs besteht aus 2 Wissensmodulen und 3 Gamemodulen, die die wichtigsten Angriffsvektoren und den Schutz vor Bedrohungen behandeln. Die einzelnen Module liefern wertvolle Informationen über die OT-Security."}
                         />
                     </div>
                 </div>
@@ -73,11 +73,7 @@ const Startseite = (props) => {
 
                     <Introduction
                         name={"Zepp"}
-                        text={"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam" +
-                            "nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam" +
-                            "erat, sed diam voluptua. At vero eos et accusam et justo duo" +
-                            "dolores et ea rebum. Stet clita kasd gubergren, no sea takimata" +
-                            "sanctus est Lorem ipsum dolor sit amet."}
+                        text={"Ich bin Zepp, OT-Security Spezialist mit langjähriger Erfahrung."}
                         image={img1}
                     />
                 </div>
@@ -86,11 +82,7 @@ const Startseite = (props) => {
                 <div className="container">
                     <Introduction
                         name={"Ted"}
-                        text={"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam" +
-                            "nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam" +
-                            "erat, sed diam voluptua. At vero eos et accusam et justo duo" +
-                            "dolores et ea rebum. Stet clita kasd gubergren, no sea takimata" +
-                            "sanctus est Lorem ipsum dolor sit amet."}
+                        text={"Ich bin Ted, und habe keinerlei Erfahrungen mit OT-Security."}
                         image={img2}
                     />
                 </div>
@@ -103,7 +95,9 @@ const Startseite = (props) => {
                 </div>
             </section>
         </main>
+
     );
+
 }
 
 export default Startseite;

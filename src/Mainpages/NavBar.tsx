@@ -1,9 +1,9 @@
 import React from 'react';
-import Anapur_Ag_Logo_removebg from '../Resources/images/Anapur_Ag_Logo-removebg.png';
+import erlenmeyer from '../Resources/erlenmeyer_animiert2.gif';
 
 const NavBar = (props: { children: any; }) => {
 
-    const {children} = props;
+    const { children } = props;
 
     return (
         <nav>
@@ -11,7 +11,7 @@ const NavBar = (props: { children: any; }) => {
                 <div className="logo">
                     <img
                         className="icon"
-                        src={Anapur_Ag_Logo_removebg}
+                        src={erlenmeyer}
                         alt="icon"
                     />
                 </div>

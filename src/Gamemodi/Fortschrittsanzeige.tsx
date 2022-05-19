@@ -1,19 +1,25 @@
 import React from 'react';
+import '../Style/Fortschrittsanzeige.css'
+import { Stepper } from '@mantine/core';
 
 const Fortschrittsanzeige = (props: { modis: any; }) => {
 
-    const {modis} = props;
+    const { modis } = props;
+
+    let bestandeneModi = 0;
+
+    modis.map((modi: { passed: boolean; }) => modi.passed ? bestandeneModi++ : null)
+
     return (
         <>
-            <ul className="progressbar">
+            <Stepper active={bestandeneModi} breakpoint="sm">
                 {
-                    modis.map((modi: { passed: any; title: boolean }) => (
-                        <li key={Math.random()} className={modi.passed ? 'bestanden' : undefined}>{modi.title}</li>
-                    ))
+                    modis.map((modi: { title: string }) =>
+                        <Stepper.Step key={Math.random()} label={modi.title} />
+                    )
                 }
-            </ul>
+            </Stepper>
         </>
     );
 }
-
 export default Fortschrittsanzeige;

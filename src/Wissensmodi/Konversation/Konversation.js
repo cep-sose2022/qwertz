@@ -1,20 +1,32 @@
-import React, {useState, useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "./Konversation.css";
-import {Button, Tooltip} from "@mantine/core";
+import {Button, Tooltip, Grid, Modal, Title} from '@mantine/core';
 
 
 import Data from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
 import {ModiContext} from "../../Gamemodi/Gamemodi";
+import {FcQuestions} from "react-icons/fc";
+import {useScrollIntoView} from "@mantine/hooks";
 
+const modalData = [
+    {
+        title: "Spielerklärung",
+        content: "Klick einfach un les " //TODO sinnvoller text
+    }
+]
 
 const Konversation = () => {
+    const eigenerName = "Konversation";
     const [bubbles, setBubbles] = useState([]);
-    let allRight = false;
+    const [modalContent] = useState(modalData[0]);
+    const [openedModal, setModalOpened] = useState(false);
+    const [allRight, setAllRight] = useState(false);
+    const {scrollIntoView, targetRef, scrollableRef} = useScrollIntoView({duration: 200});
 
-    const {markAsPassed} = useContext(ModiContext);
+    const {markAsPassed, redirect} = useContext(ModiContext);
 
-
+    // läd die daten aus der DB und schreib sie in eine const
     if (bubbles[0] === undefined) {
         Data.map(object => {
             let bubble = {
@@ -25,59 +37,116 @@ const Konversation = () => {
             }
             bubbles.push(bubble);
         })
-
     }
 
-
-    const abbilden = () => {
-        const nextBubble = bubbles.filter(bubble => bubble.selected === false)[0];
-        nextBubble.selected = true;
-        setBubbles(bubbles.filter(bubble => bubble.id !== nextBubble.id).concat(nextBubble));
-    }
-    return (
-        <div>
-            <div className="theoretic-conversation">
-
-                <div className="theoretic-conversation-body">
-                    <div className="-chat-header" >
-                        <p>Header</p>
-                    </div>
-                    <div className="chat-objects">
-                        {
-                            bubbles.filter(bubbles => bubbles.selected === true).map(
-                                bubbles => <Bubble key={bubbles.id} category={bubbles.category} text={bubbles.text}/>
-                            )
-                        }
-
-                        {
-                            bubbles.filter(bubbles => bubbles.selected === false) >= 0 ?
-                                allRight = true :
-                                <button onClick={abbilden} className="loading-button" id="loading-Button">
-                                    <span>.</span><span>.</span><span>.</span>
-                                </button>
-
-                        }
-                    </div>
-                    <div classname="chat-footer">
-                        <p>Footer</p>
-                    </div>
-                </div>
-                <div className="theoretic-conversation-footer">
-                    <Tooltip disabled={allRight} label="Du musst die Einheit erst abschließen um weiter zu machen!">
-                        <Button onClick={() => markAsPassed('Konversation')} disabled={!allRight}> Weiter</Button>
-                    </Tooltip>
-                </div>
-
-            </div>
-
-
-        </div>
-
+    // um zu dem Modi umzuleiten, der gerade daran is
+    useEffect(() =>
+        redirect(eigenerName)
     )
 
+    // zum anzeigen des Nächsten Textes
+    const abbilden = () => {
+        const nextBubble = bubbles.filter(bubble => bubble.selected === false)[0];
+        if (nextBubble !== undefined) {
+            nextBubble.selected = true;
+            setBubbles(bubbles.filter(bubble => bubble.id !== nextBubble.id).concat(nextBubble));
+        }
 
+        if (bubbles.filter(bubbles => bubbles.selected === false) >= 0)
+            setAllRight(true);
+    }
+
+    return (
+        <div className="konversation-container">
+            <div className="konversation-header">
+                <Grid justify={"space-between"}>
+                    <Grid.Col span={2}>
+                        <Modal
+                            transition="slide-down"
+                            transitionDuration={900}
+                            overlayOpacity={0.55}
+                            overlayBlur={3}
+                            style={{fontSize: 20}}
+                            centered
+                            opened={openedModal}
+                            onClose={() => {
+                                setModalOpened(false);
+                            }}
+                        >
+                            <Title size="sm" style={{lineHeight: 2.5, fontSize: 22}}>
+                                {modalContent.title}
+                            </Title>
+                            <p>{modalContent.content}</p>
+                        </Modal>
+                    </Grid.Col>
+
+                    {/* Weiter Button der nur geht, wenn alles gelesen wurde */}
+                    <Grid.Col span={2}>
+                        <Tooltip label="Du muss alles gelesen haben um weiter zu machen!">
+                            <Button onClick={() => markAsPassed(eigenerName)}
+                                    disabled={!allRight}> Weiter</Button>
+                        </Tooltip>
+                    </Grid.Col>
+
+                    {/* Button für die Spielerklärung */}
+                    <Grid.Col span={2}>
+                        <div style={{textAlign: 'end'}}>
+                            <Button style={{
+                                background: 'transparent'
+                            }} onClick={() => setModalOpened(true)}>
+                                <FcQuestions size={32}/>
+                            </Button>
+                        </div>
+                    </Grid.Col>
+                </Grid>
+            </div>
+
+            <div className="konversation-body">
+                <div className="theoretic-conversation" onClick={() => {
+                    abbilden();
+                    setTimeout(() => scrollIntoView({alignment: 'end'})
+                        , 50)
+
+                }}>
+                    <div className="theoretic-conversation-body">
+                        <div className="chat-window">
+                            <div className="top-menu">
+                                <div className="buttons">
+                                    <div className="button close"/>
+                                    <div className="button minimize"/>
+                                    <div className="button maximize"/>
+                                </div>
+                                <div className="title-chat">
+                                    <p>Chat</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="chat-objects" ref={scrollableRef}>
+                            {
+                                bubbles.filter(bubbles => bubbles.selected === true).map(
+                                    bubbles => <Bubble key={bubbles.id} category={bubbles.category}
+                                                       text={bubbles.text}/>
+                                )
+                            }
+
+                            {
+                                allRight ?
+                                    null :
+                                    <button className="loading-button" id="loading-Button" ref={targetRef}>
+                                        <span>.</span><span>.</span><span>.</span>
+                                    </button>
+
+                            }
+                        </div>
+
+                        <div className="bottom_wrapper">
+                            <textarea className="message_input" placeholder="type a message"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 };
-
 export default Konversation;
-
-

@@ -4,6 +4,7 @@ import { useDrag } from "react-dnd";
 const DragItem = (props: { id: number; state: any; text: String; right: boolean }) => {
     const { id, text, state, right } = props;
 
+    // von React-DnD, macht eine Komponente Draggable
     const [{ isDragging }, drag] = useDrag({
         type: state,
         item: {
@@ -20,8 +21,14 @@ const DragItem = (props: { id: number; state: any; text: String; right: boolean 
     return (
         <p ref={drag} className="Card"
             style={{
-                backgroundColor: right ? 'lightgreen' : 'red',
-                fontSize: (isDragging ? 20 : undefined)
+                backgroundColor: right ? 'lightgreen' : 'var(--dark-two)',
+                fontSize: (isDragging ? 20 : undefined),
+                border: '1px solid',
+                borderColor:'var(--dark-one)',
+                borderRadius: '22px',
+                color: 'white',
+                padding: 7,
+                margin: 7,
             }}>
             {text}
         </p>

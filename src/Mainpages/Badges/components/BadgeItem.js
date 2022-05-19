@@ -1,21 +1,43 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import storage from "../../../storage";
 
-const BadgeItem = ({data, id}) => (
+const setData = (badgeID) => {
+    storage.setBadgeID(badgeID)
+    console.log(badgeID)
+}
+
+const BadgeItem = ({data}) => (
     <div className="badgeline-item">
-        <div className="badgeline-item-content">
-            <span className="tag"
-                  style={{background: 'linear-gradient(to right, rgb(106, 6, 236), rgb(44, 0, 240))'}}>
-                Badge {id}
-            </span>
-            <p>{data.text}</p>
-            <h3>{data.title}</h3>
+        {/*check if badge is unlocked */}
+        {
+            data.unlocked ?
+                <div className="badgeline-item-content">
+                <span className="tag">
+                    🔓
+                </span>
+                    <h3>{data.title}</h3>
+                    <p>{data.text}</p>
+                    <Link to={'../Gamemodi/' + data.modis[0]} onClick={()=>setData(data.badgeID)}>
+                        Start
+                    </Link>
+                    <span className="circle"/>
+                </div>
+                :
+                <div className="badgeline-item-content">
+                <span className="tag">
+                    🔒
+                </span>
+                    <h3>{data.title}</h3>
+                    <p style={{filter: 'blur(4px)'}}>{data.text}</p>
 
-            <Link to={'../Gamemodi/' + id + '/' + data.modis[0]}>
-                Start
-            </Link>
-            <span className="circle"></span>
-        </div>
+
+                    <Link disabled='disabled' style={{filter: 'blur(4px)'}} to={''}>
+                        Start
+                    </Link>
+                    <span className="circle"/>
+                </div>
+        }
     </div>
 );
 

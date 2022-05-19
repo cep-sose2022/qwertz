@@ -1,5 +1,5 @@
 import React from 'react';
-import img1 from "../../Resources/images/reagenzglasOrangetransparent.png";
+import img1 from "../../Resources/images/orange_zwinkern.png";
 import './Startseite.css';
 
 const Header = () => {
@@ -18,7 +18,7 @@ const Header = () => {
                         Jetzt starten
                     </a>
                 </div>
-                <img className="column-2 image"
+                <img className="imageAnfang"
                     src={img1}
                     alt="logo" />
             </div>

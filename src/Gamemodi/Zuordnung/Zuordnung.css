@@ -1,43 +1,102 @@
-.Left {
+.background {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow: auto;
+    justify-content: space-around;
+}
+
+.container-zuordnung {
+    /*background-color: var(--dark-two);*/
     position: relative;
-    margin-left: 4rem;
+    top: 40px;
+    /*border: 5px solid;*/
+    padding: 10px;
+}
+
+.container-zuordnung .zuordnung-header {
+    background-color: var(--dark-one);
+    padding: 10px;
+    border: 5px solid;
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px black;
+}
+
+/*item heap*/
+.item-heap {
+    margin-top: calc(100% - 99%);
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.Left {
+    margin: 1rem;
+    display: block;
+    position: relative;
     text-align: center;
     font-weight: bold;
-    float: left;
-    width: 300px;
-    height: 300px;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    min-height: 300px;
     border: 3px solid rgb(0, 0, 0);
     box-shadow: 10px 5px 5px black;
-    background-color: #aeb0b9;
-    top: 75px;
-    right: 800px;
+    background-color: var(--main-color);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+/*item heap end*/
+
+
+/*answer-heap*/
+.answer-heap {
+    margin-top: calc(100% - 99%);
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .Up {
+    display: block;
     position: relative;
-    margin-right: 2.5rem;
+    margin: 1rem;
     text-align: center;
     font-weight: bold;
-    float: right;
-    width: 300px;
-    height: 300px;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    min-height: 150px;
     border: 3px solid black;
     box-shadow: 10px 5px 5px black;
-    background-color: rgba(7, 152, 255, 0.527);
-    top: -230px;
+    background-color: #e00626;
+    border-radius: 15px;
+    padding: 10px;
 }
 
 .Down {
+    margin: 1rem;
+    display: block;
     position: relative;
-    margin-left: 34.2rem;
-    margin-top: -18.8rem;
     text-align: center;
     font-weight: bold;
-    float: left;
-    width: 300px;
-    height: 300px;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    min-height: 150px;
     border: 3px solid black;
     box-shadow: 10px 5px 5px black;
-    background-color: rgba(7, 152, 255, 0.527);
-    top: 70px;
+    background-color: #32c251;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+/*answer heap end*/
+
+.header-categorization {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
 }

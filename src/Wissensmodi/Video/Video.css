@@ -1,0 +1,14 @@
+video.responsive-video {
+    max-width: 300px;
+    height: auto;
+}
+
+.center {
+    text-align: right;
+}
+
+@media screen and (min-width: 768px) {
+    video.responsive-video {
+        max-width: 640px;
+    }
+}

@@ -1,7 +1,7 @@
 [
   {
-    "title": "Phishing",
-    "text": "Es gibt zunächst zwei Theorievideos und danach erwarten Sie interkative Spiele",
+    "title": "Schadsoftware Wechseldatenträger",
+    "text": "Was gilt zu beachten im Umgang mit Wechseldatenträgern und externer Hardware. Welche Bedrohungen ergeben sich dadurch für das Unternehmen und welche Maßnahmen können Sie ergreifen. ",
     "modis": [
       "Konversation",
       "Video",
@@ -11,7 +11,7 @@
     ]
   },
   {
-    "title": "Firewall",
+    "title": "Phishing",
     "text": "Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele",
     "modis": [
       "Konversation",
@@ -22,7 +22,29 @@
     ]
   },
   {
-    "title": "OT",
+    "title": "Patchmanagement",
+    "text": "Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative SpieleEs gibt zunächst zwei Theorievideos danach erwarten Sie interkative SpieleEs gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele",
+    "modis": [
+      "Konversation",
+      "Video",
+      "Ablaufanordnung",
+      "Wimmelbild",
+      "Zuordnung"
+    ]
+  },
+  {
+    "title": "Remote Access",
+    "text": "Es gibt zunächst zwei Theorievideos und danach erwarten Sie interkative Spiele",
+    "modis": [
+      "Konversation",
+      "Video",
+      "Ablaufanordnung",
+      "Wimmelbild",
+      "Zuordnung"
+    ]
+  },
+  {
+    "title": "Smartphone im Produktionsumfeld",
     "text": "Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele",
     "modis": [
       "Konversation",

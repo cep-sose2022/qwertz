@@ -3,10 +3,11 @@ import {useDrop} from "react-dnd";
 import {ItemState} from "./ItemState";
 import {CardContext} from "./Ablaufanordnung";
 import {Center} from "@mantine/core";
+import "./Ablaufanordnung.css";
 
 
 const DropBox = (props) => {
-    const {children, id, bgColor} = props;
+    const {children, id} = props;
 
 
     const {markAsX} = useContext(CardContext);
@@ -23,13 +24,21 @@ const DropBox = (props) => {
         <Center
             ref={drop}
             style={{
-                backgroundColor: (isDragging ? 'gray' : bgColor),
-                width: 250,
-                height: 50
-
+                background: (isDragging ? 'linear-gradient(to right bottom,#7608FF,#B273FF)' : 'linear-gradient(to right bottom,#0799FFFF,#3BADFF)'),
+                width: "auto",
+                minHeight: 50,
+                display: "flex",
+                flexDirection: "column",
+                borderRadius: '15px',
+                boxShadow: '10px 5px 5px black',
             }}
         >
-            {children}
+            <div className="card-header">
+                <span>{id}</span>
+            </div>
+            <div className="card-body">
+                {children}
+            </div>
         </Center>
     );
 }

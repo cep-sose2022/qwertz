@@ -12,13 +12,9 @@ const Footer = () => {
             <div className="container">
                 <div className="grid-4">
                     <div className="grid-4-col footer-about">
-                        <h3 className="title-sm">About</h3>
+                        <h3 className="title-sm">Über die Schulung</h3>
                         <p className="text">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                            Lorem ipsum dolor sit amet.
+                            OT-Security ist ein wichtiger werdender Teil der Industrieanlagen. Im Rahmen dieser Awareness Schulung soll das Bewusstsein für mögliche Verletzungen der Industrieanlagen geschärft werden. Darunter fällt die Simulationen von Gefahren, die das menschliche Verhalten ausnutzen, um zum Beispiel durch Phishing-Mails an wertvolle Informationen zu gelangen.
                         </p>
                     </div>
                     <div className="grid-4-col footer-links">
@@ -41,14 +37,11 @@ const Footer = () => {
                     <div className="grid-4-col footer-links">
                         <h3 className="title-sm">Schulungen</h3>
                         <ul>
-                            <li key={Math.random()}><a href="#">Lorem ipsum</a></li>
-                            <li key={Math.random()}><a href="#">Lorem ipsum</a></li>
-                            <li key={Math.random()}><a href="#">Lorem ipsum</a></li>
-                            <li key={Math.random()}><a href="#">Lorem ipsum</a></li>
-                            <li key={Math.random()}><a href="#">Lorem ipsum</a></li>
+                            <li key={Math.random()}><a href="#">Wissensmodulen</a></li>
+                            <li key={Math.random()}><a href="#">Gamemodulen</a></li>
+
                         </ul>
                     </div>
-                    <div className="LEER"></div>
                 </div>
 
                 <div className="bottom-footer">
@@ -60,7 +53,7 @@ const Footer = () => {
                             <br />
                             Copyright© 2022 Team QWERTZ
                             <br />| Made by
-                            <span>Team QWERTZ</span>
+                            <span> Team QWERTZ</span>
                         </p>
                     </div>
                     <div className="followme-wrap">

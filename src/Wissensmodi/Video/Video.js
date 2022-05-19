@@ -1,17 +1,20 @@
 import React, {useContext} from "react";
 import {ModiContext} from "../../Gamemodi/Gamemodi";
 import {Button} from "@mantine/core";
-import service from "../../service"
 
 const Video = () => {
-
+    const eigenerName = 'Video';
     // @ts-ignore
-    const {markAsPassed, badgeNr} = useContext(ModiContext);
+    const {markAsPassed} = useContext(ModiContext);
+
     return (
         <>
-            <h1>Video {badgeNr}</h1>
-            <p>Servise {service.getZitate()[0]._id}</p>
-            <Button onClick={() => markAsPassed('Video')} disabled={false}> Weiter</Button>
+            <div className="center">
+                <video className="responsive-video" src="Bsp_Video.mp4" controls width="640" height="400"></video>
+                <video src="Bsp_Video.ogg"></video>
+
+            </div>
+            <Button onClick={() => markAsPassed(eigenerName)} disabled={false}> Weiter</Button>
         </>
     );
 }

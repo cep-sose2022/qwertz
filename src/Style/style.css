@@ -4,7 +4,7 @@
 :root {
     --dark-one: #333;
     --dark-two: #7a7a7a;
-    --main-color: rgba(7, 153, 255, 1);
+    --main-color: rgb(7, 153, 255, 1);
     --light-one: #fff;
     --light-two: #f9fafb;
     --light-three: #f6f7fb;
@@ -24,10 +24,11 @@ html {
     scroll-behavior: smooth
 }
 
+/*=======================Textschrift überall=======================*/
+
 body,
 button,
 input,
-/*=======================Textschrift überall=======================*/
 textarea {
     font-family: "Poppins", sans-serif;
 }
@@ -53,6 +54,8 @@ img {
     margin: 0 auto;
 }
 
+
+
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -67,7 +70,7 @@ img {
 }
 
 .column-1 {
-    margin-top: -19rem;
+    margin-top: -35.5rem;
     margin-right: 1.5rem;
     margin-left: 5rem;
     flex-basis: 120%;
@@ -76,12 +79,12 @@ img {
 }
 
 .column-1 .header-title {
-    margin-top: 25rem;
+    margin-top: 16rem;
     margin-right: 1.5rem;
 }
 
 .column-2 {
-    margin-top: 10rem;
+    margin-top: 25.5rem;
     margin-left: 6rem;
 }
 
@@ -90,6 +93,7 @@ img {
 /*=======================Header=======================*/
 header {
     width: 100%;
+    max-height: calc(100vh - -2.1rem);
     background-color: var(--light-three);
     overflow: hidden;
     position: relative;

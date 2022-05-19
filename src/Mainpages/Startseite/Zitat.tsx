@@ -1,10 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import './Startseite.css';
-import services from '../../service'
 
-const Zitat = () => {
-    const JsonData = services.getZitate()
 
+const Zitat = (props: { JsonData: any; }) => {
+    const { JsonData } = props;
     const [zitat, setZitat] = useState(JsonData[Math.floor(Math.random() * JsonData.length)])
     const generator = () => {
         setZitat(JsonData[Math.floor(Math.random() * JsonData.length)])
@@ -12,11 +11,9 @@ const Zitat = () => {
 
     return (
         <div className="quote-body">
-
             <div className="icon-quote">
-
-                <span className="icon2"/>
-                <i className="fas fa-quote-left"/>
+                <span className="icon2" />
+                <i className="fas fa-quote-left" />
                 <p className="quote">{zitat.quote}
                 </p>
             </div>

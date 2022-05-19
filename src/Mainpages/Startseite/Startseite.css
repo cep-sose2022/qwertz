@@ -40,9 +40,13 @@
 }
 
 /*============= Avatar Bild ============= */
-.column-2 image {
+
+
+.imageAnfang {
     position: relative;
-    width: 10%;
+    left: -70px;
+    margin: 20rem;
+    top: -140px;
 }
 
 .image {
@@ -154,6 +158,7 @@
     text-transform: uppercase;
     font-weight: 500;
     transition: 0.3s;
+    z-index:2;
 }
 
 .btn:hover {
@@ -200,6 +205,10 @@
     width: 100%;
 }
 
+.card .text {
+    text-align: justify;
+}
+
 /*============Abstand zum Außenbereich==========*/
 .card-wrap {
     position: relative;
@@ -210,6 +219,7 @@
 .card {
     position: relative;
     width: 100%;
+    height: 550px;
     max-width: 390px;
     min-height: 520px;
     background-color: var(--light-three);
@@ -240,7 +250,7 @@
     content: "";
     position: absolute;
     width: 100%;
-    height: 0px;
+    height: 0;
     bottom: 0;
     left: 0;
     background-color: var(--main-color);
@@ -259,8 +269,9 @@
 
 /*===============Icon Größe im Bereich Schulung================*/
 .icon {
-    width: 90px;
-    margin-bottom: 1.7rem;
+    width: 300px;
+    margin-bottom: 0;
+    margin-left: -3.8rem;
 }
 
 /*============Abstand zwischen Überschrift und Text im Bereich Schulung============*/
@@ -292,12 +303,12 @@
 .about {
     background-color: var(--light-three);
     overflow: hidden;
-    height: 670px;
+    height: 550px;
 }
 
 .about img {
     max-width: 300px;
-    top: -20rem;
+    top: -29rem;
 }
 
 .about .text {
@@ -624,61 +635,6 @@
     transform: rotate(-45deg);
 }
 
-/*==============================================================================*/
-.progressbar {
-    position: relative;
-    left: 270px;
-    top: 13px;
-    counter-reset: step;
-}
-
-.progressbar li {
-    position: relative;
-    list-style: none;
-    float: left;
-    width: 12%;
-    text-align: center;
-}
-
-.progressbar li:before {
-    content: counter(step);
-    counter-increment: step;
-    width: 40px;
-    height: 40px;
-    border: 1px solid #a0adc4;
-    display: block;
-    text-align: center;
-    margin: 0 auto 10px auto;
-    border-radius: 50%;
-    background-color: #a0adc4;
-
-    /* Center */
-    line-height: 39px;
-}
-
-.progressbar li:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background: #a0adc4;
-    top: 20px;
-    left: -50%;
-    z-index: -1;
-}
-
-.progressbar li:first-child:after {
-    content: none;
-}
-
-.progressbar li.bestanden:before {
-    background: #00E676;
-    content: "✔";
-}
-
-
-
-/*===============================================================================*/
 .rectangleRight {
     width: 480px;
     height: 370px;
@@ -727,4 +683,8 @@
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.icon-quote p {
+    font-size: 1.2rem;
 }

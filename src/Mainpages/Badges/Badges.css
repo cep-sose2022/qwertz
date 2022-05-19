@@ -1,18 +1,26 @@
-.bodyForBadge {
+.badges-container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
 
 }
 
+.badges-body {
+    width: 100%;
+}
+
+
 .badgeline-container {
     display: flex;
+    overflow:auto;
     flex-direction: column;
     position: relative;
     margin: 40px 0;
+    height: 100%;
+    width: 100%;
+    padding:5%;
+
 }
 
 .badgeline-container::after {
@@ -81,38 +89,35 @@
 }
 
 .badgeline-item-content .tag {
+
     position: absolute;
-    top: -48px;
-    width: 135px;
-    height: 35px;
+    top: -60px;
+    width: auto;
+    height: auto;
     border-radius: 20px;
     color: #fff;
     display: grid;
     place-items: center;
-    font-size: 14px;
+    font-size: 35px;
     box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.418);
-}
-
-.badgeline-item:nth-child(odd) .badgeline-item-content .tag {
-    left: auto;
-    right: 125px;
+    background: linear-gradient(to right, rgb(106, 6, 236), rgb(44, 0, 240));
 }
 
 .badgeline-item-content p {
-    position: relative;
+    /*position: relative;*/
     top: 30px;
     font-size: 16px;
     line-height: 24px;
-    margin: 15px 0;
-    max-width: 250px;
+    margin: 10px 0;
+    max-width: 80%;
 }
 
 .badgeline-item-content h3 {
-    position: relative;
+    /*position: relative;*/
     color: rgb(7, 79, 146);
     font-size: 30px;
-    line-height: 24px;
-    margin: 15px 0;
+    /*line-height: px;*/
+    /*margin: 15px 0;*/
     top: -115px;
     max-width: 250px;
 }
@@ -157,24 +162,27 @@
     left: -40px;
 }
 
-.bodyForBadge .image {
+.badges-body .image {
     position: relative;
-    height: 100vh;
+    height: 100%;
     width: 100%;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgb(0, 0, 0);
 }
 
-.bodyForBadge .image::before {
+.badges-body .image::before {
     content: "";
+    background-attachment: fixed;
     background-image: url('./../../Resources/images/wallpaperbetter.jpg');
     background-size: cover;
     position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     opacity: 0.85;
 }
+

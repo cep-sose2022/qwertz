@@ -1,28 +1,78 @@
+.ablaufanordung-container {
+    position: relative;
+    top: 40px;
+    padding: 10px;
+}
+
+
+/*button section*/
+.ablaufanordung-container .ablaufanordung-header {
+    background-color: var(--dark-one);
+    padding: 10px;
+    border: 5px solid;
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px black;
+}
+
+/*drag and drop section*/
+.ablaufanordung-container .ablaufanordung-body {
+    background: linear-gradient(to right bottom, #002B4A,#0075C8);
+    border: 5px solid;
+    margin-top: 5px;
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px black;
+}
+
+/*drag container in drag and drop section*/
+.card-header {
+    text-align: start;
+    width: 100%;
+    font-weight: bold;
+}
+
+.card-body {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.card-header span {
+    border-right: 3px solid;
+    border-bottom: 3px solid;
+    border-radius: 100%;
+}
+/*end drag container*/
+
+
+/*avatar position in Modal*/
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*heap of dropitems*/
 .scrollmenu {
-    background-color: #333;
+    min-height: 50px;
+    border: 3px solid;
+    background-color: var(--main-color);
     overflow: auto;
     white-space: nowrap;
+    border-radius: 15px;
 }
 
-.scrollmenu p {
+/*drag Item*/
+.dragCard {
     display: inline-block;
-    color: white;
     text-align: center;
+    overflow-wrap: break-word;
+    border: 1px solid;
     padding: 14px;
     text-decoration: none;
-}
-
-.board {
-    background-color: rgba(7, 152, 255, 0.527);
-    display: inline-block;
-    color: black;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-}
-
-.board div {
-    border-style: dashed;
-    width: 200px;
-    height: 50px;
+    margin: 5px;
+    border-radius: 15px;
 }
