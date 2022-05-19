@@ -27,6 +27,15 @@ storage.setBadgePassed = (badgeID) => {
     badges.filter(badge => badge.badgeID === (badgeID + 1))[0].unlocked = true
     storage.setBadges(badges)
 }
+storage.setBadgeID = (badgeID) => {
+    sessionStorage.setItem("badgeID", badgeID)
+}
+storage.getBadgeID = () => {
+    return sessionStorage.getItem("badgeID")
+}
+storage.removeBadgeID = () => {
+    sessionStorage.removeItem("badgeID")
+}
 
 // Methoden um mit den Modis zu agieren
 storage.setModis = (modis) => {
@@ -42,6 +51,23 @@ storage.setModiPassed = (modiId) => {
     let modis = storage.getModis()
     modis.filter(modi => modi.modiID === modiId)[0].passed = true
     storage.setModis(modis)
+}
+storage.setModiID = (modiId) => {
+    sessionStorage.setItem("modiID", modiId)
+}
+storage.getModiID = () => {
+    return sessionStorage.getItem("modiID")
+}
+storage.removeModiID = () => {
+    sessionStorage.removeItem("modiID")
+}
+
+storage.removeAll =()=>{
+    storage.removeModiID()
+    storage.removeBadgeID()
+    storage.removeCurrentModiTitle()
+    storage.removeModis()
+    // storage.removeBadges()
 }
 
 

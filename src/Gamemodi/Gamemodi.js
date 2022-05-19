@@ -11,26 +11,26 @@ let modiData = [
         passed: false,
         title: 'Konversation'
     },
-    // {
-    //     modiID: 2,
-    //     passed: false,
-    //     title: 'Video'
-    // },
     {
         modiID: 2,
         passed: false,
-        title: 'Wimmelbild'
+        title: 'Video'
     },
-    {
-        modiID: 3,
-        passed: false,
-        title: 'Ablaufanordnung'
-    },
-    {
-        modiID: 4,
-        passed: false,
-        title: 'Zuordnung'
-    }
+    // {
+    //     modiID: 2,
+    //     passed: false,
+    //     title: 'Wimmelbild'
+    // },
+    // {
+    //     modiID: 3,
+    //     passed: false,
+    //     title: 'Ablaufanordnung'
+    // },
+    // {
+    //     modiID: 4,
+    //     passed: false,
+    //     title: 'Zuordnung'
+    // }
 ]
 
 export const ModiContext = createContext({});
@@ -61,12 +61,12 @@ const Gamemodi = () => {
     }
 
     const loadModiData = () => {
-        // läd die Modis (also ob sie schon abgeschlossen sin oder net) aus dem LocalStorage
+        // läd die Modis (also ob sie schon abgeschlossen sin oder net) aus dem Storage
         const tempModis = storage.getModis()
         if (tempModis === undefined || tempModis === null) {
             storage.setModis(modis)
         } else
-            setModis(tempModis)
+            setModis(tempModis) // TODO DB zugriff
         // modis = tempModis
 
         // setzt den aktuellen Modi Title
@@ -87,15 +87,15 @@ const Gamemodi = () => {
         modis.filter(modi => !modi.passed)[0].passed = true
 
         if (modis.filter(modi => !modi.passed).length !== 0) {
-            let modiTitle = modis.filter(modi => !modi.passed)[0].title
-            storage.setCurrentModiTitle(modiTitle)
+            let nextModi = modis.filter(modi => !modi.passed)[0]
+            storage.setCurrentModiTitle(nextModi.title)
+            storage.setModiID(nextModi.modiID)
 
-            setCurrentModiTitle(modiTitle)
-            navigator('./' + modiTitle)
+            setCurrentModiTitle(nextModi.title)
+            navigator('./' + nextModi.title)
         } else {
-            storage.setBadgePassed(1)
-            storage.removeCurrentModiTitle()
-            storage.removeModis()
+            storage.setCurrentModiTitle('Endscreen')
+            setCurrentModiTitle('Endscreen')
             navigator('./Endscreen')
         }
     }
@@ -108,8 +108,7 @@ const Gamemodi = () => {
                 <Group>
                     <Button onClick={() => {
                         modis.map(modi => modi.passed = false)
-                        storage.removeCurrentModiTitle()
-                        storage.removeModis()
+                        storage.removeAll()
                         navigator('../Badges')
                         setModalOpened(false)
                     }}>Ja</Button>
