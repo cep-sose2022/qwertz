@@ -70,7 +70,6 @@
     min-width: 100%;
     /*height: auto;*/
     height: 25vh;
-    background-color: #e00626;
     border-radius: 15px;
     overflow: auto;
 }
@@ -86,7 +85,7 @@
     min-height: 150px;
     border: 3px solid black;
     box-shadow: 10px 5px 5px black;
-    background-color: #e00626;
+    background-color: #F88301;
     border-radius: 15px;
     padding: 10px;
 }
@@ -100,9 +99,7 @@
     height: 25vh;
     overflow: auto;
     min-height: 150px;
-    /*border: 3px solid black;*/
-    /*box-shadow: 10px 5px 5px black;*/
-    /*border-top-left-radius: 15px;*/
+
     border-radius: 15px;
 }
 
