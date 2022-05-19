@@ -1,4 +1,5 @@
 .badges-container {
+    margin-top:4vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,8 +18,8 @@
     flex-direction: column;
     position: relative;
     margin: 40px 0;
-    height: 100%;
-    width: 100%;
+    /*height: 100%;*/
+    width: 100vw;
     padding:5%;
 
 }
@@ -60,8 +61,7 @@
     align-items: flex-end;
     padding: 15px;
     position: relative;
-    width: 800px;
-    max-width: 70%;
+    max-width: 70vw;
     text-align: left;
 }
 
@@ -89,7 +89,6 @@
 }
 
 .badgeline-item-content .tag {
-
     position: absolute;
     top: -60px;
     width: auto;
@@ -104,22 +103,19 @@
 }
 
 .badgeline-item-content p {
-    /*position: relative;*/
     top: 30px;
     font-size: 16px;
     line-height: 24px;
     margin: 10px 0;
-    max-width: 80%;
+    max-width: 80vw;
 }
 
 .badgeline-item-content h3 {
-    /*position: relative;*/
+    word-break:break-all;
     color: rgb(7, 79, 146);
     font-size: 30px;
-    /*line-height: px;*/
-    /*margin: 15px 0;*/
     top: -115px;
-    max-width: 250px;
+    max-width: 70vw;
 }
 
 .badgeline-item-content a {

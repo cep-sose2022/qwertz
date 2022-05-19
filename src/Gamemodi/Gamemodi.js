@@ -11,26 +11,26 @@ let modiData = [
         passed: false,
         title: 'Konversation'
     },
-    {
-        modiID: 2,
-        passed: false,
-        title: 'Video'
-    },
     // {
     //     modiID: 2,
     //     passed: false,
-    //     title: 'Wimmelbild'
+    //     title: 'Video'
     // },
-    // {
-    //     modiID: 3,
-    //     passed: false,
-    //     title: 'Ablaufanordnung'
-    // },
-    // {
-    //     modiID: 4,
-    //     passed: false,
-    //     title: 'Zuordnung'
-    // }
+    {
+        modiID: 2,
+        passed: false,
+        title: 'Wimmelbild'
+    },
+    {
+        modiID: 3,
+        passed: false,
+        title: 'Ablaufanordnung'
+    },
+    {
+        modiID: 4,
+        passed: false,
+        title: 'Zuordnung'
+    }
 ]
 
 export const ModiContext = createContext({});
