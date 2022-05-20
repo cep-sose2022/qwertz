@@ -408,6 +408,9 @@
     font-weight: 500;
     font-size: 1.3rem;
 }
+.title{
+    margin-top:4vh;
+}
 
 .followme .footer-line {
     width: 60px;
