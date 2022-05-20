@@ -10,11 +10,10 @@ import {VscFolderLibrary} from "react-icons/vsc";
 import storage from "../../../storage";
 
 const machEnde = () => {
-    let badgeID = storage.getBadgeID()
-    storage.setBadgePassed(parseInt(badgeID))
+    storage.setBadgePassed(storage.getBadgeID())
     storage.removeAll()
 }
-
+// TODO hier wurde was gemacht
 const EndscreenPlace = () => EndscreenData.length > 0 && (
     <div className="endscreen-container">
         <div className="endscreen-header">

@@ -2,9 +2,13 @@ import React from "react";
 import {Link} from "react-router-dom";
 import storage from "../../../storage";
 
-const setData = (badgeID) => {
-    storage.setBadgeID(badgeID)
-    console.log(badgeID)
+// TODO hier wurde was gemacht
+const setData = (badgeID, modis) => {
+    if (storage.getBadgeID() !== badgeID) {
+        storage.removeAll()
+        storage.setBadgeID(badgeID)
+        storage.setModis(modis)
+    }
 }
 
 const BadgeItem = ({data}) => (
@@ -18,7 +22,7 @@ const BadgeItem = ({data}) => (
                 </span>
                     <h3>{data.title}</h3>
                     <p>{data.text}</p>
-                    <Link to={'../Gamemodi/' + data.modis[0]} onClick={()=>setData(data.badgeID)}>
+                    <Link to={'../Gamemodi'} onClick={() => setData(data.badgeID, data.modis)}>
                         Start
                     </Link>
                     <span className="circle"/>
@@ -30,7 +34,6 @@ const BadgeItem = ({data}) => (
                 </span>
                     <h3>{data.title}</h3>
                     <p style={{filter: 'blur(4px)'}}>{data.text}</p>
-
 
                     <Link disabled='disabled' style={{filter: 'blur(4px)'}} to={''}>
                         Start

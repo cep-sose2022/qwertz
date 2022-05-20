@@ -8,6 +8,9 @@ import Bubble from "./Components/Bubble";
 import {ModiContext} from "../../Gamemodi/Gamemodi";
 import {FcQuestions} from "react-icons/fc";
 import {useScrollIntoView} from "@mantine/hooks";
+import service from "../../service";
+import storage from "../../storage";
+import {useNavigate} from "react-router";
 
 const modalData = [
     {
@@ -26,23 +29,33 @@ const Konversation = () => {
 
     const {markAsPassed, redirect} = useContext(ModiContext);
 
-    // läd die daten aus der DB und schreib sie in eine const
-    if (bubbles[0] === undefined) {
-        Data.map(object => {
-            let bubble = {
-                id: Math.floor(Math.random() * 10000),
-                text: object.text,
-                category: object.category,
-                selected: false
-            }
-            bubbles.push(bubble);
-        })
-    }
+    const navigator = useNavigate();
+
+    // TODO des muss alles in jeden modi
 
     // um zu dem Modi umzuleiten, der gerade daran is
-    useEffect(() =>
+    useEffect(() => {
         redirect(eigenerName)
-    )
+        // läd die daten aus der DB und schreib sie in eine const
+        if (bubbles[0] === undefined) {
+            const Data = service.getKonversation(storage.getBadgeID(), storage.getModiID())
+            if (Data === null) {
+                navigator('../../Error503')
+                return
+            }
+
+            Data.map(object => {
+                let bubble = {
+                    id: Math.floor(Math.random() * 10000),
+                    text: object.text,
+                    category: object.category,
+                    selected: false
+                }
+                bubbles.push(bubble);
+            })
+        }
+    })
+    // TODO bis hier
 
     // zum anzeigen des Nächsten Textes
     const abbilden = () => {

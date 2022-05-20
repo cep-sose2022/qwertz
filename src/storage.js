@@ -24,14 +24,17 @@ storage.removeBadges = () => {
 storage.setBadgePassed = (badgeID) => {
     let badges = storage.getBadges()
     badges.filter(badge => badge.badgeID === badgeID)[0].passed = true
-    badges.filter(badge => badge.badgeID === (badgeID + 1))[0].unlocked = true
+
+    let nextBadge = badges.filter(badge => badge.badgeID === (badgeID + 1))[0]
+    if (nextBadge !== undefined)
+        nextBadge.unlocked = true
     storage.setBadges(badges)
 }
 storage.setBadgeID = (badgeID) => {
     sessionStorage.setItem("badgeID", badgeID)
 }
 storage.getBadgeID = () => {
-    return sessionStorage.getItem("badgeID")
+    return parseInt(sessionStorage.getItem("badgeID"))
 }
 storage.removeBadgeID = () => {
     sessionStorage.removeItem("badgeID")
@@ -39,7 +42,16 @@ storage.removeBadgeID = () => {
 
 // Methoden um mit den Modis zu agieren
 storage.setModis = (modis) => {
-    sessionStorage.setItem("modis", JSON.stringify(modis))
+    let modiData = []
+    modis.map(object => {
+        let modi = {
+            modiID: object.modiID,
+            title: object.name,
+            passed: false
+        }
+        modiData.push(modi)
+    })
+    sessionStorage.setItem("modis", JSON.stringify(modiData))
 }
 storage.getModis = () => {
     return JSON.parse(sessionStorage.getItem("modis"))
@@ -56,13 +68,13 @@ storage.setModiID = (modiId) => {
     sessionStorage.setItem("modiID", modiId)
 }
 storage.getModiID = () => {
-    return sessionStorage.getItem("modiID")
+    return parseInt(sessionStorage.getItem("modiID"))
 }
 storage.removeModiID = () => {
     sessionStorage.removeItem("modiID")
 }
 
-storage.removeAll =()=>{
+storage.removeAll = () => {
     storage.removeModiID()
     storage.removeBadgeID()
     storage.removeCurrentModiTitle()
@@ -72,3 +84,4 @@ storage.removeAll =()=>{
 
 
 module.exports = storage
+// TODO hier wurde was gemacht

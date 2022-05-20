@@ -1,35 +1,20 @@
-import React, {useEffect} from 'react';
-import {Center} from "@mantine/core";
+import React from 'react';
+import {Button} from "@mantine/core";
 import {useNavigate} from "react-router";
-import service from "../service";
+import storage from "../storage";
 
 const Error503Page = () => {
-    const JsonData = service.getZitate()
-    console.log(JsonData)
-    if(JsonData === undefined)
-        console.log("ne")
 
     const navigator = useNavigate();
 
-    useEffect(() =>
-        // hier muss des anfragen an die DB, bzw die überprüfung pb es geklappt hat
-        false ?
-            navigator('../Badges')
-            :
-            undefined
-    )
-
     return (
         <>
-
-            <Center>
-                <h1>503</h1>
-            </Center>
-            <Center>
-                <p> Service Unavailable</p>
-            </Center>
-            <h1>{JsonData[0].author}</h1>
+            <br/><br/><br/><br/><br/><br/>
+            <p>Beim laden vom Modus {storage.getCurrentModiTitle()} ist ein Fehler aufgetreten, sollte dieser Fehler
+                weiterhin bestehen wenden sie sich an sen Systemadministrator</p>
+            <Button onClick={() => navigator('../Gamemodi/' + storage.getCurrentModiTitle())}>Neu Laden</Button>
         </>
     );
 }
 export default Error503Page;
+// TODO hier wurde was gemacht

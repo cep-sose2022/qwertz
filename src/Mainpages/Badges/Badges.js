@@ -8,6 +8,7 @@ import {BackgroundImage} from "@mantine/core";
 
 import JsonData from "../../Resources/Json/BadgeData.json";
 import storage from "../../storage";
+import service from "../../service";
 
 const Badges = () => {
     let badges = []
@@ -15,14 +16,15 @@ const Badges = () => {
     // läd die daten aus der DB uns speichert sie zwischen
     // wen schon daten im storage sind, lade die, ansonsten lade die aus der DB
     if (storage.getBadges() === null) {
-        JsonData.map((object, idx) => {
+        const JsonData = service.getBadges()
+        JsonData.map((object) => {
                 let badge = {
-                    badgeID: idx + 1,
+                    badgeID: parseInt(object.badgeID),
                     title: object.title,
                     text: object.text,
                     modis: object.modis,
-                    passed: false, // TODO wenn aus DB dann hier auch den Passed status abfragen
-                    unlocked: false
+                    passed: object.passed,
+                    unlocked: object.unlocked
                 }
                 badges.push(badge)
             }
@@ -32,7 +34,7 @@ const Badges = () => {
     } else
         badges = storage.getBadges()
 
-
+// TODO hier wurde was gemacht
     return (
         <div className="badges-container">
             <div className="badges-header">

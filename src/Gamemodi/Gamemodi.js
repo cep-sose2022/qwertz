@@ -5,33 +5,33 @@ import {Button, Group, Modal} from "@mantine/core";
 import {useNavigate} from "react-router";
 import storage from '../storage';
 
-let modiData = [
-    {
-        modiID: 1,
-        passed: false,
-        title: 'Konversation'
-    },
-    {
-        modiID: 2,
-        passed: false,
-        title: 'Video'
-    },
-    // {
-    //     modiID: 2,
-    //     passed: false,
-    //     title: 'Wimmelbild'
-    // },
-    // {
-    //     modiID: 3,
-    //     passed: false,
-    //     title: 'Ablaufanordnung'
-    // },
-    // {
-    //     modiID: 4,
-    //     passed: false,
-    //     title: 'Zuordnung'
-    // }
-]
+// let modiData = [
+//     {
+//         modiID: 1,
+//         passed: false,
+//         title: 'Konversation'
+//     },
+//     {
+//         modiID: 2,
+//         passed: false,
+//         title: 'Konversation'
+//     },
+//     {
+//         modiID: 1,
+//         passed: false,
+//         title: 'Konversation'
+//     },
+//     // {
+//     //     modiID: 3,
+//     //     passed: false,
+//     //     title: 'Ablaufanordnung'
+//     // },
+//     // {
+//     //     modiID: 4,
+//     //     passed: false,
+//     //     title: 'Zuordnung'
+//     // }
+// ]
 
 export const ModiContext = createContext({});
 
@@ -41,13 +41,18 @@ const Gamemodi = () => {
     const navigator = useNavigate();
     const [currentModiTitle, setCurrentModiTitle] = useState("");
     const [firstRender, setFirstRender] = useState(true)
-    const [modis, setModis] = useState(modiData)
+    const [reload, setReload] = useState(true)
+    const [modis] = useState(storage.getModis())
 
 
     useEffect(() => {
             if (firstRender) {
                 setFirstRender(false)
                 loadModiData()
+            }
+            if (reload) {
+                setReload(false)
+                redirect()
             }
         }
     )
@@ -61,20 +66,13 @@ const Gamemodi = () => {
     }
 
     const loadModiData = () => {
-        // läd die Modis (also ob sie schon abgeschlossen sin oder net) aus dem Storage
-        const tempModis = storage.getModis()
-        if (tempModis === undefined || tempModis === null) {
-            storage.setModis(modis)
-        } else
-            setModis(tempModis) // TODO DB zugriff
-        // modis = tempModis
-
         // setzt den aktuellen Modi Title
         const tempModiTitle = storage.getCurrentModiTitle()
         if (tempModiTitle === undefined || tempModiTitle === null) {
-            const modiTitle = modis.filter(modi => !modi.passed)[0].title
-            setCurrentModiTitle(modiTitle)
-            storage.setCurrentModiTitle(modiTitle)
+            const currentModi = modis.filter(modi => !modi.passed)[0]
+            setCurrentModiTitle(currentModi.title)
+            storage.setCurrentModiTitle(currentModi.title)
+            storage.setModiID(currentModi.modiID)
         } else {
             setCurrentModiTitle(tempModiTitle)
         }
@@ -92,14 +90,15 @@ const Gamemodi = () => {
             storage.setModiID(nextModi.modiID)
 
             setCurrentModiTitle(nextModi.title)
-            navigator('./' + nextModi.title)
+            setReload(true)
+            navigator('./')
         } else {
             storage.setCurrentModiTitle('Endscreen')
             setCurrentModiTitle('Endscreen')
             navigator('./Endscreen')
         }
     }
-
+// TODO hier wurde was gemacht
     return (
         <>
             {/* Modal zum abbrechen*/}
