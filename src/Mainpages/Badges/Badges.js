@@ -16,8 +16,11 @@ const Badges = () => {
     // läd die daten aus der DB uns speichert sie zwischen
     // wen schon daten im storage sind, lade die, ansonsten lade die aus der DB
     if (storage.getBadges() === null) {
-        const JsonData = service.getBadges()
-        JsonData.map((object) => {
+        let Data = service.getBadges()
+        if (Data === null)
+            Data = JsonData
+
+        Data.map((object) => {
                 let badge = {
                     badgeID: parseInt(object.badgeID),
                     title: object.title,

@@ -3,7 +3,7 @@ import "./Konversation.css";
 import {Button, Tooltip, Grid, Modal, Title} from '@mantine/core';
 
 
-import Data from "../../Resources/Json/KonversationData.json";
+import Data2 from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
 import {ModiContext} from "../../Gamemodi/Gamemodi";
 import {FcQuestions} from "react-icons/fc";
@@ -38,10 +38,14 @@ const Konversation = () => {
         redirect(eigenerName)
         // läd die daten aus der DB und schreib sie in eine const
         if (bubbles[0] === undefined) {
-            const Data = service.getKonversation(storage.getBadgeID(), storage.getModiID())
-            if (Data === null) {
+            let Data = service.getKonversation(storage.getBadgeID(), storage.getModiID())
+            if (Data === undefined) {
                 navigator('../../Error503')
                 return
+            } else if (Data === null) {
+                console.error("DB nicht erreichbar, nutze Demo Daten")
+                // navigator('../../Error503')
+                Data = Data2
             }
 
             Data.map(object => {

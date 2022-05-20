@@ -2,28 +2,41 @@ const service = {}
 const backendUrl = 'http://localhost:5000'
 
 service.getZitate = () => {
-    const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", `${backendUrl}/getZitate`, false);
-    xmlHttp.send(null);
-    return JSON.parse(xmlHttp.responseText);
+    try {
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", `${backendUrl}/getZitate`, false);
+        xmlHttp.send(null);
+        return JSON.parse(xmlHttp.responseText);
+    } catch (e) {
+        return null
+    }
 }
 
 service.getBadges = () => {
-    const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", `${backendUrl}/getBadges`, false);
-    xmlHttp.send(null);
-    return JSON.parse(xmlHttp.responseText);
+    try {
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", `${backendUrl}/getBadges`, false);
+        xmlHttp.send(null);
+        return JSON.parse(xmlHttp.responseText);
+    } catch (e) {
+        return null
+    }
+
 }
 
 const getModiData = (badgeID, modiID, name) => {
-    const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", `${backendUrl}/get${name}/${badgeID}/${modiID}`, false);
-    xmlHttp.send(null);
-    const responseJson = JSON.parse(xmlHttp.responseText)[0];
-    if (responseJson === undefined)
+    try {
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", `${backendUrl}/get${name}/${badgeID}/${modiID}`, false);
+        xmlHttp.send(null);
+        const responseJson = JSON.parse(xmlHttp.responseText)[0];
+        if (responseJson === undefined)
+            return undefined
+        else
+            return responseJson.data;
+    } catch (e) {
         return null
-    else
-        return responseJson.data;
+    }
 }
 service.getAblaufanordnung = (badgeID, modiID) => {
     return getModiData(badgeID, modiID, 'Ablaufanordnung')
