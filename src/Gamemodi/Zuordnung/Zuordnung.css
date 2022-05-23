@@ -6,6 +6,8 @@
     justify-content: space-around;
 }
 
+
+
 .container-zuordnung {
     /*background-color: var(--dark-two);*/
     position: relative;
@@ -48,6 +50,30 @@
     padding: 10px;
 }
 
+
+.Left::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.Left::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+}
+
+.Left::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.Left::-webkit-scrollbar-thumb {
+    background: #a5a6ab;
+}
+
+
+
 /*item heap end*/
 
 /*answer-heap*/
@@ -71,6 +97,27 @@
     height: 25vh;
     border-radius: 15px;
     overflow: auto;
+}
+
+.Up::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.Up::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+}
+
+.Up::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.Up::-webkit-scrollbar-thumb {
+    background: #a5a6ab;
 }
 
 .upContainer {
@@ -100,6 +147,27 @@
     overflow: auto;
     min-height: 150px;
     border-radius: 15px;
+}
+
+.Down::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.Down::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+}
+
+.Down::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.Down::-webkit-scrollbar-thumb {
+    background: #a5a6ab;
 }
 
 .downContainer {
