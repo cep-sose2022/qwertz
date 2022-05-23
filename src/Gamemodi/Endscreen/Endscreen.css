@@ -7,7 +7,7 @@
     background-position: center;
     background-image: url(../../Resources/konfetti_animiert.gif);
     background-repeat: no-repeat;
-    border-radius:25px;
+    border-radius: 25px;
 }
 
 
@@ -24,13 +24,20 @@
 
 /*bounce animation*/
 @keyframes bounceIn {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0);
         opacity: 1;
     }
+
     40% {
         transform: translateY(-30px);
     }
+
     60% {
         transform: translateY(-15px);
     }
@@ -61,13 +68,13 @@
 }
 
 
-.endscreen-text{
+.endscreen-text {
     justify-content: center;
 }
 
 .speechbubble {
     margin-top: 25%;
-    border-radius:25px;
+    border-radius: 25px;
     justify-content: center;
     background-color: var(--main-color);
     align-items: center;
@@ -80,6 +87,7 @@
     text-align: center;
     position: relative;
 }
+
 .speechbubble:after {
     content: "";
     position: absolute;
@@ -90,3 +98,17 @@
     right: -13px;
     top: 6px;
 }
+
+
+.gif {
+    position: relative;
+    animation: disappear 0s linear 6.4s forwards;
+}
+
+/*
+@keyframes disappear {
+    to {
+        opacity: 0;
+    }
+}
+*/

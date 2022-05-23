@@ -4,8 +4,9 @@ import "./Endscreen.css";
 
 const Endscreen = () => {
     return (
-            <EndscreenPlace />
+        <EndscreenPlace />
     )
 };
 
 export default Endscreen;
+
