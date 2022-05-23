@@ -3,7 +3,7 @@ import "./Konversation.css";
 import {Button, Tooltip, Grid, Modal, Title} from '@mantine/core';
 
 
-import Data2 from "../../Resources/Json/KonversationData.json";
+import JsonList from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
 import {ModiContext} from "../../Gamemodi/Gamemodi";
 import {FcQuestions} from "react-icons/fc";
@@ -45,7 +45,7 @@ const Konversation = () => {
             } else if (Data === null) {
                 console.error("DB nicht erreichbar, nutze Demo Daten")
                 // navigator('../../Error503')
-                Data = Data2
+                Data = JsonList
             }
 
             Data.map(object => {
@@ -100,7 +100,7 @@ const Konversation = () => {
                     {/* Weiter Button der nur geht, wenn alles gelesen wurde */}
                     <Grid.Col span={2}>
                         <Tooltip label="Du muss alles gelesen haben um weiter zu machen!">
-                            <Button onClick={() => markAsPassed(eigenerName)}
+                            <Button onClick={() => markAsPassed()}
                                     disabled={!allRight}> Weiter</Button>
                         </Tooltip>
                     </Grid.Col>

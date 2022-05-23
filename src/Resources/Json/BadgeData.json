@@ -1,16 +1,14 @@
 [
   {
+    "badgeID": 1,
     "title": "Schadsoftware Wechseldatenträger",
     "text": "Was gilt zu beachten im Umgang mit Wechseldatenträgern und externer Hardware. Welche Bedrohungen ergeben sich dadurch für das Unternehmen und welche Maßnahmen können Sie ergreifen. ",
     "modis": [
-      "Konversation",
-      "Video",
-      "Ablaufanordnung",
-      "Wimmelbild",
-      "Zuordnung"
+      {"name": "Konversation","modiID": 1},{"name": "Video","modiID": 2}
     ]
   },
   {
+    "badgeID": 2,
     "title": "Phishing",
     "text": "Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele",
     "modis": [
@@ -22,6 +20,7 @@
     ]
   },
   {
+    "badgeID": 3,
     "title": "Patchmanagement",
     "text": "Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative SpieleEs gibt zunächst zwei Theorievideos danach erwarten Sie interkative SpieleEs gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele",
     "modis": [
@@ -33,6 +32,7 @@
     ]
   },
   {
+    "badgeID": 4,
     "title": "Remote Access",
     "text": "Es gibt zunächst zwei Theorievideos und danach erwarten Sie interkative Spiele",
     "modis": [
@@ -44,6 +44,7 @@
     ]
   },
   {
+    "badgeID": 5,
     "title": "Smartphone im Produktionsumfeld",
     "text": "Es gibt zunächst zwei Theorievideos danach erwarten Sie interkative Spiele",
     "modis": [

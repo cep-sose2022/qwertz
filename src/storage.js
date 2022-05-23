@@ -42,16 +42,7 @@ storage.removeBadgeID = () => {
 
 // Methoden um mit den Modis zu agieren
 storage.setModis = (modis) => {
-    let modiData = []
-    modis.map(object => {
-        let modi = {
-            modiID: object.modiID,
-            title: object.name,
-            passed: false
-        }
-        modiData.push(modi)
-    })
-    sessionStorage.setItem("modis", JSON.stringify(modiData))
+    sessionStorage.setItem("modis", JSON.stringify(modis))
 }
 storage.getModis = () => {
     return JSON.parse(sessionStorage.getItem("modis"))
@@ -59,9 +50,9 @@ storage.getModis = () => {
 storage.removeModis = () => {
     sessionStorage.removeItem("modis")
 }
-storage.setModiPassed = (modiId) => {
+storage.setModiPassed = () => {
     let modis = storage.getModis()
-    modis.filter(modi => modi.modiID === modiId)[0].passed = true
+    modis.filter(modi => !modi.passed)[0].passed = true
     storage.setModis(modis)
 }
 storage.setModiID = (modiId) => {

@@ -81,8 +81,10 @@ const Gamemodi = () => {
     // setzt einen Modi alls 'Passed' und leitet zum nächsten weiter
     const markAsPassed = () => {
 
-        storage.setModiPassed(modis.filter(modi => !modi.passed)[0].modiID)
+        storage.setModiPassed()
         modis.filter(modi => !modi.passed)[0].passed = true
+        console.log(storage.getModis(), "stor Modi")
+        console.log(modis, "prog modi")
 
         if (modis.filter(modi => !modi.passed).length !== 0) {
             let nextModi = modis.filter(modi => !modi.passed)[0]

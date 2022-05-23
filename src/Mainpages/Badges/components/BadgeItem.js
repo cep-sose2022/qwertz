@@ -7,7 +7,16 @@ const setData = (badgeID, modis) => {
     if (storage.getBadgeID() !== badgeID) {
         storage.removeAll()
         storage.setBadgeID(badgeID)
-        storage.setModis(modis)
+        let modiData = []
+        modis.map(object => {
+            let modi = {
+                modiID: object.modiID,
+                title: object.title,
+                passed: false
+            }
+            modiData.push(modi)
+        })
+        storage.setModis(modiData)
     }
 }
 

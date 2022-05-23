@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, {createContext, useContext, useState, useEffect} from 'react';
 import DropZone from "./DropZone";
 import {DndProvider} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
@@ -11,6 +11,9 @@ import {IoIosInformationCircleOutline} from "react-icons/io";
 import JsonList from "../../Resources/Json/ZuordnungData.json";
 
 import {FcQuestions} from "react-icons/fc";
+import {useNavigate} from "react-router";
+import service from "../../service";
+import storage from "../../storage";
 
 export const ItemContext = createContext({
     markAsX: (_id, _state) => {
@@ -63,30 +66,45 @@ const Zuordnung = () => {
     const {markAsPassed} = useContext(ModiContext);
 
 
-    // läd die daten aus der DB und schreib sie in eine const
-    if (fragen[0] === undefined) {
-        let fragenId = 1;
-        JsonList.map(object => {
-            let frage = {
-                id: fragenId,
-                frage: object.frage,
-            };
-            fragen.push(frage);
-            let antwortId = 1;
-            object.antworten.map(a => {
-                let antwort = {
-                    id: ((antwortId) + 10 * fragenId),
-                    text: a.text,
-                    state: ItemState.NOTSELECTED,
-                    right: false
+    const navigator = useNavigate();
+    const {redirect} = useContext(ModiContext);
+
+    // um zu dem Modi umzuleiten, der gerade daran is
+    useEffect(() => {
+        redirect(eigenerName)
+        // läd die daten aus der DB und schreib sie in eine const
+        if (antworten[0] === undefined) {
+            let Data = service.getZuordnung(storage.getBadgeID(), storage.getModiID())
+            if (Data === undefined) {
+                navigator('../../Error503')
+                return
+            } else if (Data === null) {
+                console.error("DB nicht erreichbar, nutze Demo Daten")
+                // navigator('../../Error503')
+                Data = JsonList
+            }
+
+            const tempAntworten = []
+            Data.map((object, idx) => {
+                let frage = {
+                    id: idx + 1,
+                    frage: object.frage,
                 };
-                antworten.push(antwort)
-                antwortId++;
+                fragen.push(frage);
+                object.antworten.map((a, idx) => {
+                    let antwort = {
+                        id: ((idx + 1) + 10 * (frage.id)),
+                        text: a.text,
+                        state: ItemState.NOTSELECTED,
+                        right: false
+                    };
+                    tempAntworten.push(antwort)
+                });
             });
-            fragenId++;
-        });
-        setAntworten(shuffle(antworten));
-    }
+            console.log(antworten, tempAntworten)
+            setAntworten(tempAntworten);
+        }
+    })
 
 
     // makiert eine Box als den übergebenen status
@@ -128,6 +146,7 @@ const Zuordnung = () => {
     }
 
     return (
+        // fragen[0] === undefined ? <></> :
         <div className="container-zuordnung">
             <DndProvider backend={HTML5Backend}>
                 <ItemContext.Provider value={{markAsX}}>
@@ -216,7 +235,8 @@ const Zuordnung = () => {
                                     {/*left answer container*/}
                                     < DropZone type="Up">
                                         {
-                                            fragen[0].frage
+                                            // fragen[0].frage
+                                            fragen.map((i, idx) => (idx === 0 ? i.frage : ""))
                                         }
                                         {
                                             antworten.filter(a => a.state === ItemState.UP).map(i => (
@@ -228,7 +248,8 @@ const Zuordnung = () => {
                                     {/*right answer container*/}
                                     <DropZone type="Down">
                                         {
-                                            fragen[1].frage
+                                            // fragen[1].frage
+                                            fragen.map((i, idx) => (idx === 1 ? i.frage : ""))
                                         }
                                         {
                                             antworten.filter(a => a.state === ItemState.DOWN).map(i => (
