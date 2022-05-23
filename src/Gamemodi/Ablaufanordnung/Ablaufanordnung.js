@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, {createContext, useState} from 'react';
 import {DndProvider} from "react-dnd";
 import CardStorage from "./CardStorage";
 import './Ablaufanordnung.css'
@@ -7,12 +7,9 @@ import {ItemState} from "./ItemState";
 import {HTML5Backend} from "react-dnd-html5-backend";
 import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 import DropBox from "./DropBox";
-import {Button, Grid, Modal, Popover, SimpleGrid, Text, Tooltip} from "@mantine/core";
+import {SimpleGrid} from "@mantine/core";
 
-import {ModiContext} from "../Gamemodi";
-import {IoIosInformationCircleOutline} from "react-icons/io";
-
-import {FcQuestions} from "react-icons/fc";
+import ModiHeader from "../ModiHeader";
 
 export const CardContext = createContext({
     markAsX: (_id, _state) => {
@@ -33,8 +30,8 @@ const modalData = [
         content: "Super du hast alles richtig!"
     },
     {
-        title:"Aufgabenstellung",
-        content:"Ein externer Mitarbeiter hat ein infiziertes Wartungsgerät verwendet welches zuvor schon in ihrem ICS-Netzwerk verwendet wurde. Vermutlich hatte der externe sich die Schadsoftware über das Internet eingefangen und nun durch das erneute verbinden in Ihr ICS-System versehentlich Schadsoftware eingeschleust. Glücklicherweise wurde dies sofort Erkannt wie gehen Sie nun vor?"
+        title: "Aufgabenstellung",
+        content: "Ein externer Mitarbeiter hat ein infiziertes Wartungsgerät verwendet welches zuvor schon in ihrem ICS-Netzwerk verwendet wurde. Vermutlich hatte der externe sich die Schadsoftware über das Internet eingefangen und nun durch das erneute verbinden in Ihr ICS-System versehentlich Schadsoftware eingeschleust. Glücklicherweise wurde dies sofort Erkannt wie gehen Sie nun vor?"
     }
 ]
 
@@ -56,6 +53,8 @@ function shuffle(array) {
     return array;
 }
 
+export const HeaderContext = createContext({});
+
 const Ablaufanordnung = () => {
     const eigenerName = 'Ablaufanordnung';
     const [cards, setCards] = useState([]);
@@ -64,8 +63,6 @@ const Ablaufanordnung = () => {
     const [openedPopover, setOpenedPopover] = useState(false);
     const [modalContent, setModalContent] = useState(modalData[3]);
     const [allRight, setAllRight] = useState(false);
-
-    const {markAsPassed} = useContext(ModiContext);
 
     // läd die daten aus der DB und schreib sie in eine const
     let id = 1;
@@ -138,76 +135,36 @@ const Ablaufanordnung = () => {
         }
     }
 
-
     return (
 
         <div className="ablaufanordung-container">
             <DndProvider backend={HTML5Backend}>
                 <CardContext.Provider value={{markAsX}}>
                     <div className="ablaufanordung-header">
-                        <Grid justify={"space-between"}>
-                            {/*Modal für die Aufgabenstellung und zum Anzusagen ob alles Richtig/falsch is*/}
 
-                            <Grid.Col span={2}>
-                                <Modal
-                                    transition="slide-down"
-                                    transitionDuration={900}
-                                    overlayOpacity={0.55}
-                                    overlayBlur={3}
-                                    style={{fontSize: 20}}
-                                    centered
-                                    opened={openedModal}
-                                    onClose={() => setOpenedModal(false)}
-                                    title={<IoIosInformationCircleOutline size={32}/>}
-                                >
-                                    <h3 style={{lineHeight: 2.5, fontSize: 22}}>
-                                        {modalContent.title}
-                                    </h3>
-
-                                    <p>{modalContent.content}</p>
-                                </Modal>
-                                <Button onClick={() => {setModalContent(modalData[3]); setOpenedModal(true)}}>
-                                    Augabenstellung
-                                </Button>
-                            </Grid.Col>
-
-                            {/* Popover um anzusagen das erst alle boxen zugeteilt werden müssen */}
-                            <Grid.Col span={2}>
-                                <Popover
-                                    opened={openedPopover}
-                                    onClose={() => setOpenedPopover(false)}
-                                    target={<Button onClick={checkIfAllRight}>Fertig</Button>}
-                                    width={260}
-                                    position="bottom"
-                                    withArrow
-                                >
-                                    <div style={{display: 'flex'}}>
-                                        <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
-                                    </div>
-                                </Popover>
-
-                                <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                                    <Button onClick={() => markAsPassed(eigenerName)}
-                                            disabled={!allRight}> Weiter</Button>
-                                </Tooltip>
-                            </Grid.Col>
-
-                            {/* Button für die Spielerklärung */}
-                            <Grid.Col span={2}>
-                                <div style={{textAlign: 'end'}}>
-                                    <Button style={{
-                                        background: 'transparent'
-                                    }} onClick={() => {
-                                        setModalContent(modalData[0])
-                                        setOpenedModal(true)
-                                    }}><FcQuestions size={32}/></Button>
-                                </div>
-
-                            </Grid.Col>
-                        </Grid>
+                        <HeaderContext.Provider value={{
+                            setModalContent,
+                            modalContent,
+                            openedModal,
+                            setOpenedModal,
+                            openedPopover,
+                            setOpenedPopover,
+                            checkIfAllRight,
+                            eigenerName,
+                            allRight,
+                            modalData
+                        }}>
+                            <ModiHeader
+                                aufgabenstellungVisible={true}
+                                fertigVisible={true}
+                                tooltipText="Du muss alles richtig haben um weiter zu machen!"
+                                popoverText="Du musst erst alle Boxen einsetzen"
+                            />
+                        </HeaderContext.Provider>
 
                     </div>
                     <div className="ablaufanordung-body">
+
                         <CardStorage>
                             {
                                 cards.filter(card => card.boxId === 0)
@@ -219,13 +176,13 @@ const Ablaufanordnung = () => {
                         </CardStorage>
 
                         {/* Grid wo alle Boxen in die doe Karten gelegt werden */}
-                        <SimpleGrid style={{padding: 10,}}
+                        <SimpleGrid style={{padding: 15}}
                                     cols={4}
-                                    spacing={75}
+                                    spacing="lg"
                                     breakpoints={[
-                                        {maxWidth: 1400, cols: 3},
-                                        {maxWidth: 1150, cols: 2},
-                                        {maxWidth: 850, cols: 1},
+                                        {maxWidth: 980, cols: 3, spacing: "lg"},
+                                        {maxWidth: 755, cols: 2, spacing: "lg"},
+                                        {maxWidth: 600, cols: 1, spacing: "lg"},
                                     ]}
                         >
                             {
