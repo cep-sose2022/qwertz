@@ -158,7 +158,7 @@
     text-transform: uppercase;
     font-weight: 500;
     transition: 0.3s;
-    z-index:2;
+    z-index: 2;
 }
 
 .btn:hover {
@@ -308,7 +308,7 @@
 
 .about img {
     max-width: 300px;
-    top: -29rem;
+    top: -30.5rem;
 }
 
 .about .text {
@@ -408,8 +408,9 @@
     font-weight: 500;
     font-size: 1.3rem;
 }
-.title{
-    margin-top:4vh;
+
+.title {
+    margin-top: 4vh;
 }
 
 .followme .footer-line {
