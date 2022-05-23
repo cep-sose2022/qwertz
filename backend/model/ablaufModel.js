@@ -9,6 +9,10 @@ const AblaufSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    aufgabenstellung: {
+        type: String,
+        required: true
+    },
     data: [
         {
             text: {

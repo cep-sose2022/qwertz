@@ -1,10 +1,6 @@
 const mongoose = require('mongoose')
 
 const wimmelbildSchema = new mongoose.Schema({
-    aufgabenstellung: {
-        type: String,
-        required: true
-    },
     badgeID: {
         type: Number,
         required: true,
@@ -13,6 +9,10 @@ const wimmelbildSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    // image: {
+    //     type: Image,
+    //     required: true
+    // },
     data: [
         {
             text: {

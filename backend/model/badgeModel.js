@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const BadgeSchema = new mongoose.Schema({
+    badgeID: {
+        type: String,
+        required: true
+    },
     title: {
         type: String,
         required: true
@@ -9,10 +13,24 @@ const BadgeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    passed: {
+        type: Boolean,
+        required: true
+    },
+    unlocked: {
+        type: Boolean,
+        required: true
+    },
     modis: [
         {
-            type: String,
-            required: true,
+            name: {
+                type: String,
+                required: true,
+            },
+            modiID: {
+                type: Number,
+                required: true
+            }
         }
     ]
 })

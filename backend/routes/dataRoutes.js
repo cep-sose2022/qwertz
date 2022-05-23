@@ -7,15 +7,12 @@ const {getAblauf, postAblauf} = require('../controllers/ablaufController')
 const {getZuordnung} = require("../controllers/zuordnungController");
 const {getKonversation, postKonversation} = require("../controllers/konversationController");
 
-// router.route('/').get(getData).post(setData)
-// router.route('/:id').put(updateData).delete(deleteData)
-
 
 // --- get Methoden ---
 // liefert alle Zitate zurück
 router.route('/getZitate').get(getZitate)
 // liefert alle Badgets zurück
-router.route('/getBadge').get(getBadge)
+router.route('/getBadges').get(getBadge)
 
 // liefert die Daten von einem Gamemodi zu einem Badge
 router.route('/getAblaufanordnung/:badgeID/:modiID').get(getAblauf)
