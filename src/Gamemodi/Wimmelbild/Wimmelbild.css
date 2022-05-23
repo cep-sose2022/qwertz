@@ -11,10 +11,34 @@
     margin-top: 5px;
     /*padding: 0.5%;*/
     box-shadow: 10px 5px 5px black;
-    border-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: auto;
+}
+
+.wimmelbild-container .wimmelbild-body::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.wimmelbild-container .wimmelbild-body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+}
+
+.wimmelbild-container .wimmelbild-body::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.wimmelbild-container .wimmelbild-body::-webkit-scrollbar-thumb {
+    background: #a5a6ab;
 }
 
 .imagewimmelbild {
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 
 }

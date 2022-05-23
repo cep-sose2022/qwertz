@@ -3,10 +3,9 @@ import EndscreenItem from "./EndscreenItem";
 import EndscreenData from "./../EndscreenData";
 import image from '../../../Resources/images/orange_zwinkern.png';
 import gif from '../../../Resources/zeppgefunden.gif';
-import { Image } from "@mantine/core";
 
 import { Link } from "react-router-dom";
-import { Grid } from "@mantine/core";
+import { Grid, Container } from "@mantine/core";
 
 import { FaAward } from "react-icons/fa";
 import { VscFolderLibrary } from "react-icons/vsc";
@@ -50,16 +49,17 @@ const EndscreenPlace = () => EndscreenData.length > 0 && (
             </Grid>
 
         </div>
-        <div style={{ width: 600, marginLeft: 'auto', marginRight: 'auto', marginTop: 'auto', marginBottom: 'auto' }}>
-            <Image
-                radius="md"
-                src={gif}
-                alt="gif"
-            />
-        </div>
+        <>
+            <Container size={10100} px={0}>
+                <section className="endscreengif">
+                    <img className="gif" src={gif} alt="" />
+                </section>
+            </Container>
+
+        </>
 
 
-    </div >
+    </div>
 
 
 );
