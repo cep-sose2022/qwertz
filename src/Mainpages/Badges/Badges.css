@@ -111,21 +111,30 @@
 }
 
 .badgeline-item-content h3 {
-    word-break:break-all;
+    word-break: break-all;
     color: rgb(7, 79, 146);
     font-size: 30px;
     top: -115px;
     max-width: 70vw;
 }
 
-.badgeline-item-content a {
+
+a.downloadButton {
+    float: right;
+    color: rgb(95, 168, 245);
+}
+a.downloadButton:hover {
+    float: right;
+    color: rgba(95, 168, 245, 0.5);
+}
+.badgeline-item-content a.link {
     color: rgb(95, 168, 245);
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
 }
 
-.badgeline-item-content a::after {
+.badgeline-item-content a.link::after {
     content: ' ►';
     font-size: 14px;
 }
