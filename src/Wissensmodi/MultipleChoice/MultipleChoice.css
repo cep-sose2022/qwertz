@@ -1,0 +1,119 @@
+/*heading*/
+.textField-header h3 {
+  padding: 1vh;
+}
+/*heading end*/
+
+/*Textfield left*/
+.textField {
+  width: 55vw;
+  max-height: 60vh;
+  text-align: center;
+}
+
+.textFieldBody {
+  overflow: auto;
+  padding: 1vh;
+  height: 98%;
+  border: 3px solid black;
+  margin: 0.5vh;
+  background-color: var(--main-color);
+  border-radius: 15px;
+  box-shadow: 10px 5px 5px black;
+}
+
+
+.textFieldBody::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.textFieldBody::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+}
+
+.textFieldBody::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.textFieldBody::-webkit-scrollbar-thumb {
+  background: #a5a6ab;
+}
+/*Textfield left end*/
+
+/*Multiple choice field right*/
+.multipleChoiceField {
+  width: 45vw;
+  height: 60vh;
+  margin: auto;
+  overflow: auto;
+}
+
+
+.multipleChoiceBody {
+  justify-content: center;
+  display: flex;
+  height: auto;
+  flex-direction: row;
+}
+
+.multipleChoiceContainer {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  background: #F88301;
+  box-shadow: 10px 5px 5px black;
+  border-radius: 15px;
+  border: 3px solid black;
+}
+
+.multipleChoiceField::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.multipleChoiceField::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+}
+
+.multipleChoiceField::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.multipleChoiceField::-webkit-scrollbar-thumb {
+  background: #a5a6ab;
+}
+
+/*box-element*/
+.multiBox {
+  padding: 0.5vh;
+  border: 3px solid black;
+  border-radius: 15px;
+  margin: 1vh;
+  background-color: #01BC60;
+  box-shadow: 10px 5px 5px black;
+}
+
+.multiAnswers {
+  padding: 2vh;
+}
+.multiQuestion {
+
+}
+.multiAnswers li {
+  padding: 1vh;
+  margin: 0.1vh;
+  border: 3px solid black;
+  border-radius: 15px;
+}
+/*box-elemet end*/
+
+/*Multiple choice field right end*/
