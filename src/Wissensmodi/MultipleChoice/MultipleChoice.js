@@ -1,11 +1,10 @@
 import React, {useContext, useState} from 'react'
-import {Button, Grid, Modal, Title, Tooltip} from "@mantine/core";
-import {FcQuestions} from "react-icons/fc";
 
 import steps from "../../Resources/Json/MultipleChoiceData.json"
 import {ModiContext} from "../../Gamemodi/Gamemodi";
 import MultipleChoiceField from "./Components/MultipleChoiceField";
 import './MultipleChoice.css'
+import ModiHeader from "../../Gamemodi/ModiHeader";
 
 const modalData = [
     {
@@ -27,46 +26,22 @@ const MultipleChoice = () => {
     return (
         <>
             <div className="multiChoice-header">
-                <Grid justify={"space-between"}>
-                    <Grid.Col span={2}>
-                        <Modal
-                            transition="slide-down"
-                            transitionDuration={900}
-                            overlayOpacity={0.55}
-                            overlayBlur={3}
-                            style={{fontSize: 20}}
-                            centered
-                            opened={openedModal}
-                            onClose={() => {
-                                setModalOpened(false);
-                            }}
-                        >
-                            <Title size="sm" style={{lineHeight: 2.5, fontSize: 22}}>
-                                {modalContent.title}
-                            </Title>
-                            <p>{modalContent.content}</p>
-                        </Modal>
-                    </Grid.Col>
-
-                    {/* Weiter Button der nur geht, wenn alles gelesen wurde */}
-                    <Grid.Col span={2}>
-                        <Tooltip label="Du muss alles gelesen haben um weiter zu machen!">
-                            <Button onClick={() => markAsPassed(eigenerName)}
-                                    disabled={!allRight}> Weiter</Button>
-                        </Tooltip>
-                    </Grid.Col>
-
-                    {/* Button für die Spielerklärung */}
-                    <Grid.Col span={2}>
-                        <div style={{textAlign: 'end'}}>
-                            <Button style={{
-                                background: 'transparent'
-                            }} onClick={() => setModalOpened(true)}>
-                                <FcQuestions size={32}/>
-                            </Button>
-                        </div>
-                    </Grid.Col>
-                </Grid>
+                <ModiHeader
+                    setModalContent={setModalContent}
+                    modalContent={modalContent}
+                    openedModal={openedModal}
+                    setOpenedModal={null}
+                    openedPopover={null}
+                    setOpenedPopover={null}
+                    checkIfAllRight={null}
+                    eigenerName={eigenerName}
+                    allRight={allRight}
+                    modalData={modalData}
+                    aufgabenstellungVisible={true}
+                    fertigVisible={true}
+                    tooltipText="Du musst alles richtig haben um weiter zu machen!"
+                    popoverText="Du musst erst alle Boxen einsetzen"
+                />
             </div>
 
             <div className="multipleChoiceContainer">

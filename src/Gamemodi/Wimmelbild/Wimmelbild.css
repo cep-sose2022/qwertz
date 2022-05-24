@@ -1,15 +1,8 @@
-.wimmelbild-container .wimmelbild-header {
-    background-color: var(--dark-one);
-    padding: 10px;
-    border: 5px solid;
-    border-radius: 15px;
-    box-shadow: 10px 5px 5px black;
-}
+
 
 .wimmelbild-container .wimmelbild-body {
     border: 5px solid;
     margin-top: 5px;
-    /*padding: 0.5%;*/
     box-shadow: 10px 5px 5px black;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;

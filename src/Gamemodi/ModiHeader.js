@@ -37,7 +37,13 @@ const ModiHeader = (props) => {
     // } = useContext(HeaderContext)
 
     return (
-        <>
+        <div style={{
+            backgroundColor: 'var(--dark-one)',
+            padding: '10px',
+            border: '5px solid',
+            borderRadius: '15px',
+            boxShadow: '10px 5px 5px black'
+        }}>
             <Grid justify={"space-between"}>
                 {/*Modal für die Aufgabenstellung und zum Anzusagen ob alles Richtig/falsch is*/}
                 <Modal
@@ -111,7 +117,7 @@ const ModiHeader = (props) => {
                 </Grid.Col>
 
             </Grid>
-        </>
+        </div>
     )
 }
 
