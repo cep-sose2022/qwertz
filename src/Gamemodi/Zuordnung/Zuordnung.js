@@ -134,14 +134,14 @@ const Zuordnung = () => {
                                 openedModal={openedModal}
                                 setOpenedModal={setOpenedModal}
                                 openedPopover={openedPopover}
-                                setOpenedPopover={setOpenedModal}
+                                setOpenedPopover={setOpenedPopover}
                                 checkIfAllRight={checkIfAllRight}
                                 eigenerName={eigenerName}
                                 allRight={allRight}
                                 modalData={modalData}
                                 aufgabenstellungVisible={false}
                                 fertigVisible={true}
-                                tooltipText="Du muss alles richtig haben um weiter zu machen!"
+                                tooltipText="Du musst alles richtig haben um weiter zu machen!"
                                 popoverText="Du musst erst alle Boxen einsetzen"
                             />
                     </div>
