@@ -33,25 +33,25 @@ const BadgeItem = ({data}) => (
                     🔓
                 </span>
                     <h3>{data.title}</h3>
+                    <div>
+                        <Tooltip label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
+                            <a className="downloadButton" href={img1} download>
+                                {/*// TODO hier muss der Link zur PDF datei geändert werden*/}
+                                <FaFileDownload/>
+                            </a>
+                        </Tooltip>
+                    </div>
                     <p>{data.text}</p>
 
-                    <div
-                        style={{width: "100%", display: 'flex', flexDirection: "row", justifyContent: "space-between"}}>
-                        <div>
-                            <Link className="link" to={'../Gamemodi'}
-                                  onClick={() => setData(data.badgeID, data.modis)}>
-                                Start
-                            </Link>
-                        </div>
-                        <div>
-                            <Tooltip label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
-                                <a className="downloadButton" href={img1} download>
-                                    {/*// TODO hier muss der Link zur PDF datei geändert werden*/}
-                                    <FaFileDownload/>
-                                </a>
-                            </Tooltip>
-                        </div>
+
+                    <div>
+                        <Link className="link" to={'../Gamemodi'}
+                              onClick={() => setData(data.badgeID, data.modis)}>
+                            Start
+                        </Link>
                     </div>
+
+
                     <span className="circle"/>
                 </div>
                 :
@@ -60,30 +60,21 @@ const BadgeItem = ({data}) => (
                     🔒
                 </span>
                     <h3>{data.title}</h3>
+                    <Tooltip disabled='disabled'
+                             label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
+                        <a className="downloadButton" style={{filter: 'blur(4px)'}}>
+                            <FaFileDownload/>
+                        </a>
+                    </Tooltip>
                     <p style={{filter: 'blur(4px)'}}>{data.text}</p>
+                    <div style={{filter: 'blur(4px)'}}>
+                        <Link disabled='disabled' className="link" to={''}
+                              onClick={() => setData(data.badgeID)}>
+                            Start
+                        </Link>
+                    </div>
+                    <div>
 
-                    <div
-                        style={{
-                            width: "100%",
-                            display: 'flex',
-                            flexDirection: "row",
-                            justifyContent: "space-between",
-                            filter: 'blur(4px)'
-                        }}>
-                        <div>
-                            <Link disabled='disabled' className="link" to={''}
-                                  onClick={() => setData(data.badgeID)}>
-                                Start
-                            </Link>
-                        </div>
-                        <div>
-                            <Tooltip disabled='disabled'
-                                     label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
-                                <a className="downloadButton">
-                                    <FaFileDownload/>
-                                </a>
-                            </Tooltip>
-                        </div>
                     </div>
                     <span className="circle"/>
                 </div>
