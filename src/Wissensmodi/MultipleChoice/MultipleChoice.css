@@ -6,7 +6,7 @@
 
 /*Textfield left*/
 .textField {
-  width: 55vw;
+  width: 45vw;
   max-height: 60vh;
   text-align: center;
 }
@@ -22,6 +22,9 @@
   box-shadow: 10px 5px 5px black;
 }
 
+.textFieldBody p{
+  line-height: 1.7;
+}
 
 .textFieldBody::-webkit-scrollbar {
   width: 7px;
@@ -47,7 +50,7 @@
 
 /*Multiple choice field right*/
 .multipleChoiceField {
-  width: 45vw;
+  width: 55vw;
   height: 60vh;
   margin: auto;
   overflow: auto;
@@ -98,7 +101,7 @@
   border: 3px solid black;
   border-radius: 15px;
   margin: 1vh;
-  background-color: #01BC60;
+  background-color: #F88301;
   box-shadow: 10px 5px 5px black;
 }
 
