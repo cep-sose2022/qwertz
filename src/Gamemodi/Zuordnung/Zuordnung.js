@@ -60,7 +60,7 @@ const Zuordnung = () => {
     const [antworten, setAntworten] = useState([]);
     const [openedModal, setOpenedModal] = useState(false);
     const [openedPopover, setOpenedPopover] = useState(false);
-    const [modalContent, setModalContent] = useState(modalData[0]);
+    const [modalContent, setModalContent] = useState("");
     const [allRight, setAllRight] = useState(false);
 
     const {markAsPassed} = useContext(ModiContext);
@@ -84,7 +84,7 @@ const Zuordnung = () => {
                 Data = JsonList
             }
 
-            const tempAntworten = []
+            // const tempAntworten = []
             Data.map((object, idx) => {
                 let frage = {
                     id: idx + 1,
@@ -93,16 +93,16 @@ const Zuordnung = () => {
                 fragen.push(frage);
                 object.antworten.map((a, idx) => {
                     let antwort = {
-                        id: ((idx + 1) + 10 * (frage.id)),
+                        id: ((idx) + 10 * (frage.id)),
                         text: a.text,
                         state: ItemState.NOTSELECTED,
                         right: false
                     };
-                    tempAntworten.push(antwort)
+                    antworten.push(antwort)
                 });
             });
-            console.log(antworten, tempAntworten)
-            setAntworten(tempAntworten);
+            setAntworten(shuffle(antworten))
+            setModalContent(modalData[0])
         }
     })
 
