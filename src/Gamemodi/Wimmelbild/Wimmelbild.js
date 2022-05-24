@@ -1,10 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, {useState} from "react";
 import JsonData from '../../Resources/Json/WimmelbildData.json';
-import { BackgroundImage, Box, Button, Grid, Modal, Title, Tooltip } from "@mantine/core";
-import { ModiContext } from "../Gamemodi";
-import { FcQuestions } from "react-icons/fc";
+import {BackgroundImage, Box} from "@mantine/core";
 
 import './Wimmelbild.css'
+import ModiHeader from "../ModiHeader";
 
 const modalData = [
     {
@@ -17,12 +16,10 @@ const Wimmelbild = () => {
     const eigenerName = 'Wimmelbild';
     const image = require('../../Resources/images/' + JsonData[0].bild);
     const [buttons, setButton] = useState([]);
-    const [modalTitle, setModalTitle] = useState(modalData[0].title);
-    const [modalContent, setModalContent] = useState(modalData[0].content);
-    const [openedModal, setModalOpened] = useState(false);
+    const [modalContent, setModalContent] = useState(modalData[0]);
+    const [openedModal, setOpenedModal] = useState(false);
     const [allRight, setAllRight] = useState(false);
 
-    const { markAsPassed } = useContext(ModiContext);
 
     // läd die daten aus der DB und schreib sie in eine const
     let id = 1;
@@ -46,9 +43,8 @@ const Wimmelbild = () => {
         const clickedButton = buttons.filter(button => button.id === id)[0];
         clickedButton.isClicked = true;
 
-        setModalTitle("")
-        setModalContent(clickedButton.text);
-        setModalOpened(true);
+        setModalContent({title: "", content: clickedButton.text});
+        setOpenedModal(true);
 
         setButton(buttons.filter(button => button.id !== id).concat(clickedButton));
 
@@ -60,55 +56,25 @@ const Wimmelbild = () => {
     return (
         <div className="wimmelbild-container">
             <div className="wimmelbild-header">
-                <Grid justify={"space-between"}>
-                    <Grid.Col span={2}>
-                        <Modal
-                            transition="slide-down"
-                            transitionDuration={900}
-                            overlayOpacity={0.55}
-                            overlayBlur={3}
-                            style={{ fontSize: 20 }}
-                            centered
-                            opened={openedModal}
-                            onClose={() => {
-                                setModalOpened(false);
-                            }}
-                        >
-                            <Title size="sm" style={{ lineHeight: 2.5, fontSize: 22 }}>
-                                {modalTitle}
-                            </Title>
-                            <p>{modalContent}</p>
-                        </Modal>
-                    </Grid.Col>
-
-                    <Grid.Col span={2}>
-                        <Tooltip label="Du muss alles gefunden haben um weiter zu machen!">
-                            <Button onClick={() => markAsPassed(eigenerName)}
-                                disabled={!allRight}> Weiter</Button>
-                        </Tooltip>
-                    </Grid.Col>
-
-
-                    {/* Weiter Button der nur geht, wenn alles gefunden wurde */}
-                    <Grid.Col span={2}>
-                        <div style={{ textAlign: 'end' }}>
-                            <Button style={{
-                                background: 'transparent'
-                            }} onClick={() =>
-                            {
-                                setModalTitle(modalData[0].title);
-                                setModalContent(modalData[0].content);
-                                setModalOpened(true);
-                            }}>
-                                <FcQuestions size={32} />
-                            </Button>
-                        </div>
-                    </Grid.Col>
-
-                </Grid>
+                <ModiHeader
+                    setModalContent={setModalContent}
+                    modalContent={modalContent}
+                    openedModal={openedModal}
+                    setOpenedModal={setOpenedModal}
+                    openedPopover={null}
+                    setOpenedPopover={null}
+                    checkIfAllRight={null}
+                    eigenerName={eigenerName}
+                    allRight={allRight}
+                    modalData={modalData}
+                    aufgabenstellungVisible={false}
+                    fertigVisible={false}
+                    tooltipText="Du musst erst alles gefunden haben um weiter zu machen!"
+                    popoverText=""
+                />
             </div>
             <div className="wimmelbild-body">
-                <Box sx={{ Width: 500, High: 500 }}>
+                <Box sx={{Width: 500, High: 500}}>
                     <BackgroundImage
                         style={{
                             zIndex: 1,
@@ -124,27 +90,27 @@ const Wimmelbild = () => {
                         {/*Her kommen alle Buttons rein*/}
                         {
                             buttons.map(b => (
-                                <button
-                                    key={Math.random()}
-                                    style={{
-                                        border: 'gray',
-                                        opacity: b.isClicked ? .5 : 2,
-                                        backgroundColor: b.isClicked ? 'gray' : 'transparent',
-                                        width: b.width + "%",
-                                        height: b.height + "%",
-                                        position: 'absolute',
-                                        left: `calc(${b.left}%)`,
-                                        top: `calc(${b.top}%)`,
-                                    }}
-                                    onClick={() => clickButton(b.id)}
-                                />
-                            )
+                                    <button
+                                        key={Math.random()}
+                                        style={{
+                                            border: 'gray',
+                                            opacity: b.isClicked ? .5 : 2,
+                                            backgroundColor: b.isClicked ? 'gray' : 'transparent',
+                                            width: b.width + "%",
+                                            height: b.height + "%",
+                                            position: 'absolute',
+                                            left: `calc(${b.left}%)`,
+                                            top: `calc(${b.top}%)`,
+                                        }}
+                                        onClick={() => clickButton(b.id)}
+                                    />
+                                )
                             )
                         }
                     </BackgroundImage>
                 </Box>
             </div>
-        </div >
+        </div>
     );
 };
 

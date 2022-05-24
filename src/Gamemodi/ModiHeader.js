@@ -2,14 +2,14 @@ import React, {useContext} from 'react';
 import {Button, Grid, Modal, Popover, Text, Tooltip} from "@mantine/core";
 import {IoIosInformationCircleOutline} from "react-icons/io";
 import {FcQuestions} from "react-icons/fc";
-import {HeaderContext} from "./Ablaufanordnung/Ablaufanordnung";
 import {ModiContext} from "./Gamemodi";
 
 const ModiHeader = (props) => {
-    const {tooltipText, popoverText, aufgabenstellungVisible, fertigVisible} = props
-    const {markAsPassed} = useContext(ModiContext);
-
     const {
+        tooltipText,
+        popoverText,
+        aufgabenstellungVisible,
+        fertigVisible,
         setModalContent,
         modalContent,
         openedModal,
@@ -20,7 +20,21 @@ const ModiHeader = (props) => {
         eigenerName,
         allRight,
         modalData
-    } = useContext(HeaderContext)
+    } = props
+    const {markAsPassed} = useContext(ModiContext);
+
+    // const {
+    //     setModalContent,
+    //     modalContent,
+    //     openedModal,
+    //     setOpenedModal,
+    //     openedPopover,
+    //     setOpenedPopover,
+    //     checkIfAllRight,
+    //     eigenerName,
+    //     allRight,
+    //     modalData
+    // } = useContext(HeaderContext)
 
     return (
         <>
@@ -106,24 +120,21 @@ export default ModiHeader
 
 // des muss dann in jeden modi Rein
 /*
-                        <HeaderContext.Provider value={{
-                            setModalContent,
-                            modalContent,
-                            openedModal,
-                            setOpenedModal,
-                            openedPopover,
-                            setOpenedPopover,
-                            checkIfAllRight,
-                            eigenerName,
-                            allRight,
-                            modalData
-                        }}>
                             <ModiHeader
-                                aufgabenstellungVisible={true}
+                                setModalContent={setModalContent}
+                                modalContent={modalContent}
+                                openedModal={openedModal}
+                                setOpenedModal={setOpenedModal}
+                                openedPopover={openedPopover}
+                                setOpenedPopover={setOpenedModal}
+                                checkIfAllRight={checkIfAllRight}
+                                eigenerName={eigenerName}
+                                allRight={allRight}
+                                modalData={modalData}
+                                aufgabenstellungVisible={false}
                                 fertigVisible={true}
                                 tooltipText="Du muss alles richtig haben um weiter zu machen!"
                                 popoverText="Du musst erst alle Boxen einsetzen"
                             />
-                        </HeaderContext.Provider>
 
  */

@@ -1,13 +1,12 @@
 import React, {useContext, useEffect, useState} from "react";
 import "./Konversation.css";
-import {Button, Tooltip, Grid, Modal, Title} from '@mantine/core';
 
 
 import Data from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
 import {ModiContext} from "../../Gamemodi/Gamemodi";
-import {FcQuestions} from "react-icons/fc";
 import {useScrollIntoView} from "@mantine/hooks";
+import ModiHeader from "../../Gamemodi/ModiHeader";
 
 const modalData = [
     {
@@ -20,11 +19,11 @@ const Konversation = () => {
     const eigenerName = "Konversation";
     const [bubbles, setBubbles] = useState([]);
     const [modalContent] = useState(modalData[0]);
-    const [openedModal, setModalOpened] = useState(false);
+    const [openedModal, setOpenedModal] = useState(false);
     const [allRight, setAllRight] = useState(false);
     const {scrollIntoView, targetRef, scrollableRef} = useScrollIntoView({duration: 200});
 
-    const {markAsPassed, redirect} = useContext(ModiContext);
+    const {redirect} = useContext(ModiContext);
 
     // läd die daten aus der DB und schreib sie in eine const
     if (bubbles[0] === undefined) {
@@ -59,46 +58,22 @@ const Konversation = () => {
     return (
         <div className="konversation-container">
             <div className="konversation-header">
-                <Grid justify={"space-between"}>
-                    <Grid.Col span={2}>
-                        <Modal
-                            transition="slide-down"
-                            transitionDuration={900}
-                            overlayOpacity={0.55}
-                            overlayBlur={3}
-                            style={{fontSize: 20}}
-                            centered
-                            opened={openedModal}
-                            onClose={() => {
-                                setModalOpened(false);
-                            }}
-                        >
-                            <Title size="sm" style={{lineHeight: 2.5, fontSize: 22}}>
-                                {modalContent.title}
-                            </Title>
-                            <p>{modalContent.content}</p>
-                        </Modal>
-                    </Grid.Col>
-
-                    {/* Weiter Button der nur geht, wenn alles gelesen wurde */}
-                    <Grid.Col span={2}>
-                        <Tooltip label="Du muss alles gelesen haben um weiter zu machen!">
-                            <Button onClick={() => markAsPassed(eigenerName)}
-                                    disabled={!allRight}> Weiter</Button>
-                        </Tooltip>
-                    </Grid.Col>
-
-                    {/* Button für die Spielerklärung */}
-                    <Grid.Col span={2}>
-                        <div style={{textAlign: 'end'}}>
-                            <Button style={{
-                                background: 'transparent'
-                            }} onClick={() => setModalOpened(true)}>
-                                <FcQuestions size={32}/>
-                            </Button>
-                        </div>
-                    </Grid.Col>
-                </Grid>
+                <ModiHeader
+                    setModalContent={null}
+                    modalContent={modalContent}
+                    openedModal={openedModal}
+                    setOpenedModal={setOpenedModal}
+                    openedPopover={null}
+                    setOpenedPopover={null}
+                    checkIfAllRight={null}
+                    eigenerName={eigenerName}
+                    allRight={allRight}
+                    modalData={modalData}
+                    aufgabenstellungVisible={false}
+                    fertigVisible={false}
+                    tooltipText="Du musst alles gelesen haben um weiter zu machen!"
+                    popoverText=""
+                />
             </div>
 
             <div className="konversation-body">
