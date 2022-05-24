@@ -63,6 +63,7 @@ const BadgeItem = ({data}) => (
                     <Tooltip disabled='disabled'
                              label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
                         <a className="downloadButton" style={{filter: 'blur(4px)'}}>
+                            {/*// TODO hier muss der Link zur PDF datei geändert werden*/}
                             <FaFileDownload/>
                         </a>
                     </Tooltip>
