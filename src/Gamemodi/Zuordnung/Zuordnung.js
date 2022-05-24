@@ -14,7 +14,6 @@ export const ItemContext = createContext({
     markAsX: (_id, _state) => {
     }
 });
-export const HeaderContext = createContext({});
 
 const modalData = [
     {
