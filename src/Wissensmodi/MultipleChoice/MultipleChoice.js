@@ -1,10 +1,11 @@
 import React, {useContext, useState} from 'react'
 import {Button, Grid, Modal, Title, Tooltip} from "@mantine/core";
 import {FcQuestions} from "react-icons/fc";
-import Fortschritt from "./Components/Fortschritt";
 
 import steps from "../../Resources/Json/MultipleChoiceData.json"
 import {ModiContext} from "../../Gamemodi/Gamemodi";
+import MultipleChoiceField from "./Components/MultipleChoiceField";
+import './MultipleChoice.css'
 
 const modalData = [
     {
@@ -68,11 +69,36 @@ const MultipleChoice = () => {
                 </Grid>
             </div>
 
-            <div id="Text Feld">
+            <div className="multipleChoiceContainer">
+                <div className="multipleChoiceHeader">
+                    <div className="textField-header">
+                        <h3>Titel</h3>
+                    </div>
+                </div>
+                <div className="multipleChoiceBody">
 
-                <Fortschritt lection={steps[0]}/>
+                    <div className="textField">
+
+                        <div className="textFieldBody">
+                            <p>
+                                {steps[0].text}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="multipleChoiceField">
+
+
+                        {
+                            steps[0].aufgaben.map(aufgabe => (
+                                    <MultipleChoiceField key={Math.random()} aufgabe={aufgabe}/>
+                                )
+                            )
+                        }
+
+                    </div>
+                </div>
             </div>
-
         </>
     )
 }
