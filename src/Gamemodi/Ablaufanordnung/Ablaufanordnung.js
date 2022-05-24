@@ -14,7 +14,6 @@ import service from "../../service";
 import storage from "../../storage";
 import {useNavigate} from "react-router";
 import {ModiContext} from "../Gamemodi";
-import ModiHeader from "../ModiHeader";
 
 export const CardContext = createContext({
     markAsX: (_id, _state) => {
@@ -223,5 +222,4 @@ const Ablaufanordnung = () => {
         </div>
     );
 }
-
 export default Ablaufanordnung;

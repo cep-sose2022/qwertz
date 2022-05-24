@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useContext, useEffect, useState} from 'react';
 import DropZone from "./DropZone";
 import {DndProvider} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
@@ -8,11 +8,11 @@ import {Grid} from "@mantine/core";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
 
-import {FcQuestions} from "react-icons/fc";
 import {useNavigate} from "react-router";
 import service from "../../service";
 import storage from "../../storage";
 import ModiHeader from "../ModiHeader";
+import {ModiContext} from "../Gamemodi";
 
 export const ItemContext = createContext({
     markAsX: (_id, _state) => {

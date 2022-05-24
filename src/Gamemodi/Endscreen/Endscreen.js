@@ -12,8 +12,7 @@ import storage from "../../storage";
 
 const Endscreen = () => {
     const machEnde = () => {
-        let badgeID = storage.getBadgeID()
-        storage.setBadgePassed(parseInt(badgeID))
+        storage.setBadgePassed(storage.getBadgeID())
         storage.removeAll()
     }
 

@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-import JsonData from '../../Resources/Json/WimmelbildData.json';
+import React, {useContext, useEffect, useState} from "react";
 import {BackgroundImage, Box} from "@mantine/core";
 
 import './Wimmelbild.css'
@@ -8,6 +7,7 @@ import {useNavigate} from "react-router";
 import service from "../../service";
 import storage from "../../storage";
 import JsonList from '../../Resources/Json/WimmelbildData.json';
+import {ModiContext} from "../Gamemodi";
 
 const modalData = [
     {

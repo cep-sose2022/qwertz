@@ -38,7 +38,7 @@ const BadgeItem = ({data}) => (
                     <div
                         style={{width: "100%", display: 'flex', flexDirection: "row", justifyContent: "space-between"}}>
                         <div>
-                            <Link className="link" to={'../Gamemodi/' + data.modis[0]}
+                            <Link className="link" to={'../Gamemodi'}
                                   onClick={() => setData(data.badgeID, data.modis)}>
                                 Start
                             </Link>
