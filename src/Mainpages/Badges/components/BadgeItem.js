@@ -46,6 +46,7 @@ const BadgeItem = ({data}) => (
                         <div>
                             <Tooltip label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
                                 <a className="downloadButton" href={img1} download>
+                                    {/*// TODO hier muss der Link zur PDF datei geändert werden*/}
                                     <FaFileDownload/>
                                 </a>
                             </Tooltip>
@@ -70,18 +71,18 @@ const BadgeItem = ({data}) => (
                             filter: 'blur(4px)'
                         }}>
                         <div>
+                            <Link disabled='disabled' className="link" to={''}
+                                  onClick={() => setData(data.badgeID)}>
+                                Start
+                            </Link>
+                        </div>
+                        <div>
                             <Tooltip disabled='disabled'
                                      label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
                                 <a className="downloadButton">
                                     <FaFileDownload/>
                                 </a>
                             </Tooltip>
-                        </div>
-                        <div>
-                            <Link disabled='disabled' className="link" to={''}
-                                  onClick={() => setData(data.badgeID)}>
-                                Start
-                            </Link>
                         </div>
                     </div>
                     <span className="circle"/>
