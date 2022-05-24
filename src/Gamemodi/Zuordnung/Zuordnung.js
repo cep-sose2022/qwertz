@@ -1,21 +1,20 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, {createContext, useState} from 'react';
 import DropZone from "./DropZone";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import {DndProvider} from "react-dnd";
+import {HTML5Backend} from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
-import { ItemState } from "./ItemState";
-import { Button, Grid, Modal, Popover, Text, Tooltip } from "@mantine/core";
-import { ModiContext } from "../Gamemodi";
-import { IoIosInformationCircleOutline } from "react-icons/io";
+import {ItemState} from "./ItemState";
+import {Grid} from "@mantine/core";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
 
-import { FcQuestions } from "react-icons/fc";
+import ModiHeader from "../ModiHeader";
 
 export const ItemContext = createContext({
     markAsX: (_id, _state) => {
     }
 });
+export const HeaderContext = createContext({});
 
 const modalData = [
     {
@@ -59,9 +58,6 @@ const Zuordnung = () => {
     const [openedPopover, setOpenedPopover] = useState(false);
     const [modalContent, setModalContent] = useState(modalData[0]);
     const [allRight, setAllRight] = useState(false);
-
-    const { markAsPassed } = useContext(ModiContext);
-
 
     // läd die daten aus der DB und schreib sie in eine const
     if (fragen[0] === undefined) {
@@ -130,71 +126,24 @@ const Zuordnung = () => {
     return (
         <div className="container-zuordnung">
             <DndProvider backend={HTML5Backend}>
-                <ItemContext.Provider value={{ markAsX }}>
+                <ItemContext.Provider value={{markAsX}}>
                     <div className="zuordnung-header">
-                        <Grid justify={"center"} columns={8}>
-
-                            {/*Modal für die Aufgabenstellung und zum Anzusagen ob alles Richtig/falsch is*/}
-                            <Modal
-                                transition="slide-down"
-                                transitionDuration={900}
-                                overlayOpacity={0.55}
-                                overlayBlur={3}
-                                style={{ fontSize: 20 }}
-                                centered
-                                opened={openedModal}
-                                onClose={() => setOpenedModal(false)}
-                                title={<IoIosInformationCircleOutline />}
-                            >
-                                <h3 style={{ lineHeight: 2.5, fontSize: 22 }}>
-                                    {modalContent.title}
-                                </h3>
-                                <p>{modalContent.content}</p>
-                            </Modal>
-
-                            {/* Popover um anzusagen das erst alle boxen zugeteilt werden müssen */}
-                            <Grid.Col span={2}>
-
-
-                                <Popover
-                                    opened={openedPopover}
-                                    onClose={() => setOpenedPopover(false)}
-                                    target={<Button onClick={checkIfAllRight}>Fertig</Button>}
-                                    width={260}
-                                    position="bottom"
-                                    withArrow
-                                >
-                                    <div style={{ display: 'flex' }}>
-                                        <Text size="sm">Du musst erst alle Boxen einsetzen</Text>
-                                    </div>
-                                </Popover>
-                            </Grid.Col>
-                            <Grid.Col span={5}>
-
-
-                                {/* Weiter Button der nur geht wenn alles richtig is */}
-                                <Tooltip label="Du muss alles richtig haben um weiter zu machen!">
-                                    <Button onClick={() => markAsPassed(eigenerName)}
-                                        disabled={!allRight}> Weiter</Button>
-                                </Tooltip>
-                            </Grid.Col>
-
-
-                            {/* Button für die Spielerklärung */}
-                            <Grid.Col span={1}>
-                                <div style={{ textAlign: 'end' }}>
-                                    <Button style={{
-                                        background: 'transparent'
-                                    }} onClick={() => {
-                                        setModalContent(modalData[0])
-                                        setOpenedModal(true)
-                                    }}><FcQuestions size={32} /></Button>
-                                </div>
-                            </Grid.Col>
-
-                        </Grid>
-
-
+                            <ModiHeader
+                                setModalContent={setModalContent}
+                                modalContent={modalContent}
+                                openedModal={openedModal}
+                                setOpenedModal={setOpenedModal}
+                                openedPopover={openedPopover}
+                                setOpenedPopover={setOpenedModal}
+                                checkIfAllRight={checkIfAllRight}
+                                eigenerName={eigenerName}
+                                allRight={allRight}
+                                modalData={modalData}
+                                aufgabenstellungVisible={false}
+                                fertigVisible={true}
+                                tooltipText="Du muss alles richtig haben um weiter zu machen!"
+                                popoverText="Du musst erst alle Boxen einsetzen"
+                            />
                     </div>
                     <div>
                         <Grid columns={24}>
@@ -205,9 +154,9 @@ const Zuordnung = () => {
                                     <DropZone type="Left">
                                         {
                                             antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
-                                                <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                    right={i.right} />
-                                            )
+                                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                                              right={i.right}/>
+                                                )
                                             )
                                         }
                                     </DropZone>
@@ -227,8 +176,8 @@ const Zuordnung = () => {
                                             paddingBottom: '10px',
                                             margin: 'auto'
                                         }}>{
-                                                fragen[0].frage
-                                            }</h3>
+                                            fragen[0].frage
+                                        }</h3>
                                         </div>
 
                                         <DropZone type="Up">
@@ -236,7 +185,7 @@ const Zuordnung = () => {
                                             {
                                                 antworten.filter(a => a.state === ItemState.UP).map(i => (
                                                     <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                        right={i.right} />)
+                                                              right={i.right}/>)
                                                 )
                                             }
                                         </DropZone>
@@ -252,14 +201,14 @@ const Zuordnung = () => {
                                                 paddingBottom: '10px',
                                                 margin: 'auto'
                                             }}>{
-                                                    fragen[1].frage
-                                                }</h3>
+                                                fragen[1].frage
+                                            }</h3>
                                         </div>
                                         <DropZone type="Down">
                                             {
                                                 antworten.filter(a => a.state === ItemState.DOWN).map(i => (
                                                     <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                        right={i.right} />)
+                                                              right={i.right}/>)
                                                 )
                                             }
                                         </DropZone>
