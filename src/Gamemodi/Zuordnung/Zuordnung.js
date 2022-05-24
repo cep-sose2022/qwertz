@@ -8,6 +8,10 @@ import {Grid} from "@mantine/core";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
 
+import {FcQuestions} from "react-icons/fc";
+import {useNavigate} from "react-router";
+import service from "../../service";
+import storage from "../../storage";
 import ModiHeader from "../ModiHeader";
 
 export const ItemContext = createContext({
@@ -55,33 +59,50 @@ const Zuordnung = () => {
     const [antworten, setAntworten] = useState([]);
     const [openedModal, setOpenedModal] = useState(false);
     const [openedPopover, setOpenedPopover] = useState(false);
-    const [modalContent, setModalContent] = useState(modalData[0]);
+    const [modalContent, setModalContent] = useState("");
     const [allRight, setAllRight] = useState(false);
 
-    // läd die daten aus der DB und schreib sie in eine const
-    if (fragen[0] === undefined) {
-        let fragenId = 1;
-        JsonList.map(object => {
-            let frage = {
-                id: fragenId,
-                frage: object.frage,
-            };
-            fragen.push(frage);
-            let antwortId = 1;
-            object.antworten.map(a => {
-                let antwort = {
-                    id: ((antwortId) + 10 * fragenId),
-                    text: a.text,
-                    state: ItemState.NOTSELECTED,
-                    right: false
+
+
+    const navigator = useNavigate();
+    const {redirect} = useContext(ModiContext);
+
+    // um zu dem Modi umzuleiten, der gerade daran is
+    useEffect(() => {
+        redirect(eigenerName)
+        // läd die daten aus der DB und schreib sie in eine const
+        if (antworten[0] === undefined) {
+            let Data = service.getZuordnung(storage.getBadgeID(), storage.getModiID())
+            if (Data === undefined) {
+                navigator('../../Error503')
+                return
+            } else if (Data === null) {
+                console.error("DB nicht erreichbar, nutze Demo Daten")
+                // navigator('../../Error503')
+                Data = JsonList
+            }
+
+            // const tempAntworten = []
+            Data.map((object, idx) => {
+                let frage = {
+                    id: idx + 1,
+                    frage: object.frage,
                 };
-                antworten.push(antwort)
-                antwortId++;
+                fragen.push(frage);
+                object.antworten.map((a, idx) => {
+                    let antwort = {
+                        id: ((idx) + 10 * (frage.id)),
+                        text: a.text,
+                        state: ItemState.NOTSELECTED,
+                        right: false
+                    };
+                    antworten.push(antwort)
+                });
             });
-            fragenId++;
-        });
-        setAntworten(shuffle(antworten));
-    }
+            setAntworten(shuffle(antworten))
+            setModalContent(modalData[0])
+        }
+    })
 
 
     // makiert eine Box als den übergebenen status
@@ -175,7 +196,7 @@ const Zuordnung = () => {
                                             paddingBottom: '10px',
                                             margin: 'auto'
                                         }}>{
-                                            fragen[0].frage
+                                            fragen.map((i, idx) => (idx === 0 ? i.frage : ""))
                                         }</h3>
                                         </div>
 
@@ -200,7 +221,8 @@ const Zuordnung = () => {
                                                 paddingBottom: '10px',
                                                 margin: 'auto'
                                             }}>{
-                                                fragen[1].frage
+                                                fragen.map((i, idx) => (idx === 1 ? i.frage : ""))
+
                                             }</h3>
                                         </div>
                                         <DropZone type="Down">

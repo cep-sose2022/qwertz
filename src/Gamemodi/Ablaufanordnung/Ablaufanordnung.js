@@ -9,6 +9,10 @@ import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 import DropBox from "./DropBox";
 import {SimpleGrid} from "@mantine/core";
 
+import ModiHeader from "../ModiHeader";
+import service from "../../service";
+import storage from "../../storage";
+import {useNavigate} from "react-router";
 import {ModiContext} from "../Gamemodi";
 import ModiHeader from "../ModiHeader";
 
@@ -61,32 +65,47 @@ const Ablaufanordnung = () => {
     const [openedModal, setOpenedModal] = useState(true);
     const [openedPopover, setOpenedPopover] = useState(false);
     const [modalContent, setModalContent] = useState(modalData[3]);
-    const [allRight, setAllRight] = useState(false);
+    const [allRight, setAllRight] = useState(true);
 
+    const navigator = useNavigate();
     const {redirect} = useContext(ModiContext);
-    useEffect(() => redirect())
 
-    // läd die daten aus der DB und schreib sie in eine const
-    let id = 1;
-    if (cards[0] === undefined) {
-        JsonList.map(object => {
-                let card = {
-                    key: Math.floor(Math.random() * 100000),
-                    id: id++,
-                    text: object.text,
-                    state: ItemState.WRONG,
-                    boxId: 0
+    // um zu dem Modi umzuleiten, der gerade daran is
+    useEffect(() => {
+            redirect(eigenerName)
+            // läd die daten aus der DB und schreib sie in eine const
+            if (cards[0] === undefined) {
+                let Data = service.getAblaufanordnung(storage.getBadgeID(), storage.getModiID())
+                if (Data === undefined) {
+                    navigator('../../Error503')
+                    return
+                } else if (Data === null) {
+                    console.error("DB nicht erreichbar, nutze Demo Daten")
+                    // navigator('../../Error503')
+                    Data = JsonList
                 }
-                cards.push(card);
-                let box = {
-                    key: Math.floor(Math.random() * 100000),
-                    id: card.id
-                };
-                boxes.push(box);
+
+                Data.map((object, idx) => {
+                        let card = {
+                            key: Math.random(),
+                            id: idx + 1,
+                            text: object.text,
+                            state: ItemState.WRONG,
+                            boxId: 0
+                        }
+                        cards.push(card);
+                        let box = {
+                            key: Math.floor(Math.random() * 100000),
+                            id: card.id
+                        };
+                        boxes.push(box);
+                    }
+                )
+                setCards(shuffle(cards));
             }
-        )
-        setCards(shuffle(cards));
-    }
+        }
+    )
+
 
     // legt eine Karte in die angegebene Box, taucht gegebenenfalls die Karte die da dirn liegt mit sich
     const markAsX = (id, boxId) => {
@@ -136,7 +155,6 @@ const Ablaufanordnung = () => {
             setAllRight(false);
         }
     }
-
 
     return (
 

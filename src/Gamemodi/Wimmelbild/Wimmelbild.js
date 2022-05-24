@@ -4,6 +4,10 @@ import {BackgroundImage, Box} from "@mantine/core";
 
 import './Wimmelbild.css'
 import ModiHeader from "../ModiHeader";
+import {useNavigate} from "react-router";
+import service from "../../service";
+import storage from "../../storage";
+import JsonList from '../../Resources/Json/WimmelbildData.json';
 
 const modalData = [
     {
@@ -14,29 +18,46 @@ const modalData = [
 
 const Wimmelbild = () => {
     const eigenerName = 'Wimmelbild';
-    const image = require('../../Resources/images/' + JsonData[0].bild);
+    const image = require('../../Resources/images/' + JsonList[0].bild);
     const [buttons, setButton] = useState([]);
     const [modalContent, setModalContent] = useState(modalData[0]);
     const [openedModal, setOpenedModal] = useState(false);
     const [allRight, setAllRight] = useState(false);
 
+    const navigator = useNavigate();
+    const {redirect} = useContext(ModiContext);
 
-    // läd die daten aus der DB und schreib sie in eine const
-    let id = 1;
-    if (buttons[0] === undefined) {
-        JsonData[1].buttons.map(object => {
-            let button = {
-                id: id++,
-                text: object.text,
-                width: object.bottomRightCorner.x - object.topLeftCorner.x,
-                height: object.bottomRightCorner.y - object.topLeftCorner.y,
-                top: object.topLeftCorner.y,
-                left: object.topLeftCorner.x,
-                isClicked: false
-            };
-            buttons.push(button);
-        })
-    }
+    // um zu dem Modi umzuleiten, der gerade daran is
+    useEffect(() => {
+        redirect(eigenerName)
+        // läd die daten aus der DB und schreib sie in eine const
+        if (buttons[0] === undefined) {
+            const tempButtons = []
+            console.log('ich wa da')
+            let Data = service.getWimmelbild(storage.getBadgeID(), storage.getModiID())
+            if (Data === undefined) {
+                navigator('../../Error503')
+                return
+            } else if (Data === null) {
+                console.error("DB nicht erreichbar, nutze Demo Daten")
+                // navigator('../../Error503')
+                Data = JsonList
+            }
+            Data.map((object, idx) => {
+                let button = {
+                    id: idx + 1,
+                    text: object.text,
+                    width: object.bottomRightCorner.x - object.topLeftCorner.x,
+                    height: object.bottomRightCorner.y - object.topLeftCorner.y,
+                    top: object.topLeftCorner.y,
+                    left: object.topLeftCorner.x,
+                    isClicked: false
+                };
+                tempButtons.push(button);
+                setButton(tempButtons)
+            })
+        }
+    })
 
     // makiert ein Button als geklickt
     const clickButton = (id) => {

@@ -5,9 +5,22 @@ import img1 from "../../../Resources/images/orange_zwinkern.png";
 import {FaFileDownload} from "react-icons/fa";
 import {Tooltip} from "@mantine/core";
 
-const setData = (badgeID) => {
-    storage.setBadgeID(badgeID)
-    console.log(badgeID)
+// TODO hier wurde was gemacht
+const setData = (badgeID, modis) => {
+    if (storage.getBadgeID() !== badgeID) {
+        storage.removeAll()
+        storage.setBadgeID(badgeID)
+        let modiData = []
+        modis.map(object => {
+            let modi = {
+                modiID: object.modiID,
+                title: object.title,
+                passed: false
+            }
+            modiData.push(modi)
+        })
+        storage.setModis(modiData)
+    }
 }
 
 const BadgeItem = ({data}) => (
@@ -26,7 +39,7 @@ const BadgeItem = ({data}) => (
                         style={{width: "100%", display: 'flex', flexDirection: "row", justifyContent: "space-between"}}>
                         <div>
                             <Link className="link" to={'../Gamemodi/' + data.modis[0]}
-                                  onClick={() => setData(data.badgeID)}>
+                                  onClick={() => setData(data.badgeID, data.modis)}>
                                 Start
                             </Link>
                         </div>
@@ -40,7 +53,6 @@ const BadgeItem = ({data}) => (
                     </div>
                     <span className="circle"/>
                 </div>
-
                 :
                 <div className="badgeline-item-content">
                 <span className="tag">

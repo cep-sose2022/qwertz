@@ -14,7 +14,7 @@ const Video = () => {
                 <video src="Bsp_Video.ogg"></video>
 
             </div>
-            <Button onClick={() => markAsPassed(eigenerName)} disabled={false}> Weiter</Button>
+            <Button onClick={() => markAsPassed()} disabled={false}> Weiter</Button>
         </>
     );
 }

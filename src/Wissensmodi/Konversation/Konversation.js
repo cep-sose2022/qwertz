@@ -2,11 +2,14 @@ import React, {useContext, useEffect, useState} from "react";
 import "./Konversation.css";
 
 
-import Data from "../../Resources/Json/KonversationData.json";
+import JsonList from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
 import {ModiContext} from "../../Gamemodi/Gamemodi";
 import {useScrollIntoView} from "@mantine/hooks";
 import ModiHeader from "../../Gamemodi/ModiHeader";
+import service from "../../service";
+import storage from "../../storage";
+import {useNavigate} from "react-router";
 
 const modalData = [
     {
@@ -25,23 +28,37 @@ const Konversation = () => {
 
     const {redirect} = useContext(ModiContext);
 
-    // läd die daten aus der DB und schreib sie in eine const
-    if (bubbles[0] === undefined) {
-        Data.map(object => {
-            let bubble = {
-                id: Math.floor(Math.random() * 10000),
-                text: object.text,
-                category: object.category,
-                selected: false
-            }
-            bubbles.push(bubble);
-        })
-    }
+    const navigator = useNavigate();
+
+    // TODO des muss alles in jeden modi
 
     // um zu dem Modi umzuleiten, der gerade daran is
-    useEffect(() =>
+    useEffect(() => {
         redirect(eigenerName)
-    )
+        // läd die daten aus der DB und schreib sie in eine const
+        if (bubbles[0] === undefined) {
+            let Data = service.getKonversation(storage.getBadgeID(), storage.getModiID())
+            if (Data === undefined) {
+                navigator('../../Error503')
+                return
+            } else if (Data === null) {
+                console.error("DB nicht erreichbar, nutze Demo Daten")
+                // navigator('../../Error503')
+                Data = JsonList
+            }
+
+            Data.map(object => {
+                let bubble = {
+                    id: Math.floor(Math.random() * 10000),
+                    text: object.text,
+                    category: object.category,
+                    selected: false
+                }
+                bubbles.push(bubble);
+            })
+        }
+    })
+    // TODO bis hier
 
     // zum anzeigen des Nächsten Textes
     const abbilden = () => {
