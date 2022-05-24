@@ -102,3 +102,28 @@ const ModiHeader = (props) => {
 }
 
 export default ModiHeader
+
+
+// des muss dann in jeden modi Rein
+/*
+                        <HeaderContext.Provider value={{
+                            setModalContent,
+                            modalContent,
+                            openedModal,
+                            setOpenedModal,
+                            openedPopover,
+                            setOpenedPopover,
+                            checkIfAllRight,
+                            eigenerName,
+                            allRight,
+                            modalData
+                        }}>
+                            <ModiHeader
+                                aufgabenstellungVisible={true}
+                                fertigVisible={true}
+                                tooltipText="Du muss alles richtig haben um weiter zu machen!"
+                                popoverText="Du musst erst alle Boxen einsetzen"
+                            />
+                        </HeaderContext.Provider>
+
+ */
