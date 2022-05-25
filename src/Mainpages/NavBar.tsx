@@ -1,5 +1,6 @@
 import React from 'react';
 import erlenmeyer from '../Resources/erlenmeyer_animiert2.gif';
+import {Link} from "react-router-dom";
 
 const NavBar = (props: { children: any; }) => {
 
@@ -9,11 +10,13 @@ const NavBar = (props: { children: any; }) => {
         <nav>
             <div className="container">
                 <div className="logo">
-                    <img
-                        className="icon"
-                        src={erlenmeyer}
-                        alt="icon"
-                    />
+                    <Link to={'../Startseite'}>
+                        <img
+                            className="icon"
+                            src={erlenmeyer}
+                            alt="icon"
+                        />
+                    </Link>
                 </div>
 
                 <div className="links">
