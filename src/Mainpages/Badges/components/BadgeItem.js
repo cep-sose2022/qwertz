@@ -37,7 +37,7 @@ const BadgeItem = ({data}) => (
                         <Tooltip label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
                             <a className="downloadButton" href={img1} download>
                                 {/*// TODO hier muss der Link zur PDF datei geändert werden*/}
-                                <FaFileDownload/>
+                                <FaFileDownload/> Inhalt herunterladen
                             </a>
                         </Tooltip>
                     </div>
@@ -46,7 +46,7 @@ const BadgeItem = ({data}) => (
 
                     <div>
                         <Link className="link" to={'../Gamemodi'}
-                              onClick={() => setData(data.badgeID, data.modis)}>
+                              onClick={() => setData(data.badgeID, data.modis)} style={{fontSize: '4vh'}}>
                             Start
                         </Link>
                     </div>
@@ -64,7 +64,7 @@ const BadgeItem = ({data}) => (
                              label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
                         <a className="downloadButton" style={{filter: 'blur(4px)'}}>
                             {/*// TODO hier muss der Link zur PDF datei geändert werden*/}
-                            <FaFileDownload/>
+                            <FaFileDownload/> Inhalt herunterladen
                         </a>
                     </Tooltip>
                     <p style={{filter: 'blur(4px)'}}>{data.text}</p>

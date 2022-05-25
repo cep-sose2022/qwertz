@@ -130,13 +130,11 @@ a.downloadButton:hover {
 .badgeline-item-content a.link {
     color: rgb(95, 168, 245);
     text-decoration: none;
-    font-size: 16px;
     font-weight: bold;
 }
 
 .badgeline-item-content a.link::after {
     content: ' ►';
-    font-size: 14px;
 }
 
 .badgeline-item-content .circle {
