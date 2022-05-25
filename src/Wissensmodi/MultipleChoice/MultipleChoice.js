@@ -9,7 +9,7 @@ import ModiHeader from "../../Gamemodi/ModiHeader";
 const modalData = [
     {
         title: "Spielerklärung",
-        content: "Klick einfach un les " //TODO sinnvoller text
+        content: "Kreuze die Zutreffenden aussagen an" //TODO sinnvoller text
     }
 ]
 
