@@ -64,7 +64,7 @@ const Ablaufanordnung = () => {
     const [openedModal, setOpenedModal] = useState(true);
     const [openedPopover, setOpenedPopover] = useState(false);
     const [modalContent, setModalContent] = useState(modalData[3]);
-    const [allRight, setAllRight] = useState(true);
+    const [allRight, setAllRight] = useState(false);
 
     const navigator = useNavigate();
     const {redirect} = useContext(ModiContext);
