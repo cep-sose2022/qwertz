@@ -24,6 +24,7 @@ import './Gamemodi/Zuordnung/Zuordnung.css'
 import JsonZitate from './Resources/Json/zitate.json';
 import Footer from "./Mainpages/Startseite/Footer";
 import Error503Page from "./Gamemodi/Error503Page";
+import MultipleChoice from "./Wissensmodi/MultipleChoice/MultipleChoice";
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
                         <Route path="Endscreen" element={<Endscreen/>}/>
                         <Route path="Konversation" element={<Konversation/>}/>
                         <Route path="Video" element={<Video/>}/>
+                        <Route path="MultipleChoice" element={<MultipleChoice/>}/>
                     </Route>
                 </Route>
             </Routes>
