@@ -28,7 +28,7 @@
 }
 
 .scrollmenu::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px #99B4BF;
 
 }
 
@@ -40,7 +40,7 @@
 }
 
 .scrollmenu::-webkit-scrollbar-thumb {
-    background: #f58400;
+    background: #D9A25F;
 }
 
 .card-body {

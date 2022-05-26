@@ -8,6 +8,15 @@
     --light-one: #fff;
     --light-two: #f9fafb;
     --light-three: #f6f7fb;
+
+    /*Neu angelegte Farben*/
+    --zeppfarbton: #F2BE22;
+    --tedfarbton: #185359;
+    --spielbereich1: #D9A25F;
+    --spielbereich2: #99B4BF;
+    --buttonfarbton: #2B558C;
+    --buttonhoverfarbton: #8BB4D9;
+    --ModiHeader: #0B2B40;
 }
 
 /*=======================General Styles=======================*/

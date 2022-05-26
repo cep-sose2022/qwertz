@@ -1,8 +1,8 @@
-import React, {useContext} from 'react';
-import {Button, Grid, Modal, Popover, Text, Tooltip} from "@mantine/core";
-import {IoIosInformationCircleOutline} from "react-icons/io";
-import {FcQuestions} from "react-icons/fc";
-import {ModiContext} from "./Gamemodi";
+import React, { useContext } from 'react';
+import { Button, Grid, Modal, Popover, Text, Tooltip } from "@mantine/core";
+import { IoIosInformationCircleOutline } from "react-icons/io";
+import { FcQuestions } from "react-icons/fc";
+import { ModiContext } from "./Gamemodi";
 
 const ModiHeader = (props) => {
     const {
@@ -21,7 +21,7 @@ const ModiHeader = (props) => {
         allRight,
         modalData
     } = props
-    const {markAsPassed} = useContext(ModiContext);
+    const { markAsPassed } = useContext(ModiContext);
 
     // const {
     //     setModalContent,
@@ -40,9 +40,9 @@ const ModiHeader = (props) => {
         <div style={{
             backgroundColor: 'var(--dark-one)',
             padding: '10px',
-            border: '5px solid',
+            border: '4px solid',
             borderRadius: '15px',
-            boxShadow: '10px 5px 5px black'
+            boxShadow: '10px 5px 5px  var(--dark-one)',
         }}>
             <Grid justify={"space-between"}>
                 {/*Modal für die Aufgabenstellung und zum Anzusagen ob alles Richtig/falsch is*/}
@@ -51,13 +51,13 @@ const ModiHeader = (props) => {
                     transitionDuration={900}
                     overlayOpacity={0.55}
                     overlayBlur={3}
-                    style={{fontSize: 20}}
+                    style={{ fontSize: 20 }}
                     centered
                     opened={openedModal}
                     onClose={() => setOpenedModal(false)}
-                    title={<IoIosInformationCircleOutline size={32}/>}
+                    title={<IoIosInformationCircleOutline size={32} />}
                 >
-                    <h3 style={{lineHeight: 2.5, fontSize: 22}}>
+                    <h3 style={{ lineHeight: 2.5, fontSize: 22 }}>
                         {modalContent.title}
                     </h3>
 
@@ -90,7 +90,7 @@ const ModiHeader = (props) => {
                                 position="bottom"
                                 withArrow
                             >
-                                <div style={{display: 'flex'}}>
+                                <div style={{ display: 'flex' }}>
                                     <Text size="sm">{popoverText}</Text>
                                 </div>
                             </Popover>
@@ -100,19 +100,19 @@ const ModiHeader = (props) => {
                     <>  </>
                     <Tooltip label={tooltipText}>
                         <Button onClick={() => markAsPassed(eigenerName)}
-                                disabled={!allRight}> Weiter</Button>
+                            disabled={!allRight}> Weiter</Button>
                     </Tooltip>
                 </Grid.Col>
 
                 {/* Button für die Spielerklärung */}
                 <Grid.Col span={2}>
-                    <div style={{textAlign: 'end'}}>
+                    <div style={{ textAlign: 'end' }}>
                         <Button style={{
                             background: 'transparent'
                         }} onClick={() => {
                             setModalContent(modalData[0])
                             setOpenedModal(true)
-                        }}><FcQuestions size={32}/></Button>
+                        }}><FcQuestions size={32} /></Button>
                     </div>
                 </Grid.Col>
 
