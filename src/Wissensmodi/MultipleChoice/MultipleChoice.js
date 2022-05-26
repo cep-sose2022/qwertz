@@ -1,7 +1,7 @@
-import React, {useContext, useState} from 'react'
+import React, { useContext, useState } from 'react'
 
 import steps from "../../Resources/Json/MultipleChoiceData.json"
-import {ModiContext} from "../../Gamemodi/Gamemodi";
+import { ModiContext } from "../../Gamemodi/Gamemodi";
 import MultipleChoiceField from "./Components/MultipleChoiceField";
 import './MultipleChoice.css'
 import ModiHeader from "../../Gamemodi/ModiHeader";
@@ -10,17 +10,22 @@ const modalData = [
     {
         title: "Spielerklärung",
         content: "Kreuze die Zutreffenden aussagen an" //TODO sinnvoller text
+    },
+    {
+        title: "Aufgabenstellung",
+        content: "Hier steht eine Aufgabenstellung"
     }
 ]
 
 
 const MultipleChoice = () => {
     const eigenerName = "MultipleChoice"
-    const [openedModal, setModalOpened] = useState(false)
-    const [modalContent, setModalContent] = useState(modalData[0])
-    const [allRight, setAllRight] = useState(true)
+    const [openedModal, setOpenedModal] = useState(false);
+    const [openedPopover, setOpenedPopover] = useState(false);
+    const [modalContent, setModalContent] = useState(modalData[1])
+    const [allRight] = useState(true)
 
-    const {markAsPassed} = useContext(ModiContext)
+    const { markAsPassed } = useContext(ModiContext)
 
     console.log(steps)
     return (
@@ -30,10 +35,9 @@ const MultipleChoice = () => {
                     setModalContent={setModalContent}
                     modalContent={modalContent}
                     openedModal={openedModal}
-                    setOpenedModal={null}
-                    openedPopover={null}
-                    setOpenedPopover={null}
-                    checkIfAllRight={null}
+                    openedPopover={openedPopover}
+                    setOpenedPopover={setOpenedPopover}
+                    setOpenedModal={setOpenedModal}
                     eigenerName={eigenerName}
                     allRight={allRight}
                     modalData={modalData}
@@ -66,8 +70,8 @@ const MultipleChoice = () => {
 
                         {
                             steps[0].aufgaben.map(aufgabe => (
-                                    <MultipleChoiceField key={Math.random()} aufgabe={aufgabe}/>
-                                )
+                                <MultipleChoiceField key={Math.random()} aufgabe={aufgabe} />
+                            )
                             )
                         }
 
