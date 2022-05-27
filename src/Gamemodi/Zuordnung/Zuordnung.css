@@ -43,7 +43,7 @@
     height: 72vh;
     overflow: auto;
     border: 3px solid rgb(0, 0, 0);
-    box-shadow: 5px 3px 4px black;
+    /*box-shadow: 5px 3px 4px black;*/
     border-top-left-radius: 15px;
     background-color: var(--buttonhoverfarbton);
     border-bottom-left-radius: 15px;
@@ -129,7 +129,7 @@
     min-width: 100%;
     height: auto;
     border: 3px solid black;
-    box-shadow: 5px 3px 4px black;
+    /*box-shadow: 5px 3px 4px black;*/
     background-color: var(--spielbereich1);
     border-radius: 15px;
     padding: 10px;
@@ -179,7 +179,7 @@
     min-width: 100%;
     height: auto;
     border: 3px solid black;
-    box-shadow: 5px 3px 4px black;
+    /*box-shadow: 5px 3px 4px black;*/
     background-color: var(--tedfarbton);
     border-radius: 15px;
     padding: 10px;

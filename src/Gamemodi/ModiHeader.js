@@ -42,7 +42,7 @@ const ModiHeader = (props) => {
             padding: '10px',
             border: '4px solid',
             borderRadius: '15px',
-            boxShadow: '5px 3px 4px  var(--dark-one)',
+            // boxShadow: '5px 3px 4px  var(--dark-one)',
         }}>
             <Grid justify={"space-between"}>
                 {/*Modal für die Aufgabenstellung und zum Anzusagen ob alles Richtig/falsch is*/}
