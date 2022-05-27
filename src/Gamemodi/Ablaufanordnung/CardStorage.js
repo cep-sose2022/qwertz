@@ -23,6 +23,7 @@ const CardStorage = (props) => {
             ref={drop}
             style={{
                 backgroundColor: (isDragging ? 'gray' : undefined),
+
             }}
             className="scrollmenu"
         >

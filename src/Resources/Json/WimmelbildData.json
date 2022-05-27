@@ -1,6 +1,6 @@
 [
   {
-    "bild": "wimmelbild1.png"
+    "bild": "Wimmelbilder/ICS_Wimmelbild.png"
   },
   {
     "buttons": [
@@ -24,7 +24,7 @@
         "bottomRightCorner": {
           "x": 50,
           "y": 65
-        } 
+        }
       },
       {
         "text": "Super! Externe Datenträger aus der Firma sollten nicht mit nach hause genommen um auf diesen dann private Daten zu speichern.",

@@ -22,7 +22,7 @@ const DragCard = (props: { id: number; state: any; text: String }) => {
         <p ref={drag} className="dragCard"
             style={{
 
-                backgroundColor: ItemState.RIGHT === state ? '#00AB08' : '#f58400',
+                backgroundColor: ItemState.RIGHT === state ? 'var(--antwortRichtig)' : 'var(--antwortFalsch)',
 
             }}>
 

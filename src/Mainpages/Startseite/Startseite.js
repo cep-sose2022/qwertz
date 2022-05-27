@@ -9,13 +9,11 @@ import Zitat from './Zitat'
 import img1 from './../../Resources/images/orange_normal.png'
 import img2 from './../../Resources/images/erlenmeyerkolben_gruen_normal.png'
 import img3 from './../../Resources/images/icons8-controller.png'
-import img4 from './../../Resources/images/icons8-medien.png'
 import img5 from './../../Resources/images/icons8-online-learning.png'
 import Header from "./Header";
 import Headline from "./Headline";
 import Card from "./Card";
 import Introduction from "./Introduction";
-import { Spoiler } from '@mantine/core';
 const Startseite = (props) => {
     const { JsonZitate } = props;
 
@@ -58,11 +56,6 @@ const Startseite = (props) => {
                             text={"Der Schulungskurs besteht aus 2 Wissensmodulen und 3 Gamemodulen, die die wichtigsten Angriffsvektoren und den Schutz vor Bedrohungen behandeln. Die einzelnen Module liefern wertvolle Informationen über die OT-Security."}
                         />
 
-                        <Card
-                            image={img4}
-                            title={"Test"}
-                            text={"Der Schulungskurs besteht aus 2 Wissensmodulen und 3 Gamemodulen, die die wichtigsten Angriffsvektoren und den Schutz vor Bedrohungen behandeln. Die einzelnen Module liefern wertvolle Informationen über die OT-Security."}
-                        />
                     </div>
                 </div>
             </section>

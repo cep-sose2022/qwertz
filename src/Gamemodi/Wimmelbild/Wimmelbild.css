@@ -1,5 +1,3 @@
-
-
 .wimmelbild-container .wimmelbild-body {
     border: 5px solid;
     margin-top: 5px;
@@ -7,6 +5,7 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     overflow: auto;
+    overflow-y: scroll;
 }
 
 .wimmelbild-container .wimmelbild-body::-webkit-scrollbar {
