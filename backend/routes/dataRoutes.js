@@ -6,6 +6,7 @@ const {getWimmelbild, postWimmelbild} = require('../controllers/wimmelbildContro
 const {getAblauf, postAblauf} = require('../controllers/ablaufController')
 const {getZuordnung} = require("../controllers/zuordnungController");
 const {getKonversation, postKonversation} = require("../controllers/konversationController");
+const {postMultipleChoice, getMultipleChoice} = require("../controllers/multipleChoiceController");
 
 
 // --- get Methoden ---
@@ -19,6 +20,7 @@ router.route('/getAblaufanordnung/:badgeID/:modiID').get(getAblauf)
 router.route('/getZuordnung/:badgeID/:modiID').get(getZuordnung)
 router.route('/getKonversation/:badgeID/:modiID').get(getKonversation)
 router.route('/getWimmelbild/:badgeID/:modiID').get(getWimmelbild)
+router.route('/getMultipleChoice/:badgeID/:modiID').get(getMultipleChoice)
 
 // post Methoden
 router.route('/postKonversation').post(postKonversation)
@@ -26,5 +28,6 @@ router.route('/postAblauf').post(postAblauf)
 router.route('/postBadge').post(postBadge)
 router.route('/postWimmelbild').post(postWimmelbild)
 router.route('/postZitat').post(postZitat)
+router.route('/postMultipleChoice').post(postMultipleChoice)
 
 module.exports = router
