@@ -18,7 +18,7 @@ const modalData = [
 
 const Wimmelbild = () => {
     const eigenerName = 'Wimmelbild';
-    const image = require('../../Resources/images/' + JsonList[0].bild);
+    let image;
     const [buttons, setButton] = useState([]);
     const [modalContent, setModalContent] = useState(modalData[0]);
     const [openedModal, setOpenedModal] = useState(false);
@@ -43,7 +43,9 @@ const Wimmelbild = () => {
                 // navigator('../../Error503')
                 Data = JsonList
             }
-            Data.map((object, idx) => {
+
+            image = service.getImage(Data.imageName)
+            Data.buttons.map((object, idx) => {
                 let button = {
                     id: idx + 1,
                     text: object.text,
@@ -59,7 +61,7 @@ const Wimmelbild = () => {
         }
     })
 
-    // makiert ein Button als geklickt
+    // markiert ein Button als geklickt
     const clickButton = (id) => {
         const clickedButton = buttons.filter(button => button.id === id)[0];
         clickedButton.isClicked = true;

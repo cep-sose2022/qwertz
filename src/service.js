@@ -1,6 +1,8 @@
 const service = {}
 const backendUrl = 'http://localhost:5000'
 
+// --- getter ---
+
 service.getZitate = () => {
     try {
         const xmlHttp = new XMLHttpRequest();
@@ -21,8 +23,30 @@ service.getBadges = () => {
     } catch (e) {
         return null
     }
-
 }
+
+service.getImage = (name) => {
+    try {
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", `${backendUrl}/getImage/${name}`, false);
+        xmlHttp.send(null);
+        return "data:image/png;base64," + JSON.parse(xmlHttp.responseText)[0].img;
+    } catch (e) {
+        return null
+    }
+}
+
+service.getPdf = (badgeID) => {
+    try {
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", `${backendUrl}/getPdf/${badgeID}`, false);
+        xmlHttp.send(null);
+        return "data:application/pdf;base64," + JSON.parse(xmlHttp.responseText)[0].pdf;
+    } catch (e) {
+        return null
+    }
+}
+
 
 const getModiData = (badgeID, modiID, name) => {
     try {
