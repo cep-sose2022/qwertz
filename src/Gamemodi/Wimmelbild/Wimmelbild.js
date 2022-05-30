@@ -27,10 +27,10 @@ const Wimmelbild = () => {
     const navigator = useNavigate();
     const {redirect} = useContext(ModiContext);
 
-    // um zu dem Modi umzuleiten, der gerade daran is
+    // um zu dem Modi umzuleiten, der gerade dran is
     useEffect(() => {
         redirect(eigenerName)
-        // läd die daten aus der DB und schreib sie in eine const
+        // lädt die daten aus der DB und schreibt sie in eine const
         if (buttons[0] === undefined) {
             const tempButtons = []
             console.log('ich wa da')
@@ -62,7 +62,7 @@ const Wimmelbild = () => {
         }
     })
 
-    // markiert ein Button als geklickt
+    // markiert einen Button als geklickt
     const clickButton = (id) => {
         const clickedButton = buttons.filter(button => button.id === id)[0];
         clickedButton.isClicked = true;
@@ -111,7 +111,7 @@ const Wimmelbild = () => {
                         className="imagewimmelbild" src={image}
                         radius="sm"
                     >
-                        {/*Her kommen alle Buttons rein*/}
+                        {/*alle Buttons*/}
                         {
                             buttons.map(b => (
                                     <button
