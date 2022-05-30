@@ -23,7 +23,6 @@
 .column-1 {
     margin-top: -19rem;
     margin-right: 1.5rem;
-    margin-left: 5rem;
     flex-basis: 120%;
     position: relative;
     margin-left: 50px;
@@ -47,6 +46,7 @@
     left: -70px;
     margin: 20rem;
     top: -140px;
+    height: auto;
 }
 
 .image {
@@ -342,7 +342,11 @@
     background-color: #222;
     padding: 6rem 0;
 }
-
+.container-footer{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+}
 .footer .grid-4 {
     display: grid;
     grid-template-columns: 3.5fr 2fr 2fr 3fr;
@@ -505,7 +509,7 @@
     }
 
     .title:after {
-        height: 3.5px;
+        height: 0.219rem;
         width: 70px;
     }
 
@@ -658,7 +662,6 @@
     background-color: var(--light-three);
     backdrop-filter: blur(16px) saturate(100%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border-radius: 12px;
     border: 1px solid rgba(209, 213, 219, 0.3);
     border-radius: 5px;
 }

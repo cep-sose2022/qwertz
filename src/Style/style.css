@@ -83,10 +83,9 @@ img {
 .column-1 {
     margin-top: -35.5rem;
     margin-right: 1.5rem;
-    margin-left: 5rem;
     flex-basis: 120%;
     position: relative;
-    margin-left: 50px;
+    margin-left: 3.125rem;
 }
 
 .column-1 .header-title {
@@ -104,7 +103,7 @@ img {
 /*=======================Header=======================*/
 header {
     width: 100%;
-    max-height: calc(100vh - -2.1rem);
+    max-height: calc(100vh - 2.1rem);
     background-color: var(--light-three);
     overflow: hidden;
     position: relative;
@@ -129,6 +128,12 @@ nav .container {
     width: 200px;
     display: flex;
     align-items: center;
+}
+
+.logo img {
+    width: 6rem;
+    height: 6rem ;
+    border-radius: 20px;
 }
 
 .links ul {

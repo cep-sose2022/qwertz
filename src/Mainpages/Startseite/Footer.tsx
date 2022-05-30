@@ -1,5 +1,6 @@
 import React from 'react';
 import './Startseite.css';
+import {ImArrowUp} from "react-icons/im";
 
 // @ts-ignore
 import { HashLink } from 'react-router-hash-link';
@@ -9,7 +10,7 @@ const Footer = () => {
 
     return (
         <footer className="footer">
-            <div className="container">
+            <div className="container-footer">
                 <div className="grid-4">
                     <div className="grid-4-col footer-about">
                         <h3 className="title-sm">Über die Schulung</h3>
@@ -67,7 +68,8 @@ const Footer = () => {
                         </div>
                         <div className="back-btn-wrap">
                             <a href="#" className="back-btn">
-                                <i className="fas fa-chevron-up" />
+                                <ImArrowUp style={{
+                                    color:"var(--dark-one)"}}/>
                             </a>
                         </div>
                     </div>

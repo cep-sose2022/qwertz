@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './Startseite.css';
+import {Button} from "@mantine/core";
 
 
 const Zitat = (props: { JsonData: any; }) => {
@@ -21,7 +22,7 @@ const Zitat = (props: { JsonData: any; }) => {
 
             <div className="quote-buttons">
                 <div className="btnzitat">
-                    <button onClick={generator}>Neues Zitat</button>
+                    <Button className="button" style={{backgroundColor:'var(--main-color)'}} onClick={generator}>Neues Zitat</Button>
                 </div>
             </div>
         </div>
