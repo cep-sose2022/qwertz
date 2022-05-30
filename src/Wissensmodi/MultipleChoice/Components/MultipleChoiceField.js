@@ -1,17 +1,20 @@
-import React from 'react'
-import { Center, Checkbox} from "@mantine/core";
+import React, {useState} from 'react'
+import {Center, Checkbox} from "@mantine/core";
 
 const MultipleChoiceField = (props) => {
 
-    const {aufgabe} = props
+    const {aufgabe, setAufgabeChecked} = props
+    const [rerender, setRerender] = useState(false)
 
     const handleChange = (event) => {
-        console.log(event.target.name)
-        console.log(event.target.value)
+        const target = event.target
+        setRerender(!rerender)
+        setAufgabeChecked(parseInt(target.name), parseInt(target.value))
     }
 
     return (
-        <div className="multiBox">
+        <div className="multiBox"
+             style={{backgroundColor: aufgabe.isRichtig ? 'var(--antwortRichtig)' : undefined}}>
             <Center>
                 <div key={Math.random()}>
                     <div className="multiQuestion">
@@ -21,20 +24,19 @@ const MultipleChoiceField = (props) => {
                         <ul key={Math.random()}>
                             {
                                 aufgabe.antworten.map(antwort => (
-                                        <li key={Math.random()}>
-                                            <Checkbox
-                                                // icon={}
-                                                label={antwort.text}
-                                                name={aufgabe.frage}
-                                                value={antwort.text}
-                                                onChange={handleChange}
-                                            />
-                                        </li>
-                                    )
-                                )
+                                    <li key={Math.random()}>
+                                        <Checkbox
+                                            // icon={}
+                                            label={antwort.text}
+                                            name={aufgabe.id}
+                                            value={antwort.id}
+                                            checked={antwort.isChecked}
+                                            onChange={handleChange}
+                                        />
+                                    </li>
+                                ))
                             }
                         </ul>
-
                     </div>
                 </div>
             </Center>

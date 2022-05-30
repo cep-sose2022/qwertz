@@ -1,10 +1,13 @@
-import React, { useContext, useState } from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 
-import steps from "../../Resources/Json/MultipleChoiceData.json"
-import { ModiContext } from "../../Gamemodi/Gamemodi";
+import JsonList from "../../Resources/Json/MultipleChoiceData.json"
 import MultipleChoiceField from "./Components/MultipleChoiceField";
 import './MultipleChoice.css'
 import ModiHeader from "../../Gamemodi/ModiHeader";
+import {ModiContext} from "../../Gamemodi/Gamemodi";
+import {useNavigate} from "react-router";
+import service from "../../service";
+import storage from "../../storage";
 
 const modalData = [
     {
@@ -12,8 +15,12 @@ const modalData = [
         content: "Kreuze die Zutreffenden aussagen an" //TODO sinnvoller text
     },
     {
-        title: "Aufgabenstellung",
-        content: "Hier steht eine Aufgabenstellung"
+        title: "Leider Falsch",
+        content: "Leider nicht alles richtig, schaue dir das noch mal an."
+    },
+    {
+        title: "Alles Richtig",
+        content: "Super du hast alles richtig!"
     }
 ]
 
@@ -22,12 +29,95 @@ const MultipleChoice = () => {
     const eigenerName = "MultipleChoice"
     const [openedModal, setOpenedModal] = useState(false);
     const [openedPopover, setOpenedPopover] = useState(false);
-    const [modalContent, setModalContent] = useState(modalData[1])
-    const [allRight] = useState(true)
+    const [modalContent, setModalContent] = useState(modalData[0])
+    const [allRight, setAllRight] = useState(false)
+    const [text, setText] = useState("");
+    const [aufgaben, setAufgaben] = useState([])
 
-    const { markAsPassed } = useContext(ModiContext)
+    const {redirect} = useContext(ModiContext);
 
-    console.log(steps)
+    const navigator = useNavigate();
+
+
+    // um zu dem Modi umzuleiten, der gerade daran is
+    useEffect(() => {
+        redirect(eigenerName)
+        // läd die daten aus der DB und schreib sie in eine const
+        if (aufgaben[0] === undefined) {
+            // let Data = service.getMultipleChoice(storage.getBadgeID(), storage.getModiID())
+            let Data = null
+            if (Data === undefined) {
+                navigator('../../Error503')
+                return
+            } else if (Data === null) {
+                console.error("DB nicht erreichbar, nutze Demo Daten")
+                // navigator('../../Error503')
+                Data = JsonList[0]
+            }
+
+            setText(Data.text)
+            Data.aufgaben.map((object, idx) => {
+                let aufgabe = {
+                    id: idx + 1,
+                    frage: object.frage,
+                    antworten: [],
+                    isRichtig: false
+                }
+                object.antworten.map((object, idx) => {
+                        let antwort = {
+                            id: idx + 1,
+                            text: object.text,
+                            isRichtig: object.isRichtig,
+                            isChecked: false
+                        }
+                        aufgabe.antworten.push(antwort)
+                    }
+                )
+                aufgaben.push(aufgabe);
+            })
+
+        }
+    })
+
+    const checkIfAllRight = () => {
+        console.log("isRichtig?", aufgaben)
+
+        aufgaben.map(aufgabe => {
+            let abbruch = false
+            aufgabe.antworten.map(antwort => {
+                if (!abbruch)
+                    if (antwort.isChecked && antwort.isRichtig) {
+                        aufgabe.isRichtig = true
+                    } else if (antwort.isChecked && !antwort.isRichtig) {
+                        aufgabe.isRichtig = false
+                        abbruch = true
+                    } else if (!antwort.isChecked && antwort.isRichtig) {
+                        aufgabe.isRichtig = false
+                        abbruch = true
+                    }
+            })
+        })
+
+        if (aufgaben.filter(aufgabe => !aufgabe.isRichtig).length === 0) {
+            // alles Richtig
+            setModalContent(modalData[2]);
+            setOpenedModal(true);
+            setAllRight(true);
+        } else {
+            // noch was Falsch
+            setModalContent(modalData[1]);
+            setOpenedModal(true);
+            setAllRight(false);
+
+        }
+    }
+
+
+    const setAufgabeChecked = (aufgabenID, antwortID) => {
+        const antwort = aufgaben.filter(aufgabe => aufgabe.id === aufgabenID)[0].antworten.filter(antwort => antwort.id === antwortID)[0]
+        antwort.isChecked = !antwort.isChecked
+    };
+
     return (
         <>
             <div className="multiChoice-header">
@@ -38,13 +128,14 @@ const MultipleChoice = () => {
                     openedPopover={openedPopover}
                     setOpenedPopover={setOpenedPopover}
                     setOpenedModal={setOpenedModal}
+                    checkIfAllRight={checkIfAllRight}
                     eigenerName={eigenerName}
                     allRight={allRight}
                     modalData={modalData}
-                    aufgabenstellungVisible={true}
+                    aufgabenstellungVisible={false}
                     fertigVisible={true}
                     tooltipText="Du musst alles richtig haben um weiter zu machen!"
-                    popoverText="Du musst erst alle Boxen einsetzen"
+                    popoverText="Du musst jede Frage beantworten!"
                 />
             </div>
 
@@ -60,7 +151,7 @@ const MultipleChoice = () => {
 
                         <div className="textFieldBody">
                             <p>
-                                {steps[0].text}
+                                {text}
                             </p>
                         </div>
                     </div>
@@ -69,9 +160,10 @@ const MultipleChoice = () => {
 
 
                         {
-                            steps[0].aufgaben.map(aufgabe => (
-                                <MultipleChoiceField key={Math.random()} aufgabe={aufgabe} />
-                            )
+                            aufgaben.map(aufgabe => (
+                                    <MultipleChoiceField key={Math.random()} aufgabe={aufgabe}
+                                                         setAufgabeChecked={setAufgabeChecked}/>
+                                )
                             )
                         }
 

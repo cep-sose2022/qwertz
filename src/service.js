@@ -51,5 +51,8 @@ service.getWimmelbild = (badgeID, modiID) => {
     return getModiData(badgeID, modiID, 'Wimmelbild')
 }
 
+service.getMultipleChoice = (badgeID, modiID) => {
+    return getModiData(badgeID, modiID, 'MultipleChoice')
+}
+
 module.exports = service
-// TODO hier wurde was gemacht
