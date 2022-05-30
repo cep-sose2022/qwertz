@@ -21,8 +21,9 @@ const DragCard = (props: { id: number; state: any; text: String }) => {
     return (
         <p ref={drag} className="dragCard"
             style={{
+                backgroundColor: ItemState.RIGHT === state ? 'var(--antwortRichtig)' : 'var(--spielbereich1)',
 
-                backgroundColor: ItemState.RIGHT === state ? 'var(--antwortRichtig)' : 'var(--antwortFalsch)',
+                fontSize: (text ? 13.4 : undefined),
 
             }}>
 

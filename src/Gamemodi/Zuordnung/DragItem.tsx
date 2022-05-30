@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDrag } from "react-dnd";
 import { ItemState } from './ItemState';
-
+import './Zuordnung.css';
 const DragItem = (props: { id: number; state: any; text: String; right: boolean }) => {
     const { id, text, state, right } = props;
 
@@ -22,13 +22,11 @@ const DragItem = (props: { id: number; state: any; text: String; right: boolean 
     return (
         <p ref={drag} className="Card"
             style={{
-                backgroundColor: right ? 'var( --antwortFalsch)' : ' var(--antwortRichtig)',
-                background: ItemState.NOTSELECTED ? 'gray' : 'gray',
-                fontSize: (isDragging ? 20 : undefined),
+                backgroundColor: right ? 'var(--antwortRichtig)' : 'var(--spielbereich1)',
                 border: '1px solid',
                 borderColor: 'var(--dark-one)',
                 borderRadius: '15px',
-                color: 'white',
+                color: 'var(   --dark-one)',
                 padding: 7,
                 margin: 7,
             }}>
