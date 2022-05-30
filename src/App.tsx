@@ -13,7 +13,6 @@ import Ablaufanordnung from './Gamemodi/Ablaufanordnung/Ablaufanordnung';
 import Wimmelbild from './Gamemodi/Wimmelbild/Wimmelbild';
 import Zuordnung from './Gamemodi/Zuordnung/Zuordnung';
 import Endscreen from './Gamemodi/Endscreen/Endscreen';
-import Video from './Wissensmodi/Video/Video';
 import Konversation from './Wissensmodi/Konversation/Konversation';
 
 // import CSS
@@ -31,19 +30,19 @@ function App() {
     return (
         <Router>
             {
-                <div style={{backgroundColor: 'lightgreen'}}>
-                    <a> Zum Debuggen und Testen aller Seiten, kommt dann am Ende noch weg</a>
-                    <br/>
-                    <Link to='Startseite'>Startseite </Link>
-                    <Link to='Dashboard/Sammlung'>Dashboard </Link>
-                    <Link to='Dashboard/Badges'>Badges </Link>
-                    <Link to='Dashboard/Gamemodi/Zuordnung'>Zuordnung </Link>
-                    <Link to='Dashboard/Gamemodi/Ablaufanordnung'>Ablaufanordnung </Link>
-                    <Link to='Dashboard/Gamemodi/Endscreen'>Endscreen </Link>
-                    <Link to='Dashboard/Gamemodi/Wimmelbild'>Wimmelbild </Link>
-                    <Link to='Dashboard/Gamemodi/Konversation'>Konversation </Link>
-                    <Link to='Dashboard/Gamemodi/Video'>Video </Link>
-                </div>
+                // <div style={{backgroundColor: 'lightgreen'}}>
+                //     <a> Zum Debuggen und Testen aller Seiten, kommt dann am Ende noch weg</a>
+                //     <br/>
+                //     <Link to='Startseite'>Startseite </Link>
+                //     <Link to='Dashboard/Sammlung'>Dashboard </Link>
+                //     <Link to='Dashboard/Badges'>Badges </Link>
+                //     <Link to='Dashboard/Gamemodi/Zuordnung'>Zuordnung </Link>
+                //     <Link to='Dashboard/Gamemodi/Ablaufanordnung'>Ablaufanordnung </Link>
+                //     <Link to='Dashboard/Gamemodi/Endscreen'>Endscreen </Link>
+                //     <Link to='Dashboard/Gamemodi/Wimmelbild'>Wimmelbild </Link>
+                //     <Link to='Dashboard/Gamemodi/Konversation'>Konversation </Link>
+                //     <Link to='Dashboard/Gamemodi/Video'>Video </Link>
+                // </div>
             }
             <Routes>
                 {/*MainPage*/}
@@ -61,7 +60,6 @@ function App() {
                         <Route path="Zuordnung" element={<Zuordnung/>}/>
                         <Route path="Endscreen" element={<Endscreen/>}/>
                         <Route path="Konversation" element={<Konversation/>}/>
-                        <Route path="Video" element={<Video/>}/>
                         <Route path="MultipleChoice" element={<MultipleChoice/>}/>
                     </Route>
                 </Route>
