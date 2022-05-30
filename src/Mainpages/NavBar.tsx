@@ -1,6 +1,6 @@
 import React from 'react';
 import erlenmeyer from '../Resources/erlenmeyer_animiert.gif';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const NavBar = (props: { children: any; }) => {
 

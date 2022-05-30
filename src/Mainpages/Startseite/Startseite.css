@@ -342,11 +342,13 @@
     background-color: #222;
     padding: 6rem 0;
 }
-.container-footer{
-    display:flex;
+
+.container-footer {
+    display: flex;
     flex-wrap: wrap;
-    flex-direction:row;
+    flex-direction: row;
 }
+
 .footer .grid-4 {
     display: grid;
     grid-template-columns: 3.5fr 2fr 2fr 3fr;

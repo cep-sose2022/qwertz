@@ -2,6 +2,7 @@
 
 /*=======================Festgelegte Farben=======================*/
 :root {
+
     --dark-one: #333;
     --dark-two: #7a7a7a;
     --main-color: rgb(7, 153, 255, 1);
@@ -132,7 +133,7 @@ nav .container {
 
 .logo img {
     width: 6rem;
-    height: 6rem ;
+    height: 6rem;
     border-radius: 20px;
 }
 

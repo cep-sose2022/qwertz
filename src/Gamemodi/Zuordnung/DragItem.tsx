@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDrag } from "react-dnd";
+import { ItemState } from './ItemState';
 
 const DragItem = (props: { id: number; state: any; text: String; right: boolean }) => {
     const { id, text, state, right } = props;
@@ -21,7 +22,8 @@ const DragItem = (props: { id: number; state: any; text: String; right: boolean 
     return (
         <p ref={drag} className="Card"
             style={{
-                backgroundColor: right ? 'var(--antwortRichtig)' : 'var(--antwortFalsch)',
+                backgroundColor: right ? 'var( --antwortFalsch)' : ' var(--antwortRichtig)',
+                background: ItemState.NOTSELECTED ? 'gray' : 'gray',
                 fontSize: (isDragging ? 20 : undefined),
                 border: '1px solid',
                 borderColor: 'var(--dark-one)',
