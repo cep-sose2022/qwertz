@@ -14,12 +14,6 @@
     text-align: center;
 }
 
-/*
-.wrpvertikal {
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-*/
 .progressbar li:before {
     content: counter(step);
     counter-increment: step;

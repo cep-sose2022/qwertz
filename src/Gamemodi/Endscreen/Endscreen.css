@@ -47,7 +47,7 @@
 /*hin und her springen*/
 @keyframes example {
     0% {
-        left: 0px;
+        left: 0;
     }
 
     25% {
@@ -59,11 +59,11 @@
     }
 
     75% {
-        left: 0px;
+        left: 0;
     }
 
     100% {
-        left: 0px;
+        left: 0;
     }
 }
 
