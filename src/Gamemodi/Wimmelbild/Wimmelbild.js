@@ -18,7 +18,7 @@ const modalData = [
 
 const Wimmelbild = () => {
     const eigenerName = 'Wimmelbild';
-    let image;
+    const [image, setImage] = useState("");
     const [buttons, setButton] = useState([]);
     const [modalContent, setModalContent] = useState(modalData[0]);
     const [openedModal, setOpenedModal] = useState(false);
@@ -44,7 +44,8 @@ const Wimmelbild = () => {
                 Data = JsonList
             }
 
-            image = service.getImage(Data.imageName)
+            setImage(service.getImage(Data.imageName))
+            console.log(image)
             Data.buttons.map((object, idx) => {
                 let button = {
                     id: idx + 1,
