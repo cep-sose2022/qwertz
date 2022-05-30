@@ -4,6 +4,7 @@
     justify-content: center;
     flex-direction: column;
     margin: 0;
+    padding: 10%;
     background-position: center;
     background-image: url(../../Resources/konfetti_animiert.gif);
     background-repeat: no-repeat;
@@ -12,61 +13,63 @@
 
 
 .imgerlen {
-    position: relative;
-    animation: bounceIn 1s infinite;
-    animation-duration: 8.5s;
-    animation-iteration-count: infinite;
-    width: 30%;
-    height: auto;
+    vertical-align: middle;
+    width: 350px;
+    height: 300px;
+    line-height: 300px;
     display: inline-block;
-    top: -31px;
 }
 
-/*bounce animation*/
-@keyframes bounceIn {
+.imgerlenBox {
+    position: relative;
+    top: -305px;
+    left: 0px;
+    height: 30%;
+    width: 30%;
+    z-index: 1001;
+    -webkit-animation: imgerlenBox 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: imgerlenBox 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation-delay: 4.5s;
+    animation-duration: 2.7s;
+}
 
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
+
+@-webkit-keyframes imgerlenBox {
+    0% {
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
         opacity: 1;
     }
 
-    40% {
-        transform: translateY(-30px);
-    }
-
-    60% {
-        transform: translateY(-15px);
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
     }
 }
 
-
-/*hin und her springen*/
-@keyframes example {
+@keyframes imgerlenBox {
     0% {
-        left: 0;
-    }
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
 
-    25% {
-        left: 50%;
-    }
-
-    50% {
-        left: 200px;
-    }
-
-    75% {
-        left: 0;
     }
 
     100% {
-        left: 0;
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
     }
 }
-
 
 .endscreen-text {
     justify-content: center;
@@ -105,7 +108,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    animation: disappear 0s linear 8s forwards;
+    animation: disappear 0s linear 7s forwards;
 
 }
 
@@ -118,15 +121,17 @@
     right: 0;
     bottom: 0;
     background-color: rgb(255, 255, 255);
-    animation: disappear 0s linear 8s forwards;
+    animation: disappear 0s linear 7s forwards;
 }
+
 
 /*Button "Weiter zur Sammlung" und "Zu den Badges" disappear danach appear*/
 .btn {
     border: 5px solid;
-    animation: opacityOn 8s normal forwards step-end;
+    animation: opacityOn 7s normal forwards step-end;
     animation-delay: 0s;
 }
+
 
 @keyframes disappear {
     to {
