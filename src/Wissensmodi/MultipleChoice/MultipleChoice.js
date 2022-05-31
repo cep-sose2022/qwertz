@@ -58,7 +58,6 @@ const MultipleChoice = () => {
 
     // um zu dem Modi umzuleiten, der gerade daran is
     useEffect(() => {
-        console.log("useEffect")
         redirect(eigenerName)
         // läd die daten aus der DB und schreib sie in eine const
         if (aufgaben[0] === undefined) {
@@ -100,8 +99,6 @@ const MultipleChoice = () => {
     })
 
     const checkIfAllRight = () => {
-        console.log("isRichtig?", aufgaben)
-
         aufgaben.map(aufgabe => {
             let abbruch = false
             aufgabe.antworten.map(antwort => {
