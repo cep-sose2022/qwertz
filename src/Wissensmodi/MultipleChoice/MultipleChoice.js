@@ -24,15 +24,32 @@ const modalData = [
     }
 ]
 
+function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex !== 0) {
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+}
 
 const MultipleChoice = () => {
-    const eigenerName = "MultipleChoice"
+    const eigenerName = "Multiplechoice"
     const [openedModal, setOpenedModal] = useState(false);
     const [openedPopover, setOpenedPopover] = useState(false);
     const [modalContent, setModalContent] = useState(modalData[0])
     const [allRight, setAllRight] = useState(false)
     const [text, setText] = useState("");
-    const [aufgaben, setAufgaben] = useState([])
+    const [aufgaben] = useState([])
 
     const {redirect} = useContext(ModiContext);
 
@@ -41,11 +58,12 @@ const MultipleChoice = () => {
 
     // um zu dem Modi umzuleiten, der gerade daran is
     useEffect(() => {
+        console.log("useEffect")
         redirect(eigenerName)
         // läd die daten aus der DB und schreib sie in eine const
         if (aufgaben[0] === undefined) {
-            // let Data = service.getMultipleChoice(storage.getBadgeID(), storage.getModiID())
-            let Data = null
+            let Data = service.getMultipleChoice(storage.getBadgeID(), storage.getModiID())
+            // let Data = null
             if (Data === undefined) {
                 navigator('../../Error503')
                 return
@@ -54,8 +72,8 @@ const MultipleChoice = () => {
                 // navigator('../../Error503')
                 Data = JsonList[0]
             }
+            Data = Data[0]
 
-            setText(Data.text)
             Data.aufgaben.map((object, idx) => {
                 let aufgabe = {
                     id: idx + 1,
@@ -73,8 +91,10 @@ const MultipleChoice = () => {
                         aufgabe.antworten.push(antwort)
                     }
                 )
-                aufgaben.push(aufgabe);
+                aufgabe.antworten = shuffle(aufgabe.antworten)
+                aufgaben.push(aufgabe)
             })
+            setText(Data.text)
 
         }
     })
@@ -157,8 +177,6 @@ const MultipleChoice = () => {
                     </div>
 
                     <div className="multipleChoiceField">
-
-
                         {
                             aufgaben.map(aufgabe => (
                                     <MultipleChoiceField key={Math.random()} aufgabe={aufgabe}
@@ -166,7 +184,6 @@ const MultipleChoice = () => {
                                 )
                             )
                         }
-
                     </div>
                 </div>
             </div>
