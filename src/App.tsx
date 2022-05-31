@@ -25,11 +25,13 @@ import Footer from "./Mainpages/Startseite/Footer";
 import Error503Page from "./Gamemodi/Error503Page";
 import MultipleChoice from "./Wissensmodi/MultipleChoice/MultipleChoice";
 import Admin from "./Mainpages/Admin/Admin";
+import ScrollToTop from "./ScrollToTop";
 
 
 function App() {
     return (
         <Router>
+            <ScrollToTop/>
             {
                 <div style={{backgroundColor: 'lightgreen'}}>
                     <a> Zum Debuggen und Testen aller Seiten, kommt dann am Ende noch weg</a>
