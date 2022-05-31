@@ -41,7 +41,9 @@ service.getPdf = (badgeID) => {
         const xmlHttp = new XMLHttpRequest();
         xmlHttp.open("GET", `${backendUrl}/getPdf/${badgeID}`, false);
         xmlHttp.send(null);
-        return "data:application/pdf;base64," + JSON.parse(xmlHttp.responseText)[0].pdf;
+        const pdf = JSON.parse(xmlHttp.responseText)[0];
+        pdf.pdf = "data:application/pdf;base64," + pdf.pdf
+        return pdf;
     } catch (e) {
         return null
     }

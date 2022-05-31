@@ -35,10 +35,10 @@ const BadgeItem = ({data}) => (
                     <h3>{data.title}</h3>
                     <div>
                         <Tooltip label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
-                            <a className="downloadButton" href={service.getPdf(data.badgeID)}
-                               download={"Badge_" + data.badgeID}>
+                            <a className="downloadButton" href={service.getPdf(data.badgeID).pdf}
+                               download={service.getPdf(data.badgeID).name}>
                                 {/*// TODO hier muss der Link zur PDF datei geändert werden*/}
-                                <FaFileDownload/> Inhalt herunterladen
+                                <FaFileDownload/> Inhalt herunterladen {}
                             </a>
                         </Tooltip>
                     </div>
