@@ -24,27 +24,31 @@ import JsonZitate from './Resources/Json/zitate.json';
 import Footer from "./Mainpages/Startseite/Footer";
 import Error503Page from "./Gamemodi/Error503Page";
 import MultipleChoice from "./Wissensmodi/MultipleChoice/MultipleChoice";
+import Admin from "./Mainpages/Admin/Admin";
 
 
 function App() {
     return (
         <Router>
             {
-                // <div style={{backgroundColor: 'lightgreen'}}>
-                //     <a> Zum Debuggen und Testen aller Seiten, kommt dann am Ende noch weg</a>
-                //     <br/>
-                //     <Link to='Startseite'>Startseite </Link>
-                //     <Link to='Dashboard/Sammlung'>Dashboard </Link>
-                //     <Link to='Dashboard/Badges'>Badges </Link>
-                //     <Link to='Dashboard/Gamemodi/Zuordnung'>Zuordnung </Link>
-                //     <Link to='Dashboard/Gamemodi/Ablaufanordnung'>Ablaufanordnung </Link>
-                //     <Link to='Dashboard/Gamemodi/Endscreen'>Endscreen </Link>
-                //     <Link to='Dashboard/Gamemodi/Wimmelbild'>Wimmelbild </Link>
-                //     <Link to='Dashboard/Gamemodi/Konversation'>Konversation </Link>
-                //     <Link to='Dashboard/Gamemodi/Video'>Video </Link>
-                // </div>
+                <div style={{backgroundColor: 'lightgreen'}}>
+                    <a> Zum Debuggen und Testen aller Seiten, kommt dann am Ende noch weg</a>
+                    <br/>
+                    <Link to='Startseite'>Startseite </Link>
+                    <Link to='Dashboard/Sammlung'>Dashboard </Link>
+                    <Link to='Dashboard/Badges'>Badges </Link>
+                    <Link to='Dashboard/Gamemodi/Zuordnung'>Zuordnung </Link>
+                    <Link to='Dashboard/Gamemodi/Ablaufanordnung'>Ablaufanordnung </Link>
+                    <Link to='Dashboard/Gamemodi/Endscreen'>Endscreen </Link>
+                    <Link to='Dashboard/Gamemodi/Wimmelbild'>Wimmelbild </Link>
+                    <Link to='Dashboard/Gamemodi/Konversation'>Konversation </Link>
+                    <Link to='Dashboard/Gamemodi/Video'>Video </Link>
+                    <Link to='Admin'>Admin Bereich </Link>
+                </div>
             }
             <Routes>
+                {/*Admin Bereich*/}
+                <Route path="Admin" element={<Admin/>}/>
                 {/*MainPage*/}
                 <Route path="" element={<Startseite JsonZitate={JsonZitate}/>}/>
                 <Route path="Startseite" element={<Startseite JsonZitate={JsonZitate}/>}/>
