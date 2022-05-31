@@ -1,0 +1,23 @@
+[
+  {
+    "badgeID": 3,
+    "modiID": 1,
+    "data": [
+      {
+        "text": "Sicherstellen das der Fernzugriff korrekt beantragt, akzeptiert und autorisiert wurde."
+      },
+      {
+        "text": "Die Anwendung die verwendet wird im ICS überprüfen das diese ordnungsgemäß untersucht wurde und nicht als Bedrohung eingeordnet werden kann."
+      },
+      {
+        "text": "Zweck, verwendete Fernzugriffsanwendung, verschlüsselungs- und Authentifizierungs Technologien, Länge der Zeit und Umstände und identität des dezentralen Client-Geräts dokumentieren"
+      },
+      {
+        "text": "Fernwartung darf nach Prüfungen durchgeführt werden"
+      },
+      {
+        "text": "Beim Beenden der Fernwartung sicherstellen, dass alle interaktiven Fernzugriffsanwendungen ordnungsgemäß beendet sind."
+      }
+    ]
+  }
+]

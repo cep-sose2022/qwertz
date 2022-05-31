@@ -1,0 +1,39 @@
+[
+  {
+    "badgeID": 1,
+    "modiID": 1,
+    "data": [
+      {
+        "frage": "Falsche Aussagen",
+        "antworten": [
+          {
+            "text": "In der Vergangenheit gehen kaum Bedrohungen von Fernzugriffsanwendungen aus"
+          },
+          {
+            "text": "Es ist unbedenklich nach einer Fernwartung die Verbindung offen zu lassen"
+          },
+          {
+            "text": "Ein Verfahren für Validierung und Genehmigung ist nicht Notwendig, da dies ja immer vorausgesetzt sein sollte"
+          }
+        ]
+      },
+      {
+        "frage": "Richtige Aussagen",
+        "antworten": [
+          {
+            "text": "Ist der Fernzugriff für die Verwendung im ICS autorisiert so muss sichergestellt werden dass alle verwendeten Fernzugriffsanwendungen akzeptiert werden."
+          },
+          {
+            "text": "Ein Unternehmen sollte unbedingt über eine Dokumentation und Autorisierung aller Fernzugriffsverbindungen verfügen bevor sie verwendet werden darf."
+          },
+          {
+            "text": "Es sollte ein Verfahren für die Beantragung einer Fernzugriffsverbindung zwischen einem Client und Server existieren."
+          },
+          {
+            "text": "Aus der Dokumentation sollte hervorgehen, dass alle interaktiven Fernzugriffsverbindungen autorisiert, authentifiziert, verschlüsselt und dokumentiert sind."
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "badgeID": 2,
+    "modiID": 1,
+    "text": "Der Status eines Patches besitzt eine hohe Priorität. Dieser gilt für alle Geräte im ICS stets aktuell zu halten. Das wird benötigt falls Diagnosen, oder forensische Untersuchung notwendig sind um den Patch Status eines Gerätes nachvollziehen zu können. Dieser Status hilft dabei im falle einer Schwachstelle anhand des aktuellen Patches, diese besser zu beurteilen. Der Status eines Patches sollte folgend dokumentiert sein, die Patchkennung, die anwendbare Software die gepatcht werden soll, das Datum der Patchfreigabe und der Installation (geplant oder tatsächlich). Sowie ist auch wichtig darauf zu achten beim einspielen eines Patches das der Zustand sich durch den Inhalt des Patches nicht auf die Konfiguration eines Gerätes auswirkt. Daher gilt das zu überprüfen, denn durch das einspielen eines Sicherheitspatches darf es nicht passieren das es dadurch zu einer verringerung der Sicherheit kommt.",
+    "aufgaben": [
+      {
+        "frage": "Warum sollte ein Sicherheitspatch dokumentiert und stets aktuell gehalten werden?",
+        "antworten": [
+          {
+            "text": "Dokumentation ist unnötig, im Nachhinein ist es sowieso schon zu spät.",
+            "isRichtig": false
+          },
+          {
+            "text": "Damit im Falle einer forensischen Untersuchung nachvollzogen werden kann, welcher Patch sich auf einem Gerät befindet.",
+            "isRichtig": true
+          },
+          {
+            "text": "Dadurch ist es einfacher zu beurteilen wie gravierend eine Schwachstellen bezüglich des aktuellen Patches ist.",
+            "isRichtig": true
+          },
+          {
+            "text": "Dadurch das der Patch dokumentiert ist steigt seine technische Sicherheit.",
+            "isRichtig": false
+          }
+        ]
+      },
+      {
+        "frage": "Welche primären Merkmale sollten bei der Dokumentation für den Patch Status auf jeden Fall vorhanden sein?",
+        "antworten": [
+          {
+            "text": "Es reicht lediglich die Patchkennung, dass versteht jeder Kollege.",
+            "isRichtig": false
+          },
+          {
+            "text": "Sie können die Infos des Patch Herausgebers angeben dort stehen alle wichtigen Informationen.",
+            "isRichtig": false
+          },
+          {
+            "text": "Die Patchkennung, die anwendbare Software die gepatcht werden soll, das Datum der Patchfreigabe und der Installation (geplant oder tatsächlich) sind essentiell für die Dokumentation.",
+            "isRichtig": true
+          }
+        ]
+      }
+    ]
+  }
+]

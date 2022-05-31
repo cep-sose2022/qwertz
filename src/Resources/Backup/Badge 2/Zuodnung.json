@@ -1,0 +1,36 @@
+[
+  {
+    "badgeID": 2,
+    "modiID": 1,
+    "data": [
+      {
+        "frage": "Falsche Aussagen",
+        "antworten": [
+          {
+            "text": "Eine Kompatibilitätsprüfung bei einer CD/DVD oder einem USB-Stick ist nicht nötig, wenn die manipulationssicheren Siegel angebracht sind."
+          },
+          {
+            "text": "Nachdem ein Patch eingespielt wurde kann das keine Auswirkungen auf die Konfiguration der Anlage haben. Daher kann nach dem Einspielen eines Patches auf einen Test diesbezüglich verzichtet werden."
+          },
+          {
+            "text": "Das Datum der Patchfreigabe ist immer korrekt und muss daher vor dem Einspielen nicht überprüft werden."
+          }
+        ]
+      },
+      {
+        "frage": "Richtige Aussagen",
+        "antworten": [
+          {
+            "text": "Jeder Sicherheitspatch sollte auf Authentizität und Integrität geprüft werden."
+          },
+          {
+            "text": "In regelmäßigen Abständen muss geprüft werden ob Sicherheitspatches aktuell sind."
+          },
+          {
+            "text": "Der Status von sämtliches Patches der Geräte muss ordentlich dokumentiert sein. Darunter fällt beispielsweise die Patchkennung und das Datum der Patchfreigabe."
+          }
+        ]
+      }
+    ]
+  }
+]

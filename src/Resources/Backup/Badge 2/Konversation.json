@@ -1,0 +1,56 @@
+[
+   {
+      "badgeID": 2,
+      "modiID": 1,
+      "data": [
+         {
+            "text": "Hallo, hast du kurz Zeit, mir nochmal etwas zum Patchmanagement der Sicherheitspatches zu erklären?",
+            "category": "bubble-right"
+         },
+         {
+            "text": "Hi, ja natürlich, vielleicht erstmal Allgemein.",
+            "category": "bubble-left"
+         },
+         {
+            "text": "Beim einspielen von Sicherheitspatches im Rahmen des Patchmanagements sind grundlegende Dinge zu beachten. Es muss sichergestellt werden, dass alle installierten Sicherheitspatches auf ihre Authentizität und Integrität überprüft werden.",
+            "category": "bubble-left"
+         },
+         {
+            "text": "Die meisten Patches werden in der Regel in Form von Netzwerkübertragungen, CDs/DVDs und USB-Speichersticks vom Produktlieferanten zur Verfügung gestellt.",
+            "category": "bubble-left"
+         },
+         {
+            "text": "Daher resultiert aus dieser Tatsache die Notwendigkeit das die Integrität und die Authentizität der Patches überprüft werden muss. Zu beachten ist dass alle Patches direkt vom Patchentwickler überliefert werden.",
+            "category": "bubble-left"
+         },
+         {
+            "text": "Danke für die allgemeine Übersicht. Hilf mir bitte nochmal auf die Sprünge, was war nochmal Authentizität und Integrität?",
+            "category": "bubble-right"
+         },
+         {
+            "text": "Naja die Authentizität ist eigentlich ein Teil der Integrität. Im prinzip ist ein Patch integer, wenn die Daten unversehrt, vollständig und aktuell bleiben. Die Authentizität ist ein Aspekt davon und zwar das der Ursprung der Daten festgestellt werden kann.",
+            "category": "bubble-left"
+         },
+         {
+            "text": "Danke für die Info. Zu den Patches kann da etwas schiefgehen wenn diese kommen, sollte ich da etwas beachten, gibt es Arten von Schutzfunktionen?",
+            "category": "bubble-right"
+         },
+         {
+            "text": "Auf jeden Fall und zwar: eine Schutzfunktion für die Gewährleistung der Authentizität und Integrität sind beispielsweise digitale Signaturen. Bei Medien wie CDs/DVDs und USB sollten manipulationssichere Siegel verwendet werden.",
+            "category": "bubble-left"
+         },
+         {
+            "text": "Achso und bevor ich noch vergesse. Es  muss Außerdem sichergestellt sein beim Einspielen von Patches das die Sicherheitspatches mit der Gerätesoftware des ICS Kompatibel sowie zur Installation freigegeben sind und schließlich nach der Freigabe installiert werden. Oft werden Sicherheitspatches unabhängig von der Software des ICS entwickelt beispielsweise bei Betriebssystemen, diese werden dann bereitgestellt. Dadurch kann es sein das auch das ICS-System den Sicherheitspatch benötigt.",
+            "category": "bubble-left"
+         },
+         {
+            "text": "Somit ist es wichtig regelmäßig die Sicherheitspatches zu überprüfen. Da Sicherheitspatches Schwachstellen schließen wird ein ungepatchtes ICS anfällig durch nicht einspielen oder aktuell halten der Patches. Deshalb ist ein rechtzeitiges einspielen von Sicherheitspatches ein notwendiger Faktor der die Risiken auf ein erträgliches Maß reduziert.",
+            "category": "bubble-left"
+         },
+         {
+            "text": "Besten Dank für ganzen Infos, das hilft mir auf jeden Fall weiter wenn ich das nächste mal einen Sicherheitspatch einspiele. :-)",
+            "category": "bubble-right"
+         }
+      ]
+   }
+]
