@@ -57,7 +57,7 @@ const Zuordnung = () => {
     const eigenerName = 'Zuordnung';
     const [fragen] = useState([]);
     const [antworten, setAntworten] = useState([]);
-    const [openedModal, setOpenedModal] = useState(false);
+    const [openedModal, setOpenedModal] = useState(true);
     const [openedPopover, setOpenedPopover] = useState(false);
     const [modalContent, setModalContent] = useState("");
     const [allRight, setAllRight] = useState(false);
@@ -91,15 +91,15 @@ const Zuordnung = () => {
                 };
                 fragen.push(frage);
                 object.antworten.map((a, idx) => {
-                    if(idx<=1){
+                    if (idx <= 1) {
                         let antwort = {
-                        id: ((idx) + 10 * (frage.id)),
-                        text: a.text,
-                        state: ItemState.NOTSELECTED,
-                        right: false
-                    };
-                    antworten.push(antwort)
-                }
+                            id: ((idx) + 10 * (frage.id)),
+                            text: a.text,
+                            state: ItemState.NOTSELECTED,
+                            right: false
+                        };
+                        antworten.push(antwort)
+                    }
                 });
             });
             setAntworten(shuffle(antworten))

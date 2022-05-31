@@ -1,7 +1,6 @@
 /*Füllung ändern*/
 :root {
-    --tube-percentage: 80%;
-    --tube-title: "80%";
+
     --tube-color: #4488e0;
 }
 
@@ -82,7 +81,6 @@
 
 .tube .liquid .percentage {
     position: absolute;
-    height: var(--tube-percentage);
     width: 100%;
     bottom: 0;
     left: 0;

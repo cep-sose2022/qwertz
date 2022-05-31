@@ -1,13 +1,13 @@
-import React, {useContext, useEffect, useState} from "react";
-import {BackgroundImage, Box} from "@mantine/core";
+import React, { useContext, useEffect, useState } from "react";
+import { BackgroundImage, Box } from "@mantine/core";
 
 import './Wimmelbild.css'
 import ModiHeader from "../ModiHeader";
-import {useNavigate} from "react-router";
+import { useNavigate } from "react-router";
 import service from "../../service";
 import storage from "../../storage";
 import JsonList from '../../Resources/Json/WimmelbildData.json';
-import {ModiContext} from "../Gamemodi";
+import { ModiContext } from "../Gamemodi";
 
 const modalData = [
     {
@@ -21,11 +21,11 @@ const Wimmelbild = () => {
     const [image, setImage] = useState("");
     const [buttons, setButton] = useState([]);
     const [modalContent, setModalContent] = useState(modalData[0]);
-    const [openedModal, setOpenedModal] = useState(false);
+    const [openedModal, setOpenedModal] = useState(true);
     const [allRight, setAllRight] = useState(false);
 
     const navigator = useNavigate();
-    const {redirect} = useContext(ModiContext);
+    const { redirect } = useContext(ModiContext);
 
     // um zu dem Modi umzuleiten, der gerade dran is
     useEffect(() => {
@@ -67,7 +67,7 @@ const Wimmelbild = () => {
         const clickedButton = buttons.filter(button => button.id === id)[0];
         clickedButton.isClicked = true;
 
-        setModalContent({title: "", content: clickedButton.text});
+        setModalContent({ title: "", content: clickedButton.text });
         setOpenedModal(true);
 
         setButton(buttons.filter(button => button.id !== id).concat(clickedButton));
@@ -98,7 +98,7 @@ const Wimmelbild = () => {
                 />
             </div>
             <div className="wimmelbild-body">
-                <Box sx={{Width: 500, High: 500}}>
+                <Box sx={{ Width: 500, High: 500 }}>
                     <BackgroundImage
                         style={{
                             zIndex: 1,
@@ -114,21 +114,21 @@ const Wimmelbild = () => {
                         {/*alle Buttons*/}
                         {
                             buttons.map(b => (
-                                    <button
-                                        key={Math.random()}
-                                        style={{
-                                            border: 'gray',
-                                            opacity: b.isClicked ? .5 : 2,
-                                            backgroundColor: b.isClicked ? 'gray' : 'transparent',
-                                            width: b.width + "%",
-                                            height: b.height + "%",
-                                            position: 'absolute',
-                                            left: `calc(${b.left}%)`,
-                                            top: `calc(${b.top}%)`,
-                                        }}
-                                        onClick={() => clickButton(b.id)}
-                                    />
-                                )
+                                <button
+                                    key={Math.random()}
+                                    style={{
+                                        border: 'gray',
+                                        opacity: b.isClicked ? .5 : 2,
+                                        backgroundColor: b.isClicked ? 'gray' : 'transparent',
+                                        width: b.width + "%",
+                                        height: b.height + "%",
+                                        position: 'absolute',
+                                        left: `calc(${b.left}%)`,
+                                        top: `calc(${b.top}%)`,
+                                    }}
+                                    onClick={() => clickButton(b.id)}
+                                />
+                            )
                             )
                         }
                     </BackgroundImage>

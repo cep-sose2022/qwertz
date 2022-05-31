@@ -1,11 +1,11 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 
 import JsonList from "../../Resources/Json/MultipleChoiceData.json"
 import MultipleChoiceField from "./Components/MultipleChoiceField";
 import './MultipleChoice.css'
 import ModiHeader from "../../Gamemodi/ModiHeader";
-import {ModiContext} from "../../Gamemodi/Gamemodi";
-import {useNavigate} from "react-router";
+import { ModiContext } from "../../Gamemodi/Gamemodi";
+import { useNavigate } from "react-router";
 import service from "../../service";
 import storage from "../../storage";
 
@@ -44,14 +44,14 @@ function shuffle(array) {
 
 const MultipleChoice = () => {
     const eigenerName = "Multiplechoice"
-    const [openedModal, setOpenedModal] = useState(false);
+    const [openedModal, setOpenedModal] = useState(true);
     const [openedPopover, setOpenedPopover] = useState(false);
     const [modalContent, setModalContent] = useState(modalData[0])
     const [allRight, setAllRight] = useState(false)
     const [text, setText] = useState("");
     const [aufgaben] = useState([])
 
-    const {redirect} = useContext(ModiContext);
+    const { redirect } = useContext(ModiContext);
 
     const navigator = useNavigate();
 
@@ -81,14 +81,14 @@ const MultipleChoice = () => {
                     isRichtig: false
                 }
                 object.antworten.map((object, idx) => {
-                        let antwort = {
-                            id: idx + 1,
-                            text: object.text,
-                            isRichtig: object.isRichtig,
-                            isChecked: false
-                        }
-                        aufgabe.antworten.push(antwort)
+                    let antwort = {
+                        id: idx + 1,
+                        text: object.text,
+                        isRichtig: object.isRichtig,
+                        isChecked: false
                     }
+                    aufgabe.antworten.push(antwort)
+                }
                 )
                 aufgabe.antworten = shuffle(aufgabe.antworten)
                 aufgaben.push(aufgabe)
@@ -176,9 +176,9 @@ const MultipleChoice = () => {
                     <div className="multipleChoiceField">
                         {
                             aufgaben.map(aufgabe => (
-                                    <MultipleChoiceField key={Math.random()} aufgabe={aufgabe}
-                                                         setAufgabeChecked={setAufgabeChecked}/>
-                                )
+                                <MultipleChoiceField key={Math.random()} aufgabe={aufgabe}
+                                    setAufgabeChecked={setAufgabeChecked} />
+                            )
                             )
                         }
                     </div>

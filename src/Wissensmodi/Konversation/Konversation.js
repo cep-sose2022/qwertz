@@ -1,15 +1,15 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Konversation.css";
 
 
 import JsonList from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
-import {ModiContext} from "../../Gamemodi/Gamemodi";
-import {useScrollIntoView} from "@mantine/hooks";
+import { ModiContext } from "../../Gamemodi/Gamemodi";
+import { useScrollIntoView } from "@mantine/hooks";
 import ModiHeader from "../../Gamemodi/ModiHeader";
 import service from "../../service";
 import storage from "../../storage";
-import {useNavigate} from "react-router";
+import { useNavigate } from "react-router";
 
 const modalData = [
     {
@@ -21,12 +21,15 @@ const modalData = [
 const Konversation = () => {
     const eigenerName = "Konversation";
     const [bubbles, setBubbles] = useState([]);
-    const [modalContent] = useState(modalData[0]);
-    const [openedModal, setOpenedModal] = useState(false);
-    const [allRight, setAllRight] = useState(false);
-    const {scrollIntoView, targetRef, scrollableRef} = useScrollIntoView({duration: 200});
 
-    const {redirect} = useContext(ModiContext);
+    const [openedModal, setOpenedModal] = useState(true);
+    const [openedPopover, setOpenedPopover] = useState(false);
+    const [modalContent, setModalContent] = useState(modalData[0]);
+
+    const [allRight, setAllRight] = useState(false);
+    const { scrollIntoView, targetRef, scrollableRef } = useScrollIntoView({ duration: 200 });
+
+    const { redirect } = useContext(ModiContext);
 
     const navigator = useNavigate();
 
@@ -76,13 +79,12 @@ const Konversation = () => {
         <div className="konversation-container">
             <div className="konversation-header">
                 <ModiHeader
-                    setModalContent={null}
+                    setModalContent={setModalContent}
                     modalContent={modalContent}
                     openedModal={openedModal}
                     setOpenedModal={setOpenedModal}
-                    openedPopover={null}
-                    setOpenedPopover={null}
-                    checkIfAllRight={null}
+                    openedPopover={openedPopover}
+                    setOpenedPopover={setOpenedPopover}
                     eigenerName={eigenerName}
                     allRight={allRight}
                     modalData={modalData}
@@ -96,7 +98,7 @@ const Konversation = () => {
             <div className="konversation-body">
                 <div className="theoretic-conversation" onClick={() => {
                     abbilden();
-                    setTimeout(() => scrollIntoView({alignment: 'end'})
+                    setTimeout(() => scrollIntoView({ alignment: 'end' })
                         , 50)
 
                 }}>
@@ -104,9 +106,9 @@ const Konversation = () => {
                         <div className="chat-window">
                             <div className="top-menu">
                                 <div className="buttons">
-                                    <div className="button close"/>
-                                    <div className="button minimize"/>
-                                    <div className="button maximize"/>
+                                    <div className="button close" />
+                                    <div className="button minimize" />
+                                    <div className="button maximize" />
                                 </div>
                                 <div className="title-chat">
                                     <p>Chat</p>
@@ -118,7 +120,7 @@ const Konversation = () => {
                             {
                                 bubbles.filter(bubbles => bubbles.selected === true).map(
                                     bubbles => <Bubble key={bubbles.id} category={bubbles.category}
-                                                       text={bubbles.text}/>
+                                        text={bubbles.text} />
                                 )
                             }
 
@@ -133,7 +135,7 @@ const Konversation = () => {
                         </div>
 
                         <div className="bottom_wrapper">
-                            <textarea className="message_input" placeholder="type a message"/>
+                            <textarea className="message_input" placeholder="type a message" />
                         </div>
                     </div>
                 </div>

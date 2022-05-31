@@ -7,17 +7,13 @@ import { FaAward } from "react-icons/fa";
 import EndscreenData from "./EndscreenData";
 import EndscreenItem from "./components/EndscreenItem";
 import image from "../../Resources/images/orange_zwinkern.png";
-import gif from "../../Resources/mysterybox-anim.gif";
+import gif from "../../Resources/zeppgefunden.gif";
 import storage from "../../storage";
-import JsonList from '../../Resources/Json/BelohnungData.json';
 
 const Endscreen = () => {
-    const image = require('../../Resources/images/' + JsonList[0].bild);
-
-    const imagebox = require('../../Resources/images/' + JsonList[1].bildBox);
-
     const machEnde = () => {
-        storage.setBadgePassed(storage.getBadgeID())
+        let badgeID = storage.getBadgeID()
+        storage.setBadgePassed(parseInt(badgeID))
         storage.removeAll()
     }
 
@@ -48,9 +44,8 @@ const Endscreen = () => {
                         </div>
                     </div>
 
-                    <img className="imgerlen" src={imagebox} alt="erlenmeyerkolbenZwinkert" />
 
-                    <img className="imgerlenBox" src={image} alt="erlenmeyerkolbenZwinkert" />
+                    <img className="imgerlen" src={image} alt="erlenmeyerkolbenZwinkert" />
                 </Grid>
 
             </div>
@@ -70,4 +65,3 @@ const Endscreen = () => {
 };
 
 export default Endscreen;
-
