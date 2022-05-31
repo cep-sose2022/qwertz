@@ -1,5 +1,5 @@
 import React, {createContext, useEffect, useState} from 'react';
-import {Outlet, useParams} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import Fortschrittsanzeige from "./Fortschrittsanzeige";
 import {Button, Group, Modal} from "@mantine/core";
 import {useNavigate} from "react-router";
@@ -36,7 +36,7 @@ import storage from '../storage';
 export const ModiContext = createContext({});
 
 const Gamemodi = () => {
-    const {badgeNr} = useParams();
+    const badgeNr = storage.getBadgeID();
     const [modalOpened, setModalOpened] = useState(false);
     const navigator = useNavigate();
     const [currentModiTitle, setCurrentModiTitle] = useState("");
