@@ -30,7 +30,7 @@ const DropZone = (props) => {
     return (
         <div ref={drop}
             style={{
-                backgroundColor: (isDragging ? 'gray' : undefined),
+                border:(isDragging ? '3px solid black' : undefined),
             }}
             className={type}
         >

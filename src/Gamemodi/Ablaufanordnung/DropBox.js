@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useDrop } from "react-dnd";
 import { ItemState } from "./ItemState";
 import { CardContext } from "./Ablaufanordnung";
-import { Center, Grid } from "@mantine/core";
+import { Center } from "@mantine/core";
 import "./Ablaufanordnung.css";
 
 
@@ -30,7 +30,6 @@ const DropBox = (props) => {
                 maxWidth: 245,
                 flexDirection: "column",
                 borderRadius: '15px',
-                boxShadow: '4px 4px 4px black',
             }}
         >
             <div className="card-header">
