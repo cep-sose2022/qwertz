@@ -36,15 +36,15 @@
 .column-2 {
     margin-top: 10rem;
     margin-left: 6rem;
+    justify-content: center;
 }
-
 /*============= Avatar Bild ============= */
 
 
 .imageAnfang {
     position: relative;
     left: -70px;
-    margin: 20rem;
+    margin: 5rem;
     top: -140px;
     height: auto;
 }
@@ -171,12 +171,16 @@
 }
 
 
+
+
 /*==============Linke Seite Überschrift================*/
+
 .header-content .container.grid-2 {
     grid-template-columns: 3fr 3.5fr;
     min-height: calc(100vh - 6rem);
-    padding-bottom: 4.5rem;
-    text-align: left;
+    padding: 7rem 0;
+    text-align: center;
+    justify-content:center;
 }
 
 /*==============="Hallo, ich bin Zepp"============== */
@@ -303,7 +307,7 @@
 .about {
     background-color: var(--light-three);
     overflow: hidden;
-    height: 550px;
+    height: 34.375rem;
 }
 
 .about img {
@@ -322,7 +326,7 @@
 
 .about .column-1:before {
     content: "Übermich";
-    position: absolute;
+    position: relative;
     font-size: 8rem;
     font-weight: 200;
     color: var(--main-color);

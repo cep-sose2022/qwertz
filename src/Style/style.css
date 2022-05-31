@@ -86,6 +86,7 @@ img {
     margin-right: 1.5rem;
     flex-basis: 120%;
     position: relative;
+    word-break: break-word;
     margin-left: 3.125rem;
 }
 

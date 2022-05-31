@@ -59,11 +59,9 @@ const Startseite = (props) => {
                     </div>
                 </div>
             </section>
-
+            <Headline title={"Wer sind wir"} headline={"Über uns"} text={""} />
             <section className="about section" id="about">
                 <div className="container">
-                    <Headline title={"Wer sind wir"} headline={"Über uns"} text={""} />
-
                     <Introduction
                         name={"Zepp"}
                         text={"Ich bin Zepp, OT-Security Spezialist mit langjähriger Erfahrung."}
