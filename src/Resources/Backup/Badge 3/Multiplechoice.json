@@ -2,33 +2,35 @@
   {
     "badgeID": 3,
     "modiID": 1,
-    "text": "Unternehmen sollte unbedingt über eine Dokumentation und Autorisierung aller Fernzugriffsverbindungen verfügen bevor sie verwendet werden darf. Dazu gehören in der Regel ein Verfahren zur Beantragung einer Fernzugriffsverbindung zwischen einem Client und einem Server, ein Validierungs- und Genehmigungsverfahren für die Verbindung auf der Grundlage ihrer erwarteten Nutzung und ein verfahren zur Vorbereitung der Verbindung für die Nutzung. Darunter fallen dann beispielsweise die Erstellung von Firewall Regeln, die Konfiguration von VPNs und der DMZ und die Gewährung des Zugriffs des Benutzers auf die Serveranwendung. Dies sollte daher zwingend mit allen Anweisungen die zur Vorbereitung und Nutzung der Verbindung erforderlich sind dokumentiert werden. Aus der Dokumentation sollte hervorgehen dass alle interaktiven Fernzugriffsverbindungen autorisiert, authentifiziert, verschlüsselt und dokumentiert sind. Folgende Punkte müssen in der Dokumentation vorhanden sein: der Nutzen, die zu verwendete Fernzugriffsanwendung, verwendete Verschlüsselungs- und Authentifizierungs Technologien, wie die Verbindung hergestellt werden soll(z.B. über das Internet durch virtuelles privates Netzwerk(VPN) über eine DMZ) gegebenenfalls mit Anweisungen, die Umstände die die Verbindung erfordern, die Länge der Zeit die die Verbindung offen sein muss, einschließlich erwarteter Inaktivitäts Perioden und den Standort und die Identität des dezentralen Client-Geräts und der Anwendung des Benutzers.",
-    "aufgaben": [
-      {
-        "frage": "Welche folgende Aussage gilt für die Dokumentation bei Fernzugriffsverbindungen?",
-        "antworten": [
-          {
-            "text": "Es muss ein Verfahren dokumentiert werden wie ein Fernzugriff beantragt wird",
-            "isRichtig": true
-          },
-          {
-            "text": "Für Fernzugriffe wird keine Dokumentation benötigt, da dies meist telefonisch oder per Email geklärt wird wann ein Fernzugriff erfolgt.",
-            "isRichtig": false
-          },
-          {
-            "text": "Es muss lediglich dokumentiert werden wann der Fernzugriff stattfindet",
-            "isRichtig": false
-          },
-          {
-            "text": "Ein Validierungs- und Genehmigungsverfahren für die Verbindung auf der Grundlage ihrer erwarteten Nutzung.",
-            "isRichtig": true
-          },
-          {
-            "text": "Ein verfahren zur Vorbereitung der Verbindung für die Nutzung.",
-            "isRichtig": true
-          }
-        ]
-      }
-    ]
+    "data": {
+      "text": "Unternehmen sollte unbedingt über eine Dokumentation und Autorisierung aller Fernzugriffsverbindungen verfügen bevor sie verwendet werden darf. Dazu gehören in der Regel ein Verfahren zur Beantragung einer Fernzugriffsverbindung zwischen einem Client und einem Server, ein Validierungs- und Genehmigungsverfahren für die Verbindung auf der Grundlage ihrer erwarteten Nutzung und ein verfahren zur Vorbereitung der Verbindung für die Nutzung. Darunter fallen dann beispielsweise die Erstellung von Firewall Regeln, die Konfiguration von VPNs und der DMZ und die Gewährung des Zugriffs des Benutzers auf die Serveranwendung. Dies sollte daher zwingend mit allen Anweisungen die zur Vorbereitung und Nutzung der Verbindung erforderlich sind dokumentiert werden. Aus der Dokumentation sollte hervorgehen dass alle interaktiven Fernzugriffsverbindungen autorisiert, authentifiziert, verschlüsselt und dokumentiert sind. Folgende Punkte müssen in der Dokumentation vorhanden sein: der Nutzen, die zu verwendete Fernzugriffsanwendung, verwendete Verschlüsselungs- und Authentifizierungs Technologien, wie die Verbindung hergestellt werden soll(z.B. über das Internet durch virtuelles privates Netzwerk(VPN) über eine DMZ) gegebenenfalls mit Anweisungen, die Umstände die die Verbindung erfordern, die Länge der Zeit die die Verbindung offen sein muss, einschließlich erwarteter Inaktivitäts Perioden und den Standort und die Identität des dezentralen Client-Geräts und der Anwendung des Benutzers.",
+      "aufgaben": [
+        {
+          "frage": "Welche folgende Aussage gilt für die Dokumentation bei Fernzugriffsverbindungen?",
+          "antworten": [
+            {
+              "text": "Es muss ein Verfahren dokumentiert werden wie ein Fernzugriff beantragt wird",
+              "isRichtig": true
+            },
+            {
+              "text": "Für Fernzugriffe wird keine Dokumentation benötigt, da dies meist telefonisch oder per Email geklärt wird wann ein Fernzugriff erfolgt.",
+              "isRichtig": false
+            },
+            {
+              "text": "Es muss lediglich dokumentiert werden wann der Fernzugriff stattfindet",
+              "isRichtig": false
+            },
+            {
+              "text": "Ein Validierungs- und Genehmigungsverfahren für die Verbindung auf der Grundlage ihrer erwarteten Nutzung.",
+              "isRichtig": true
+            },
+            {
+              "text": "Ein verfahren zur Vorbereitung der Verbindung für die Nutzung.",
+              "isRichtig": true
+            }
+          ]
+        }
+      ]
+    }
   }
 ]

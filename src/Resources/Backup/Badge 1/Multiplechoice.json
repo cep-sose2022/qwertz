@@ -2,42 +2,44 @@
   {
     "badgeID": 1,
     "modiID": 1,
-    "text": "Laptops von externen Wartungsfirmen stellen eine Bedrohung dar wenn diese im internen Netz betrieben werden. Da diese häufiger in unterschiedlichen Netzen verwendet werden. Oftmals haben diese Geräte Zugriff auf das Internet, wodurch sie sich außerhalb des Betriebs/Unternehmensnetzwerks infizieren und bei erneuter Verbindung mit dem ICS-Netz auch eine infektion von diesem Netzwerk bewirken können. Das Einrichten von Quarantäne Netzen für den Zugang von externe Dienstleister und dessen Endgeräten gilt als eine Maßnahme um dessen vorzubeugen. Dadurch besteht kein Kontakt zum Zentralen ICS-Netzwerk und beugt eine Infizierung dessen vor. Wird ein externes Wartungsgerät in das Netzwerk gelassen, so ist es zwingend erforderlich vorher einen Virenscan durchzuführen.",
-    "aufgaben": [
-      {
-        "frage": "Ist es gefährlich ein Wartungslaptop einer externen Firma in das ICS-Netz zu lassen?",
-        "antworten": [
-          {
-            "text": "Nein, die Geräte verfügen über einen Virenscanner.",
-            "isRichtig": false
-          },
-          {
-            "text": "Ja, da diese Geräte sich auch in anderen Netzen befinden, beispielsweise dem Internet und sich dort mit Schadsoftware infizieren können.",
-            "isRichtig": true
-          },
-          {
-            "text": "Nein, da das ICS-Netz eine Firewall besitzt.",
-            "isRichtig": false
-          }
-        ]
-      },
-      {
-        "frage": "Warum sollte ein Quarantänenetz für externe Geräte eingerichtet werden?",
-        "antworten": [
-          {
-            "text": "Wird nicht benötigt es existiert ja das ICS-Netz damit kann das externe Gerät verbunden werden.",
-            "isRichtig": false
-          },
-          {
-            "text": "Dadurch wird die Gefahr eingedämmt wenn es sich um infiziertes Gerät handelt das dieses sich auf das gesamte ICS-Netz ausbreiten kann.",
-            "isRichtig": true
-          },
-          {
-            "text": "Damit die Mitarbeiter des externen Personals getrennt sind von dem internen Personals des Unternehmens.",
-            "isRichtig": false
-          }
-        ]
-      }
-    ]
+    "data": {
+      "text": "Laptops von externen Wartungsfirmen stellen eine Bedrohung dar wenn diese im internen Netz betrieben werden. Da diese häufiger in unterschiedlichen Netzen verwendet werden. Oftmals haben diese Geräte Zugriff auf das Internet, wodurch sie sich außerhalb des Betriebs/Unternehmensnetzwerks infizieren und bei erneuter Verbindung mit dem ICS-Netz auch eine infektion von diesem Netzwerk bewirken können. Das Einrichten von Quarantäne Netzen für den Zugang von externe Dienstleister und dessen Endgeräten gilt als eine Maßnahme um dessen vorzubeugen. Dadurch besteht kein Kontakt zum Zentralen ICS-Netzwerk und beugt eine Infizierung dessen vor. Wird ein externes Wartungsgerät in das Netzwerk gelassen, so ist es zwingend erforderlich vorher einen Virenscan durchzuführen.",
+      "aufgaben": [
+        {
+          "frage": "Ist es gefährlich ein Wartungslaptop einer externen Firma in das ICS-Netz zu lassen?",
+          "antworten": [
+            {
+              "text": "Nein, die Geräte verfügen über einen Virenscanner.",
+              "isRichtig": false
+            },
+            {
+              "text": "Ja, da diese Geräte sich auch in anderen Netzen befinden, beispielsweise dem Internet und sich dort mit Schadsoftware infizieren können.",
+              "isRichtig": true
+            },
+            {
+              "text": "Nein, da das ICS-Netz eine Firewall besitzt.",
+              "isRichtig": false
+            }
+          ]
+        },
+        {
+          "frage": "Warum sollte ein Quarantänenetz für externe Geräte eingerichtet werden?",
+          "antworten": [
+            {
+              "text": "Wird nicht benötigt es existiert ja das ICS-Netz damit kann das externe Gerät verbunden werden.",
+              "isRichtig": false
+            },
+            {
+              "text": "Dadurch wird die Gefahr eingedämmt wenn es sich um infiziertes Gerät handelt das dieses sich auf das gesamte ICS-Netz ausbreiten kann.",
+              "isRichtig": true
+            },
+            {
+              "text": "Damit die Mitarbeiter des externen Personals getrennt sind von dem internen Personals des Unternehmens.",
+              "isRichtig": false
+            }
+          ]
+        }
+      ]
+    }
   }
 ]
