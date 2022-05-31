@@ -1,0 +1,31 @@
+[
+    {
+        "badgeID": 1, 
+        "title": "soSchadftware Wechseldatenträger",
+        "text": "Was gilt zu beachten im Umgang mit Wechseldatenträgern und externer Hardware. Welche Bedrohungen ergeben sich dadurch für das Unternehmen und welche Maßnahmen können Sie ergreifen. ",
+        "passed": false,
+        "unlocked": false,
+        "modis":[
+            {
+                "title": "Konversation", 
+                "modiID": 1
+            },
+            {
+                "title": "Multiplechoice", 
+                "modiID": 1
+            },
+            {
+                "title": "Ablaufanordnung", 
+                "modiID": 1
+            },
+            {
+                "title": "Wimmelbild", 
+                "modiID": 1
+            },
+            {
+                "title": "Zuordnung", 
+                "modiID": 1
+            }
+        ]
+    }
+]

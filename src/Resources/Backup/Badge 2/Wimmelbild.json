@@ -1,0 +1,44 @@
+[
+  {
+    "badgeID": 2,
+    "modiID": 1,
+    "data": {
+      "imageName": "USB_Wimmelbild",
+      "buttons": [
+        {
+          "text": " Gefunden! Genau es sollte regelmäßig geprüft werden ob neue Sicherheitspatches zur verfügung stehen.",
+          "topLeftCorner": {
+            "x": 5,
+            "y": 0
+          },
+          "bottomRightCorner": {
+            "x": 40,
+            "y": 15
+          }
+        },
+        {
+          "text": "Gefunden! Bevor ein Patch eingespielt wird sollte immer die Kompatibilität geprüft werden, ist dies nicht der Fall darf der Patch nicht einfach eingespielt werden.",
+          "topLeftCorner": {
+            "x": 40,
+            "y": 45
+          },
+          "bottomRightCorner": {
+            "x": 50,
+            "y": 65
+          }
+        },
+        {
+          "text": "Gefunden! Achtung hier könnte es sein das jemand die Speichermedien bereits verwendet hat. Das sollte gemeldet und geprüft werden.",
+          "topLeftCorner": {
+            "x": 70,
+            "y": 50
+          },
+          "bottomRightCorner": {
+            "x": 99,
+            "y": 70
+          }
+        }
+      ]
+    }
+  }
+]

@@ -22,7 +22,16 @@ const setData = (badgeID, modis) => {
     }
 }
 
-const BadgeItem = ({data}) => (
+const BadgeItem = ({data}) => {
+    const pdf = service.getPdf(data.badgeID)
+    let pdfData;
+    let pdfName
+    if(pdf !== null)
+    {
+        pdfData = pdf.pdf
+        pdfName = pdf.name
+    }
+return(
     <div className="badgeline-item">
         {/*check if badge is unlocked */}
         {
@@ -34,8 +43,8 @@ const BadgeItem = ({data}) => (
                     <h3>{data.title}</h3>
                     <div>
                         <Tooltip label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
-                            <a className="downloadButton" href={service.getPdf(data.badgeID).pdf}
-                               download={service.getPdf(data.badgeID).name}>
+                            <a className="downloadButton" href={pdfData}
+                               download={pdfName}>
                                 <FaFileDownload/> Inhalt herunterladen {}
                             </a>
                         </Tooltip>
@@ -79,6 +88,6 @@ const BadgeItem = ({data}) => (
                 </div>
         }
     </div>
-);
+)};
 
 export default BadgeItem;

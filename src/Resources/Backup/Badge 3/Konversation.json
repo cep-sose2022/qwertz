@@ -1,0 +1,44 @@
+[
+   {
+      "badgeID": 3,
+      "modiID": 1,
+      "data": [
+         {
+            "text": "Hi kannst du mir nochmal erklären was allgemein zu beachten ist beim Arbeiten mit Fernwartungssoftware?",
+            "category": "bubble-right"
+         },
+         {
+            "text": "Hallo, natürlich worauf du auf jeden Fall achten solltest.",
+            "category": "bubble-left"
+         },
+         {
+            "text": "Ist der Fernzugriff für die Verwendung im ICS autorisiert so muss sichergestellt werden dass alle verwendeten Fernzugriffsanwendungen akzeptiert werden. Fernzugriffsanwendungen wie beispielsweise Remote-Desktop-Anwendungen ermöglichen die Fernanmeldung an Arbeitsstationen und Geräten. Oftmals sorgen OPC(Open Platform Communications) Zugang zum ICS. Jedoch sind in der Vergangenheit viele Fernzugriffsanwendungen nicht sicher genug entwickelt worden und führen zu beträchtlichen Sicherheitslücken. Daher müssen Fernzugriffsanwendungen vor der verwendung im ICS ordnungsgemäß geprüft werden. Die Anwendungen sollten untersucht werden um sicherzustellen dass sie in der Vergangenheit nicht ausgenutzt worden sind. Neue Fernzugriffsprodukte sollten erst dann eingesetzt werden wenn sie gründlich evaluiert und von seriösen bekannten Dritten auf Schwachstellen überprüft sind.",
+            "category": "bubble-left"
+         },
+         {
+            "text": "Danke für die Info kann dabei etwas schlimmes passieren? ",
+            "category": "bubble-right"
+         },
+         {
+            "text": "Ja Achtung, Anwendungen für den Fernzugriff bieten die Möglichkeit das ein dezentraler Computer wie eine Arbeitsstation, oder ein Laptop potenziell mit Schadsoftware infiziert und dadurch das ICS infizieren, oder angreifen kann. Beispielsweise könnte ein Laptop mit entsprechenden Fernzugriffsrechten vom Standort entfernt werden und eine Verbindung zum Internet herstellen wodurch sich dieser dann infiziert. Von diesem Laptop aus könnte dann ein Benutzer eine VPN-Verbindung herstellen und eine Remote-Desktop-Verbindung in das ICS. Wenn eine Schadsoftware vorhanden ist und richtig ausgeführt wird, besteht der sofortige Vollzugriff auf das ICS.  Wodurch sich wieder neue Angriffsmöglichkeiten ergeben.",
+            "category": "bubble-left"
+         },
+         {
+            "text": "Was?! Achtung das solltest du auf keinen Fall machen, das kann echt schwerwiegende Probleme für das Unternehmen mit sich ziehen. Du könntest ausversehen Schadsoftware in das ICS-Netzwerk einschleusen.",
+            "category": "bubble-left"
+         },
+         {
+            "text": "Oh Okay, das klingt auf jeden Fall Bedenklich. Hast du noch einen Tipp was zu beachten ist wenn ein Fernzugriff beendet werden soll?",
+            "category": "bubble-right"
+         },
+         {
+            "text": "Beim Beenden eines Fernzugriffs gilt zu beachten, dass das Unternehmen sicherstellen muss dass alle interaktiven Fernzugriffsverbindungen nach einer konfigurierten Inaktivitätsperiode ordnungsgemäß beendet werden. Das Offenlassen von Fernzugriffsverbindungen bei Nichtbenutzung birgt ein unnötiges Risiko das die Verbindung unsachgemäß genutzt wird oder das Angreifer versuchen die Kontroller über sie zu übernehmen. Eine Schutzfunktion wäre das die Fernanwendung so konfiguriert ist das nach einer gewissen Zeit der Inaktivität die Verbindung automatisch beendet wird.",
+            "category": "bubble-left"
+         },
+         {
+            "text": "Danke für die Erklärung!",
+            "category": "bubble-right"
+         }
+      ]
+   }
+]

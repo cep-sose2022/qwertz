@@ -1,0 +1,32 @@
+[
+  {
+    "badgeID": 2,
+    "modiID": 1,
+    "data": [
+      {
+        "text": "Sicherheitsupdate auf Authentizität prüfen und Integrität."
+      },
+      {
+        "text": "Die manipulationssicheren Siegel des USB-Sticks prüfen."
+      },
+      {
+        "text": "Überprüfen ob das Speichermedium Freigegeben ist und verwendet werden darf."
+      },
+      {
+        "text": "Das Speichermedium auf Kompatibilität prüfen."
+      },
+      {
+        "text": "Patch einspielen."
+      },
+      {
+        "text": "Patch dokumentieren mit Patchkennung, angewandte Software, Datum der Freigabe und Installation."
+      },
+      {
+        "text": "Anlage auf Funktion und Konfigurationszustand prüfen."
+      },
+      {
+        "text": "Patch Dokumentation ordnungsgemäß digital oder analog abheften bzw. speichern."
+      }
+    ]
+  }
+]
