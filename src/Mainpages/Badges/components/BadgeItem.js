@@ -1,9 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import storage from "../../../storage";
-import img1 from "../../../Resources/images/orange_zwinkern.png";
 import {FaFileDownload} from "react-icons/fa";
 import {Tooltip} from "@mantine/core";
+import service from "../../../service";
 
 // TODO hier wurde was gemacht
 const setData = (badgeID, modis) => {
@@ -35,7 +35,8 @@ const BadgeItem = ({data}) => (
                     <h3>{data.title}</h3>
                     <div>
                         <Tooltip label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
-                            <a className="downloadButton" href={img1} download>
+                            <a className="downloadButton" href={service.getPdf(data.badgeID)}
+                               download={"Badge_" + data.badgeID}>
                                 {/*// TODO hier muss der Link zur PDF datei geändert werden*/}
                                 <FaFileDownload/> Inhalt herunterladen
                             </a>
