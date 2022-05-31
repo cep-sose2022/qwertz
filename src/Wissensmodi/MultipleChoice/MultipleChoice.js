@@ -11,16 +11,16 @@ import storage from "../../storage";
 
 const modalData = [
     {
-        title: "Spielerklärung",
-        content: "Kreuze die Zutreffenden aussagen an" //TODO sinnvoller text
+        title: "SPIELANLEITUNG 🎲",
+        content: "Lesen Sie sich den Text auf der linken Seite sorgfältig durch und kreuzen Sie anschließend die zutreffenden Aussagen an. Sie können eine oder mehrere Antworten ankreuzen."
     },
     {
-        title: "Leider Falsch",
-        content: "Leider nicht alles richtig, schaue dir das noch mal an."
+        title: "LEIDER FALSCH ✗",
+        content: "Leider ist nicht alles richtig, überprüfen Sie Ihre Antworten noch einmal. 🧐"
     },
     {
-        title: "Alles Richtig",
-        content: "Super du hast alles richtig!"
+        title: "ALLES RICHTIG ✓",
+        content: "Super, Sie haben alles richtig gelöst! 👏"
     }
 ]
 

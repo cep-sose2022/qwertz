@@ -11,8 +11,8 @@ import { ModiContext } from "../Gamemodi";
 
 const modalData = [
     {
-        title: "Spielerklärung",
-        content: "Finde alle verstecken fehler "
+        title: "SPIELANLEITUNG 🎲",
+        content: "Klicken Sie alle versteckten Fehler an."
     }
 ]
 

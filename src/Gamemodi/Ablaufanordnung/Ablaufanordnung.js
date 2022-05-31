@@ -1,19 +1,19 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
-import {DndProvider} from "react-dnd";
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { DndProvider } from "react-dnd";
 import CardStorage from "./CardStorage";
 import './Ablaufanordnung.css'
 import DragCard from "./DragCard";
-import {ItemState} from "./ItemState";
-import {HTML5Backend} from "react-dnd-html5-backend";
+import { ItemState } from "./ItemState";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 import DropBox from "./DropBox";
-import {SimpleGrid} from "@mantine/core";
+import { SimpleGrid } from "@mantine/core";
 
 import ModiHeader from "../ModiHeader";
 import service from "../../service";
 import storage from "../../storage";
-import {useNavigate} from "react-router";
-import {ModiContext} from "../Gamemodi";
+import { useNavigate } from "react-router";
+import { ModiContext } from "../Gamemodi";
 
 export const CardContext = createContext({
     markAsX: (_id, _state) => {
@@ -22,20 +22,21 @@ export const CardContext = createContext({
 
 const modalData = [
     {
-        title: "Spielerklärung",
-        content: "(Sachverhalt/Problem beschreiben). Ordne nun die Sätze."
+        title: "SPIELANLEITUNG 🎲",
+        content: "Ordnen Sie die Kärtchen in der richtigen Reihenfolge"
     },
     {
-        title: "Leider Falsch",
-        content: "Leider nicht alles richtig, schaue dir das noch mal an."
+        title: "LEIDER FALSCH ✗",
+        content: "Leider ist nicht alles richtig, überprüfen Sie Ihre Antworten noch einmal. 🧐"
     },
     {
-        title: "Alles Richtig",
-        content: "Super du hast alles richtig!"
+        title: "ALLES RICHTIG ✓",
+        content: "Super, Sie haben alles richtig gelöst! 👏"
     },
     {
-        title: "Aufgabenstellung",
-        content: "Ein externer Mitarbeiter hat ein infiziertes Wartungsgerät verwendet welches zuvor schon in ihrem ICS-Netzwerk verwendet wurde. Vermutlich hatte der externe sich die Schadsoftware über das Internet eingefangen und nun durch das erneute verbinden in Ihr ICS-System versehentlich Schadsoftware eingeschleust. Glücklicherweise wurde dies sofort Erkannt wie gehen Sie nun vor?"
+        title: "AUFGABENSTELLUNG",
+        content: "Ein externer Mitarbeiter hat ein infiziertes Wartungsgerät verwendet, welches zuvor schon in Ihrem ICS-Netzwerk verwendet wurde. Vermutlich hatte der externe sich die Schadsoftware über das Internet eingefangen und nun durch das erneute Verbinden in Ihr ICS-System versehentlich Schadsoftware eingeschleust. Glücklicherweise wurde dies sofort erkannt."
+            + " Wie gehen Sie nun vor?"
     }
 ]
 
@@ -67,44 +68,44 @@ const Ablaufanordnung = () => {
     const [allRight, setAllRight] = useState(false);
 
     const navigator = useNavigate();
-    const {redirect} = useContext(ModiContext);
+    const { redirect } = useContext(ModiContext);
 
     // um zu dem Modi umzuleiten, der gerade daran is
     useEffect(() => {
-            redirect(eigenerName)
-            // läd die daten aus der DB und schreib sie in eine const
-            if (cards[0] === undefined) {
-                let Data = service.getAblaufanordnung(storage.getBadgeID(), storage.getModiID())
-                if (Data === undefined) {
-                    navigator('../../Error503')
-                    return
-                } else if (Data === null) {
-                    console.error("DB nicht erreichbar, nutze Demo Daten")
-                    // navigator('../../Error503')
-                    Data = JsonList
-                }
-
-                Data.map((object, idx) => {
-                    if(idx<=3){
-                        let card = {
-                            key: Math.random(),
-                            id: idx + 1,
-                            text: object.text,
-                            state: ItemState.WRONG,
-                            boxId: 0
-                        }
-                        cards.push(card);
-                        let box = {
-                            key: Math.floor(Math.random() * 100000),
-                            id: card.id
-                        };
-                        boxes.push(box);
-                    }
-                    }
-                )
-                setCards(shuffle(cards));
+        redirect(eigenerName)
+        // läd die daten aus der DB und schreib sie in eine const
+        if (cards[0] === undefined) {
+            let Data = service.getAblaufanordnung(storage.getBadgeID(), storage.getModiID())
+            if (Data === undefined) {
+                navigator('../../Error503')
+                return
+            } else if (Data === null) {
+                console.error("DB nicht erreichbar, nutze Demo Daten")
+                // navigator('../../Error503')
+                Data = JsonList
             }
+
+            Data.map((object, idx) => {
+                if (idx <= 3) {
+                    let card = {
+                        key: Math.random(),
+                        id: idx + 1,
+                        text: object.text,
+                        state: ItemState.WRONG,
+                        boxId: 0
+                    }
+                    cards.push(card);
+                    let box = {
+                        key: Math.floor(Math.random() * 100000),
+                        id: card.id
+                    };
+                    boxes.push(box);
+                }
+            }
+            )
+            setCards(shuffle(cards));
         }
+    }
     )
 
 
@@ -161,7 +162,7 @@ const Ablaufanordnung = () => {
 
         <div className="ablaufanordung-container">
             <DndProvider backend={HTML5Backend}>
-                <CardContext.Provider value={{markAsX}}>
+                <CardContext.Provider value={{ markAsX }}>
                     <div className="ablaufanordung-header">
                         <ModiHeader
                             setModalContent={setModalContent}
@@ -186,34 +187,34 @@ const Ablaufanordnung = () => {
                             {
                                 cards.filter(card => card.boxId === 0)
                                     .map(card => (
-                                            <DragCard key={card.key} id={card.id} text={card.text} state={card.state}/>
-                                        )
+                                        <DragCard key={card.key} id={card.id} text={card.text} state={card.state} />
+                                    )
                                     )
                             }
                         </CardStorage>
 
                         {/* Grid wo alle Boxen in die doe Karten gelegt werden */}
-                        <SimpleGrid style={{padding: 15}}
-                                    cols={4}
-                                    spacing="lg"
-                                    breakpoints={[
-                                        {maxWidth: 980, cols: 3, spacing: "lg"},
-                                        {maxWidth: 755, cols: 2, spacing: "lg"},
-                                        {maxWidth: 600, cols: 1, spacing: "lg"},
-                                    ]}
+                        <SimpleGrid style={{ padding: 15 }}
+                            cols={4}
+                            spacing="lg"
+                            breakpoints={[
+                                { maxWidth: 980, cols: 3, spacing: "lg" },
+                                { maxWidth: 755, cols: 2, spacing: "lg" },
+                                { maxWidth: 600, cols: 1, spacing: "lg" },
+                            ]}
                         >
                             {
                                 boxes.map(box => (
-                                        <DropBox key={box.key} id={box.id}>
-                                            {
-                                                cards.filter(card => card.boxId === box.id).map(card => (
-                                                        <DragCard key={card.id} id={card.id} text={card.text}
-                                                                  state={card.state}/>
-                                                    )
-                                                )
-                                            }
-                                        </DropBox>
-                                    )
+                                    <DropBox key={box.key} id={box.id}>
+                                        {
+                                            cards.filter(card => card.boxId === box.id).map(card => (
+                                                <DragCard key={card.id} id={card.id} text={card.text}
+                                                    state={card.state} />
+                                            )
+                                            )
+                                        }
+                                    </DropBox>
+                                )
                                 )
                             }
                         </SimpleGrid>

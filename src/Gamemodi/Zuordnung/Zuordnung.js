@@ -21,16 +21,17 @@ export const ItemContext = createContext({
 
 const modalData = [
     {
-        title: "Spielerklärung",
-        content: "Ordne die Elemente den zwei Verschiedenen Boxen zu. "
+        title: "SPIELANLEITUNG 🎲",
+        content: "Ordnen Sie die Aussagen den jeweiligen Boxen zu."
     },
     {
-        title: "Leider Falsch",
-        content: "Leider nicht alles richtig, schaue dir das noch mal an."
+        title: "LEIDER FALSCH ✗",
+        content: "Leider ist nicht alles richtig, überprüfen Sie Ihre Antworten noch einmal. 🧐"
+
     },
     {
-        title: "Alles Richtig",
-        content: "Super du hast alles richtig!"
+        title: "ALLES RICHTIG ✓",
+        content: "Super, Sie haben alles richtig gelöst! 👏"
     }
 ]
 

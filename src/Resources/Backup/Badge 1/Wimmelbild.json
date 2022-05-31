@@ -6,7 +6,7 @@
       "imageName": "USB_Wimmelbild",
       "buttons": [
         {
-          "text": "Gefunden! Auf gar keine Fall einen gefunden USB-Stick verwenden, unbedingt vor einer Nutzung prüfen.",
+          "text": "Gefunden! Auf keinen Fall einen gefunden USB-Stick verwenden, unbedingt vor einer Nutzung prüfen lassen.",
           "topLeftCorner": {
             "x": 5,
             "y": 0
@@ -17,7 +17,7 @@
           }
         },
         {
-          "text": "Gefunden! Externe Datenträger aus der Firma sollten nicht mit nach hause genommen um auf diesen dann private Daten zu speichern.",
+          "text": "Gefunden! Externe Datenträger aus der Firma sollten nicht mit nach Hause genommen, um auf diesen dann private Daten zu speichern.",
           "topLeftCorner": {
             "x": 40,
             "y": 45
@@ -28,7 +28,7 @@
           }
         },
         {
-          "text": "Gefunden! Externe Geräte sollten in speziellen Netzen laufen, da diese oft Zugang zum Internet haben und sich darüber Schadsoftware einschleusen kann beim nächsten verbinden mit dem ICS.",
+          "text": "Gefunden! Externe Geräte sollten in speziellen Netzen laufen, da diese oft Zugang zum Internet haben und sich darüber Schadsoftware einschleusen kann beim nächsten Verbinden mit dem ICS.",
           "topLeftCorner": {
             "x": 70,
             "y": 50

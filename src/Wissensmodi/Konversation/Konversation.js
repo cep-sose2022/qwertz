@@ -13,8 +13,8 @@ import { useNavigate } from "react-router";
 
 const modalData = [
     {
-        title: "Spielerklärung",
-        content: "Klick einfach un les " //TODO sinnvoller text
+        title: "SPIELANLEITUNG 🎲",
+        content: "Lesen Sie sich die Konversation sorgfältig durch. Zum fortsetzen der Konversation bitte anklicken."
     }
 ]
 
