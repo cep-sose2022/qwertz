@@ -1,32 +1,31 @@
 import Headline from "../Startseite/Headline";
 import bild from "../../Resources/images/SammlungDashboard.png";
-import bild2 from "../../Resources/images/Sammlungen/labortisch.png";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./Sammlung.css";
 import storage from "../../storage";
 
 
 const Sammlung = () => {
 
-    let percentage = 0;
-    storage.getBadges().map(badge => badge.passed ? percentage++ : null);
-    console.log(percentage);
-    percentage = percentage / storage.getBadges().lenght
-
+    const [percentage, setPercentage] = useState(0);
+    useEffect(() => {
+        let passed = 0;
+        const badges = storage.getBadges()
+        badges.map(badge => badge.passed ? passed++ : null);
+        setPercentage((passed/badges.length)*100);
+    })
 
     return (
         <>
             <Headline title={"Dashboard"} headline={"Meine Sammlung"} text={""} />
-            <img className="dashboardBild" src={bild}></img>
+            <img alt={""} className="dashboardBild" src={bild}/>
             <div className="tube" >
                 <div className="shine"></div>
                 <div className="body">
                     <div className="liquid">
                         <div className="percentage" style={{
-                            height: percentage * 100
+                            height: percentage
                         }}>
-
-
                         </div>
                     </div>
                 </div>
