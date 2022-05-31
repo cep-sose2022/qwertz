@@ -5,6 +5,10 @@ const PDFSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    name:{
+      type: String,
+      required: true
+    },
     pdf: {
         type: String,
         required: true,
