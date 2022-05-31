@@ -1,0 +1,51 @@
+[
+    {
+        "badgeID": 1,
+        "modiID": 1, 
+        "data": [
+            {
+                "frage": "Falsche Aussagen",
+                "antworten": [
+                  {
+                    "text": "Finde ich einen USB-Stick auf dem Parkplatz sollte ich diesen direkt in der Firma ausprobieren und nachsehen was für Dateien sich darauf befinden, am besten direkt im ICS."
+                  },
+                  {
+                    "text": "Ich kann reinen Gewissens den USB-Stick mit Urlaubsfotos von einem Bekannten nach Feierabend im Unternehmensnetz verwenden."
+                  },
+                  {
+                    "text": "Bei Schadsoftware handelt es sich um alte Hardware die Fachgerecht entsorgt werden muss."
+                  },
+                  {
+                    "text": "Ein externer wartungs Laptop der seinen Standort regelmäßig wechselt und sich mit dem internet und dem Firmennetz verbinden kann, stellt keinerlei Bedrohung dar."
+                  },
+                  {
+                    "text":"Das externe Speichermedium welches ich für die Arbeit verwende, kann ich ruhig mit nach Hause nehmen um dort weiter zu arbeiten. Außerdem ist es kein Problem dort auch private Daten zu speichern, falls ich diese in der Firma mal benötige."
+                  }
+                ]
+              },
+              {
+                "frage": "Richtige Aussagen",
+                "antworten": [
+                  {
+                    "text": "Eine Schadsoftware wurde dazu entwickelt ungewollte Funktionen auf einem System ausführen zu lassen."
+                  },
+                  {
+                    "text": "Bei Viren, Ransomware und Trojanern handelt es sich um Schadsoftware, welche sich auf einem externen Speichermedium befinden kann."
+                  },
+                  {
+                    "text": "Um das ICS - Netz zu schützen macht es Sinn externen Dienstleistern ein quarantäne Netz einzurichten in dem diese getrennt vom Unternehmensnetz arbeiten können."
+                  },
+                  {
+                    "text": "Durch Kunstharz kann ein physisches Anschließen von externen Speichermedien verhindert werden."
+                  },
+                  {
+                    "text": "Wird ein externes Wartungsgerät in das Firmennetz gelassen, so sollte zwingend zuvor ein Virenscan durchgeführt werden."
+                  }
+                ]
+              }
+            
+        ]
+
+        
+    }
+]

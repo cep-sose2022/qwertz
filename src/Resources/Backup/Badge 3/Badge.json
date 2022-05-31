@@ -1,0 +1,31 @@
+[
+    {
+        "badgeID": 3, 
+        "title": "Remote Access",
+        "text": "Was gilt beim Zugriff über Remote-Verbindungen zu beachten und welche Risiken können davon ausgehen.",
+        "passed": false,
+        "unlocked": false,
+        "modis":[
+            {
+                "title": "Konversation", 
+                "modiID": 1
+            },
+            {
+                "title": "Multiplechoice", 
+                "modiID": 1
+            },
+            {
+                "title": "Ablaufanordnung", 
+                "modiID": 1
+            },
+            {
+                "title": "Wimmelbild", 
+                "modiID": 1
+            },
+            {
+                "title": "Zuordnung", 
+                "modiID": 1
+            }
+        ]
+    }
+]
