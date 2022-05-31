@@ -75,4 +75,3 @@ storage.removeAll = () => {
 
 
 module.exports = storage
-// TODO hier wurde was gemacht

@@ -5,7 +5,6 @@ import {FaFileDownload} from "react-icons/fa";
 import {Tooltip} from "@mantine/core";
 import service from "../../../service";
 
-// TODO hier wurde was gemacht
 const setData = (badgeID, modis) => {
     if (storage.getBadgeID() !== badgeID) {
         storage.removeAll()
@@ -37,7 +36,6 @@ const BadgeItem = ({data}) => (
                         <Tooltip label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
                             <a className="downloadButton" href={service.getPdf(data.badgeID).pdf}
                                download={service.getPdf(data.badgeID).name}>
-                                {/*// TODO hier muss der Link zur PDF datei geändert werden*/}
                                 <FaFileDownload/> Inhalt herunterladen {}
                             </a>
                         </Tooltip>
@@ -64,7 +62,6 @@ const BadgeItem = ({data}) => (
                     <Tooltip disabled='disabled'
                              label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
                         <a className="downloadButton" style={{filter: 'blur(4px)'}}>
-                            {/*// TODO hier muss der Link zur PDF datei geändert werden*/}
                             <FaFileDownload/> Inhalt herunterladen
                         </a>
                     </Tooltip>

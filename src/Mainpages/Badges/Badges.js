@@ -36,7 +36,6 @@ const Badges = () => {
     } else
         badges = storage.getBadges()
 
-// TODO hier wurde was gemacht
     return (
         <div className="badges-container">
             <div className="badges-header">

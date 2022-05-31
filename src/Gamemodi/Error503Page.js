@@ -17,4 +17,3 @@ const Error503Page = () => {
     );
 }
 export default Error503Page;
-// TODO hier wurde was gemacht
