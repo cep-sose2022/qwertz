@@ -84,19 +84,22 @@ const Zuordnung = () => {
 
             // const tempAntworten = []
             Data.map((object, idx) => {
+
                 let frage = {
                     id: idx + 1,
                     frage: object.frage,
                 };
                 fragen.push(frage);
                 object.antworten.map((a, idx) => {
-                    let antwort = {
+                    if(idx<=1){
+                        let antwort = {
                         id: ((idx) + 10 * (frage.id)),
                         text: a.text,
                         state: ItemState.NOTSELECTED,
                         right: false
                     };
                     antworten.push(antwort)
+                }
                 });
             });
             setAntworten(shuffle(antworten))
