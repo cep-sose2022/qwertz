@@ -44,7 +44,7 @@
     font-weight: normal;
     overflow: auto;
 }
-
+/*scrollbar*/
 .chat-objects::-webkit-scrollbar {
     width: 7px;
     height: 7px;
@@ -65,6 +65,8 @@
 .chat-objects::-webkit-scrollbar-thumb {
     background: #a5a6ab;
 }
+
+/*scrollbar end*/
 
 .chat-objects p {
     min-width: calc(100% - 80%);
@@ -213,8 +215,6 @@
 .konversation-container .konversation-body {
     border: 5px solid;
     margin-top: 5px;
-    /*padding: 0.5%;*/
     border-radius: 15px;
-    box-shadow: 10px 5px 5px black;
 
 }

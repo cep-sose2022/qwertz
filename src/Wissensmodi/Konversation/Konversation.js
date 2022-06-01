@@ -1,15 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "./Konversation.css";
 
 
 import JsonList from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
-import { ModiContext } from "../../Gamemodi/Gamemodi";
-import { useScrollIntoView } from "@mantine/hooks";
+import {ModiContext} from "../../Gamemodi/Gamemodi";
+import {useScrollIntoView} from "@mantine/hooks";
 import ModiHeader from "../../Gamemodi/ModiHeader";
 import service from "../../service";
 import storage from "../../storage";
-import { useNavigate } from "react-router";
+import {useNavigate} from "react-router";
 
 const modalData = [
     {
@@ -33,7 +33,6 @@ const Konversation = () => {
 
     const navigator = useNavigate();
 
-    // TODO des muss alles in jeden modi
 
     // um zu dem Modi umzuleiten, der gerade daran is
     useEffect(() => {
@@ -61,7 +60,6 @@ const Konversation = () => {
             })
         }
     })
-    // TODO bis hier
 
     // zum anzeigen des Nächsten Textes
     const abbilden = () => {
@@ -102,25 +100,27 @@ const Konversation = () => {
                         , 50)
 
                 }}>
+                    {/*chatscreen header start*/}
                     <div className="theoretic-conversation-body">
                         <div className="chat-window">
                             <div className="top-menu">
                                 <div className="buttons">
-                                    <div className="button close" />
-                                    <div className="button minimize" />
-                                    <div className="button maximize" />
+                                    <div className="button close"/>
+                                    <div className="button minimize"/>
+                                    <div className="button maximize"/>
                                 </div>
                                 <div className="title-chat">
                                     <p>Chat</p>
                                 </div>
                             </div>
                         </div>
-
+                        {/*chatscreen header end*/}
+                        {/*message area chatscreen start*/}
                         <div className="chat-objects" ref={scrollableRef}>
                             {
                                 bubbles.filter(bubbles => bubbles.selected === true).map(
                                     bubbles => <Bubble key={bubbles.id} category={bubbles.category}
-                                        text={bubbles.text} />
+                                                       text={bubbles.text}/>
                                 )
                             }
 
@@ -133,10 +133,13 @@ const Konversation = () => {
 
                             }
                         </div>
-
+                        {/*message area chatscreen end*/}
+                        {/*chatscreen footer with input field*/}
                         <div className="bottom_wrapper">
-                            <textarea className="message_input" placeholder="type a message" />
+                            <textarea className="message_input" placeholder="type a message"/>
                         </div>
+                        {/*chatscreen footer with input field end*/}
+
                     </div>
                 </div>
             </div>
