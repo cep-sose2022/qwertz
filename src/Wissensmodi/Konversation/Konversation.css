@@ -40,7 +40,7 @@
     padding-top: 20px;
     display: flex;
     flex-direction: column;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: normal;
     overflow: auto;
 }
@@ -72,9 +72,9 @@
     min-width: calc(100% - 80%);
     max-width: calc(100% - 25%);
     word-wrap: break-word;
-    line-height: 24px;
     position: relative;
     padding: 10px 20px;
+    text-align: start;
     margin: 10px;
     border-radius: 25px;
 

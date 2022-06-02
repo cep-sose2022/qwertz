@@ -172,7 +172,9 @@
 
 
 
-
+.header-content {
+    padding-top: 10vh;
+}
 /*==============Linke Seite Überschrift================*/
 
 .header-content .container.grid-2 {
@@ -669,6 +671,7 @@
 .quote-body .author {
     text-align: right;
     margin-top: 15px;
+    color: black;
 }
 
 .quote-body .quote-buttons {
@@ -693,5 +696,6 @@
 }
 
 .icon-quote p {
-    font-size: 1.2rem;
+    color: black;
+    /*font-size: 1.2rem;*/
 }
