@@ -1,6 +1,6 @@
 const storage = {}
 
-// Methoden um mit den currentModiTitle zu agieren
+// method to interact with currentModiTitle
 storage.setCurrentModiTitle = (currentModiTitle) => {
     sessionStorage.setItem("currentModiTitle", currentModiTitle)
 }
@@ -11,7 +11,7 @@ storage.removeCurrentModiTitle = () => {
     sessionStorage.removeItem("currentModiTitle")
 }
 
-// Methoden um mit den Badges zu agieren
+// method to interact with Badges
 storage.setBadges = (badges) => {
     sessionStorage.setItem("badges", JSON.stringify(badges))
 }
@@ -40,7 +40,7 @@ storage.removeBadgeID = () => {
     sessionStorage.removeItem("badgeID")
 }
 
-// Methoden um mit den Modis zu agieren
+// method to interact with modis
 storage.setModis = (modis) => {
     sessionStorage.setItem("modis", JSON.stringify(modis))
 }

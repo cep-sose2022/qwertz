@@ -12,8 +12,7 @@ import service from "../../service";
 const Badges = () => {
     let badges = []
 
-    // läd die daten aus der DB uns speichert sie zwischen
-    // wen schon daten im storage sind, lade die, ansonsten lade die aus der DB
+  //loading data from db
     if (storage.getBadges() === null) {
         let Data = service.getBadges()
         if (Data === null)

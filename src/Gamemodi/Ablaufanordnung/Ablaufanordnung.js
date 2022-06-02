@@ -1,19 +1,19 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { DndProvider } from "react-dnd";
+import React, {createContext, useContext, useEffect, useState} from 'react';
+import {DndProvider} from "react-dnd";
 import CardStorage from "./CardStorage";
 import './Ablaufanordnung.css'
 import DragCard from "./DragCard";
-import { ItemState } from "./ItemState";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import {ItemState} from "./ItemState";
+import {HTML5Backend} from "react-dnd-html5-backend";
 import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 import DropBox from "./DropBox";
-import { SimpleGrid } from "@mantine/core";
+import {SimpleGrid} from "@mantine/core";
 
 import ModiHeader from "../ModiHeader";
 import service from "../../service";
 import storage from "../../storage";
-import { useNavigate } from "react-router";
-import { ModiContext } from "../Gamemodi";
+import {useNavigate} from "react-router";
+import {ModiContext} from "../Gamemodi";
 
 export const CardContext = createContext({
     markAsX: (_id, _state) => {
@@ -70,10 +70,11 @@ const Ablaufanordnung = () => {
     const navigator = useNavigate();
     const { redirect } = useContext(ModiContext);
 
-    // um zu dem Modi umzuleiten, der gerade daran is
+
     useEffect(() => {
+        // redirect to the actual mode
         redirect(eigenerName)
-        // läd die daten aus der DB und schreib sie in eine const
+        // loading data from db
         if (cards[0] === undefined) {
             let Data = service.getAblaufanordnung(storage.getBadgeID(), storage.getModiID())
             if (Data === undefined) {
@@ -105,11 +106,12 @@ const Ablaufanordnung = () => {
             )
             setCards(shuffle(cards));
         }
+        // loading data end
     }
     )
 
 
-    // legt eine Karte in die angegebene Box, taucht gegebenenfalls die Karte die da dirn liegt mit sich
+    // put card in a choosen box, if box is filled switch cards
     const markAsX = (id, boxId) => {
         const draggedCard = cards.filter(card => card.id === id)[0];
         let otherCard = cards.filter(card => card.boxId === boxId)[0];
@@ -124,8 +126,7 @@ const Ablaufanordnung = () => {
 
         setCards(cards.filter(card => card.id !== id).concat(draggedCard));
     }
-
-    // prüft, ob alle Boxen richtig zugeteilt sind, aber nur wenn auch alle zugeteilt wurden
+    //check if all cards are allocated and in the right boxes
     const checkIfAllRight = () => {
         if (cards.filter(card => card.boxId === 0).length !== 0) {
             setOpenedPopover(true);
@@ -146,12 +147,12 @@ const Ablaufanordnung = () => {
         })
 
         if (cards.filter(card => card.state === ItemState.WRONG).length === 0) {
-            // alles Richtig
+            //right
             setModalContent(modalData[2]);
             setOpenedModal(true);
             setAllRight(true);
         } else {
-            // noch was Falsch
+            //wrong
             setModalContent(modalData[1]);
             setOpenedModal(true);
             setAllRight(false);
@@ -160,10 +161,10 @@ const Ablaufanordnung = () => {
 
     return (
 
-        <div className="ablaufanordung-container">
+        <div className="ablaufanordnung-container">
             <DndProvider backend={HTML5Backend}>
                 <CardContext.Provider value={{ markAsX }}>
-                    <div className="ablaufanordung-header">
+                    <div className="ablaufanordnung-header">
                         <ModiHeader
                             setModalContent={setModalContent}
                             modalContent={modalContent}
@@ -181,27 +182,28 @@ const Ablaufanordnung = () => {
                             popoverText="Du musst erst alle Boxen einsetzen"
                         />
                     </div>
-                    <div className="ablaufanordung-body">
-
+                    <div className="ablaufanordnung-body">
+                        {/*Card Heap*/}
                         <CardStorage>
                             {
                                 cards.filter(card => card.boxId === 0)
                                     .map(card => (
-                                        <DragCard key={card.key} id={card.id} text={card.text} state={card.state} />
-                                    )
+                                            <DragCard key={card.key} id={card.id} text={card.text} state={card.state}/>
+                                        )
                                     )
                             }
                         </CardStorage>
+                        {/*Card Heap end*/}
 
-                        {/* Grid wo alle Boxen in die doe Karten gelegt werden */}
-                        <SimpleGrid style={{ padding: 15 }}
-                            cols={4}
-                            spacing="lg"
-                            breakpoints={[
-                                { maxWidth: 980, cols: 3, spacing: "lg" },
-                                { maxWidth: 755, cols: 2, spacing: "lg" },
-                                { maxWidth: 600, cols: 1, spacing: "lg" },
-                            ]}
+                        {/*Grid to drag the cards in*/}
+                        <SimpleGrid style={{padding: 15}}
+                                    cols={4}
+                                    spacing="lg"
+                                    breakpoints={[
+                                        {maxWidth: 980, cols: 3, spacing: "lg"},
+                                        {maxWidth: 755, cols: 2, spacing: "lg"},
+                                        {maxWidth: 600, cols: 1, spacing: "lg"},
+                                    ]}
                         >
                             {
                                 boxes.map(box => (
@@ -218,7 +220,7 @@ const Ablaufanordnung = () => {
                                 )
                             }
                         </SimpleGrid>
-
+                        {/*Grid end*/}
                     </div>
                 </CardContext.Provider>
             </DndProvider>

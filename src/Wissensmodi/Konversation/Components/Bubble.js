@@ -5,10 +5,10 @@ const Bubble = ({text, category}) => {
     let element;
 
     if (category === "bubble-right") {
-        // chatelemet mit Image links
+        // chatelemet right
         element = <p className={category}>{text}</p>
     } else {
-        // chatelemet mit Image rechts
+        // chatelemet left
         element = <p className={category}>{text}</p>
 
     }

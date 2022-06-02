@@ -11,9 +11,9 @@ import gif from "../../Resources/zeppgefunden.gif";
 import storage from "../../storage";
 
 const Endscreen = () => {
+    //marks a Badge as finished
     const machEnde = () => {
-        let badgeID = storage.getBadgeID()
-        storage.setBadgePassed(parseInt(badgeID))
+        storage.setBadgePassed(parseInt(storage.getBadgeID()))
         storage.removeAll()
     }
 

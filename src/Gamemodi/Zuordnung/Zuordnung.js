@@ -1,18 +1,18 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, {createContext, useContext, useEffect, useState} from 'react';
 import DropZone from "./DropZone";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import {DndProvider} from "react-dnd";
+import {HTML5Backend} from "react-dnd-html5-backend";
 import DragItem from "./DragItem";
-import { ItemState } from "./ItemState";
-import { Grid } from "@mantine/core";
+import {ItemState} from "./ItemState";
+import {Grid} from "@mantine/core";
 
 import JsonList from "../../Resources/Json/ZuordnungData.json";
 
-import { useNavigate } from "react-router";
+import {useNavigate} from "react-router";
 import service from "../../service";
 import storage from "../../storage";
 import ModiHeader from "../ModiHeader";
-import { ModiContext } from "../Gamemodi";
+import {ModiContext} from "../Gamemodi";
 
 export const ItemContext = createContext({
     markAsX: (_id, _state) => {
@@ -68,10 +68,10 @@ const Zuordnung = () => {
     const navigator = useNavigate();
     const { redirect } = useContext(ModiContext);
 
-    // um zu dem Modi umzuleiten, der gerade daran is
     useEffect(() => {
+        // redirect to actual mode
         redirect(eigenerName)
-        // läd die daten aus der DB und schreib sie in eine const
+        // loading data from db
         if (antworten[0] === undefined) {
             let Data = service.getZuordnung(storage.getBadgeID(), storage.getModiID())
             if (Data === undefined) {
@@ -83,7 +83,6 @@ const Zuordnung = () => {
                 Data = JsonList
             }
 
-            // const tempAntworten = []
             Data.map((object, idx) => {
 
                 let frage = {
@@ -109,7 +108,7 @@ const Zuordnung = () => {
     })
 
 
-    // makiert eine Box als den übergebenen status
+    // marks a box a overgiven state
     const markAsX = (id, state) => {
         const draggedItem = antworten.filter((i) => i.id === id)[0];
         draggedItem.state = state;
@@ -117,7 +116,7 @@ const Zuordnung = () => {
     }
 
 
-    // prüft, ob alle Boxen richtig zugeteilt sind, aber nur wenn auch alle zugeteilt wurden
+    //checks if all boxes are in the right place
     const checkIfAllRight = () => {
         if (antworten.filter(antwort => antwort.state === ItemState.NOTSELECTED).length !== 0) {
             setOpenedPopover(true);
@@ -135,12 +134,12 @@ const Zuordnung = () => {
         })
 
         if (antworten.filter(antwort => antwort.right === false).length === 0) {
-            // alles Richtig
+            //right
             setModalContent(modalData[2]);
             setOpenedModal(true);
             setAllRight(true);
         } else {
-            // noch was Falsch
+            //wrong
             setModalContent(modalData[1]);
             setOpenedModal(true);
             setAllRight(false);
