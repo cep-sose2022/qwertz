@@ -10,6 +10,7 @@ const getGif = ((req, res) => {
     })
 })
 
+
 const postGif = (async (req, res) => {
     const gif = req.body
     const newGif = new GifModel(gif)
