@@ -2,8 +2,8 @@ import React from 'react';
 import './Startseite.css';
 
 
-const Card = (props: { image: any; title: string; text: string; link: string; }) => {
-    const { image, title, text, link } = props;
+const Card = (props: { image: any; title: string; text: string;}) => {
+    const { image, title, text } = props;
 
     return (
         <div className="card-wrap">
