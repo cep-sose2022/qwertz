@@ -32,10 +32,10 @@ const Zitat = (props) => {
             <div className="icon-quote">
                 <span className="icon2" />
                 <i className="fas fa-quote-left" />
-                <p className="quote">{zitat!==undefined?zitat.quote:undefined}
+                <p className="text quote" >{zitat!==undefined?zitat.quote:undefined}
                 </p>
             </div>
-            <div className="author">{zitat!==undefined?zitat.author:undefined}</div>
+            <p className="text author">{zitat!==undefined?zitat.author:undefined}</p>
 
             <div className="quote-buttons">
                 <div className="btnzitat">
