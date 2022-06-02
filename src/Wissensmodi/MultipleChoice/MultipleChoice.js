@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, {useContext, useState, useEffect} from 'react';
 
 import JsonList from "../../Resources/Json/MultipleChoiceData.json"
 import MultipleChoiceField from "./Components/MultipleChoiceField";
@@ -157,17 +157,12 @@ const MultipleChoice = () => {
             </div>
 
             <div className="multipleChoiceContainer">
-                <div className="multipleChoiceHeader">
-                    <div className="textField-header">
-                        <h3>Titel</h3>
-                    </div>
-                </div>
                 <div className="multipleChoiceBody">
 
                     <div className="textField">
 
                         <div className="textFieldBody">
-                            <p>
+                            <p className="text">
                                 {text}
                             </p>
                         </div>
