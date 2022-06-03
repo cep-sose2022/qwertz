@@ -12,7 +12,6 @@ const MultipleChoiceField = (props) => {
         setAufgabeChecked(parseInt(target.name), parseInt(target.value))
     }
 
-    console.log("MultipleChoiceField", aufgabe.frage)
     return (
         <div className="multiBox"
              style={{backgroundColor: aufgabe.isRichtig ? 'var(--antwortRichtig)' : undefined}}>
