@@ -4,6 +4,7 @@
     justify-content: center;
     flex-direction: column;
     margin: 0;
+    padding-bottom: 30%;
     background-position: center;
     background-image: url(../../Resources/konfetti_animiert.gif);
     background-repeat: no-repeat;
@@ -16,10 +17,11 @@
     animation: bounceIn 1s infinite;
     animation-duration: 8.5s;
     animation-iteration-count: infinite;
-    width: 30%;
+    width: 36%;
     height: auto;
     display: inline-block;
-    top: -31px;
+    left: 50px;
+    top: 50px;
 }
 
 /*bounce animation*/
@@ -105,7 +107,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    animation: disappear 0s linear 9s forwards;
+    animation: disappear 0s linear 7s forwards;
 
 }
 
@@ -118,13 +120,13 @@
     right: 0;
     bottom: 0;
     background-color: rgb(255, 255, 255);
-    animation: disappear 0s linear 8s forwards;
+    animation: disappear 0s linear 7s forwards;
 }
 
 /*Button "Weiter zur Sammlung" und "Zu den Badges" disappear danach appear*/
 .btn {
     border: 5px solid;
-    animation: opacityOn 8s normal forwards step-end;
+    animation: opacityOn 7s normal forwards step-end;
     animation-delay: 0s;
 }
 

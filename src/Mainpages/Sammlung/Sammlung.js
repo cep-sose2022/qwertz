@@ -1,8 +1,9 @@
 import Headline from "../Startseite/Headline";
 import bild from "../../Resources/images/SammlungDashboard.png";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./Sammlung.css";
 import storage from "../../storage";
+import service from "../../service";
 
 
 const Sammlung = () => {
@@ -12,13 +13,14 @@ const Sammlung = () => {
         let passed = 0;
         const badges = storage.getBadges()
         badges.map(badge => badge.passed ? passed++ : null);
-        setPercentage((passed/badges.length)*100);
+        setPercentage((passed / badges.length) * 100);
     })
 
     return (
         <>
             <Headline title={"Dashboard"} headline={"Meine Sammlung"} text={""} />
-            <img alt={""} className="dashboardBild" src={bild}/>
+            <img className="dashboardBild" src={service.getSammlung("badge" + storage.getBadgeID())} alt="Bild" />
+
             <div className="tube" >
                 <div className="shine"></div>
                 <div className="body">

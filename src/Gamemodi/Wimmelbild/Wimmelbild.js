@@ -108,7 +108,7 @@ const Wimmelbild = () => {
                             marginRight: 'auto',
                             position: 'relative'
                         }}
-                        className="imagewimmelbild" src={image}
+                        className="imagewimmelbild" src={service.getWimmelbild(storage.getBadgeID(), storage.getModiID())}
                         radius="sm"
                     >
                         {/*alle Buttons*/}

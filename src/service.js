@@ -35,6 +35,26 @@ service.getImage = (name) => {
         return null
     }
 }
+service.getSammlung = (name) => {
+    try {
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", `${backendUrl}/getSammlung/${name}`, false);
+        xmlHttp.send(null);
+        return "data:image/png;base64," + JSON.parse(xmlHttp.responseText)[0].sammlung;
+    } catch (e) {
+        return null
+    }
+}
+service.getGif = (name) => {
+    try {
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", `${backendUrl}/getGif/${name}`, false);
+        xmlHttp.send(null);
+        return "data:image/gif;base64," + JSON.parse(xmlHttp.responseText)[0].gif;
+    } catch (e) {
+        return null
+    }
+}
 
 service.getPdf = (badgeID) => {
     try {

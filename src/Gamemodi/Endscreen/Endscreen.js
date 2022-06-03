@@ -9,6 +9,7 @@ import EndscreenItem from "./components/EndscreenItem";
 import image from "../../Resources/images/orange_zwinkern.png";
 import gif from "../../Resources/zeppgefunden.gif";
 import storage from "../../storage";
+import service from "../../service";
 
 const Endscreen = () => {
     const machEnde = () => {
@@ -45,14 +46,14 @@ const Endscreen = () => {
                     </div>
 
 
-                    <img className="imgerlen" src={image} alt="erlenmeyerkolbenZwinkert" />
+                    <img className="imgerlen" src={service.getImage("badge" + storage.getBadgeID())} alt="erlenmeyerkolbenZwinkert" />
                 </Grid>
 
             </div>
             <>
                 <Container size={10100} px={0}>
                     <section className="endscreengif">
-                        <img className="gif" src={gif} alt="" />
+                        <img className="gif" src={service.getGif("badge" + storage.getBadgeID())} alt="" />
                     </section>
                 </Container>
 
