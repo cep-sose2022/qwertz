@@ -1,7 +1,5 @@
 import React, {useContext, useEffect, useState} from "react";
 import "./Konversation.css";
-
-
 import JsonList from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
 import {ModiContext} from "../../Gamemodi/Gamemodi";
@@ -34,10 +32,10 @@ const Konversation = () => {
     const navigator = useNavigate();
 
 
-    // um zu dem Modi umzuleiten, der gerade daran is
     useEffect(() => {
+        // redirect to actual mode
         redirect(eigenerName)
-        // läd die daten aus der DB und schreib sie in eine const
+        // loading data from db
         if (bubbles[0] === undefined) {
             let Data = service.getKonversation(storage.getBadgeID(), storage.getModiID())
             if (Data === undefined) {
@@ -61,7 +59,7 @@ const Konversation = () => {
         }
     })
 
-    // zum anzeigen des Nächsten Textes
+    // print next message
     const abbilden = () => {
         const nextBubble = bubbles.filter(bubble => bubble.selected === false)[0];
         if (nextBubble !== undefined) {

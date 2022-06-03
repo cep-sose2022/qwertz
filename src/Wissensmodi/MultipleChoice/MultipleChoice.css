@@ -24,7 +24,8 @@
 }
 
 .textFieldBody p {
-  line-height: 1.7;
+  text-align: left;
+  color: black;
 }
 
 .textFieldBody::-webkit-scrollbar {
@@ -108,15 +109,14 @@
   padding: 2vh;
 }
 
-.multiQuestion {}
-
 .multiAnswers li {
   padding: 1vh;
   margin: 0.1vh;
   border: 3px solid black;
   border-radius: 15px;
+  text-align: start;
 }
 
-/*box-elemet end*/
+/*box-element end*/
 
 /*Multiple choice field right end*/

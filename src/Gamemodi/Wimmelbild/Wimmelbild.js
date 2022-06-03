@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
-import { BackgroundImage, Box } from "@mantine/core";
+import React, {useContext, useEffect, useState} from "react";
+import {BackgroundImage, Box} from "@mantine/core";
 
 import './Wimmelbild.css'
 import ModiHeader from "../ModiHeader";
-import { useNavigate } from "react-router";
+import {useNavigate} from "react-router";
 import service from "../../service";
 import storage from "../../storage";
 import JsonList from '../../Resources/Json/WimmelbildData.json';
-import { ModiContext } from "../Gamemodi";
+import {ModiContext} from "../Gamemodi";
 
 const modalData = [
     {
@@ -27,13 +27,12 @@ const Wimmelbild = () => {
     const navigator = useNavigate();
     const { redirect } = useContext(ModiContext);
 
-    // um zu dem Modi umzuleiten, der gerade dran is
     useEffect(() => {
+        // redirect to actual mode
         redirect(eigenerName)
-        // lädt die daten aus der DB und schreibt sie in eine const
+        // loading data from db
         if (buttons[0] === undefined) {
             const tempButtons = []
-            console.log('ich wa da')
             let Data = service.getWimmelbild(storage.getBadgeID(), storage.getModiID())
             if (Data === undefined) {
                 navigator('../../Error503')
@@ -62,7 +61,7 @@ const Wimmelbild = () => {
         }
     })
 
-    // markiert einen Button als geklickt
+    // marks a button as clicked
     const clickButton = (id) => {
         const clickedButton = buttons.filter(button => button.id === id)[0];
         clickedButton.isClicked = true;

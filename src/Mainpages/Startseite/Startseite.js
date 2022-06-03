@@ -1,11 +1,8 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
-
+import {Link} from "react-router-dom";
+import {HashLink} from "react-router-hash-link";
 import NavBar from "../NavBar";
 import Zitat from './Zitat'
-
-// import images
 import img1 from './../../Resources/images/orange_normal.png'
 import img2 from './../../Resources/images/erlenmeyerkolben_gruen_normal.png'
 import img3 from './../../Resources/images/icons8-controller.png'
@@ -14,6 +11,7 @@ import Header from "./Header";
 import Headline from "./Headline";
 import Card from "./Card";
 import Introduction from "./Introduction";
+
 const Startseite = (props) => {
     const { JsonZitate } = props;
 

@@ -1,12 +1,10 @@
 import React from 'react';
 import { useDrag } from "react-dnd";
-import { ItemState } from './ItemState';
 import './Zuordnung.css';
 const DragItem = (props: { id: number; state: any; text: String; right: boolean }) => {
     const { id, text, state, right } = props;
 
-    // von React-DnD, macht eine Komponente Draggable
-    const [{ isDragging }, drag] = useDrag({
+    const [{}, drag] = useDrag({
         type: state,
         item: {
             id: id,

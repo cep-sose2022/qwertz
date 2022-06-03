@@ -1,11 +1,11 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, {useContext, useEffect, useState} from 'react';
 
 import JsonList from "../../Resources/Json/MultipleChoiceData.json"
 import MultipleChoiceField from "./Components/MultipleChoiceField";
 import './MultipleChoice.css'
 import ModiHeader from "../../Gamemodi/ModiHeader";
-import { ModiContext } from "../../Gamemodi/Gamemodi";
-import { useNavigate } from "react-router";
+import {ModiContext} from "../../Gamemodi/Gamemodi";
+import {useNavigate} from "react-router";
 import service from "../../service";
 import storage from "../../storage";
 
@@ -56,13 +56,13 @@ const MultipleChoice = () => {
     const navigator = useNavigate();
 
 
-    // um zu dem Modi umzuleiten, der gerade daran is
+
     useEffect(() => {
+        // redirect to actual mode
         redirect(eigenerName)
-        // läd die daten aus der DB und schreib sie in eine const
+        // loading data from db
         if (aufgaben[0] === undefined) {
             let Data = service.getMultipleChoice(storage.getBadgeID(), storage.getModiID())
-            // let Data = null
             if (Data === undefined) {
                 navigator('../../Error503')
                 return
@@ -98,6 +98,7 @@ const MultipleChoice = () => {
         }
     })
 
+    //checks if all answers are right
     const checkIfAllRight = () => {
         aufgaben.map(aufgabe => {
             let abbruch = false
@@ -116,12 +117,12 @@ const MultipleChoice = () => {
         })
 
         if (aufgaben.filter(aufgabe => !aufgabe.isRichtig).length === 0) {
-            // alles Richtig
+            // right
             setModalContent(modalData[2]);
             setOpenedModal(true);
             setAllRight(true);
         } else {
-            // noch was Falsch
+            // false
             setModalContent(modalData[1]);
             setOpenedModal(true);
             setAllRight(false);
@@ -129,7 +130,7 @@ const MultipleChoice = () => {
         }
     }
 
-
+    // sets a multipleChoice field checked
     const setAufgabeChecked = (aufgabenID, antwortID) => {
         const antwort = aufgaben.filter(aufgabe => aufgabe.id === aufgabenID)[0].antworten.filter(antwort => antwort.id === antwortID)[0]
         antwort.isChecked = !antwort.isChecked
@@ -157,17 +158,12 @@ const MultipleChoice = () => {
             </div>
 
             <div className="multipleChoiceContainer">
-                <div className="multipleChoiceHeader">
-                    <div className="textField-header">
-                        <h3>Titel</h3>
-                    </div>
-                </div>
                 <div className="multipleChoiceBody">
 
                     <div className="textField">
 
                         <div className="textFieldBody">
-                            <p>
+                            <p className="text">
                                 {text}
                             </p>
                         </div>

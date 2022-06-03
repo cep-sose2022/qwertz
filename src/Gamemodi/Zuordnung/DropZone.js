@@ -18,7 +18,6 @@ const DropZone = (props) => {
 
     const { markAsX } = useContext(ItemContext);
 
-    // von React-DnD, macht eine Komponente zu eiern, wo man eine Draggable Komponente hereinlegen kann
     const [{ isDragging }, drop] = useDrop(() => ({
         accept: [ItemState.NOTSELECTED, ItemState.UP, ItemState.DOWN],
         drop: (item) => markAsX(item.id, state),

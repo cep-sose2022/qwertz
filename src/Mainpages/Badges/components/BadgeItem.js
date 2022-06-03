@@ -44,8 +44,8 @@ return(
                     <div>
                         <Tooltip label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
                             <a className="downloadButton" href={pdfData}
-                               download={pdfName}>
-                                <FaFileDownload/> Inhalt herunterladen {}
+                               download={pdfName} >
+                                <FaFileDownload/> Inhalt herunterladen
                             </a>
                         </Tooltip>
                     </div>
@@ -54,7 +54,7 @@ return(
 
                     <div>
                         <Link className="link" to={'../Gamemodi'}
-                              onClick={() => setData(data.badgeID, data.modis)} style={{fontSize: '4vh'}}>
+                              onClick={() => setData(data.badgeID, data.modis)} style={{fontSize: '1.8rem'}}>
                             Start
                         </Link>
                     </div>

@@ -12,9 +12,9 @@ import storage from "../../storage";
 import service from "../../service";
 
 const Endscreen = () => {
+    //marks a Badge as finished
     const machEnde = () => {
-        let badgeID = storage.getBadgeID()
-        storage.setBadgePassed(parseInt(badgeID))
+        storage.setBadgePassed(parseInt(storage.getBadgeID()))
         storage.removeAll()
     }
 

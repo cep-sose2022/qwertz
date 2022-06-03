@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { useDrop } from "react-dnd";
 import { ItemState } from "./ItemState";
 import { CardContext } from "./Ablaufanordnung";
-import { Container } from "@mantine/core";
 
 
 const CardStorage = (props) => {

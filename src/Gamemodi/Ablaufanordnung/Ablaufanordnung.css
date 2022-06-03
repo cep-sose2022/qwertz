@@ -1,4 +1,4 @@
-.ablaufanordung-container {
+.ablaufanordnung-container {
     position: relative;
     top: 40px;
     padding: 10px;
@@ -7,7 +7,7 @@
 
 
 /*drag and drop section*/
-.ablaufanordung-container .ablaufanordung-body {
+.ablaufanordnung-container .ablaufanordnung-body {
     background-image: url(../../Resources/images/chemistry_edited.jpg);
     border: 5px solid;
     margin-top: 5px;
@@ -86,7 +86,7 @@
 /*drag Item*/
 .dragCard {
     vertical-align: middle;
-    font-size: smaller;
+    font-size: 1rem;
     border: 1px solid;
     padding: 15px;
     margin: 5px;
