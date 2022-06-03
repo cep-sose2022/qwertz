@@ -8,6 +8,7 @@ const { getZuordnung } = require("../controllers/zuordnungController");
 const { getKonversation, postKonversation } = require("../controllers/konversationController");
 const { postMultipleChoice, getMultipleChoice } = require("../controllers/multipleChoiceController");
 const { getImage, postImage } = require("../controllers/imageController");
+const { getSammlung, postSammlung } = require("../controllers/sammlungController");
 const { getGif, postGif } = require("../controllers/gifController");
 const { getPdf, postPdf } = require("../controllers/pdfController")
 
@@ -18,6 +19,8 @@ router.route('/getZitate').get(getZitate)
 router.route('/getBadges').get(getBadge)
 // liefert ein Wimmelbild anhand des namens
 router.route('/getImage/:name').get(getImage)
+// liefert Sammlungsraum zurück
+router.route('/getSammlung/:name').get(getSammlung)
 // liefert GIF anhand des namens
 router.route('/getGif/:name').get(getGif)
 // liefert die PDF eines Badges zurück
@@ -37,6 +40,7 @@ router.route('/postWimmelbild').post(postWimmelbild)
 router.route('/postZitat').post(postZitat)
 router.route('/postMultipleChoice').post(postMultipleChoice)
 router.route('/postImage').post(postImage)
+router.route('/postSammlung').post(postSammlung)
 router.route('/postGif').post(postGif)
 router.route('/postPdf').post(postPdf)
 
