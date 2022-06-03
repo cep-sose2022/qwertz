@@ -1,13 +1,13 @@
-import React, {useContext, useEffect, useState} from "react";
-import {BackgroundImage, Box} from "@mantine/core";
+import React, { useContext, useEffect, useState } from "react";
+import { BackgroundImage, Box } from "@mantine/core";
 
 import './Wimmelbild.css'
 import ModiHeader from "../ModiHeader";
-import {useNavigate} from "react-router";
+import { useNavigate } from "react-router";
 import service from "../../service";
 import storage from "../../storage";
 import JsonList from '../../Resources/Json/WimmelbildData.json';
-import {ModiContext} from "../Gamemodi";
+import { ModiContext } from "../Gamemodi";
 
 const modalData = [
     {
@@ -107,7 +107,7 @@ const Wimmelbild = () => {
                             marginRight: 'auto',
                             position: 'relative'
                         }}
-                        className="imagewimmelbild" src={service.getWimmelbild(storage.getBadgeID(), storage.getModiID())}
+                        className="imagewimmelbild" src={image}
                         radius="sm"
                     >
                         {/*alle Buttons*/}
