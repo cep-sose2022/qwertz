@@ -220,7 +220,6 @@
     width: 100%;
 }
 
-.tube .meter::after,
 .tube .meter::before {
     content: var(--tube-title);
     position: inherit;
@@ -237,15 +236,7 @@
     transition: 1s;
 }
 
-.tube .meter::after {
-    content: '';
-    border: 12px solid transparent;
-    border-right-color: var(--tube-color);
-    padding: 0;
-    border-radius: 0;
-    background: transparent;
-    transform: translate(-78%, 50%);
-}
+
 
 /*Tube meter */
 .tube .meter div {
