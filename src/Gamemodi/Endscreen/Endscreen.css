@@ -107,7 +107,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    animation: disappear 0s linear 7s forwards;
+    animation: disappear 0s linear 8s forwards;
 
 }
 
@@ -120,13 +120,13 @@
     right: 0;
     bottom: 0;
     background-color: rgb(255, 255, 255);
-    animation: disappear 0s linear 7s forwards;
+    animation: disappear 0s linear 8s forwards;
 }
 
 /*Button "Weiter zur Sammlung" und "Zu den Badges" disappear danach appear*/
 .btn {
     border: 5px solid;
-    animation: opacityOn 7s normal forwards step-end;
+    animation: opacityOn 8s normal forwards step-end;
     animation-delay: 0s;
 }
 
