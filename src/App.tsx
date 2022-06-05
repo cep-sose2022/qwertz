@@ -32,7 +32,9 @@ function App() {
     return (
         <Router>
             <ScrollToTop />
+            {/*
             {
+
                 <div style={{ backgroundColor: 'lightgreen' }}>
                     <a> Zum Debuggen und Testen aller Seiten, kommt dann am Ende noch weg</a>
                     <br />
@@ -47,7 +49,9 @@ function App() {
                     <Link to='Dashboard/Gamemodi/Video'>Video </Link>
                     <Link to='Admin'>Admin Bereich </Link>
                 </div>
+
             }
+             */}
             <Routes>
                 {/*Admin area*/}
                 <Route path="Admin" element={<Admin />} />
