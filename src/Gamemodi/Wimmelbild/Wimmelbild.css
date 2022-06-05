@@ -7,6 +7,7 @@
     overflow-y: scroll;
 }
 
+/*Scrollbar*/
 .wimmelbild-container .wimmelbild-body::-webkit-scrollbar {
     width: 7px;
     height: 7px;
@@ -27,6 +28,8 @@
 .wimmelbild-container .wimmelbild-body::-webkit-scrollbar-thumb {
     background: #a5a6ab;
 }
+
+/*Scrollbar ends*/
 
 .imagewimmelbild {
     border-top-left-radius: 10px;

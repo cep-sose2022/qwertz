@@ -1,5 +1,5 @@
 .badges-container {
-    margin-top:4vh;
+    margin-top: 4vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +14,7 @@
 
 .badgeline-container {
     display: flex;
-    overflow:auto;
+    overflow: auto;
     flex-direction: column;
     position: relative;
     width: 100vw;
@@ -121,10 +121,12 @@ a.downloadButton {
     float: right;
     color: rgb(95, 168, 245);
 }
+
 a.downloadButton:hover {
     float: right;
     color: rgba(95, 168, 245, 0.5);
 }
+
 .badgeline-item-content a.link {
     color: rgb(95, 168, 245);
     text-decoration: none;
@@ -177,7 +179,7 @@ a.downloadButton:hover {
 .badges-body .image::before {
     content: "";
     background-attachment: fixed;
-    background-image: url('./../../Resources/images/wallpaperbetter.jpg');
+    background-image: url('./../../Resources/images/badge_background.jpg');
     background-size: cover;
     position: absolute;
     top: 0;
@@ -186,4 +188,3 @@ a.downloadButton:hover {
     left: 0;
     opacity: 0.85;
 }
-

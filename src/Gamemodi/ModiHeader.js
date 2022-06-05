@@ -1,7 +1,13 @@
 import React, { useContext } from 'react';
+
+// import Mantine Core
 import { Button, Grid, Modal, Popover, Text, Tooltip } from "@mantine/core";
+
+// import react-icon
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { FcQuestions } from "react-icons/fc";
+
+// import ModiContext
 import { ModiContext } from "./Gamemodi";
 
 const ModiHeader = (props) => {
@@ -45,7 +51,7 @@ const ModiHeader = (props) => {
             // boxShadow: '5px 3px 4px  var(--dark-one)',
         }}>
             <Grid justify={"space-between"}>
-                {/*Modal für die Aufgabenstellung und zum Anzusagen ob alles Richtig/falsch is*/}
+                {/*Modal for the task and for confirming whether everything is right/wrong*/}
                 <Modal
                     transition="slide-down"
                     transitionDuration={900}
@@ -78,7 +84,7 @@ const ModiHeader = (props) => {
                     }
                 </Grid.Col>
 
-                {/* Popover um anzusagen das erst alle boxen zugeteilt werden müssen */}
+                {/*Popover to promise that all boxes must be assigned first*/}
                 <Grid.Col span={2}>
                     {
                         fertigVisible ?
@@ -104,7 +110,7 @@ const ModiHeader = (props) => {
                     </Tooltip>
                 </Grid.Col>
 
-                {/* Button für die Spielerklärung */}
+                {/*Game explanation button*/}
                 <Grid.Col span={2}>
                     <div style={{ textAlign: 'end' }}>
                         <Button style={{

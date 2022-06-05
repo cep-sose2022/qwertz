@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 
 // import MainPages
 import Startseite from './Mainpages/Startseite/Startseite';
@@ -31,47 +31,47 @@ import ScrollToTop from "./ScrollToTop";
 function App() {
     return (
         <Router>
-            <ScrollToTop/>
+            <ScrollToTop />
             {
-                // <div style={{backgroundColor: 'lightgreen'}}>
-                //     <a> Zum Debuggen und Testen aller Seiten, kommt dann am Ende noch weg</a>
-                //     <br/>
-                //     <Link to='Startseite'>Startseite </Link>
-                //     <Link to='Dashboard/Sammlung'>Dashboard </Link>
-                //     <Link to='Dashboard/Badges'>Badges </Link>
-                //     <Link to='Dashboard/Gamemodi/Zuordnung'>Zuordnung </Link>
-                //     <Link to='Dashboard/Gamemodi/Ablaufanordnung'>Ablaufanordnung </Link>
-                //     <Link to='Dashboard/Gamemodi/Endscreen'>Endscreen </Link>
-                //     <Link to='Dashboard/Gamemodi/Wimmelbild'>Wimmelbild </Link>
-                //     <Link to='Dashboard/Gamemodi/Konversation'>Konversation </Link>
-                //     <Link to='Dashboard/Gamemodi/Video'>Video </Link>
-                //     <Link to='Admin'>Admin Bereich </Link>
-                // </div>
+                <div style={{ backgroundColor: 'lightgreen' }}>
+                    <a> Zum Debuggen und Testen aller Seiten, kommt dann am Ende noch weg</a>
+                    <br />
+                    <Link to='Startseite'>Startseite </Link>
+                    <Link to='Dashboard/Sammlung'>Dashboard </Link>
+                    <Link to='Dashboard/Badges'>Badges </Link>
+                    <Link to='Dashboard/Gamemodi/Zuordnung'>Zuordnung </Link>
+                    <Link to='Dashboard/Gamemodi/Ablaufanordnung'>Ablaufanordnung </Link>
+                    <Link to='Dashboard/Gamemodi/Endscreen'>Endscreen </Link>
+                    <Link to='Dashboard/Gamemodi/Wimmelbild'>Wimmelbild </Link>
+                    <Link to='Dashboard/Gamemodi/Konversation'>Konversation </Link>
+                    <Link to='Dashboard/Gamemodi/Video'>Video </Link>
+                    <Link to='Admin'>Admin Bereich </Link>
+                </div>
             }
             <Routes>
                 {/*Admin area*/}
-                <Route path="Admin" element={<Admin/>}/>
+                <Route path="Admin" element={<Admin />} />
                 {/*MainPage*/}
-                <Route path="" element={<Startseite JsonZitate={JsonZitate}/>}/>
-                <Route path="Startseite" element={<Startseite JsonZitate={JsonZitate}/>}/>
+                <Route path="" element={<Startseite JsonZitate={JsonZitate} />} />
+                <Route path="Startseite" element={<Startseite JsonZitate={JsonZitate} />} />
                 {/*Dashboard outlets}*/}
-                <Route path="Dashboard" element={<Dashboard/>}>
-                    <Route path="Badges" element={<Badges/>}/>
-                    <Route path="Sammlung" element={<Sammlung/>}/>
-                    <Route path="Error503" element={<Error503Page/>}/>
-                    <Route path="Gamemodi" element={<Gamemodi/>}>
+                <Route path="Dashboard" element={<Dashboard />}>
+                    <Route path="Badges" element={<Badges />} />
+                    <Route path="Sammlung" element={<Sammlung />} />
+                    <Route path="Error503" element={<Error503Page />} />
+                    <Route path="Gamemodi" element={<Gamemodi />}>
                         {/*gamemodi outlets */}
-                        <Route path="Ablaufanordnung" element={<Ablaufanordnung/>}/>
-                        <Route path="Wimmelbild" element={<Wimmelbild/>}/>
-                        <Route path="Zuordnung" element={<Zuordnung/>}/>
-                        <Route path="Endscreen" element={<Endscreen/>}/>
-                        <Route path="Konversation" element={<Konversation/>}/>
-                        <Route path="MultipleChoice" element={<MultipleChoice/>}/>
+                        <Route path="Ablaufanordnung" element={<Ablaufanordnung />} />
+                        <Route path="Wimmelbild" element={<Wimmelbild />} />
+                        <Route path="Zuordnung" element={<Zuordnung />} />
+                        <Route path="Endscreen" element={<Endscreen />} />
+                        <Route path="Konversation" element={<Konversation />} />
+                        <Route path="MultipleChoice" element={<MultipleChoice />} />
                     </Route>
                 </Route>
             </Routes>
 
-            <Footer/>
+            <Footer />
 
         </Router>
     );

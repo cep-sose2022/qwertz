@@ -1,8 +1,14 @@
-import React, {createContext, useEffect, useState} from 'react';
-import {Outlet} from "react-router-dom";
+import React, { createContext, useEffect, useState } from 'react';
+import { Outlet } from "react-router-dom";
+import { useNavigate } from "react-router";
+
+// import Fortschrittsanzeige, whether mode passed
 import Fortschrittsanzeige from "./Fortschrittsanzeige";
-import {Button, Group, Modal} from "@mantine/core";
-import {useNavigate} from "react-router";
+
+// import Mantine Core
+import { Button, Group, Modal } from "@mantine/core";
+
+// import Backend
 import storage from '../storage';
 
 // let modiData = [
@@ -46,15 +52,15 @@ const Gamemodi = () => {
 
 
     useEffect(() => {
-            if (firstRender) {
-                setFirstRender(false)
-                loadModiData()
-            }
-            if (reload) {
-                setReload(false)
-                redirect()
-            }
+        if (firstRender) {
+            setFirstRender(false)
+            loadModiData()
         }
+        if (reload) {
+            setReload(false)
+            redirect()
+        }
+    }
     )
 
     // navigierte zum aktuellen Modi
@@ -118,16 +124,16 @@ const Gamemodi = () => {
             {/* Fortschrittsanzeige */}
             <div className="section-header">
                 <h3 className="title" data-title={"Badge " + badgeNr}>{currentModiTitle}</h3>
-                <br/>
-                <Fortschrittsanzeige modis={modis}/>
-                <br/>
-                <div onClick={() => setModalOpened(true)} className="xbutton"/>
+                <br />
+                <Fortschrittsanzeige modis={modis} />
+                <br />
+                <div onClick={() => setModalOpened(true)} className="xbutton" />
             </div>
 
             {/* Bereich für die Modi*/}
-            <div className="container" style={{position: 'relative'}}>
-                <ModiContext.Provider value={{markAsPassed, redirect}}>
-                    <Outlet/>
+            <div className="container" style={{ position: 'relative' }}>
+                <ModiContext.Provider value={{ markAsPassed, redirect }}>
+                    <Outlet />
                 </ModiContext.Provider>
             </div>
         </>

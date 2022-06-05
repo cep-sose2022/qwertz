@@ -1,13 +1,22 @@
 import React from "react";
-import "./Endscreen.css";
-import { Container, Grid } from "@mantine/core";
 import { Link } from "react-router-dom";
+
+// import CSS
+import "./Endscreen.css";
+// import Mantine Core
+import { Container, Grid } from "@mantine/core";
+
+// import react-icons
 import { VscFolderLibrary } from "react-icons/vsc";
 import { FaAward } from "react-icons/fa";
+
+// import Data
 import EndscreenData from "./EndscreenData";
+
+// import Component
 import EndscreenItem from "./components/EndscreenItem";
-import image from "../../Resources/images/orange_zwinkern.png";
-import gif from "../../Resources/zeppgefunden.gif";
+
+// import Backend
 import storage from "../../storage";
 import service from "../../service";
 

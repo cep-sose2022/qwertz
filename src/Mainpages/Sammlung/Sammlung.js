@@ -1,5 +1,4 @@
 import Headline from "../Startseite/Headline";
-import bild from "../../Resources/images/SammlungDashboard.png";
 import React, { useEffect, useState } from "react";
 import "./Sammlung.css";
 import storage from "../../storage";

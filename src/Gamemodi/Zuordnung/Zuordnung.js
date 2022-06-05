@@ -1,18 +1,33 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
-import DropZone from "./DropZone";
-import {DndProvider} from "react-dnd";
-import {HTML5Backend} from "react-dnd-html5-backend";
-import DragItem from "./DragItem";
-import {ItemState} from "./ItemState";
-import {Grid} from "@mantine/core";
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useNavigate } from "react-router";
 
+import DropZone from "./DropZone";
+import DragItem from "./DragItem";
+
+// import ReactDND for Drag and Drop
+import { DndProvider } from "react-dnd";
+
+// import HTML5 Backend
+import { HTML5Backend } from "react-dnd-html5-backend";
+
+// import ItemState for right and wrong answer
+import { ItemState } from "./ItemState";
+
+// import Mantine Core
+import { Grid } from "@mantine/core";
+
+// import JsonList
 import JsonList from "../../Resources/Json/ZuordnungData.json";
 
-import {useNavigate} from "react-router";
+// import ModiHeader
+import ModiHeader from "../ModiHeader";
+
+// import ModiContext
+import { ModiContext } from "../Gamemodi";
+
+// import Backend
 import service from "../../service";
 import storage from "../../storage";
-import ModiHeader from "../ModiHeader";
-import {ModiContext} from "../Gamemodi";
 
 export const ItemContext = createContext({
     markAsX: (_id, _state) => {
@@ -34,7 +49,6 @@ const modalData = [
         content: "Super, Sie haben alles richtig gelöst! 👏"
     }
 ]
-
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -62,8 +76,6 @@ const Zuordnung = () => {
     const [openedPopover, setOpenedPopover] = useState(false);
     const [modalContent, setModalContent] = useState("");
     const [allRight, setAllRight] = useState(false);
-
-
 
     const navigator = useNavigate();
     const { redirect } = useContext(ModiContext);

@@ -1,3 +1,4 @@
+/*body area where confetti is*/
 .endscreen-body {
     display: flex;
     align-items: center;
@@ -11,7 +12,7 @@
     border-radius: 25px;
 }
 
-
+/*reward image next to the speech bubble*/
 .imgerlen {
     position: relative;
     animation: bounceIn 1s infinite;
@@ -24,6 +25,7 @@
     top: 50px;
 }
 
+/*reward image next to the speech bubble*/
 /*bounce animation*/
 @keyframes bounceIn {
 
@@ -46,7 +48,7 @@
 }
 
 
-/*hin und her springen*/
+/*picture let the animation jump back and forth*/
 @keyframes example {
     0% {
         left: 0px;
@@ -101,7 +103,7 @@
     top: 6px;
 }
 
-/*Gif appear dann disappear*/
+/*Gif appear then disappear*/
 .gif {
     display: block;
     margin-left: auto;
@@ -111,7 +113,7 @@
 
 }
 
-/*Container appear dann disappear*/
+/*Container appear then disappear*/
 .endscreen-container .endscreengif {
     position: absolute;
     margin: auto;
@@ -123,7 +125,7 @@
     animation: disappear 0s linear 8s forwards;
 }
 
-/*Button "Weiter zur Sammlung" und "Zu den Badges" disappear danach appear*/
+/*Button "Weiter zur Sammlung" and "Zu den Badges" disappear then appear*/
 .btn {
     border: 5px solid;
     animation: opacityOn 8s normal forwards step-end;

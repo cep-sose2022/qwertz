@@ -1,12 +1,17 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import {HashLink} from "react-router-hash-link";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import NavBar from "../NavBar";
 import Zitat from './Zitat'
-import img1 from './../../Resources/images/orange_normal.png'
-import img2 from './../../Resources/images/erlenmeyerkolben_gruen_normal.png'
-import img3 from './../../Resources/images/icons8-controller.png'
-import img5 from './../../Resources/images/icons8-online-learning.png'
+
+// import Zepp and Ted for "Über uns"- Section
+import img1 from './../../Resources/images/Zepp/orange_zwinkern.png'
+import img2 from './../../Resources/images/Ted/erlenmeyerkolben_gruen_normal.png'
+
+// import icon picture for Cards
+import img3 from './../../Resources/images/Startseite-icons/icons8-controller.png'
+import img5 from './../../Resources/images/Startseite-icons/icons8-online-learning.png'
+
 import Header from "./Header";
 import Headline from "./Headline";
 import Card from "./Card";

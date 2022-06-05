@@ -1,19 +1,43 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
-import {DndProvider} from "react-dnd";
-import CardStorage from "./CardStorage";
-import './Ablaufanordnung.css'
-import DragCard from "./DragCard";
-import {ItemState} from "./ItemState";
-import {HTML5Backend} from "react-dnd-html5-backend";
-import JsonList from "../../Resources/Json/AblaufanordnungData.json";
-import DropBox from "./DropBox";
-import {SimpleGrid} from "@mantine/core";
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useNavigate } from "react-router";
 
+// import ReactDND for Drag and Drop
+import { DndProvider } from "react-dnd";
+
+// import CardStorage.js
+import CardStorage from "./CardStorage";
+
+// import CSS
+import './Ablaufanordnung.css'
+
+// import DragCard, whether the answer is correct or not
+import DragCard from "./DragCard";
+
+// import ItemState for right and wrong answer
+import { ItemState } from "./ItemState";
+
+// import JsonList
+import JsonList from "../../Resources/Json/AblaufanordnungData.json";
+
+// import DropBox 
+import DropBox from "./DropBox";
+
+// import Mantine Core
+import { SimpleGrid } from "@mantine/core";
+
+// import ModiHeader
 import ModiHeader from "../ModiHeader";
+
+// import ModiContext
+import { ModiContext } from "../Gamemodi";
+
+// import HTML5 Backend
+import { HTML5Backend } from "react-dnd-html5-backend";
+
+// import Backend
 import service from "../../service";
 import storage from "../../storage";
-import {useNavigate} from "react-router";
-import {ModiContext} from "../Gamemodi";
+
 
 export const CardContext = createContext({
     markAsX: (_id, _state) => {
@@ -188,22 +212,22 @@ const Ablaufanordnung = () => {
                             {
                                 cards.filter(card => card.boxId === 0)
                                     .map(card => (
-                                            <DragCard key={card.key} id={card.id} text={card.text} state={card.state}/>
-                                        )
+                                        <DragCard key={card.key} id={card.id} text={card.text} state={card.state} />
+                                    )
                                     )
                             }
                         </CardStorage>
                         {/*Card Heap end*/}
 
                         {/*Grid to drag the cards in*/}
-                        <SimpleGrid style={{padding: 15}}
-                                    cols={4}
-                                    spacing="lg"
-                                    breakpoints={[
-                                        {maxWidth: 980, cols: 3, spacing: "lg"},
-                                        {maxWidth: 755, cols: 2, spacing: "lg"},
-                                        {maxWidth: 600, cols: 1, spacing: "lg"},
-                                    ]}
+                        <SimpleGrid style={{ padding: 15 }}
+                            cols={4}
+                            spacing="lg"
+                            breakpoints={[
+                                { maxWidth: 980, cols: 3, spacing: "lg" },
+                                { maxWidth: 755, cols: 2, spacing: "lg" },
+                                { maxWidth: 600, cols: 1, spacing: "lg" },
+                            ]}
                         >
                             {
                                 boxes.map(box => (
