@@ -4,7 +4,7 @@ import './Zuordnung.css';
 const DragItem = (props: { id: number; state: any; text: String; right: boolean }) => {
     const { id, text, state, right } = props;
 
-    const [{}, drag] = useDrag({
+    const [{ }, drag] = useDrag({
         type: state,
         item: {
             id: id,
@@ -19,6 +19,7 @@ const DragItem = (props: { id: number; state: any; text: String; right: boolean 
 
     return (
         <p ref={drag} className="Card"
+            // if card inserted correctly then change the color to green, otherwise the color stays the same
             style={{
                 backgroundColor: right ? 'var(--antwortRichtig)' : 'var(--spielbereich1)',
                 border: '1px solid',

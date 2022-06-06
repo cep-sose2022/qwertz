@@ -1,9 +1,10 @@
-/*Füllung ändern*/
+/*fixed colors*/
 :root {
 
     --tube-color: #4488e0;
 }
 
+/*Background from the test tube*/
 .tube {
     position: relative;
     height: 200px;
@@ -14,6 +15,7 @@
     background-color: #272822;
 }
 
+/*the top of the test tube*/
 .tube::after {
     content: "";
     position: absolute;
@@ -25,6 +27,7 @@
     background-color: #272822;
 }
 
+/*the complete body of the test tube*/
 .tube .body {
     position: absolute;
     border-radius: inherit;
@@ -35,6 +38,7 @@
     z-index: 5;
 }
 
+/*the glass shades on the test tube*/
 .tube .shine {
     position: absolute;
     left: 10%;
@@ -62,6 +66,9 @@
     bottom: 0;
 }
 
+/*the glass shades on the test tube ends*/
+
+/*the liquid moves*/
 @keyframes liquid {
     0% {
         transform: translateX(-50%) rotate(0deg);
@@ -70,8 +77,12 @@
     100% {
         transform: translateX(-50%) rotate(360deg);
     }
+
 }
 
+/*the liquid moves ends*/
+
+/*the liquid movements that it can reach a maximum of 100*/
 .tube .liquid {
     position: absolute;
     height: 80%;
@@ -79,6 +90,7 @@
     bottom: 0;
 }
 
+/*the liquid in what percentage it is currently*/
 .tube .liquid .percentage {
     position: absolute;
     width: 100%;
@@ -109,109 +121,9 @@
     border-radius: 60px;
 }
 
-@keyframes bubble {
-    from {
-        background: #272822;
-        transform: scale(0.3) rotate(50deg);
-        margin-left: 0;
-    }
+/*the liquid in what percentage it is currently ends*/
 
-    10% {
-        margin-left: 1px;
-    }
-
-    20% {
-        margin-left: -1px;
-    }
-
-    30% {
-        margin-left: 1px;
-    }
-
-    40% {
-        margin-left: -1px;
-    }
-
-    50% {
-        margin-left: 1px;
-        background: var(--tube-color);
-        transform: scale(0.85) rotate(50deg);
-        opacity: .75;
-    }
-
-    60% {
-        margin-left: -1px;
-    }
-
-    70% {
-        margin-left: 1px;
-    }
-
-    80% {
-        margin-left: -1px;
-    }
-
-    90% {
-        margin-left: 1px;
-    }
-
-    to {
-        margin-left: -1px;
-        bottom: 135%;
-        opacity: 0;
-        transform: scale(1) rotate(50deg);
-    }
-}
-
-.tube .bubbles {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: calc(var(--tube-percentage) + calc(100% - var(--tube-percentage)));
-    z-index: 10;
-}
-
-.tube .bubbles div {
-    position: absolute;
-    left: 30%;
-    border-radius: 50% 50% 0 50%;
-    background: var(--tube-color);
-    width: 10px;
-    height: 10px;
-    opacity: 0.8;
-    bottom: calc(var(--tube-percentage) / 3);
-    animation: bubble 3s infinite linear;
-    transform: scale(0.3) rotate(50deg);
-    transition: 1s;
-}
-
-.tube .bubbles div:nth-child(2) {
-    left: 40%;
-    opacity: 0.7;
-    animation-delay: 100ms;
-    animation-duration: 2.5s;
-}
-
-.tube .bubbles div:nth-child(3) {
-    left: 40%;
-    opacity: 0.6;
-    animation-delay: 200ms;
-}
-
-.tube .bubbles div:nth-child(4) {
-    left: 60%;
-    animation-delay: 250ms;
-    animation-duration: 1.75s;
-}
-
-.tube .bubbles div:nth-child(5) {
-    left: 50%;
-    opacity: 0.8;
-    animation-delay: 150ms;
-    animation-duration: 2.25s;
-}
-
+/*The meter height from the test tube*/
 .tube .meter {
     position: absolute;
     height: 80%;
@@ -236,9 +148,6 @@
     transition: 1s;
 }
 
-
-
-/*Tube meter */
 .tube .meter div {
     position: absolute;
     left: -4px;
@@ -270,8 +179,9 @@
     top: 100%;
 }
 
-/*Dashboard Bild*/
+/*The meter height from the test tube ends*/
 
+/*The image for the collections*/
 .dashboardBild {
     position: relative;
     display: block;

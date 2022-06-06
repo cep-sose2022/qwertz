@@ -4,8 +4,6 @@
     padding: 10px;
 }
 
-
-
 /*drag and drop section*/
 .ablaufanordnung-container .ablaufanordnung-body {
     background-image: url(../../Resources/images/ablaufanordnung_background.jpg);
@@ -22,6 +20,7 @@
     font-weight: bold;
 }
 
+/*scrollbar design*/
 .scrollmenu::-webkit-scrollbar {
     width: 7px;
     height: 7px;
@@ -42,6 +41,8 @@
 .scrollmenu::-webkit-scrollbar-thumb {
     background: #D9A25F;
 }
+
+/*scrollbar design ends*/
 
 .card-body {
     display: flex;
@@ -98,7 +99,7 @@
     overflow: auto;
 }
 
-
+/*scrollbar design*/
 .dragCard::-webkit-scrollbar {
     width: 7px;
     height: 7px;
@@ -118,3 +119,5 @@
 .dragCard::-webkit-scrollbar-thumb {
     background: gray;
 }
+
+/*scrollbar design ends*/

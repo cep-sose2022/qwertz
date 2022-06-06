@@ -5,10 +5,10 @@ import { useNavigate } from "react-router";
 // import Fortschrittsanzeige, whether mode passed
 import Fortschrittsanzeige from "./Fortschrittsanzeige";
 
-// import Mantine Core
+// import Mantine core library includes essential component
 import { Button, Group, Modal } from "@mantine/core";
 
-// import Backend
+// import Backend to get the data from the database
 import storage from '../storage';
 
 // let modiData = [
@@ -63,7 +63,7 @@ const Gamemodi = () => {
     }
     )
 
-    // navigierte zum aktuellen Modi
+    // navigates to the current mode
     const redirect = (eigenerName) => {
         const currentModiTitle = storage.getCurrentModiTitle()
         if (currentModiTitle !== null && currentModiTitle !== eigenerName) {
@@ -72,7 +72,7 @@ const Gamemodi = () => {
     }
 
     const loadModiData = () => {
-        // setzt den aktuellen Modi Title
+        // sets the current mode title
         const tempModiTitle = storage.getCurrentModiTitle()
         if (tempModiTitle === undefined || tempModiTitle === null) {
             const currentModi = modis.filter(modi => !modi.passed)[0]
@@ -84,9 +84,8 @@ const Gamemodi = () => {
         }
     }
 
-    // setzt einen Modi alls 'Passed' und leitet zum nächsten weiter
+    // sets a mode as 'Passed' and forwards to the next
     const markAsPassed = () => {
-
         storage.setModiPassed()
         modis.filter(modi => !modi.passed)[0].passed = true
 
@@ -107,7 +106,7 @@ const Gamemodi = () => {
 
     return (
         <>
-            {/* Modal zum abbrechen*/}
+            {/* Modal to cancel*/}
             <Modal opened={modalOpened} onClose={() => setModalOpened(false)}>
                 <p>Möchtest du wirklich abbrechen?</p>
                 <Group>
@@ -120,8 +119,9 @@ const Gamemodi = () => {
                     <Button onClick={() => setModalOpened(false)}>Nein</Button>
                 </Group>
             </Modal>
+            {/* Modal to cancel ends*/}
 
-            {/* Fortschrittsanzeige */}
+            {/* progress indicator */}
             <div className="section-header">
                 <h3 className="title" data-title={"Badge " + badgeNr}>{currentModiTitle}</h3>
                 <br />
@@ -129,13 +129,16 @@ const Gamemodi = () => {
                 <br />
                 <div onClick={() => setModalOpened(true)} className="xbutton" />
             </div>
+            {/* progress indicator ends*/}
 
-            {/* Bereich für die Modi*/}
+            {/* area for the modules*/}
             <div className="container" style={{ position: 'relative' }}>
                 <ModiContext.Provider value={{ markAsPassed, redirect }}>
                     <Outlet />
                 </ModiContext.Provider>
             </div>
+            {/* area for the modules ends*/}
+
         </>
     );
 }

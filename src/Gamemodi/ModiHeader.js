@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-// import Mantine Core
+// import Mantine Core library 
 import { Button, Grid, Modal, Popover, Text, Tooltip } from "@mantine/core";
 
 // import react-icon

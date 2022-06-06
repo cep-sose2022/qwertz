@@ -11,7 +11,7 @@
     width: 100%;
 }
 
-
+/*The area where the badges are*/
 .badgeline-container {
     display: flex;
     overflow: auto;
@@ -34,6 +34,9 @@
     z-index: 0;
 }
 
+/*The area where the badges are ends*/
+
+/*The area where there is an arrow on the box*/
 .badgeline-item {
     display: flex;
     justify-content: flex-end;
@@ -50,6 +53,9 @@
     padding-right: 0;
 }
 
+/*The area where there is an arrow on the box ends*/
+
+/*The box/badge where the individual OT topics are located*/
 .badgeline-item-content {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
@@ -86,6 +92,9 @@
     box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+/*The box/badge where the individual OT topics are located ends*/
+
+/*the circle where there is a lock*/
 .badgeline-item-content .tag {
     position: absolute;
     top: -60px;
@@ -97,7 +106,7 @@
     place-items: center;
     font-size: 35px;
     box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.418);
-    background: linear-gradient(to right, rgb(106, 6, 236), rgb(44, 0, 240));
+    background: linear-gradient(to right, rgb(52, 6, 236), rgb(44, 0, 240));
 }
 
 .badgeline-item-content p {
@@ -116,7 +125,7 @@
     max-width: 70vw;
 }
 
-
+/*download button to download the content*/
 a.downloadButton {
     float: right;
     color: rgb(95, 168, 245);
@@ -127,6 +136,9 @@ a.downloadButton:hover {
     color: rgba(95, 168, 245, 0.5);
 }
 
+/*download button to download the content ends*/
+
+/*the "Start" button*/
 .badgeline-item-content a.link {
     color: rgb(95, 168, 245);
     text-decoration: none;
@@ -165,6 +177,9 @@ a.downloadButton:hover {
     left: -40px;
 }
 
+/*the "Start" button ends*/
+
+/*background image*/
 .badges-body .image {
     position: relative;
     height: 100%;
@@ -188,3 +203,5 @@ a.downloadButton:hover {
     left: 0;
     opacity: 0.85;
 }
+
+/*background image ends*/

@@ -20,11 +20,10 @@ const DragCard = (props: { id: number; state: any; text: String }) => {
 
     return (
         <p ref={drag} className="dragCard"
+            // if card inserted correctly then change the color to green, otherwise the color stays the same
             style={{
                 backgroundColor: ItemState.RIGHT === state ? 'var(--antwortRichtig)' : 'var(--spielbereich1)',
-
                 fontSize: (text ? 13.4 : undefined),
-
             }}>
 
             {text}

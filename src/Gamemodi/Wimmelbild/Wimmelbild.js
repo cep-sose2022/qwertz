@@ -1,13 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
+
+// import Mantine Core for responsive BackgroundImage and Box
 import { BackgroundImage, Box } from "@mantine/core";
 
 import './Wimmelbild.css'
 import ModiHeader from "../ModiHeader";
 import { useNavigate } from "react-router";
-import service from "../../service";
-import storage from "../../storage";
+
 import JsonList from '../../Resources/Json/WimmelbildData.json';
 import { ModiContext } from "../Gamemodi";
+
+// import Backend to get the data from the database
+import service from "../../service";
+import storage from "../../storage";
 
 const modalData = [
     {
@@ -84,15 +89,15 @@ const Wimmelbild = () => {
                     modalContent={modalContent}
                     openedModal={openedModal}
                     setOpenedModal={setOpenedModal}
-                    openedPopover={null}
-                    setOpenedPopover={null}
-                    checkIfAllRight={null}
+                    openedPopover={false}
+                    setOpenedPopover={false}
+                    checkIfAllRight={false}
                     eigenerName={eigenerName}
                     allRight={allRight}
                     modalData={modalData}
                     aufgabenstellungVisible={false}
                     fertigVisible={false}
-                    tooltipText="Du musst erst alles gefunden haben um weiter zu machen!"
+                    tooltipText="⚠️ Sie müssen erst alles gefunden haben, um weiterzumachen!"
                     popoverText=""
                 />
             </div>
@@ -110,7 +115,7 @@ const Wimmelbild = () => {
                         className="imagewimmelbild" src={image}
                         radius="sm"
                     >
-                        {/*alle Buttons*/}
+                        {/*all Buttons*/}
                         {
                             buttons.map(b => (
                                 <button

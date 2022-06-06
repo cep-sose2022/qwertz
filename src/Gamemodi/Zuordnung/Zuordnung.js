@@ -13,7 +13,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 // import ItemState for right and wrong answer
 import { ItemState } from "./ItemState";
 
-// import Mantine Core
+// import Mantine core library includes essential component
 import { Grid } from "@mantine/core";
 
 // import JsonList
@@ -25,7 +25,7 @@ import ModiHeader from "../ModiHeader";
 // import ModiContext
 import { ModiContext } from "../Gamemodi";
 
-// import Backend
+// import Backend to get the data from the database
 import service from "../../service";
 import storage from "../../storage";
 
@@ -176,8 +176,8 @@ const Zuordnung = () => {
                             modalData={modalData}
                             aufgabenstellungVisible={false}
                             fertigVisible={true}
-                            tooltipText="Du musst alles richtig haben um weiter zu machen!"
-                            popoverText="Du musst erst alle Boxen einsetzen"
+                            tooltipText="⚠️ Sie müssen erst alles richtig haben, um weiterzumachen!"
+                            popoverText="⚠️ Sie müssen erst alle Boxen eingesetzt haben!"
                         />
                     </div>
                     <div>
@@ -185,7 +185,7 @@ const Zuordnung = () => {
                             <Grid.Col span={10}>
                                 {/*heap of items */}
                                 <div className="item-heap">
-                                    {/* Storage für die antworten */}
+                                    {/*Storage for the answers*/}
                                     <DropZone type="Left">
                                         {
                                             antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
@@ -195,13 +195,13 @@ const Zuordnung = () => {
                                             )
                                         }
                                     </DropZone>
+                                    {/*Storage for the answers ends*/}
                                 </div>
                             </Grid.Col>
                             <Grid.Col span={14}>
 
                                 <div className="answer-heap">
                                     {/*left answer container*/}
-
                                     <div className="upContainer">
                                         <div className="header"><h3 style={{
                                             backgroundColor: "D9A25F",
@@ -225,6 +225,8 @@ const Zuordnung = () => {
                                             }
                                         </DropZone>
                                     </div>
+                                    {/*left answer container ends*/}
+
                                     {/*right answer container*/}
                                     <div className="downContainer">
                                         <div className="header">
@@ -250,6 +252,7 @@ const Zuordnung = () => {
                                             }
                                         </DropZone>
                                     </div>
+                                    {/*right answer container ends*/}
                                 </div>
                             </Grid.Col>
                         </Grid>

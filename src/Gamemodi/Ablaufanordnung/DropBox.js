@@ -23,6 +23,7 @@ const DropBox = (props) => {
     return (
         <Center
             ref={drop}
+            // the lower cards where the upper cards are used
             style={{
                 background: (isDragging ? 'linear-gradient(to right bottom,gray, gray)' : 'linear-gradient(to right bottom,gray,gray)'),
                 width: "auto",

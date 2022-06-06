@@ -20,6 +20,7 @@ const CardStorage = (props) => {
     return (
         <div
             ref={drop}
+            /*the background color where the cards are located*/
             style={{
                 backgroundColor: (isDragging ? 'gray' : undefined),
 

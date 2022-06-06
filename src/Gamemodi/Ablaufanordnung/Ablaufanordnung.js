@@ -7,7 +7,7 @@ import { DndProvider } from "react-dnd";
 // import CardStorage.js
 import CardStorage from "./CardStorage";
 
-// import CSS
+// import CSS for the design
 import './Ablaufanordnung.css'
 
 // import DragCard, whether the answer is correct or not
@@ -22,7 +22,7 @@ import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 // import DropBox 
 import DropBox from "./DropBox";
 
-// import Mantine Core
+// import Mantine Core for responsive Grid-Layout
 import { SimpleGrid } from "@mantine/core";
 
 // import ModiHeader
@@ -34,7 +34,7 @@ import { ModiContext } from "../Gamemodi";
 // import HTML5 Backend
 import { HTML5Backend } from "react-dnd-html5-backend";
 
-// import Backend
+// import Backend to get the data from the database
 import service from "../../service";
 import storage from "../../storage";
 
@@ -86,8 +86,8 @@ const Ablaufanordnung = () => {
     const eigenerName = 'Ablaufanordnung';
     const [cards, setCards] = useState([]);
     const [boxes] = useState([]);
-    const [openedModal, setOpenedModal] = useState(true);
-    const [openedPopover, setOpenedPopover] = useState(false);
+    const [openedModal, setOpenedModal] = useState(true); // Task is displayed every time
+    const [openedPopover, setOpenedPopover] = useState(false); // so you can close popver again
     const [modalContent, setModalContent] = useState(modalData[3]);
     const [allRight, setAllRight] = useState(false);
 
@@ -202,8 +202,8 @@ const Ablaufanordnung = () => {
                             modalData={modalData}
                             aufgabenstellungVisible={true}
                             fertigVisible={true}
-                            tooltipText="Du musst alles richtig haben um weiter zu machen!"
-                            popoverText="Du musst erst alle Boxen einsetzen"
+                            tooltipText="⚠️ Sie müssen erst alles richtig haben, um weiterzumachen!"
+                            popoverText="⚠️ Sie müssen erst alle Boxen eingesetzt haben!"
                         />
                     </div>
                     <div className="ablaufanordnung-body">

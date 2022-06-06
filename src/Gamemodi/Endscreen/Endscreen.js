@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // import CSS
 import "./Endscreen.css";
-// import Mantine Core
+// import Mantine Core for responsive Container and Grid-Layout
 import { Container, Grid } from "@mantine/core";
 
 // import react-icons
@@ -16,7 +16,7 @@ import EndscreenData from "./EndscreenData";
 // import Component
 import EndscreenItem from "./components/EndscreenItem";
 
-// import Backend
+// import Backend to get the data from the database
 import storage from "../../storage";
 import service from "../../service";
 
@@ -54,7 +54,7 @@ const Endscreen = () => {
                         </div>
                     </div>
 
-
+                    {/*the picture is getting from the database*/}
                     <img className="imgerlen" src={service.getImage("badge" + storage.getBadgeID())} alt="erlenmeyerkolbenZwinkert" />
                 </Grid>
 
@@ -62,6 +62,7 @@ const Endscreen = () => {
             <>
                 <Container size={10100} px={0}>
                     <section className="endscreengif">
+                        {/*the GIF is getting from the database*/}
                         <img className="gif" src={service.getGif("badge" + storage.getBadgeID())} alt="" />
                     </section>
                 </Container>

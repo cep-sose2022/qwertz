@@ -47,6 +47,7 @@
     }
 }
 
+/*bounce animation ends*/
 
 /*picture let the animation jump back and forth*/
 @keyframes example {
@@ -71,11 +72,13 @@
     }
 }
 
+/*picture let the animation jump back and forth ends*/
 
 .endscreen-text {
     justify-content: center;
 }
 
+/*speech bubble design*/
 .speechbubble {
     margin-top: 25%;
     border-radius: 25px;
@@ -103,6 +106,8 @@
     top: 6px;
 }
 
+/*speech bubble design ends*/
+
 /*Gif appear then disappear*/
 .gif {
     display: block;
@@ -110,7 +115,6 @@
     margin-right: auto;
     width: 50%;
     animation: disappear 0s linear 8s forwards;
-
 }
 
 /*Container appear then disappear*/
@@ -132,6 +136,7 @@
     animation-delay: 0s;
 }
 
+/*the individual steps of the animation sequence are defined*/
 @keyframes disappear {
     to {
         opacity: 0;
@@ -144,3 +149,5 @@
         opacity: 0;
     }
 }
+
+/*the individual steps of the animation sequence are defined ends*/
