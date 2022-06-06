@@ -203,7 +203,7 @@ const Ablaufanordnung = () => {
                             aufgabenstellungVisible={true}
                             fertigVisible={true}
                             tooltipText="⚠️ Sie müssen erst alles richtig haben, um weiterzumachen!"
-                            popoverText="⚠️ Sie müssen erst alle Boxen eingesetzt haben!"
+                            popoverText="⚠️ Sie müssen erst alle Kärtchen eingesetzt haben!"
                         />
                     </div>
                     <div className="ablaufanordnung-body">
