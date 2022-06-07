@@ -35,10 +35,10 @@ service.getImage = (name) => {
         return null
     }
 }
-service.getSammlung = (name) => {
+service.getSammlung = (badgeID) => {
     try {
         const xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", `${backendUrl}/getSammlung/${name}`, false);
+        xmlHttp.open("GET", `${backendUrl}/getSammlung/${badgeID}`, false);
         xmlHttp.send(null);
         return "data:image/png;base64," + JSON.parse(xmlHttp.responseText)[0].sammlung;
     } catch (e) {

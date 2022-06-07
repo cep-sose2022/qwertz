@@ -32,7 +32,7 @@ const Sammlung = () => {
             return img
         else
             // gets the image from the last passed badge from the db
-            return service.getSammlung("badge" + passedBadges[passedBadges.length - 1].badgeID)
+            return service.getSammlung(passedBadges[passedBadges.length - 1].badgeID)
     }
 
     return (
