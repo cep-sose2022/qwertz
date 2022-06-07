@@ -31,7 +31,6 @@ Das Backend befindet sich in folgendem Repository [qwertz_backend](https://githu
 
 ## Starten der Software
 - Um die Awareness-Schulung zu starten wird das [Backend](#Backend) benötigt.
-
 - Dieses muss vor der Anwendung mit ```npm start server``` gestartet werden.
   - und läuft nun auf [http://localhost:5000](http://localhost:5000)
 - Danach kann die Anwendung mit ```npm start``` gestartet werden. 
@@ -42,7 +41,11 @@ Das Backend befindet sich in folgendem Repository [qwertz_backend](https://githu
 
 ## Architektur
 
-##Technologien
+## Technologien
+- [React](https://reactjs.org/)
+- [ReactDND](https://react-dnd.github.io/react-dnd/)
+- [NodeJS](https://nodejs.org)
+- [Mantine](https://mantine.dev/)
 
 ## Team
 
