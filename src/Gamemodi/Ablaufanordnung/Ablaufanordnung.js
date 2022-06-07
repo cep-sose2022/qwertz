@@ -19,7 +19,7 @@ import { ItemState } from "./ItemState";
 // import JsonList
 import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 
-// import DropBox 
+// import DropBox
 import DropBox from "./DropBox";
 
 // import Mantine Core for responsive Grid-Layout
@@ -111,7 +111,6 @@ const Ablaufanordnung = () => {
             }
 
             Data.map((object, idx) => {
-                if (idx <= 3) {
                     let card = {
                         key: Math.random(),
                         id: idx + 1,
@@ -125,7 +124,6 @@ const Ablaufanordnung = () => {
                         id: card.id
                     };
                     boxes.push(box);
-                }
             }
             )
             setCards(shuffle(cards));
