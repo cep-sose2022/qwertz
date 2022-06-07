@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Headline from "../Startseite/Headline";
 
 // import CSS for the design
@@ -10,7 +10,8 @@ import service from "../../service";
 
 
 const Sammlung = () => {
-    {/*to show the progress bar*/ }
+    {/*to show the progress bar*/
+    }
     const [percentage, setPercentage] = useState(0);
 
     useEffect(() => {
@@ -22,15 +23,26 @@ const Sammlung = () => {
         setPercentage((passed / badges.length) * 100);
     })
 
+    // return an image
+    const getImage = () => {
+        // filter all passed badges
+        const passedBadges = storage.getBadges().filter(badge => badge.passed)
+        // if no badge is passed return default image
+        if (passedBadges.length === 0)
+            return img
+        else
+            // gets the image from the last passed badge from the db
+            return service.getSammlung("badge" + passedBadges[passedBadges.length - 1].badgeID)
+    }
+
     return (
         <>
-            <Headline title={"Dashboard"} headline={"Meine Sammlung"} text={""} />
+            <Headline title={"Dashboard"} headline={"Meine Sammlung"} text={""}/>
             {/*the picture is getting from the database*/}
-            <img className="dashboardBild" src={img} alt="Bild" />
+            <img className="dashboardBild" src={getImage()} alt="Bild"/>
 
-            <img className="dashboardBild" src={service.getSammlung("badge" + storage.getBadgeID())} alt="Bild" />
 
-            <div className="tube" >
+            <div className="tube">
                 <div className="shine"></div>
                 <div className="body">
                     <div className="liquid">
