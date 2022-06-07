@@ -45,7 +45,7 @@ Zur [Architektur](https://github.com/bastian1901/qwertz/blob/master/Architektur.
 
 ## Technologien
 
-- [React](https://reactjs.org/)
+- [React](https://reactjs.org/) 
 - [ReactDND](https://react-dnd.github.io/react-dnd/)
 - [NodeJS](https://nodejs.org)
 - [Mantine](https://mantine.dev/)
@@ -54,4 +54,3 @@ Zur [Architektur](https://github.com/bastian1901/qwertz/blob/master/Architektur.
 
 OT-Awareness-Schulung inklusive [qwertz_backend](#Backend) sind lizenziert unter
 der [MIT License](https://github.com/bastian1901/qwertz/blob/master/LICENSE).
-
