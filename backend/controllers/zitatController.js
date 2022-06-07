@@ -1,5 +1,4 @@
 const ZitatModel = require("../model/zitatModel");
-const KonversationModel = require("../model/konversationModel");
 
 const getZitate = ((req, res) => {
     ZitatModel.find({}, (err, result) => {
