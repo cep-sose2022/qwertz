@@ -26,5 +26,5 @@ Mongoose...
 
 ## License 
 qwertz_backend inklusive [OT - Awareness Schulung](https://github.com/bastian1901/OT-Awareness-Schulung.git) sind lizensiert unter
-der [MIT License](https://github.com/bastian1901/qwertz/blob/master/LICENSE).
+der [MIT License](https://github.com/bastian1901/qwertz_backend/blob/master/LICENSE).
 
