@@ -1,13 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Headline from "../Startseite/Headline";
 
 // import CSS for the design
 import "./Sammlung.css";
-import img from './../../Resources/images/Dashboard/belohnungbadge1.png'
+import img from './../../Resources/images/Dashboard/belohnung_badge0.png'
 // import Backend to get the data from the database
 import storage from "../../storage";
 import service from "../../service";
 
+import { Grid, Center } from "@mantine/core";
 
 const Sammlung = () => {
     {/*to show the progress bar*/
@@ -37,12 +38,12 @@ const Sammlung = () => {
 
     return (
         <>
-            <Headline title={"Dashboard"} headline={"Meine Sammlung"} text={""}/>
-            {/*the picture is getting from the database*/}
-            <img className="dashboardBild" src={getImage()} alt="Bild"/>
+            <Headline title={"Dashboard"} headline={"Meine Sammlung"} text={""} />
 
 
-            <div className="tube">
+
+
+            <div className="tube" style={{ marginBottom: 30 }}>
                 <div className="shine"></div>
                 <div className="body">
                     <div className="liquid">
@@ -61,6 +62,11 @@ const Sammlung = () => {
                     <div>20</div>
                 </div>
             </div>
+
+            <Center style={{ float: "left", marginRight: 15 }}>
+                <div>   {/*the picture is getting from the database*/}
+                    <img style={{ textAlign: "center", marginTop: 10 }} className="dashboardBild" src={getImage()} alt="Bild" /></div>
+            </Center>
         </>
     );
 }

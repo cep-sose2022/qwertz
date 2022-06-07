@@ -9,10 +9,11 @@
     position: relative;
     height: 200px;
     width: 50px;
-    top: -700px;
     border: 3px solid #272822;
     border-radius: 0 0 50rem 50rem;
     background-color: #272822;
+    margin-top: -200px;
+    top: 250px;
 }
 
 /*the top of the test tube*/
@@ -188,4 +189,5 @@
     margin-left: auto;
     margin-right: auto;
     width: 85%;
+    background-color: red;
 }
