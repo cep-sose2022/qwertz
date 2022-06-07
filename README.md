@@ -14,17 +14,20 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 - [License](#License)
 
 ## Installation
-- Install [Npm](https://nodejs.org/en/download/)
-- Clone the repository ```https://github.com/bastian1901/qwertz_backend.git```
-- Install dependencies ```npm install```
-- config?
-- daten einlesen?
-- Start with ```npm start server```
+- Installiere [Npm](https://nodejs.org/en/download/)
+- Clone das Repository ```https://github.com/bastian1901/qwertz_backend.git```
+- Installiere Abhängigkeiten ```npm install```
+- Link der MongoDB unter ```MONGO_URI``` in [.env](https://github.com/bastian1901/qwertz_backend/tree/master/.env) einfügen
+- Mit ```npm start server``` starten
 
 ## Database
-Mongoose...
+Für dieses Repo wird eine MongoDB benötigt.
+Diese kann bei einem beliebigen Anbieter oder auch lokal gehostet werden.
 
-## License 
-qwertz_backend inklusive [OT - Awareness Schulung](https://github.com/bastian1901/OT-Awareness-Schulung.git) sind lizensiert unter
+- [Demodaten](https://github.com/bastian1901/qwertz_backend/tree/master/backend/Demodaten.zip)
+- [Datenstruktur](https://github.com/bastian1901/qwertz_backend/tree/master/backend/model)
+
+## License
+qwertz_backend inklusive [OT - Awareness Schulung](https://github.com/bastian1901/OT-Awareness-Schulung.git) sind lizenziert unter
 der [MIT License](https://github.com/bastian1901/qwertz/blob/master/LICENSE).
 
