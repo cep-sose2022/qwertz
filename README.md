@@ -13,17 +13,16 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 ## Table of Contents
 
 - [Installation](#Installation)
-- [Backend](https://github.com/bastian1901/qwertz_backend.git)
+- [Backend](#Backend)
 - [Architektur](#Architektur)
 - [Technologien](#Technologien)
-- [Team](#Team)
 - [License](#License)
 
 ## Installation
 
-- Install [Npm](https://nodejs.org/en/download/)
-- Clone the repository: ```git clone https://github.com/bastian1901/OT-Awareness-Schulung.git```
-- Install dependencies: ```npm install```
+- Installiere [Npm](https://nodejs.org/en/download/)
+- Clone das Repository ```git clone https://github.com/bastian1901/OT-Awareness-Schulung.git```
+- Installiere Abhängkeiten ```npm install```
 
 ## Backend
 
@@ -50,8 +49,6 @@ Zur [Architektur](https://github.com/bastian1901/qwertz/blob/master/Architektur.
 - [ReactDND](https://react-dnd.github.io/react-dnd/)
 - [NodeJS](https://nodejs.org)
 - [Mantine](https://mantine.dev/)
-
-## Team
 
 ## License
 
