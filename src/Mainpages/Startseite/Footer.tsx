@@ -1,6 +1,6 @@
 import React from 'react';
 import './Startseite.css';
-import {ImArrowUp} from "react-icons/im";
+import { ImArrowUp } from "react-icons/im";
 
 // @ts-ignore
 import { HashLink } from 'react-router-hash-link';
@@ -10,14 +10,15 @@ const Footer = () => {
 
     return (
         <footer className="footer">
-            <div className="container-footer">
+            <div className="container">
                 <div className="grid-4">
                     <div className="grid-4-col footer-about">
-                        <h3 className="title-sm">Über die Schulung</h3>
+                        <h3 className="title-sm">About</h3>
                         <p className="text">
-                            OT-Security ist ein wichtiger werdender Teil der Industrieanlagen. Im Rahmen dieser Awareness Schulung soll das Bewusstsein für mögliche Verletzungen der Industrieanlagen geschärft werden. Darunter fällt die Simulationen von Gefahren, die das menschliche Verhalten ausnutzen, um zum Beispiel durch Phishing-Mails an wertvolle Informationen zu gelangen.
+                            OT-Security ist ein wichtiger werdender Teil der Industrieanlagen. Im Rahmen dieser Awareness Schulung soll das Bewusstsein für mögliche Verletzungen der Industrieanlagen geschärft werden.
                         </p>
                     </div>
+
                     <div className="grid-4-col footer-links">
                         <h3 className="title-sm">Links</h3>
                         <ul>
@@ -35,14 +36,7 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className="grid-4-col footer-links">
-                        <h3 className="title-sm">Schulungen</h3>
-                        <ul>
-                            <li key={Math.random()}><a href="#">Wissensmodulen</a></li>
-                            <li key={Math.random()}><a href="#">Gamemodulen</a></li>
 
-                        </ul>
-                    </div>
                 </div>
 
                 <div className="bottom-footer">
@@ -57,19 +51,18 @@ const Footer = () => {
                             <span> Team QWERTZ</span>
                         </p>
                     </div>
-                    <div className="followme-wrap">
-                        <div className="followme">
-                            <span className="footer-line" />
-                            <div className="social-media">
-                                <a href="https://www.linkedin.com/company/anapur-ag/">
-                                    <i className="fab fa-linkedin-in" />
-                                </a>
-                            </div>
+
+                    <div className="circle-wrap">
+                        <div className="circle">
+                            <span className="footer-line"></span>
+
                         </div>
+
                         <div className="back-btn-wrap">
                             <a href="#" className="back-btn">
                                 <ImArrowUp style={{
-                                    color:"var(--dark-one)"}}/>
+                                    color: "var(--dark-one)"
+                                }} />
                             </a>
                         </div>
                     </div>

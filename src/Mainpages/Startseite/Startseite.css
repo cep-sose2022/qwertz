@@ -38,6 +38,7 @@
     margin-left: 6rem;
     justify-content: center;
 }
+
 /*============= Avatar Bild ============= */
 
 
@@ -175,6 +176,7 @@
 .header-content {
     padding-top: 10vh;
 }
+
 /*==============Linke Seite Überschrift================*/
 
 .header-content .container.grid-2 {
@@ -182,7 +184,7 @@
     min-height: calc(100vh - 6rem);
     padding: 7rem 0;
     text-align: center;
-    justify-content:center;
+    justify-content: center;
 }
 
 /*==============="Hallo, ich bin Zepp"============== */
@@ -341,7 +343,6 @@
 }
 
 /* End About */
-
 /* Footer */
 
 .footer {
@@ -352,6 +353,7 @@
 .footer .grid-4 {
     display: grid;
     grid-template-columns: 3.5fr 2fr 2fr 3fr;
+
 }
 
 .grid-4-col {
@@ -361,10 +363,13 @@
 .footer .title-sm {
     color: #fafafa;
     margin-bottom: 0.9rem;
+
 }
 
 .footer .text {
     color: #aaa;
+
+
 }
 
 .footer-links a {
@@ -379,6 +384,43 @@
     color: var(--main-color);
 }
 
+.footer-input-wrap {
+    display: grid;
+    grid-template-columns: auto 50px;
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-top: 1.2rem;
+}
+
+.footer-input {
+    background: #373737;
+    color: #333;
+    outline: none;
+    border: none;
+    padding: 0 1.5rem;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.input-arrow {
+    color: #fff;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.45rem;
+    transition: 0.3s;
+}
+
+.input-arrow:hover {
+    background-color: #6b44e0;
+}
+
+.focus {
+    background: #fff;
+}
 
 .bottom-footer {
     margin-top: 5.5rem;
@@ -392,7 +434,7 @@
     color: #7b7b7b;
     font-size: 1.2rem;
     display: inline-block;
-    text-align: justify;
+    text-align: center;
 }
 
 .copyright .text span {
@@ -400,26 +442,18 @@
     cursor: pointer;
 }
 
-.followme-wrap {
+.circle-wrap {
     display: flex;
 }
 
-.followme {
+.circle {
     display: flex;
     align-items: center;
 }
 
-.followme h3 {
-    color: #7b7b7b;
-    font-weight: 500;
-    font-size: 1.3rem;
-}
 
-.title {
-    margin-top: 4vh;
-}
 
-.followme .footer-line {
+.circle .footer-line {
     width: 60px;
     height: 2px;
     background-color: #7b7b7b;
@@ -451,7 +485,7 @@
     width: 55px;
     background-color: var(--main-color);
     border-radius: 50%;
-    color: rgb(250, 0, 0);
+    color: #fff;
     font-size: 1.2rem;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.15);
     transition: 0.3s;
@@ -460,7 +494,7 @@
 }
 
 .back-btn:hover {
-    background-color: #4488e0;
+    background-color: #6b44e0;
 }
 
 .back-btn-wrap:before {
@@ -468,7 +502,7 @@
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: rgb(255, 255, 255);
+    background-color: #fff;
     z-index: 1;
     top: 50%;
     left: 50%;
@@ -489,8 +523,6 @@
         opacity: 0;
     }
 }
-
-/* End Footer */
 
 /* Responsive */
 
