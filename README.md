@@ -20,35 +20,36 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 - [License](#License)
 
 ## Installation
+
 - Install [Npm](https://nodejs.org/en/download/)
 - Clone the repository: ```git clone https://github.com/bastian1901/OT-Awareness-Schulung.git```
 - Install dependencies: ```npm install```
 
-
-
 ## Backend
-Das Backend befindet sich in folgendem Repository [qwertz_backend](https://github.com/bastian1901/qwertz_backend.git)
+
+Das Backend befindet sich in folgendem Repository [qwertz_backend](https://github.com/bastian1901/qwertz_backend.git).
+<br/>
+Um ein eigenes Backend aufzusetzen muss lediglich die Datei [service]() angepasst werden
+und sich an die richtige Datenstruktur gehalten werden.
 
 ## Starten der Software
+
 - Um die Awareness-Schulung zu starten wird das [Backend](#Backend) benötigt.
 - Dieses muss vor der Anwendung mit ```npm start server``` gestartet werden.
-  - und läuft nun auf [http://localhost:5000](http://localhost:5000)
-- Danach kann die Anwendung mit ```npm start``` gestartet werden. 
-  - Diese läuft nun auf [http://localhost:3000](http://localhost:3000)
-
-
-
+    - und läuft nun auf (standardmäßig) [http://localhost:5000](http://localhost:5000)
+- Danach kann die Anwendung mit ```npm start``` gestartet werden.
+    - Diese läuft nun auf (standardmäßig) [http://localhost:3000](http://localhost:3000)
 
 ## Architektur
 
 ## Technologien
+
 - [React](https://reactjs.org/)
 - [ReactDND](https://react-dnd.github.io/react-dnd/)
 - [NodeJS](https://nodejs.org)
 - [Mantine](https://mantine.dev/)
 
 ## Team
-
 
 ## License
 
