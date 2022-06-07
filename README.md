@@ -31,3 +31,4 @@ Diese kann bei einem beliebigen Anbieter oder auch lokal gehostet werden.
 qwertz_backend inklusive [OT - Awareness Schulung](https://github.com/bastian1901/OT-Awareness-Schulung.git) sind lizenziert unter
 der [MIT License](https://github.com/bastian1901/qwertz/blob/master/LICENSE).
 
+
