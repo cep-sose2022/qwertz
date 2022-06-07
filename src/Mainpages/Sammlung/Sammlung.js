@@ -21,7 +21,7 @@ const Sammlung = () => {
         /* checking whether a badge has been passed or not, if passes,
         then we increase the percentage, otherwise null */
         badges.map(badge => badge.passed ? passed++ : null);
-        setPercentage((passed / badges.length) * 100);
+        setPercentage((passed / badges.length) * 200);
     })
 
     // return an image
@@ -56,10 +56,9 @@ const Sammlung = () => {
                 </div>
                 <div className="meter">
                     <div>100</div>
-                    <div>80</div>
-                    <div>60</div>
-                    <div>40</div>
-                    <div>20</div>
+                    <div>75</div>
+                    <div>50</div>
+                    <div>25</div>
                 </div>
             </div>
 
