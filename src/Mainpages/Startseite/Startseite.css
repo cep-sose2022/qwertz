@@ -343,8 +343,8 @@
 }
 
 /* End About */
-/* Footer */
 
+/* Footer */
 .footer {
     background-color: #222;
     padding: 6rem 0;
@@ -450,8 +450,6 @@
     display: flex;
     align-items: center;
 }
-
-
 
 .circle .footer-line {
     width: 60px;
@@ -633,6 +631,8 @@
         padding: 2.2rem 1.5rem;
     }
 }
+
+/* Footer ends*/
 
 /* DASHBOARD */
 .badge {
