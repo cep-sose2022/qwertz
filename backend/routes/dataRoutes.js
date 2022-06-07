@@ -20,7 +20,7 @@ router.route('/getBadges').get(getBadge)
 // liefert ein Wimmelbild anhand des namens
 router.route('/getImage/:name').get(getImage)
 // liefert Sammlungsraum zurück
-router.route('/getSammlung/:name').get(getSammlung)
+router.route('/getSammlung/:badgeID').get(getSammlung)
 // liefert GIF anhand des namens
 router.route('/getGif/:name').get(getGif)
 // liefert die PDF eines Badges zurück

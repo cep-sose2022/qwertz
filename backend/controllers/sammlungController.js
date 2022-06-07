@@ -1,7 +1,7 @@
 const SammlungModel = require("../model/sammlungModel");
 
 const getSammlung = ((req, res) => {
-    SammlungModel.find({ name: req.params.name }, (err, result) => {
+    SammlungModel.find({ badgeID: req.params.badgeID }, (err, result) => {
         if (err) {
             res.json(err)
         } else {
