@@ -29,8 +29,8 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 
 Das Backend befindet sich in folgendem Repository [qwertz_backend](https://github.com/bastian1901/qwertz_backend.git).
 <br/>
-Um ein eigenes Backend aufzusetzen muss lediglich die Datei [service]() angepasst werden
-und sich an die richtige Datenstruktur gehalten werden.
+Um ein eigenes Backend aufzusetzen muss lediglich die Datei [service](https://github.com/bastian1901/qwertz/blob/master/src/service.js) angepasst werden
+und sich an die richtige [Datenstruktur](https://github.com/bastian1901/qwertz_backend/tree/master/backend/model) gehalten werden.
 
 ## Starten der Software
 
@@ -41,6 +41,8 @@ und sich an die richtige Datenstruktur gehalten werden.
     - Diese läuft nun auf (standardmäßig) [http://localhost:3000](http://localhost:3000)
 
 ## Architektur
+
+Zur [Architektur](https://github.com/bastian1901/qwertz/blob/master/Architektur.pdf)
 
 ## Technologien
 
@@ -53,6 +55,6 @@ und sich an die richtige Datenstruktur gehalten werden.
 
 ## License
 
-OT-Awareness-Schulung inklusive [qwertz_backend](#Backend) sind lizensiert unter
+OT-Awareness-Schulung inklusive [qwertz_backend](#Backend) sind lizenziert unter
 der [MIT License](https://github.com/bastian1901/qwertz/blob/master/LICENSE).
 
