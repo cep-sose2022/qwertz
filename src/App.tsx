@@ -32,7 +32,6 @@ function App() {
     return (
         <Router>
             <ScrollToTop />
-            {/*
             {
 
                 <div style={{ backgroundColor: 'lightgreen' }}>
@@ -51,7 +50,6 @@ function App() {
                 </div>
 
             }
-             */}
             <Routes>
                 {/*Admin area*/}
                 <Route path="Admin" element={<Admin />} />
