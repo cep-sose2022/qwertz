@@ -10,7 +10,7 @@ const Dashboard = () => {
                 <NavBar>
                     <Link to='../Startseite'>Startseite</Link>
                     <Link to='../Dashboard/Badges'>Badges</Link>
-                    <Link to='../Dashboard/Sammlung'>Dashboard</Link>
+                    <Link to='../Dashboard/Sammlung'>Meine Sammlung</Link>
                 </NavBar>
             </header>
             <div id="body">
