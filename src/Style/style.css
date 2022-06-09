@@ -277,7 +277,6 @@ nav .container {
     width: 55px;
     background-color: var(--main-color);
     border-radius: 50%;
-    color: rgb(250, 0, 0);
     font-size: 1.2rem;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.15);
     transition: 0.3s;

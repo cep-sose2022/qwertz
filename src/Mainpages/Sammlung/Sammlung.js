@@ -11,8 +11,7 @@ import service from "../../service";
 import { Center } from "@mantine/core";
 
 const Sammlung = () => {
-    {/*to show the progress bar*/
-    }
+    {/*to show the progress bar*/ }
     const [percentage, setPercentage] = useState(0);
 
     useEffect(() => {
@@ -23,6 +22,7 @@ const Sammlung = () => {
         badges.map(badge => badge.passed ? passed++ : null);
         setPercentage((passed / badges.length) * 200);
     })
+
 
     // return an image
     const getImage = () => {
@@ -36,6 +36,7 @@ const Sammlung = () => {
             return service.getSammlung(passedBadges[passedBadges.length - 1].badgeID)
     }
 
+
     return (
         <>
             <Headline title={"Dashboard"} headline={"Meine Sammlung"} text={""} />
@@ -44,7 +45,7 @@ const Sammlung = () => {
 
 
             <div className="tube" style={{ marginBottom: 30 }}>
-                <div className="shine"/>
+                <div className="shine" />
                 <div className="body">
                     <div className="liquid">
                         {/*the logic for the percentage so that it adapts to the passed badges*/}
@@ -55,14 +56,16 @@ const Sammlung = () => {
                     </div>
                 </div>
                 <div className="meter">
-                    <div>100</div>
-                    <div>75</div>
-                    <div>50</div>
-                    <div>25</div>
+                    <div>100%</div>
+                    <div>75%</div>
+                    <div>50%</div>
+                    <div>25%</div>
+
+
                 </div>
             </div>
 
-            <Center style={{ float: "left", marginRight: 15 }}>
+            <Center style={{ float: "left", marginRight: 30 }}>
                 <div>   {/*the picture is getting from the database*/}
                     <img style={{ textAlign: "center", marginTop: 10 }} className="dashboardBild" src={getImage()} alt="Bild" /></div>
             </Center>
