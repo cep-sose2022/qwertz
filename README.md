@@ -29,7 +29,7 @@ Diese kann bei einem beliebigen Anbieter oder auch lokal gehostet werden.
 - [Datenstruktur](https://github.com/bastian1901/qwertz_backend/tree/master/backend/model)
 
 ## Mocha Tests
-Die Automatisierten [Mocha](https://mochajs.org/) Tests lassen sich mit ```npm test ``` starten.
+Die Automatisierten [Mocha](https://mochajs.org/) Tests lassen sich mit ```npm test``` starten.
 
 ## License
 qwertz_backend inklusive [OT - Awareness Schulung](https://github.com/bastian1901/OT-Awareness-Schulung.git) sind lizenziert unter
