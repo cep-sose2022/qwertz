@@ -11,7 +11,7 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 ## Table of Contents
 - [Installation](#Installation)
 - [Database](#Database)
-- [Mocha Tests](#Mocha Tests)
+- [Mocha Tests](#Mocha-Tests)
 - [License](#License)
 
 ## Installation
