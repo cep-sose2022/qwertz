@@ -33,13 +33,13 @@ const Endscreen = () => {
                 <Grid justify={"space-around"}>
                     <div className="btn" onClick={machEnde}>
                         <Link to="../../Sammlung">
-                            <span style={{ fontSize: '20px', textAlign: 'center', itemsAlign: 'center' }}>
+                            <span style={{ fontSize: '20px', textAlign: 'center', itemsAlign: 'center', color: "black"}}>
                                 <VscFolderLibrary /> Weiter zur Sammlung
                             </span>
                         </Link>
                     </div>
                     <div className="btn" onClick={machEnde}>
-                        <Link to="../../Badges" style={{ fontSize: '20px', textAlign: 'center', itemsAlign: 'center' }}>
+                        <Link to="../../Badges" style={{ fontSize: '20px', textAlign: 'center', itemsAlign: 'center', color: "black" }}>
                             <FaAward /> Zu den Badges </Link>
                     </div>
                 </Grid>
