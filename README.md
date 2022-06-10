@@ -14,6 +14,7 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 - [Mocha Tests](#Mocha-Tests)
 - [License](#License)
 
+
 ## Installation
 - Installiere [Npm](https://nodejs.org/en/download/)
 - Clone das Repository ```https://github.com/bastian1901/qwertz_backend.git```
@@ -25,12 +26,16 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 Für dieses Repo wird eine MongoDB benötigt.
 Diese kann bei einem beliebigen Anbieter oder auch lokal gehostet werden.
 
-- [Demodaten](https://github.com/bastian1901/qwertz_backend/tree/master/backend/Demodaten.zip)
+- [Demodaten](https://github.com/bastian1901/qwertz_backend/blob/master/OT-DEMO-Datas.zip)
+Demo-Daten für Badges als JSON zum nutzen in der MongoDB.
+Badges mit Fließtext und Lösungen der Badges. 
+Badges mit Fließtext ohne Lösungen und Aufgabenstellungen der Badges.
+
 - [Datenstruktur](https://github.com/bastian1901/qwertz_backend/tree/master/backend/model)
 
 ## Mocha Tests
 Die Automatisierten [Mocha](https://mochajs.org/) Tests lassen sich mit ```npm test``` starten.
-
+ 
 ## License
 qwertz_backend inklusive [OT - Awareness Schulung](https://github.com/bastian1901/OT-Awareness-Schulung.git) sind lizenziert unter
 der [MIT License](https://github.com/bastian1901/qwertz/blob/master/LICENSE).
