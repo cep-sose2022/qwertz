@@ -26,12 +26,12 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 Für dieses Repo wird eine MongoDB benötigt.
 Diese kann bei einem beliebigen Anbieter oder auch lokal gehostet werden.
 
-- ### [Demodaten](https://github.com/bastian1901/qwertz_backend/blob/master/OT-DEMO-Datas.zip)
+- [Demodaten](https://github.com/bastian1901/qwertz_backend/blob/master/OT-DEMO-Datas.zip)
   - Demo-Daten der Badges als JSON Dateien, zum einpflegen in die MongoDB.
   - Badges mit Fließtext und Lösungen der Badges. 
   - Badges mit Fließtext ohne Lösungen und Aufgabenstellungen der Badges.
 
-- ### [Datenstruktur](https://github.com/bastian1901/qwertz_backend/tree/master/backend/model)
+- [Datenstruktur](https://github.com/bastian1901/qwertz_backend/tree/master/backend/model)
 
 ## Mocha Tests
 Die Automatisierten [Mocha](https://mochajs.org/) Tests lassen sich mit ```npm test``` starten.
