@@ -1,6 +1,6 @@
 <div align="center">
 
-![alt Logo](src/Resources/logo_small.png)
+![Logo](src/Resources/logo_small.png)
 
 
 </div>
@@ -40,8 +40,7 @@ und sich an die richtige [Datenstruktur](https://github.com/bastian1901/qwertz_b
     - Diese läuft nun auf (standardmäßig) [http://localhost:3000](http://localhost:3000)
 
 ## Architektur
-
-Zur [Architektur](https://github.com/bastian1901/qwertz/blob/master/Architektur.pdf)
+Zur [Architektur](https://github.com/bastian1901/OT-Awareness-Schulung/blob/master/src/Resources/Architektur.pdf)
 
 ## Technologien
 
