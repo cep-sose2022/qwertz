@@ -34,7 +34,7 @@ und sich an die richtige [Datenstruktur](https://github.com/bastian1901/qwertz_b
 
 ## Starten der Software
 
-- Um die Awareness-Schulung zu starten wird das [Backend](#Backend) benötigt.
+- Um die Awareness-Schulung zu starten wird das [Backend](https://github.com/bastian1901/qwertz_backend) benötigt.
 - Dieses muss vor der Anwendung mit ```npm start server``` gestartet werden.
     - und läuft nun auf (standardmäßig) [http://localhost:5000](http://localhost:5000)
 - Danach kann die Anwendung mit ```npm start``` gestartet werden.
