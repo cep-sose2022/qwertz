@@ -49,6 +49,9 @@ Zur [Architektur](https://github.com/bastian1901/OT-Awareness-Schulung/blob/mast
 - [NodeJS](https://nodejs.org)
 - [Mantine](https://mantine.dev/)
 
+## Limitation List
+Zur [Limitation List](https://github.com/bastian1901/OT-Awareness-Schulung/blob/master/src/LimitationList.pdf)
+
 ## License
 
 OT-Awareness-Schulung inklusive [qwertz_backend](#Backend) sind lizenziert unter
