@@ -16,6 +16,7 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 - [Backend](#Backend)
 - [Architektur](#Architektur)
 - [Technologien](#Technologien)
+- [Limitation List](#Limitation List)
 - [License](#License)
 
 ## Installation
