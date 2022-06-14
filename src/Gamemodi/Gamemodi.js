@@ -11,34 +11,6 @@ import { Button, Group, Modal } from "@mantine/core";
 // import Backend to get the data from the database
 import storage from '../storage';
 
-// let modiData = [
-//     {
-//         modiID: 1,
-//         passed: false,
-//         title: 'Konversation'
-//     },
-//     {
-//         modiID: 2,
-//         passed: false,
-//         title: 'Konversation'
-//     },
-//     {
-//         modiID: 1,
-//         passed: false,
-//         title: 'Konversation'
-//     },
-//     // {
-//     //     modiID: 3,
-//     //     passed: false,
-//     //     title: 'Ablaufanordnung'
-//     // },
-//     // {
-//     //     modiID: 4,
-//     //     passed: false,
-//     //     title: 'Zuordnung'
-//     // }
-// ]
-
 export const ModiContext = createContext({});
 
 const Gamemodi = () => {
