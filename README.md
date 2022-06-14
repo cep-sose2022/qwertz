@@ -51,7 +51,7 @@ Zur [Architektur](https://github.com/bastian1901/OT-Awareness-Schulung/blob/mast
 - [Mantine](https://mantine.dev/)
 
 ## Limitation List
-Zur [Limitation List](https://github.com/bastian1901/OT-Awareness-Schulung/blob/master/src/Ressources/LimitationList.pdf)
+Zur [Limitation List](https://github.com/bastian1901/OT-Awareness-Schulung/blob/master/src/Resources/LimitationList.pdf)
 
 ## License
 
