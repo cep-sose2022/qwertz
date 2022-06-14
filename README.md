@@ -41,7 +41,7 @@ und sich an die richtige [Datenstruktur](https://github.com/bastian1901/qwertz_b
     - Diese läuft nun auf (standardmäßig) [http://localhost:3000](http://localhost:3000)
 
 ## Architektur
-Zur [Architektur](https://github.com/bastian1901/OT-Awareness-Schulung/blob/master/src/Resources/Architektur.pdf)
+Zur [Architektur](https://github.com/bastian1901/OT-Awareness-Schulung/blob/master/src/Ressources/Architektur.pdf)
 
 ## Technologien
 
@@ -51,7 +51,7 @@ Zur [Architektur](https://github.com/bastian1901/OT-Awareness-Schulung/blob/mast
 - [Mantine](https://mantine.dev/)
 
 ## Limitation List
-Zur [Limitation List](https://github.com/bastian1901/OT-Awareness-Schulung/blob/master/src/Ressources/LimitationList.pdf)
+Zur [Limitation List](https://github.com/bastian1901/OT-Awareness-Schulung/blob/master/src/Resources/LimitationList.pdf)
 
 ## License
 
