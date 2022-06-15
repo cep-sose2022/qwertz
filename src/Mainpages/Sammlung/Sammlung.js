@@ -15,12 +15,10 @@ const Sammlung = () => {
     const [percentage, setPercentage] = useState(0);
 
     useEffect(() => {
-        let passed = 0;
         const badges = storage.getBadges()
         /* checking whether a badge has been passed or not, if passes,
         then we increase the percentage, otherwise null */
-        badges.map(badge => badge.passed ? passed++ : null);
-        setPercentage((passed / badges.length) * 200);
+        setPercentage((badges.filter(badge => badge.passed).length / badges.length) * 200);
     })
 
 
