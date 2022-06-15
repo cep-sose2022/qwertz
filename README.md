@@ -27,10 +27,10 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 
 ## Backend
 
-Das Backend befindet sich in folgendem Repository [qwertz_backend](https://github.com/bastian1901/qwertz_backend.git).
+Das Backend befindet sich in folgendem Repository [qwertz_backend](https://github.com/bastianfeil/qwertz_backend.git).
 <br/>
-Um ein eigenes Backend aufzusetzen muss lediglich die Datei [service](https://github.com/bastian1901/qwertz/blob/master/src/service.js) angepasst werden
-und sich an die richtige [Datenstruktur](https://github.com/bastian1901/qwertz_backend/tree/master/backend/model) gehalten werden.
+Um ein eigenes Backend aufzusetzen muss lediglich die Datei [service](https://github.com/bastianfeil/qwertz/blob/master/src/service.js) angepasst werden
+und sich an die richtige [Datenstruktur](https://github.com/bastianfeil/qwertz_backend/tree/master/backend/model) gehalten werden.
 
 ## Starten der Software
 
@@ -41,7 +41,7 @@ und sich an die richtige [Datenstruktur](https://github.com/bastian1901/qwertz_b
     - Diese läuft nun auf (standardmäßig) [http://localhost:3000](http://localhost:3000)
 
 ## Architektur
-Zur [Architektur](https://github.com/bastian1901/OT-Awareness-Schulung/blob/master/src/Ressources/Architektur.pdf)
+Zur [Architektur](https://github.com/bastianfeil/OT-Awareness-Schulung/blob/master/src/Ressources/Architektur.pdf)
 
 ## Technologien
 
@@ -51,7 +51,7 @@ Zur [Architektur](https://github.com/bastian1901/OT-Awareness-Schulung/blob/mast
 - [Mantine](https://mantine.dev/)
 
 ## Limitation List
-Zur [Limitation List](https://github.com/bastian1901/OT-Awareness-Schulung/blob/master/src/Resources/LimitationList.pdf)
+Zur [Limitation List](https://github.com/bastianfeil/OT-Awareness-Schulung/blob/master/src/Resources/LimitationList.pdf)
 
 ## License
 
