@@ -47,7 +47,8 @@ const Badges = () => {
     return (
         <div className="badges-container">
             <div className="badges-header">
-                <Headline title={"Badges"} headline={"Dein Fortschritt"} text={""} />
+                {/*we have changed "badges" to "Batches" here */}
+                <Headline title={"Batches"} headline={"Dein Fortschritt"} text={""} />
             </div>
             <div className="badges-body">
                 <BackgroundImage className="image" src={''}>

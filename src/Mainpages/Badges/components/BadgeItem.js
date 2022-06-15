@@ -41,7 +41,7 @@ const BadgeItem = ({ data }) => {
                         </span>
                         <h3>{data.title}</h3>
                         <div>
-                            <Tooltip label="Hier können Sie den Inhalt dieses Badges als PDF-Datei herunterladen.">
+                            <Tooltip label="Hier können Sie den Inhalt dieses Batches als PDF-Datei herunterladen.">
                                 <a className="downloadButton" href={pdfData}
                                     download={pdfName} >
                                     <FaFileDownload /> Inhalt herunterladen
@@ -68,7 +68,7 @@ const BadgeItem = ({ data }) => {
                         </span>
                         <h3>{data.title}</h3>
                         <Tooltip disabled='disabled'
-                            label="Hier kannst du dir den Inhalt dieses Badges in einer PDF-Datei herunterladen.">
+                            label="Hier kannst du dir den Inhalt dieses Batches in einer PDF-Datei herunterladen.">
                             <a className="downloadButton" style={{ filter: 'blur(4px)' }}>
                                 <FaFileDownload /> Inhalt herunterladen
                             </a>
