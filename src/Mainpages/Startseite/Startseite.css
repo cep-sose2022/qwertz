@@ -62,6 +62,17 @@
     z-index: 2;
 }
 
+
+.erlenmeyer {
+    position: absolute;
+    background: white;
+}
+
+.erlenmeyer:hover {
+    opacity: 0;
+}
+
+
 /*====================Karten im Bereich Schulung============= */
 .overlay {
     position: absolute;
@@ -281,6 +292,16 @@
     width: 300px;
     margin-bottom: 0;
     margin-left: -3.8rem;
+
+    float: left;
+    width: 250px;
+    height: 100px;
+    background: transparent url("../../Resources/animation_erlenmeyer.png") center top no-repeat;
+    background-size: 40%;
+}
+
+.icon:hover {
+    background-image: url("../../Resources/erlenmeyer-animiert.gif");
 }
 
 /*============Abstand zwischen Überschrift und Text im Bereich Schulung============*/
