@@ -1,20 +1,20 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
-import {useNavigate} from "react-router";
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useNavigate } from "react-router";
 
 import DropZone from "./DropZone";
 import DragItem from "./DragItem";
 
 // import ReactDND for Drag and Drop
-import {DndProvider} from "react-dnd";
+import { DndProvider } from "react-dnd";
 
 // import HTML5 Backend
-import {HTML5Backend} from "react-dnd-html5-backend";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 // import ItemState for right and wrong answer
-import {ItemState} from "./ItemState";
+import { ItemState } from "./ItemState";
 
 // import Mantine core library includes essential component
-import {Grid} from "@mantine/core";
+import { Grid } from "@mantine/core";
 
 // import JsonList
 import JsonList from "../../Resources/Json/ZuordnungData.json";
@@ -23,7 +23,7 @@ import JsonList from "../../Resources/Json/ZuordnungData.json";
 import ModiHeader from "../ModiHeader";
 
 // import ModiContext
-import {ModiContext} from "../Gamemodi";
+import { ModiContext } from "../Gamemodi";
 
 // import Backend to get the data from the database
 import service from "../../service";
@@ -78,7 +78,7 @@ const Zuordnung = () => {
     const [allRight, setAllRight] = useState(false);
 
     const navigator = useNavigate();
-    const {redirect} = useContext(ModiContext);
+    const { redirect } = useContext(ModiContext);
 
     useEffect(() => {
         // redirect to actual mode
@@ -159,7 +159,7 @@ const Zuordnung = () => {
     return (
         <div className="container-zuordnung">
             <DndProvider backend={HTML5Backend}>
-                <ItemContext.Provider value={{markAsX}}>
+                <ItemContext.Provider value={{ markAsX }}>
                     <div className="zuordnung-header">
                         <ModiHeader
                             setModalContent={setModalContent}
@@ -187,9 +187,9 @@ const Zuordnung = () => {
                                     <DropZone type="Left">
                                         {
                                             antworten.filter(a => a.state === ItemState.NOTSELECTED).map(i => (
-                                                    <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                              right={i.right}/>
-                                                )
+                                                <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
+                                                    right={i.right} />
+                                            )
                                             )
                                         }
                                     </DropZone>
@@ -209,8 +209,8 @@ const Zuordnung = () => {
                                             paddingBottom: '10px',
                                             margin: 'auto'
                                         }}>{
-                                            fragen.map((i, idx) => (idx === 0 ? i.frage : ""))
-                                        }</h3>
+                                                fragen.map((i, idx) => (idx === 0 ? i.frage : ""))
+                                            }</h3>
                                         </div>
 
                                         <DropZone type="Up">
@@ -218,7 +218,7 @@ const Zuordnung = () => {
                                             {
                                                 antworten.filter(a => a.state === ItemState.UP).map(i => (
                                                     <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                              right={i.right}/>)
+                                                        right={i.right} />)
                                                 )
                                             }
                                         </DropZone>
@@ -229,23 +229,22 @@ const Zuordnung = () => {
                                     <div className="downContainer">
                                         <div className="header">
                                             <h3 style={{
-                                                backgroundColor: "#185359",
-                                                color: "white",
+                                                color: "black",
                                                 textAlign: "center",
                                                 itemsAlign: 'center',
                                                 width: 'auto',
                                                 paddingBottom: '10px',
                                                 margin: 'auto'
                                             }}>{
-                                                fragen.map((i, idx) => (idx === 1 ? i.frage : ""))
+                                                    fragen.map((i, idx) => (idx === 1 ? i.frage : ""))
 
-                                            }</h3>
+                                                }</h3>
                                         </div>
                                         <DropZone type="Down">
                                             {
                                                 antworten.filter(a => a.state === ItemState.DOWN).map(i => (
                                                     <DragItem key={i.id} state={i.state} text={i.text} id={i.id}
-                                                              right={i.right}/>)
+                                                        right={i.right} />)
                                                 )
                                             }
                                         </DropZone>

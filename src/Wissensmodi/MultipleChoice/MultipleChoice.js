@@ -1,11 +1,11 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import JsonList from "../../Resources/Json/MultipleChoiceData.json"
 import MultipleChoiceField from "./Components/MultipleChoiceField";
 import './MultipleChoice.css'
 import ModiHeader from "../../Gamemodi/ModiHeader";
-import {ModiContext} from "../../Gamemodi/Gamemodi";
-import {useNavigate} from "react-router";
+import { ModiContext } from "../../Gamemodi/Gamemodi";
+import { useNavigate } from "react-router";
 import service from "../../service";
 import storage from "../../storage";
 
@@ -152,8 +152,8 @@ const MultipleChoice = () => {
                     modalData={modalData}
                     aufgabenstellungVisible={false}
                     fertigVisible={true}
-                    tooltipText="Du musst alles richtig haben um weiter zu machen!"
-                    popoverText="Du musst jede Frage beantworten!"
+                    tooltipText="⚠️ Sie müssen erst alles richtig haben, um weiterzumachen!"
+                    popoverText="⚠️ Sie müssen erst alle Fragen beantworten!"
                 />
             </div>
 

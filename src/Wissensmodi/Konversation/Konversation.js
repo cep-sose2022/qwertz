@@ -1,13 +1,13 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Konversation.css";
 import JsonList from "../../Resources/Json/KonversationData.json";
 import Bubble from "./Components/Bubble";
-import {ModiContext} from "../../Gamemodi/Gamemodi";
-import {useScrollIntoView} from "@mantine/hooks";
+import { ModiContext } from "../../Gamemodi/Gamemodi";
+import { useScrollIntoView } from "@mantine/hooks";
 import ModiHeader from "../../Gamemodi/ModiHeader";
 import service from "../../service";
 import storage from "../../storage";
-import {useNavigate} from "react-router";
+import { useNavigate } from "react-router";
 
 const modalData = [
     {
@@ -86,7 +86,7 @@ const Konversation = () => {
                     modalData={modalData}
                     aufgabenstellungVisible={false}
                     fertigVisible={false}
-                    tooltipText="Du musst alles gelesen haben um weiter zu machen!"
+                    tooltipText="⚠️ Sie müssen alles gelesen haben, um weiter machen zu können!"
                     popoverText=""
                 />
             </div>
@@ -103,9 +103,9 @@ const Konversation = () => {
                         <div className="chat-window">
                             <div className="top-menu">
                                 <div className="buttons">
-                                    <div className="button close"/>
-                                    <div className="button minimize"/>
-                                    <div className="button maximize"/>
+                                    <div className="button close" />
+                                    <div className="button minimize" />
+                                    <div className="button maximize" />
                                 </div>
                                 <div className="title-chat">
                                     <p>Chat</p>
@@ -118,7 +118,7 @@ const Konversation = () => {
                             {
                                 bubbles.filter(bubbles => bubbles.selected === true).map(
                                     bubbles => <Bubble key={bubbles.id} category={bubbles.category}
-                                                       text={bubbles.text}/>
+                                        text={bubbles.text} />
                                 )
                             }
 
@@ -134,7 +134,7 @@ const Konversation = () => {
                         {/*message area chatscreen end*/}
                         {/*chatscreen footer with input field*/}
                         <div className="bottom_wrapper">
-                            <textarea className="message_input" placeholder="type a message"/>
+                            <textarea className="message_input" placeholder="type a message" />
                         </div>
                         {/*chatscreen footer with input field end*/}
 

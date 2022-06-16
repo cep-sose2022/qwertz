@@ -12,13 +12,13 @@
 
     /*Neu angelegte Farben*/
     --zeppfarbton: #F2BE22;
-    --tedfarbton: #185359;
-    --antwortRichtig: #6A8C69;
+    --tedfarbton: #18525975;
+    --antwortRichtig: #6a8c69b1;
     --antwortFalsch: #A62014;
-    --spielbereich1: #ecba7e;
-    --spielbereich2: #99B4BF;
+    --spielbereich1: #ecba7ebc;
+    --spielbereich2: #99b4bfbe;
     --buttonfarbton: #2B558C;
-    --buttonhoverfarbton: #8BB4D9;
+    --buttonhoverfarbton: #8bb5d99a;
     --ModiHeader: #0B2B40;
 }
 
