@@ -1,6 +1,6 @@
 const data = [
     {
-        text: "Gute Arbeit!\nAbzeichen abgeschlossen 🔓",
+        text: "Gute Arbeit!\nBatch abgeschlossen 🔓",
     }
 ]
 export default data;
