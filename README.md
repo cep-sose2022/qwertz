@@ -20,17 +20,13 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 - [Technologien](#Technologien)
 - [Limitation List](#Limitation-List)
 - [License](#License)
-
-
 ##Installation
 - Installiere [Npm](https://nodejs.org/en/download/)
 - Clone das Repository ```git clone https://github.com/bastian1901/OT-Awareness-Schulung.git```
-
 ###Backend
 - Navigiere in den server Ordner ```cd server```
 - Installiere Abhängkeiten ```npm install```
 - Link der MongoDB unter ```MONGO_URI``` in [.env](https://github.com/cep-sose2022/qwertz/blob/main/server/.env) einfügen
-
 ###Frontend
 - navigiere in den frontend Ordner ```cd frontend```
 - Installiere Abhängkeiten ```npm install```
