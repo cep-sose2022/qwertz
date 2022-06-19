@@ -1,0 +1,220 @@
+.theoretic-conversation-body {
+    width: 100%;
+    height: 650px;
+    position: relative;
+    top: 0.006rem;
+    text-align: center;
+    background-color: transparent;
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.theoretic-conversation-footer {
+    background-color: var(--dark-one);
+    width: 75%;
+    min-width: 240px;
+    text-align: center;
+    top: 40px;
+    position: relative;
+    margin: auto;
+    border: 5px solid;
+    border-top: 0 solid;
+}
+
+
+/*text container*/
+:root {
+    --send-bg: #0B93F6;
+    --send-color: white;
+    --receive-bg: #E5E5EA;
+    --receive-text: black;
+    --page-background: white;
+}
+
+
+.chat-objects {
+    position: relative;
+    height: calc(100%);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    font-weight: normal;
+    overflow: auto;
+}
+/*scrollbar*/
+.chat-objects::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.chat-objects::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+}
+
+.chat-objects::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.chat-objects::-webkit-scrollbar-thumb {
+    background: #a5a6ab;
+}
+
+/*scrollbar end*/
+
+.chat-objects p {
+    min-width: calc(100% - 80%);
+    max-width: calc(100% - 25%);
+    word-wrap: break-word;
+    position: relative;
+    padding: 10px 20px;
+    text-align: start;
+    margin: 10px;
+    border-radius: 25px;
+
+}
+
+.bubble-right {
+    color: var(--send-color);
+    background: var(--send-bg);
+    align-self: flex-end;
+}
+
+.bubble-left {
+    background: var(--receive-bg);
+    color: black;
+    align-self: flex-start;
+}
+
+/*text container end */
+
+
+/*loading button*/
+@keyframes blink {
+    0% {
+        opacity: .2;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .2;
+    }
+}
+
+.loading-button {
+    position: relative;
+    background: transparent;
+    color: var(--light-one);
+    padding: 20px 40px;
+    border: 8px;
+    flex-basis: 70%;
+    font-weight: 300;
+}
+
+
+.loading-button span {
+    color: var(--main-color);
+    font-size: 50px;
+    animation-name: blink;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.loading-button span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.loading-button span:nth-child(3) {
+    animation-delay: .4s;
+}
+
+/*loading button end */
+
+
+/*topbar*/
+.top-menu {
+    z-index: -1;
+    position: relative;
+    background-color: var(--dark-two);
+    width: 100%;
+    padding: 20px 0 15px;
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+}
+
+.top-menu .buttons {
+    margin: 3px 0 0 20px;
+    position: absolute;
+}
+
+.top-menu .buttons .button {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+}
+
+.top-menu .buttons .button.close {
+    background-color: #f5886e;
+}
+
+.top-menu .buttons .button.minimize {
+    background-color: #fdbf68;
+}
+
+.top-menu .buttons .button.maximize {
+    background-color: #a3d063;
+}
+
+.top-menu .title-chat {
+    text-align: center;
+    color: var(--dark-one);
+    font-size: 20px;
+}
+
+/*topbar end*/
+
+/*input field*/
+.bottom_wrapper {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    background-color: var(--dark-two);
+    padding: 20px 20px;
+    bottom: 0;
+}
+
+
+/*End Vertical Scrollbar*/
+.bottom_wrapper .message_input {
+    width: 100%;
+    text-align: left;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px solid #bcbdc0;
+    position: relative;
+    padding: 0 20px;
+    box-sizing: border-box;
+    outline-width: 0;
+    color: gray;
+    resize: none;
+}
+
+/*input field end*/
+.konversation-container .konversation-body {
+    border: 5px solid;
+    margin-top: 5px;
+    border-radius: 15px;
+
+}

@@ -1,0 +1,33 @@
+[
+  {
+    "badgeID": 3,
+    "modiID": 1,
+    "data": {
+      "imageName": "Fernwartung_Wimmelbild",
+      "buttons": [
+        {
+          "text": "Gefunden! Genau es sollte immer darauf geachtet werden, dass eine Fernverbindung ordnungsgemäß geschlossen wird",
+          "topLeftCorner": {
+            "x": 5,
+            "y": 0
+          },
+          "bottomRightCorner": {
+            "x": 40,
+            "y": 15
+          }
+        },
+        {
+          "text": " Gefunden! Es muss ein Beantragungsverfahren existieren das der Fernzugriff autorisiert ist.",
+          "topLeftCorner": {
+            "x": 40,
+            "y": 45
+          },
+          "bottomRightCorner": {
+            "x": 50,
+            "y": 65
+          }
+        }
+      ]
+    }
+  }
+]

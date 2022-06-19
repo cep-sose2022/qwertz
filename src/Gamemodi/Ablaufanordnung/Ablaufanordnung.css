@@ -1,0 +1,123 @@
+.ablaufanordnung-container {
+    position: relative;
+    top: 40px;
+    padding: 10px;
+}
+
+/*drag and drop section*/
+.ablaufanordnung-container .ablaufanordnung-body {
+    background-image: url(../../Resources/images/ablaufanordnung_background.jpg);
+    border: 5px solid;
+    margin-top: 5px;
+    border-radius: 15px;
+    /*box-shadow: 10px 5px 5px black;*/
+}
+
+/*drag container in drag and drop section*/
+.card-header {
+    text-align: start;
+    width: 100%;
+    font-weight: bold;
+}
+
+/*scrollbar design*/
+.scrollmenu::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.scrollmenu::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #99B4BF;
+
+}
+
+.scrollmenu::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.scrollmenu::-webkit-scrollbar-thumb {
+    background: #D9A25F;
+}
+
+/*scrollbar design ends*/
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.card-header span {
+    border-right: 3px solid;
+    border-bottom: 3px solid;
+    border-radius: 100%;
+
+}
+
+/*end drag container*/
+
+
+/*avatar position in Modal*/
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*heap of dropitems*/
+.scrollmenu {
+    background-color: gray;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    white-space: normal;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    min-height: 10vh;
+
+}
+
+/*drag Item*/
+.dragCard {
+    vertical-align: middle;
+    font-size: 1rem;
+    border: 1px solid;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 20vw;
+    height: 25vh;
+    flex: 0 0 auto;
+    overflow: auto;
+}
+
+/*scrollbar design*/
+.dragCard::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.dragCard::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.dragCard::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    /*box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);*/
+}
+
+.dragCard::-webkit-scrollbar-thumb {
+    background: gray;
+}
+
+/*scrollbar design ends*/

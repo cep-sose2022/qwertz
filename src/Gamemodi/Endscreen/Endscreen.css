@@ -1,0 +1,153 @@
+/*body area where confetti is*/
+.endscreen-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding-bottom: 30%;
+    background-position: center;
+    background-image: url(../../Resources/konfetti_animiert.gif);
+    background-repeat: no-repeat;
+    border-radius: 25px;
+}
+
+/*reward image next to the speech bubble*/
+.imgerlen {
+    position: relative;
+    animation: bounceIn 1s infinite;
+    animation-duration: 8.5s;
+    animation-iteration-count: infinite;
+    width: 36%;
+    height: auto;
+    display: inline-block;
+    left: 50px;
+    top: 50px;
+}
+
+/*reward image next to the speech bubble*/
+/*bounce animation*/
+@keyframes bounceIn {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/*bounce animation ends*/
+
+/*picture let the animation jump back and forth*/
+@keyframes example {
+    0% {
+        left: 0px;
+    }
+
+    25% {
+        left: 50%;
+    }
+
+    50% {
+        left: 200px;
+    }
+
+    75% {
+        left: 0px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
+/*picture let the animation jump back and forth ends*/
+
+.endscreen-text {
+    justify-content: center;
+}
+
+/*speech bubble design*/
+.speechbubble {
+    margin-top: 25%;
+    border-radius: 25px;
+    justify-content: center;
+    background-color: var(--main-color);
+    align-items: center;
+    font-size: 35px;
+    line-height: 45px;
+    font-weight: bold;
+    /*margin: 15px 0;*/
+    white-space: pre;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.speechbubble:after {
+    content: "";
+    position: absolute;
+    border-left: 10px solid var(--main-color);
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--main-color);
+    border-bottom: 10px solid transparent;
+    right: -13px;
+    top: 6px;
+}
+
+/*speech bubble design ends*/
+
+/*Gif appear then disappear*/
+.gif {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    animation: disappear 0s linear 8s forwards;
+}
+
+/*Container appear then disappear*/
+.endscreen-container .endscreengif {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    animation: disappear 0s linear 8s forwards;
+}
+
+/*Button "Weiter zur Sammlung" and "Zu den Badges" disappear then appear*/
+.btn {
+    border: 5px solid;
+    animation: opacityOn 8s normal forwards step-end;
+    animation-delay: 0s;
+}
+
+/*the individual steps of the animation sequence are defined*/
+@keyframes disappear {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes opacityOn {
+
+    0% {
+        opacity: 0;
+    }
+}
+
+/*the individual steps of the animation sequence are defined ends*/

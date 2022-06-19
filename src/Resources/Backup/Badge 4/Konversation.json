@@ -1,0 +1,61 @@
+[
+    {
+        "badgeID": 1,
+        "modiID":1,
+        "data": [
+            {
+                "text": "Hi schon gehört Wechseldatenträger wie USB-Sticks und externe Festplatten sind heutzutage weit verbreitet. In Unternehmen verwenden Mitarbeiter diese sowohl im normalen IT-Office-Umfeld sowie aber auch im ICS-Umfeld (Industrial Control System).",
+                "category": "bubble-left"
+             },
+             {
+                "text": "Hey, klar das weiß doch jeder ;-)",
+                "category": "bubble-right"
+             },
+             {
+                "text": "Ja da hast du recht. Bedenklich wird das ganze aber vor allem wenn es passiert das ein Kollege ein solches Speichermedium mit nach hause nimmt um zum Beispiel von dort aus zu arbeiten.",
+                "category": "bubble-left"
+             },
+             {
+                "text": "Bedenklich? Also ich hab das neulich erst gemacht, vor allem fand ich es praktisch das ich gleich den USB-Stick aus der Firma noch dazu verwenden konnte ein paar Fotos aus dem letzten Urlaub für einen Kollegen mit drauf zu laden.",
+                "category": "bubble-right"
+             },
+             {
+                "text": " Ach und natürlich noch Musik damit ich endlich wieder neue dabei habe für die Arbeit ;-). ",
+                "category": "bubble-right"
+             },
+             
+             {
+                "text": "Was?! Achtung das solltest du auf keinen Fall machen, das kann echt schwerwiegende Probleme für das Unternehmen mit sich ziehen. Du könntest ausversehen Schadsoftware in das ICS-Netzwerk einschleusen.",
+                "category": "bubble-left"
+             },
+             {
+                "text": "Schadsoftware? Was meinst du damit genau?",
+                "category": "bubble-right"
+             },
+             {
+                "text": "Eine Schadsoftware kann sich auf einem solchen Speichermedium wie einem USB-Stick oder einer externen Festplatte befinden. Dabei handelt es sich beispielsweise um Würmer, Viren sowie Ransomware und Trojaner. Im Grunde ist alles eine Schadsoftware die dazu entwickelt wurde und den Zweck hat ungewollte Funktionen auf einem System ausführen zu lassen.",
+                "category": "bubble-left"
+             },
+             {
+                "text": "Das versteht man also unter einer Schadsoftware. Gut zu Wissen Ok und was für Bedrohungen können sich durch so einen Datenträger ergeben?",
+                "category": "bubble-right"
+             },
+             {
+                "text": "So gelten als Bedrohungsszenarien vor allem Speichermedien wie USB-Sticks welche im Office-Netz oder im privaten Umfeld infiziert worden sind und diese dann ihren Weg direkt in die ICS-Netze finden können. Somit könnte ein Angreifer die komplette Anlage lahmlegen und beispielsweise die Systeme verschlüsseln wodurch erhebliche Kosten verursacht werden können. Denn sind die Daten erst einmal gestohlen und dazu auch noch gelöscht kann es zu Erpressungen kommen. Außerdem könnte ein Angreifer volle Kontrolle über das System erlangen. Wodurch dieser die Anlage manipulieren könnte und beträchtliche Schäden daran verursachen kann. Im schlimmsten Fall kann es passieren das durch Manipulation einer Anlage ein Kollege zu Schaden kommt.",
+                "category": "bubble-left"
+             },
+             {
+                "text": "Das klingt sehr gefährlich, was kann ich für Maßnahmen ergreifen um sowas zu verhindern?",
+                "category": "bubble-right"
+             },
+             {
+                "text": "Maßnahmen für solche Bedrohungen durch Wechseldatenträger sind beispielsweise technische Kontrollen. Das entsprechende Datenträger inventarisiert werden und ein Whitelisting für zugelassene Wechseldatenträger existiert. Das nur Unternehmenseigene ggf. personalisierte Wechseldatenträger verwendet werden und diese Ausschließlich im ICS-Netz verwendung finden. Auf keine Fall private Speichermedien verwenden auch wenn du diese von Freunden hast. Ebenso solltest du auch niemals ein dir unbekanntes Speichermedium einfach verwenden falls du ein solches auf dem Parkplatz oder an einem anderen Ort im Unternehmen gefunden hast.",
+                "category": "bubble-left"
+             },
+             {
+                "text": "Danke für die Info's in Zukunft werde ich darauf achten!",
+                "category": "bubble-right"
+             }
+        ]
+    }
+]

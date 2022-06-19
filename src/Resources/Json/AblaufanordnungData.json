@@ -1,0 +1,23 @@
+[
+  {
+    "text": "1: Nicht in Panik geraten, das infizierte Gerät nicht ausschalten oder das Netzteil ziehen, es wird ein laufendes System benötigt"
+  },
+  {
+    "text": "2: System isolieren sofort alle Netzwerkverbindungen trennen. Netzwerkkabel ziehen und das WLAN deaktivieren. Die Schadsoftware darf sich nicht weiter verbreiten"
+  },
+  {
+    "text": "3: Analysieren welche Systeme von dem infizierten Endgerät noch betroffen sein könnten"
+  },
+  {
+    "text": "4: Wenn möglich sofort alle Passwörter ändern die von dem betroffenen System infiziert sein könnten"
+  },
+  {
+    "text": "5: Vorgesetzten informieren und in Kenntnis über das Problem setzen das somit auch ggf. Kunden informiert werden können und Mitarbeiter. "
+  },
+  {
+    "text": "6: Kontrollieren Sie die Datensicherung ob diese sich infiziert haben könnte und mit dem Endgerät in verbindung stehen könnte. "
+  },
+  {
+    "text": "7: Ist das infizierte Endgerät in Quarantäne und das restliche Netzwerk gesichert versuchen Sie sämtliche Daten zu sichern auf dem Betroffenen Gerät für eine spätere Analyse. "
+  }
+]

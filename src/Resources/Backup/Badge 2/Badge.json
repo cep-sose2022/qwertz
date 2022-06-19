@@ -1,0 +1,31 @@
+[
+    {
+        "badgeID": 2,
+        "title": "Patch Management",
+        "text": "Was gilt zu beachten beim einspielen von Sicherheitspatches und welche Komplikationen können dadurch entstehen.",
+        "passed": false,
+        "unlocked": false,
+        "modis": [
+            {
+                "title": "Konversation", 
+                "modiID": 1
+            },
+            {
+                "title": "Multiplechoice", 
+                "modiID": 1
+            },
+            {
+                "title": "Ablaufanordnung", 
+                "modiID": 1
+            },
+            {
+                "title": "Wimmelbild", 
+                "modiID": 1
+            },
+            {
+                "title": "Zuordnung", 
+                "modiID": 1
+            }
+        ]
+    }
+]
