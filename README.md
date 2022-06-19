@@ -32,7 +32,7 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 - Installiere Abhängkeiten ```npm install```
 - Link der MongoDB unter ```MONGO_URI``` in [.env](https://github.com/cep-sose2022/qwertz/blob/main/server/.env) einfügen
 ### Frontend
-- navigiere in den frontend Ordner ```cd frontend```
+- Navigiere in den frontend Ordner ```cd frontend```
 - Installiere Abhängkeiten ```npm install```
 
 
