@@ -87,7 +87,7 @@ const Ablaufanordnung = () => {
     const [boxes] = useState([]);
     const [openedModal, setOpenedModal] = useState(true); // Task is displayed every time
     const [openedPopover, setOpenedPopover] = useState(false); // so you can close popover again
-    const [modalContent, setModalContent] = useState(modalData[3]);
+    const [modalContent, setModalContent] = useState(modalData[0]);
     const [allRight, setAllRight] = useState(false);
 
     const navigator = useNavigate();
