@@ -55,7 +55,7 @@ function App() {
                 <Route path="Startseite" element={<Startseite JsonZitate={JsonZitate}/>}/>
                 {/*Dashboard outlets}*/}
                 <Route path="Dashboard" element={<Dashboard/>}>
-                    <Route path="Badges" element={<Badges/>}/>
+                    <Route path="Batches" element={<Badges/>}/>
                     <Route path="Sammlung" element={<Sammlung/>}/>
                     <Route path="Error503" element={<Error503Page/>}/>
                     <Route path="Gamemodi" element={<Gamemodi/>}>

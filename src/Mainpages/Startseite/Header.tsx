@@ -14,7 +14,7 @@ const Header = () => {
                         Ich bin Zepp, OT-Security Spezialist mit langjähriger Erfahrung.
                         Ich begleite dich auf deinem Weg!
                     </p>
-                    <a href="/Dashboard/Badges" className="btn">
+                    <a href="/Dashboard/Batches" className="btn">
                         Jetzt starten
                     </a>
                 </div>

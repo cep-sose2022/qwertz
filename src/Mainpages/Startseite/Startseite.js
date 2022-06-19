@@ -28,7 +28,7 @@ const Startseite = (props) => {
                 <HashLink to="#services">Schulung</HashLink>
                 <HashLink to="#about">Über uns</HashLink>
                 <HashLink to="#zitat">Zitat</HashLink>
-                <Link to="../Dashboard/Badges" className="active">Jetzt starten</Link>
+                <Link to="../Dashboard/Batches" className="active">Jetzt starten</Link>
             </NavBar>
 
             <header id="header">

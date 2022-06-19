@@ -39,7 +39,7 @@ const Endscreen = () => {
                         </Link>
                     </div>
                     <div className="btn" onClick={machEnde}>
-                        <Link to="../../Badges" style={{ fontSize: '20px', textAlign: 'center', itemsAlign: 'center', color: "black" }}>
+                        <Link to="../../Batches" style={{ fontSize: '20px', textAlign: 'center', itemsAlign: 'center', color: "black" }}>
                             <FaAward /> Zu den Batches </Link>
                     </div>
                 </Grid>

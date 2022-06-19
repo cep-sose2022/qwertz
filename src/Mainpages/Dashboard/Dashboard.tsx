@@ -9,7 +9,7 @@ const Dashboard = () => {
             <header id="header">
                 <NavBar>
                     <Link to='../Startseite'>Startseite</Link>
-                    <Link to='../Dashboard/Badges'>Batches</Link>
+                    <Link to='../Dashboard/Batches'>Batches</Link>
                     <Link to='../Dashboard/Sammlung'>Meine Sammlung</Link>
                 </NavBar>
             </header>
