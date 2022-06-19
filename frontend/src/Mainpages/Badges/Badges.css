@@ -194,7 +194,7 @@ a.downloadButton:hover {
 .badges-body .image::before {
     content: "";
     background-attachment: fixed;
-    background-image: url('./../../Resources/images/badge_background.jpg');
+    background-image: url('../../Resources/images/badge_background.jpg');
     background-size: cover;
     position: absolute;
     top: 0;

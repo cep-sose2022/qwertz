@@ -3,7 +3,7 @@ import Headline from "../Startseite/Headline";
 
 // import CSS for the design
 import "./Sammlung.css";
-import img from './../../Resources/images/Dashboard/belohnung_badge0.png'
+import img from '../../Resources/images/Dashboard/belohnung_badge0.png'
 // import Backend to get the data from the database
 import storage from "../../storage";
 import service from "../../service";
