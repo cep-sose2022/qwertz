@@ -31,24 +31,6 @@ function App() {
     return (
         <Router>
             <ScrollToTop/>
-            {/*{*/}
-
-            {/*    <div style={{ backgroundColor: 'lightgreen' }}>*/}
-            {/*        <a> Zum Debuggen und Testen aller Seiten, kommt dann am Ende noch weg</a>*/}
-            {/*        <br />*/}
-            {/*        <Link to='Startseite'>Startseite </Link>*/}
-            {/*        <Link to='Dashboard/Sammlung'>Dashboard </Link>*/}
-            {/*        <Link to='Dashboard/Badges'>Badges </Link>*/}
-            {/*        <Link to='Dashboard/Gamemodi/Zuordnung'>Zuordnung </Link>*/}
-            {/*        <Link to='Dashboard/Gamemodi/Ablaufanordnung'>Ablaufanordnung </Link>*/}
-            {/*        <Link to='Dashboard/Gamemodi/Endscreen'>Endscreen </Link>*/}
-            {/*        <Link to='Dashboard/Gamemodi/Wimmelbild'>Wimmelbild </Link>*/}
-            {/*        <Link to='Dashboard/Gamemodi/Konversation'>Konversation </Link>*/}
-            {/*        <Link to='Dashboard/Gamemodi/Video'>Video </Link>*/}
-            {/*        */}
-            {/*    </div>*/}
-
-            {/*}*/}
             <Routes>
                 {/*MainPage*/}
                 <Route path="" element={<Startseite JsonZitate={JsonZitate}/>}/>
