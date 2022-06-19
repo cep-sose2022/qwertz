@@ -22,27 +22,33 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 - [License](#License)
 
 
-## Installation
+
+
+##Installation
 - Installiere [Npm](https://nodejs.org/en/download/)
 - Clone das Repository ```git clone https://github.com/bastian1901/OT-Awareness-Schulung.git```
-### Backend
+
+###Backend
 - Navigiere in den server Ordner ```cd server```
 - Installiere Abhängkeiten ```npm install```
-- Link der MongoDB unter ```MONGO_URI``` in [.env](https://github.com/bastianfeil/qwertz_backend/tree/master/.env) einfügen
-### Frontend
+- Link der MongoDB unter ```MONGO_URI``` in [.env](https://github.com/cep-sose2022/qwertz/blob/main/server/.env) einfügen
+
+###Frontend
 - navigiere in den frontend Ordner ```cd frontend```
 - Installiere Abhängkeiten ```npm install```
+
+
 
 ## Database
 Für dieses Repo wird eine MongoDB benötigt.
 Diese kann bei einem beliebigen Anbieter oder auch lokal gehostet werden.
 
-- [Demodaten](https://github.com/bastianfeil/qwertz_backend/blob/master/OT-DEMO-Datas.zip)
+- [Demodaten](https://github.com/cep-sose2022/qwertz/blob/main/server/OT-DEMO-Datas.zip)
     - Demo-Daten der Badges als JSON Dateien, zum einpflegen in die MongoDB.
     - Badges mit Fließtext und Lösungen der Badges.
     - Badges mit Fließtext ohne Lösungen und Aufgabenstellungen der Badges.
 
-- [Datenstruktur](https://github.com/bastianfeil/qwertz_backend/tree/master/backend/model)
+- [Datenstruktur](https://github.com/cep-sose2022/qwertz/tree/main/server/backend/model)
 
 ## Starten der Software
 - Navigiere in den server Ordner ```cd server```
@@ -54,7 +60,7 @@ Diese kann bei einem beliebigen Anbieter oder auch lokal gehostet werden.
 
 
 ## Architektur
-Zur [Architektur](https://github.com/bastianfeil/OT-Awareness-Schulung/blob/master/src/Ressources/Architektur.pdf)
+Zur [Architektur](https://github.com/cep-sose2022/qwertz/blob/main/frontend/src/Resources/Architektur.pdf)
 
 ## Mocha Tests
 - Navigiere in den server Ordner ```cd server```
@@ -68,13 +74,9 @@ Zur [Architektur](https://github.com/bastianfeil/OT-Awareness-Schulung/blob/mast
 - [Mantine](https://mantine.dev/)
 
 ## Limitation List
-Zur [Limitation List](https://github.com/bastianfeil/OT-Awareness-Schulung/blob/master/src/Resources/LimitationList.pdf)
-
-
-## Architektur
-Zur [Architektur](https://github.com/bastianfeil/OT-Awareness-Schulung/blob/master/src/Ressources/Architektur.pdf)
+Zur [Limitation List](https://github.com/cep-sose2022/qwertz/blob/main/frontend/src/Resources/LimitationList.pdf)
 
 ## License
 
 OT-Awareness ist lizenziert unter
-der [MIT License](https://github.com/bastianfeil/qwertz/blob/master/LICENSE).
+der [MIT License](https://github.com/cep-sose2022/qwertz/blob/main/LICENSE).
