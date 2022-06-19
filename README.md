@@ -20,6 +20,7 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 - [Technologien](#Technologien)
 - [Limitation List](#Limitation-List)
 - [License](#License)
+
 ##Installation
 - Installiere [Npm](https://nodejs.org/en/download/)
 - Clone das Repository ```git clone https://github.com/bastian1901/OT-Awareness-Schulung.git```
