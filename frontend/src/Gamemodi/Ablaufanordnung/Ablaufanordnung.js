@@ -59,8 +59,7 @@ const modalData = [
     },
     {
         title: "AUFGABENSTELLUNG",
-        content: "Ein externer Mitarbeiter hat ein infiziertes Wartungsgerät verwendet, welches zuvor schon in Ihrem ICS-Netzwerk verwendet wurde. Vermutlich hatte der externe sich die Schadsoftware über das Internet eingefangen und nun durch das erneute Verbinden in Ihr ICS-System versehentlich Schadsoftware eingeschleust. Glücklicherweise wurde dies sofort erkannt."
-            + " Wie gehen Sie nun vor?"
+        content: service.getAufgabenstellung(storage.getBadgeID(), storage.getModiID())
     }
 ]
 
@@ -87,7 +86,7 @@ const Ablaufanordnung = () => {
     const [cards, setCards] = useState([]);
     const [boxes] = useState([]);
     const [openedModal, setOpenedModal] = useState(true); // Task is displayed every time
-    const [openedPopover, setOpenedPopover] = useState(false); // so you can close popver again
+    const [openedPopover, setOpenedPopover] = useState(false); // so you can close popover again
     const [modalContent, setModalContent] = useState(modalData[3]);
     const [allRight, setAllRight] = useState(false);
 

@@ -84,8 +84,27 @@ const getModiData = (badgeID, modiID, name) => {
         return null
     }
 }
+
+const getModiAufgabenstellung = (badgeID, modiID, name) =>{
+    try {
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", `${backendUrl}/get${name}/${badgeID}/${modiID}`, false);
+        xmlHttp.send(null);
+        const responseJson = JSON.parse(xmlHttp.responseText)[0];
+        if (responseJson === undefined)
+            return undefined
+        else
+            return responseJson.aufgabenstellung;
+    } catch (e) {
+        return null
+    }
+}
+
 service.getAblaufanordnung = (badgeID, modiID) => {
     return getModiData(badgeID, modiID, 'Ablaufanordnung')
+}
+service.getAufgabenstellung = (badgeID, modiID) => {
+    return getModiAufgabenstellung(badgeID, modiID, 'Ablaufanordnung')
 }
 service.getZuordnung = (badgeID, modiID) => {
     return getModiData(badgeID, modiID, 'Zuordnung')
