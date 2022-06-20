@@ -80,7 +80,7 @@ const Gamemodi = () => {
         <>
             {/* Modal to cancel*/}
             <Modal opened={modalOpened} onClose={() => setModalOpened(false)}>
-                <p>Möchtest du wirklich abbrechen?</p>
+                <p>Möchten Sie wirklich abbrechen?</p>
                 <Group>
                     <Button onClick={() => {
                         modis.map(modi => modi.passed = false)
