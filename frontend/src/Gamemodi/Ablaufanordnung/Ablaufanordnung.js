@@ -1,8 +1,8 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { useNavigate } from "react-router";
+import React, {createContext, useContext, useEffect, useState} from 'react';
+import {useNavigate} from "react-router";
 
 // import ReactDND for Drag and Drop
-import { DndProvider } from "react-dnd";
+import {DndProvider} from "react-dnd";
 
 // import CardStorage.js
 import CardStorage from "./CardStorage";
@@ -14,7 +14,7 @@ import './Ablaufanordnung.css'
 import DragCard from "./DragCard";
 
 // import ItemState for right and wrong answer
-import { ItemState } from "./ItemState";
+import {ItemState} from "./ItemState";
 
 // import JsonList
 import JsonList from "../../Resources/Json/AblaufanordnungData.json";
@@ -23,16 +23,16 @@ import JsonList from "../../Resources/Json/AblaufanordnungData.json";
 import DropBox from "./DropBox";
 
 // import Mantine Core for responsive Grid-Layout
-import { SimpleGrid } from "@mantine/core";
+import {SimpleGrid} from "@mantine/core";
 
 // import ModiHeader
 import ModiHeader from "../ModiHeader";
 
 // import ModiContext
-import { ModiContext } from "../Gamemodi";
+import {ModiContext} from "../Gamemodi";
 
 // import HTML5 Backend
-import { HTML5Backend } from "react-dnd-html5-backend";
+import {HTML5Backend} from "react-dnd-html5-backend";
 
 // import Backend to get the data from the database
 import service from "../../service";
@@ -44,7 +44,7 @@ export const CardContext = createContext({
     }
 });
 
-const modalData = [
+let modalData = [
     {
         title: "SPIELANLEITUNG 🎲",
         content: "Ordnen Sie die Kärtchen in der richtigen Reihenfolge"
@@ -59,7 +59,7 @@ const modalData = [
     },
     {
         title: "AUFGABENSTELLUNG",
-        content: service.getAufgabenstellung(storage.getBadgeID(), storage.getModiID())
+        content: "aufgabenstellung"
     }
 ]
 
@@ -89,46 +89,49 @@ const Ablaufanordnung = () => {
     const [openedPopover, setOpenedPopover] = useState(false); // so you can close popover again
     const [modalContent, setModalContent] = useState(modalData[0]);
     const [allRight, setAllRight] = useState(false);
+    const [aufgabenstellung] = useState(service.getAufgabenstellung(storage.getBadgeID(), storage.getModiID()));
 
     const navigator = useNavigate();
-    const { redirect } = useContext(ModiContext);
+    const {redirect} = useContext(ModiContext);
 
 
     useEffect(() => {
-        // redirect to the actual mode
-        redirect(eigenerName)
-        // loading data from db
-        if (cards[0] === undefined) {
-            let Data = service.getAblaufanordnung(storage.getBadgeID(), storage.getModiID())
-            if (Data === undefined) {
-                navigator('../../Error503')
-                return
-            } else if (Data === null) {
-                console.error("DB nicht erreichbar, nutze Demo Daten")
-                // navigator('../../Error503')
-                Data = JsonList
-            }
+            // redirect to the actual mode
+            redirect(eigenerName)
+            // loading data from db
+            if (cards[0] === undefined) {
+                let Data = service.getAblaufanordnung(storage.getBadgeID(), storage.getModiID())
+                if (Data === undefined) {
+                    navigator('../../Error503')
+                    return
+                } else if (Data === null) {
+                    console.error("DB nicht erreichbar, nutze Demo Daten")
+                    // navigator('../../Error503')
+                    Data = JsonList
+                }
 
-            Data.map((object, idx) => {
-                    let card = {
-                        key: Math.random(),
-                        id: idx + 1,
-                        text: object.text,
-                        state: ItemState.WRONG,
-                        boxId: 0
+                modalData[3].content = aufgabenstellung
+
+                Data.map((object, idx) => {
+                        let card = {
+                            key: Math.random(),
+                            id: idx + 1,
+                            text: object.text,
+                            state: ItemState.WRONG,
+                            boxId: 0
+                        }
+                        cards.push(card);
+                        let box = {
+                            key: Math.floor(Math.random() * 100000),
+                            id: card.id
+                        };
+                        boxes.push(box);
                     }
-                    cards.push(card);
-                    let box = {
-                        key: Math.floor(Math.random() * 100000),
-                        id: card.id
-                    };
-                    boxes.push(box);
+                )
+                setCards(shuffle(cards));
             }
-            )
-            setCards(shuffle(cards));
+            // loading data end
         }
-        // loading data end
-    }
     )
 
 
@@ -184,7 +187,7 @@ const Ablaufanordnung = () => {
 
         <div className="ablaufanordnung-container">
             <DndProvider backend={HTML5Backend}>
-                <CardContext.Provider value={{ markAsX }}>
+                <CardContext.Provider value={{markAsX}}>
                     <div className="ablaufanordnung-header">
                         <ModiHeader
                             setModalContent={setModalContent}
@@ -209,35 +212,35 @@ const Ablaufanordnung = () => {
                             {
                                 cards.filter(card => card.boxId === 0)
                                     .map(card => (
-                                        <DragCard key={card.key} id={card.id} text={card.text} state={card.state} />
-                                    )
+                                            <DragCard key={card.key} id={card.id} text={card.text} state={card.state}/>
+                                        )
                                     )
                             }
                         </CardStorage>
                         {/*Card Heap end*/}
 
                         {/*Grid to drag the cards in*/}
-                        <SimpleGrid style={{ padding: 15 }}
-                            cols={4}
-                            spacing="lg"
-                            breakpoints={[
-                                { maxWidth: 980, cols: 3, spacing: "lg" },
-                                { maxWidth: 755, cols: 2, spacing: "lg" },
-                                { maxWidth: 600, cols: 1, spacing: "lg" },
-                            ]}
+                        <SimpleGrid style={{padding: 15}}
+                                    cols={4}
+                                    spacing="lg"
+                                    breakpoints={[
+                                        {maxWidth: 980, cols: 3, spacing: "lg"},
+                                        {maxWidth: 755, cols: 2, spacing: "lg"},
+                                        {maxWidth: 600, cols: 1, spacing: "lg"},
+                                    ]}
                         >
                             {
                                 boxes.map(box => (
-                                    <DropBox key={box.key} id={box.id}>
-                                        {
-                                            cards.filter(card => card.boxId === box.id).map(card => (
-                                                <DragCard key={card.id} id={card.id} text={card.text}
-                                                    state={card.state} />
-                                            )
-                                            )
-                                        }
-                                    </DropBox>
-                                )
+                                        <DropBox key={box.key} id={box.id}>
+                                            {
+                                                cards.filter(card => card.boxId === box.id).map(card => (
+                                                        <DragCard key={card.id} id={card.id} text={card.text}
+                                                                  state={card.state}/>
+                                                    )
+                                                )
+                                            }
+                                        </DropBox>
+                                    )
                                 )
                             }
                         </SimpleGrid>
