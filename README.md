@@ -26,7 +26,7 @@ Softwareentwicklungsprojekt der Hochschule Mannheim im Sommersemester 2022 vom T
 
 ## Installation
 - Installiere [Npm](https://nodejs.org/en/download/)
-- Clone das Repository ```git clone https://github.com/bastian1901/OT-Awareness-Schulung.git```
+- Clone das Repository ```git clone https://github.com/cep-sose2022/qwertz.git```
 ### Backend
 - Navigiere in den server Ordner ```cd server```
 - Installiere Abhängkeiten ```npm install```
